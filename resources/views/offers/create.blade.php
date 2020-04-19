@@ -14,9 +14,7 @@
             </div>
             
             <div class="card-body">
-            @if ( session('message'))
-            <div class="alert alert-sucess">{{session('message')}}</div>
-            @endif
+                
             <form method="POST" action="/offers">
                 @csrf
                 <input
