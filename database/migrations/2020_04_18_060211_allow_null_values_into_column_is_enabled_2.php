@@ -13,9 +13,9 @@ class AllowNullValuesIntoColumnIsEnabled2 extends Migration
      */
     public function up()
     {
-        Schema::table('offers', function (Blueprint $table) {
+        /* Schema::table('offers', function (Blueprint $table) {
             $table->boolean('is_enabled')->nullable()->change();
-        });
+        }); */
     }
 
     /**
@@ -25,6 +25,5 @@ class AllowNullValuesIntoColumnIsEnabled2 extends Migration
      */
     public function down()
     {
-        
     }
 }

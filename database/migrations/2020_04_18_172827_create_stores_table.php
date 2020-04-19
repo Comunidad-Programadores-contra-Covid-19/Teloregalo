@@ -16,10 +16,11 @@ class CreateStoresTable extends Migration
         Schema::create('stores', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('description');
-            $table->string('address');
-            $table->string('sector');
-            $table->string('avatar');
+            $table->text('description')->nullable();
+            $table->string('address')->nullable();
+            $table->string('sector')->nullable();
+            $table->string('avatar')->nullable();
+            $table->string('facebook')->nullable();
             $table->timestamps();
         });
     }

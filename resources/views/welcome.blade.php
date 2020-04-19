@@ -86,6 +86,8 @@
 
                 <div class="links">
                     <a href=" {{ route('stores.index') }}">Listado de comercios</a>
+                    <a href=" {{ route('stores.create') }}">Registrar comercio</a>
+                    <a href="#">Regalar</a>
                 </div>
             </div>
         </div>
