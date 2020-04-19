@@ -42,6 +42,14 @@ class OfferController extends Controller
      */
     public function store(Request $request)
     {
+        /*
+        To do validations
+        $request->validate([
+            'first_name'=>'required',
+            'last_name'=>'required',
+            'email'=>'required'
+        ]);*/
+
         $offer = new Offer();
         $offer->name_offer = $request->name_offer;
         $offer->description_offer = $request->description_offer;
@@ -52,7 +60,7 @@ class OfferController extends Controller
         $offer->id_commerce = auth()->user()->email;
         $offer->save();
 
-        return back()->with('message','Oferta agregada.');
+        return redirect('/offers')->with('success', 'Oferta creada.');
     }
 
     /**
@@ -74,7 +82,8 @@ class OfferController extends Controller
      */
     public function edit($id)
     {
-        //
+        $offer = Offer::find($id);
+        return view('offers.edit', compact('offer'));
     }
 
     /**
@@ -86,7 +95,17 @@ class OfferController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $offer = Offer::find($id);
+        $offer->name_offer =  $request->get('name_offer');
+        $offer->description_offer = $request->get('description_offer');
+        $offer->cost = $request->get('cost');
+        $offer->amount = $request->get('amount');
+        $offer->is_enabled = $request->get('is_enabled');
+        $offer->save();
+
+        //To stay in /edit when updated
+        //return back()->with('message','Oferta editada.');
+        return redirect('/offers')->with('success', 'Oferta actualizada.');
     }
 
     /**
@@ -97,6 +116,9 @@ class OfferController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $offer = Offer::find($id);
+        $offer->delete();
+
+        return redirect('/offers')->with('success', 'Oferta eliminada.');
     }
 }
