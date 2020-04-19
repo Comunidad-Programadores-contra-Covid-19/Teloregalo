@@ -19,4 +19,6 @@ Auth::routes();
 
 Route::resource('offers', 'OfferController');
 
+Route::resource('stores', 'StoreController');
+
 Route::get('/home', 'HomeController@index')->name('home');
