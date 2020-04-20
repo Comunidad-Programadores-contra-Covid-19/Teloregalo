@@ -13,6 +13,12 @@
                 <hr>
                 <h3>Nombre: {{ $store->name}}</h2>
                 <p>Descripcion: {{ $store->description}}</p>
+                <a href="{{ route('stores.edit', $store->id )}}">Editar</a>
+                <form action="{{ route('stores.destroy', $store->id) }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button>Eliminar</button>
+                </form>
             </div>
         @endforeach
 </body>
