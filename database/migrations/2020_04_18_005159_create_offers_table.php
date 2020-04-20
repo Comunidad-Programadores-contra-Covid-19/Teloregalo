@@ -17,9 +17,9 @@ class CreateOffersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name_offer');
             $table->text('description_offer');
-            $table->string('cost',8,2);
+            $table->string('cost', 8, 2);
             $table->integer('amount');
-            $table->boolean('is_enabled');
+            $table->boolean('is_enabled')->nullable();
             $table->string('id_commerce');
             $table->timestamps();
         });
