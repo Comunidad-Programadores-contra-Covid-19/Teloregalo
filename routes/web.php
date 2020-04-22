@@ -20,5 +20,6 @@ Auth::routes();
 Route::resource('offers', 'OfferController');
 
 Route::resource('stores', 'StoreController');
-
+Route::resource('/procesar-pago', 'PaymentController');
 Route::get('/home', 'HomeController@index')->name('home');
+

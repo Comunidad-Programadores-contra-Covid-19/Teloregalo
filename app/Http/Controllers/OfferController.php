@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Contracts\Auth\Guard;
 use App\Offer;
 
 class OfferController extends Controller
@@ -12,6 +13,7 @@ class OfferController extends Controller
     {
         $this->middleware('auth');
     }
+    
     /**
      * Display a listing of the resource.
      *
