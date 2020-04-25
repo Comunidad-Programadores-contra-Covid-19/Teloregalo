@@ -10,9 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
-
 /* Auth::routes(); */
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
