@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use \App\Store;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\StoreController;
 class HomeController extends Controller
 {
     /**
@@ -11,10 +11,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+ /*    public function __construct()
     {
         $this->middleware('auth');
-    }
+    } */
 
     /**
      * Show the application dashboard.
@@ -23,6 +23,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $stores = Store::all();
+        
+        return view('welcome',  [
+            'stores'=>$stores 
+        ]);
     }
+
+
 }
