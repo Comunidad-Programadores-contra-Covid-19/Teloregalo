@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Store extends Model
 {
-    protected $fillable = ['name'];
+    protected $fillable = ['name','user_id','description','adress','sector','avatar','facebook','category','phone'];
 
     public function offers()
     {
@@ -17,4 +17,6 @@ class Store extends Model
     {
         return $this->hasOne('App\User');
     }
+
+
 }

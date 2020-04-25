@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 
-class RegisterController extends Controller
+class RegisterStoreController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -32,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -65,15 +65,35 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
+        /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function showStoreRegistrationForm(){
+        return view('auth.registerStore');
+    }
     protected function create(array $data)
     {
-   
-           return User::create([
+      $users = DB::transaction(function () use($data) {
+            $user = User::create([
                 'name' => $data['name'],
                 'email' => $data['email'],
-                'rol'=> 'client',
+                'rol'=> 'store',
                 'password' => Hash::make($data['password']),
             ]);
     
+            $user->storeRelation()->create([
+                'name' => '',
+                'description'=> '',
+                'address'=> '',
+                'sector'=> '',
+                'avatar'=> '',
+            ]);
+                return $user;
+         
+        });
+        return $users;
     }
+
 }

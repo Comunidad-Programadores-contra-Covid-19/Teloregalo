@@ -7,14 +7,15 @@ use App\Store;
 
 class StoreController extends Controller
 {
-    public function index()
-    {
-        $stores = Store::orderBy('id', 'ASC')->paginate();
-        return view('stores.index', ['stores' => $stores]);
-    }
     public function create()
     {
-        return view('stores.create');
+        return view('stores.index');
+    }
+
+    public function index()
+    {
+        $stores = Store::all();
+        return $stores;
     }
 
     public function store(Request $request)
@@ -30,10 +31,15 @@ class StoreController extends Controller
         $store = Store::find($id);
         return view('stores.edit', ['store' => $store]);
     }
-
+    public function getMyStore($id)
+    {
+        $store  = Store::where('user_id',$id);
+       
+        return view('stores.index', ['store' => $store]);
+    }
     public function update(Request $request, $id)
     {
-        $dataStore = request()->except(['_token', '_method']);
+       $dataStore = request()->except(['_token', '_method']);
         Store::where('id', '=', $id)->update($dataStore);
         return redirect('stores');
     }

@@ -1,14 +1,16 @@
+@include('layouts.app')
+@yield('content')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Te lo regalo</title>
-
+        <script src="{{ asset('js/app.js') }}" defer></script>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <!-- Styles -->
         <style>
             html, body {
@@ -22,12 +24,16 @@
 
             .full-height {
                 height: 100vh;
+                background-color: #f0f8fe;
             }
-
+            .full-height2 {
+                height: 100vh;
+              
+            }
             .flex-center {
                 align-items: center;
                 display: flex;
-                justify-content: center;
+                justify-content:center;
             }
 
             .position-ref {
@@ -45,7 +51,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 400%;
             }
 
             .links > a {
@@ -57,17 +63,23 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
-
+            .input-search{
+                width:180px;
+            }
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+     
         </style>
     </head>
     <body>
+     
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
+     
+  {{--           @if (Route::has('login'))
                 <div class="top-right links">
-                    {{-- @auth
+                    @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Ingresar</a>
@@ -75,22 +87,75 @@
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Registrarse</a>
                         @endif
-                    @endauth --}}
+                    @endauth
                 </div>
-            @endif
+            @endif --}}
+            
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Te lo regalo
-                </div>
+                <div class="container p-0">
+                    <div class="row title">
+                        <div class="col p-0 ml-2">
 
-                <div class="links">
-                    <a href=" {{ route('stores.index') }}">Listado de comercios</a>
-                    <a href="{{ route('register') }}">Registrar comercio</a>
-                    
-                    <a href="#">Regalar</a>
+                            Te lo regalo
+                        </div>
+                    </div>
+                    <div class="row">
+                       <div class="col-lg-6">
+                           <p class="text-justify">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                Nullam vel nibh a turpis ornare rutrum. Aenean nec augue felis. 
+                                Donec lorem nisl, lacinia nec feugiat ac, interdum nec quam. Fusce euismod 
+                                pellentesque neque ut mattis. Phasellus dignissim dolor ut mi congue, ac accumsan 
+                                sapien condimentum. Phasellus ultricies, ipsum quis suscipit viverra, nulla turpis maximus leo,                              
+                           </p>
+                        </div>
+                    </div>
+
+                    <div class="row m-1 justify-content-start hidden-lg">
+                        @guest
+                        <div  class="m-0">
+                            <a class="btn btn-primary m-0" href="stores/register" role="button">Registrar comercio</a> 
+                        </div>  
+                        @endguest 
+                        <div class=" mx-1">
+                            <a class="btn btn-outline-primary px-5" href="#"  role="button">Regalar</a>
+                        </div> 
+                    </div>
+                
+            
                 </div>
             </div>
-        </div>
-    </body>
+
+                <div class="full-height2">
+                    <div class="row justify-content-center p-5"> 
+                        <h2 >COMERCIOS QUE YA FORMAN PARTE</h2>
+                    </div>
+
+                    <div class="container ">
+                       
+                    <div class="row justify-content-center">
+                        <input class="form-control col-lg-6 col-md-6 col-sm-6 col-xs-12 align-self-center" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-primary col-lg-2 col-md-2 d-sm-none d-md-block d-none d-sm-block" type="submit">Search</button>
+                    </div>
+                        
+                    @foreach($stores as $store)
+                    
+                    <div class="card m-1" style="width: 18rem;">
+                        <img class="card-img-top w-80" src="https://static3.bigstockphoto.com/7/9/2/large2/297455965.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Nombre: {{ $store->name}}</h5>
+                          <h6 class="card-title">Categoria: {{ $store->category}}</h6>
+                          <p class="card-text">Descripcion :{{ $store->description}}</p>
+                          <p class="card-text">Ubicacion :{{ $store->address}}</p>
+                          <a href="#" class="btn btn-primary">Hacer regalo</a>
+                        </div>
+                      </div>
+                      
+                
+                    @endforeach
+                    </div>
+                </div>
+               
+    </body>   
+
 </html>

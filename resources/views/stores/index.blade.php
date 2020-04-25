@@ -1,25 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Te lo regalo</title>
-</head>
+@extends('layouts.app')
+<?php $user=Auth::user()->store ?>
+
+@section('content')
 <body>
-    <h1>Listado de comercios</h1>
-        @foreach ($stores as $store)
-            <div>
-                <hr>
-                <h3>Nombre: {{ $store->name}}</h2>
-                <p>Descripcion: {{ $store->description}}</p>
-                <a href="{{ route('stores.edit', $store->id )}}">Editar</a>
-                <form action="{{ route('stores.destroy', $store->id) }}" method="POST">
-                    @csrf
-                    <input type="hidden" name="_method" value="DELETE">
-                    <button>Eliminar</button>
-                </form>
-            </div>
-        @endforeach
+{{--     {{var_dump($stores)}} --}}
+    <div class="container">
+        <div class="row">
+            <img src="https://lifeatbrio.com/wp-content/uploads/2016/11/user-placeholder.jpg" class="rounded mx-auto m-4 d-block col-2" >
+        </div>
+        
+    </div>
+    <nav class="container">
+        <div class="nav nav-tabs row" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active col-4" id="nav-perfil-tab" data-toggle="tab" href="#nav-perfil" role="tab" aria-controls="nav-perfil" aria-selected="true">Perfil</a>
+          <a class="nav-item nav-link col-4" id="nav-regalos-tab" data-toggle="tab" href="#nav-regalos" role="tab" aria-controls="nav-regalos" aria-selected="false">Regalos</a>
+          <a class="nav-item nav-link col-4" id="nav-catalogo-tab" data-toggle="tab" href="#nav-catalogo" role="tab" aria-controls="nav-catalogo" aria-selected="false">Catalogos</a>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-perfil" role="tabpanel" aria-labelledby="nav-perfil-tab">
+            @include('stores.profile')
+            @yield('profile')
+        </div>
+        <div class="tab-pane fade" id="nav-regalos" role="tabpanel" aria-labelledby="nav-regalos-tab">
+            @include('stores.gifts')
+            @yield('gifts')
+        </div>
+        <div class="tab-pane fade" id="nav-catalogo" role="tabpanel" aria-labelledby="nav-catalogo-tab">
+            @include('stores.catalogue')
+            @yield('catalogue')
+        </div>
+      </div>
 </body>
-</html>
+@endsection
