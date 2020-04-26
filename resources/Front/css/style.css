@@ -1,0 +1,37 @@
+/*---Google fonts--- */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600,700');
+
+/*---Components design--- */
+@import url("Components/avatar.css");
+@import url("Components/button.css");
+@import url("Components/icons.css");
+@import url("Components/navbar.css");
+@import url("Components/form.css");
+@import url("Components/card.css");
+
+/*---Fonts--- */
+body{
+    background-color:white;
+    font-family: "Poppins Sans-serif",sans-serif;
+    font-weight: 400;
+    color: #2E2C2C;
+}
+
+h1{
+    font-family: "Poppins",sans-serif;
+    font-weight: 700;
+    color: #2E2C2C;
+}
+
+h2, h3, h4, h6{
+    font-family: "Poppins",sans-serif;
+    font-weight: 600;
+    color: #2E2C2C;
+}
+
+.container{
+    max-width: 90%;
+}
+
+
+

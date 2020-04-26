@@ -1,0 +1,88 @@
+/*---General--- */
+
+.btn.focus, .btn:focus{
+    box-shadow: none !important;
+    outline: none;
+}
+
+
+/*---Boton Principal--- */
+
+.btn-principal{
+    color:#2E2C2C;
+    background-color: #96D293;
+    border: 0.1rem solid;
+    border-color: #96D293;
+    border-radius: 1rem;
+    padding: 0.3rem 1rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.btn-principal:hover{
+ background-color: #8CC189;
+ border-color: #8CC189;
+ color:#2E2C2C;
+ text-decoration: none;
+}
+
+
+/*---Boton alternativa--- */
+
+.btn-alternative{
+    background-color: transparent;
+    color: #2E2C2C !important;
+    border: 0.15rem solid;
+    border-color: #96D293;
+    border-radius: 1rem;
+    padding: 0.3rem 1rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.btn-alternative:hover{
+    background-color:rgba(140, 193, 137, 0.1) !important;
+    border-color: #8CC189;
+    color:#2E2C2C !important;
+    text-decoration: none;
+}
+
+.btn-alternative:active{
+    background-color:rgba(140, 193, 137, 0.1) !important;
+    border-color: #8CC189;
+    color:#2E2C2C !important;
+    text-decoration: none;
+    }
+
+
+/*---Boton NavBar--- */
+
+.btn-navbar{
+    background-color:rgba(255, 255, 255, 0.4);
+    color: #2E2C2C !important;
+    border-radius: 1rem;
+    padding: 0.3rem 1rem !important;
+    font-weight: 400;
+    text-align: center;
+    margin: 0.5rem;
+}
+
+.btn-navbar:hover{
+    background-color:rgba(255, 255, 255, 0.6);
+    color:#2E2C2C !important;
+    text-decoration: none;
+}
+
+
+
+.btn-alternative.active{
+    color:#2E2C2C !important;
+    background-color: #96D293;
+    border: 0.2rem solid;
+    border-color: #96D293 !important;
+    border-radius: 1rem;
+    padding: 0.3rem 1rem;
+    font-weight: 400;
+}
+
+

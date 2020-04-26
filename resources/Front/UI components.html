@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UI Components</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+    <!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-light navbar-green shadow-sm sticky-top">
+    <a class="navbar-brand" href="#">
+        teloregalo
+        <img src="css/logo.svg" width="40" height="40" class="d-inline-block align-bottom" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+      aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Comercios adheridos
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">¿Quienes Somos?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">FAQS's</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item button">
+          <a class="nav-link p-0 btn-navbar" href="#">
+          Soy un Comercio</a>
+        </li>
+        <li class="nav-item button">
+            <a class="nav-link p-0 btn-navbar" href="#">
+            Soy un Heroe</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+  <!--/.Navbar -->
+
+
+    <div class="container">
+        <h1 class="text-center">UI Components </h1>
+
+        <h2>Avatar Design</h2>
+        <br>
+        <img src="https://via.placeholder.com/50" alt="" class="avatar">
+        <img src="https://via.placeholder.com/50" alt="" class="avatar-small">
+        <br>
+        <br>
+
+        <h2>Button Design</h2>
+        <br>
+        <a href="#" class="btn-principal">Start now</a>
+        <a href="#" class="btn-alternative">Start now</a>
+
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-alternative active">
+              <input type="radio" name="options" id="option1" autocomplete="off" checked> Lista
+            </label>
+            <label class="btn btn-alternative">
+              <input type="radio" name="options" id="option2" autocomplete="off"> Mapa
+            </label>
+          </div>
+        <br>
+
+
+        <h2>Dropdown Design</h2>
+        <br>
+        <div class="dropdown">
+            <img src="https://via.placeholder.com/50" alt="" class="avatar dropdown-toggle" id="dropdownMenuButton"
+                data-toggle="dropdown">
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
+        <br>
+
+
+        <h2>Card Design</h2>
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" alt="" class="card-image">
+                    <div class="card-description">
+                        <h3>Nombre del Comercio</h3>
+                        <p><span><i class="fas fa-map-marker-alt"></i></span>Ubicación</p>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="card-availability">
+                        <p><b>xx regalos</b> para entregar</p>
+                    </div>
+                    <div class="card-btn">
+                        <a href="#" class="btn-principal">Conocer más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6">
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" alt="" class="card-image">
+                    <div class="card-description">
+                        <h3>Nombre del Comercio</h3>
+                        <p><span><i class="fas fa-map-marker-alt"></i></span>Ubicación</p>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="card-availability">
+                        <p><b>xx regalos</b> para entregar</p>
+                    </div>
+                    <div class="card-btn">
+                        <a href="#" class="btn-principal">Conocer más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-lg-4">
+                <div class="card-product">
+                    <img src="https://via.placeholder.com/150" alt="" class="card-image-product">
+                    <div class="card-description-product">
+                        <h4>Producto para regalo</h4>
+                        <p>Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet.</p>
+                        <h3>$200</h3>
+                    </div>
+                    <div class="card-btn-product ">
+                        <a href="#" class="btn-principal btn-block ">Comprar</a>
+                        <a href="#" class="btn-alternative btn-block ">Retirar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-4">
+                <div class="card-product">
+                    <img src="https://via.placeholder.com/150" alt="" class="card-image-product">
+                    <div class="card-description-product">
+                        <h4>Producto para regalo</h4>
+                        <p>Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet.</p>
+                        <h3>$200</h3>
+                    </div>
+                    <div class="card-btn-product ">
+                        <a href="#" class="btn-principal btn-block ">Comprar</a>
+                        <a href="#" class="btn-alternative btn-block ">Retirar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-4">
+                <div class="card-product">
+                    <img src="https://via.placeholder.com/150" alt="" class="card-image-product">
+                    <div class="card-description-product">
+                        <h4>Producto para regalo</h4>
+                        <p>Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet.</p>
+                        <h3>$200</h3>
+                    </div>
+                    <div class="card-btn-product ">
+                        <a href="#" class="btn-principal btn-block ">Comprar</a>
+                        <a href="#" class="btn-alternative btn-block ">Retirar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+
+        <h2>Form Design</h2>
+
+        <form class="col-md-12 col-lg-6">
+            <div class="form-group ">
+              <label for="exampleInputEmail1">Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresar email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Contraseña</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Categorías</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Descripción</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Contale brevemente a tus vecinos sobre tu comercio / Agrega detalles sobre tus productos"></textarea>
+              </div>
+
+            <div class="form-group">
+              <label for="exampleInputTime">Desde<span><input type="time" class="form-control" id="exampleInputTime" aria-describedby="timeHelp"></span>
+              </label>
+              <label for="exampleInputTime">Hasta<span><input type="time" class="form-control" aria-describedby="timeHelp"></span>
+              </label>
+            </div>
+
+            <label>
+                <input class="form-control" type="text" placeholder="Campo de solo lectura..." readonly>
+            </label>
+
+
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1"><b> Aceptar terminos y condiciones</b></label>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-principal btn-block">Registrar Comercio</button>
+          </form>
+
+
+
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+
+</body>
+
+</html>
