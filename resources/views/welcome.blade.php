@@ -1,11 +1,33 @@
+
+
 @include('layouts.app')
 @yield('content')
+
+<?php
+// SDK de Mercado Pago
+require '../vendor/autoload.php';
+
+    MercadoPago\SDK::setAccessToken("TEST-4473036575801903-042214-90e96cb43dab864cda0953e27f5c8539-553262681");
+    
+
+// Crea un objeto de preferencia
+$preference = new MercadoPago\Preference();
+
+// Crea un ítem en la preferencia
+$item = new MercadoPago\Item();
+$item->title = 'Mi producto';
+$item->quantity = 1;
+$item->unit_price = 75.56;
+$preference->items = array($item);
+$preference->save();
+
+?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
         <title>Te lo regalo</title>
         <script src="{{ asset('js/app.js') }}" defer></script>
         <!-- Fonts -->
@@ -153,6 +175,15 @@
                       
                 
                     @endforeach
+
+                    <form action="/controllers/PaymentController.php" method="POST">
+  <script
+   src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
+   data-preference-id="<?php echo $preference->id; ?>">
+  </script>
+</form>
+
+
                     </div>
                 </div>
                
