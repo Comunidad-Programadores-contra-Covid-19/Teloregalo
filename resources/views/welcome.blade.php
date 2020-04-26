@@ -169,19 +169,19 @@ $preference->save();
                           <h6 class="card-title">Categoria: {{ $store->category}}</h6>
                           <p class="card-text">Descripcion :{{ $store->description}}</p>
                           <p class="card-text">Ubicacion :{{ $store->address}}</p>
-                          <a href="#" class="btn btn-primary">Hacer regalo</a>
+                            <form action="/" method="POST">
+                            <script
+                            src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
+                            data-preference-id="<?php echo $preference->id; ?>">
+                            </script>
+                            </form>
                         </div>
                       </div>
                       
                 
                     @endforeach
 
-                    <form action="/controllers/PaymentController.php" method="POST">
-  <script
-   src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
-   data-preference-id="<?php echo $preference->id; ?>">
-  </script>
-</form>
+                    
 
 
                     </div>
