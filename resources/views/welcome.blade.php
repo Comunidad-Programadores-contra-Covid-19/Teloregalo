@@ -1,5 +1,3 @@
-
-
 @include('layouts.app')
 @yield('content')
 
@@ -91,8 +89,6 @@ $preference->save();
             .m-b-md {
                 margin-bottom: 30px;
             }
-
-     
         </style>
     </head>
     <body>
@@ -140,7 +136,12 @@ $preference->save();
                         </div>  
                         @endguest 
                         <div class=" mx-1">
-                            <a class="btn btn-outline-primary px-5" href="#"  role="button">Regalar</a>
+                        <form action="/" method="POST">
+                            <script
+                            src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
+                            data-preference-id="<?php echo $preference->id; ?>">
+                            </script>
+                            </form>
                         </div> 
                     </div>
                 
@@ -169,12 +170,7 @@ $preference->save();
                           <h6 class="card-title">Categoria: {{ $store->category}}</h6>
                           <p class="card-text">Descripcion :{{ $store->description}}</p>
                           <p class="card-text">Ubicacion :{{ $store->address}}</p>
-                            <form action="/" method="POST">
-                            <script
-                            src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
-                            data-preference-id="<?php echo $preference->id; ?>">
-                            </script>
-                            </form>
+                            
                         </div>
                       </div>
                       

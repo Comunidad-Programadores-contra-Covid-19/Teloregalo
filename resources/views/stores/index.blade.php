@@ -31,5 +31,17 @@
             @yield('catalogue')
         </div>
       </div>
+
+      <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Perfil</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Regalos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/offers">Catalogo</a>
+  </li>
+</ul>
 </body>
 @endsection

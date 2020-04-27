@@ -3,6 +3,15 @@
 @section('content')
 
 <div class="container">
+        <div class="row">
+            <img src="https://lifeatbrio.com/wp-content/uploads/2016/11/user-placeholder.jpg" class="rounded mx-auto m-4 d-block col-2" >
+        </div>
+
+        <div class="nav nav-tabs row">
+    <a class="nav-item nav-link col-4" href="#">Perfil</a>
+    <a class="nav-link col-4" href="#">Regalos</a>
+    <a class="nav-link active col-4" href="/offers">Catalogo</a>
+</div>
 
     <div class="row justify-content-center">
 
