@@ -170,7 +170,7 @@ $preference->save();
                           <h6 class="card-title">Categoria: {{ $store->category}}</h6>
                           <p class="card-text">Descripcion :{{ $store->description}}</p>
                           <p class="card-text">Ubicacion :{{ $store->address}}</p>
-                            
+                            <a class="btn btn-primary" href=" {{ route('stores.show', $store->id) }}">Ver productos</a>
                         </div>
                       </div>
                       

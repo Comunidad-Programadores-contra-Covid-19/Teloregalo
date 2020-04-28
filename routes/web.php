@@ -37,11 +37,11 @@ Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback
 
 Route::resource('offers', 'OfferController');
 
-
+Route::resource('stores', 'StoreController');
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::group(['middleware'=>['auth','store']], function(){
+Route::group(['middleware' => ['auth', 'store']], function () {
     Route::get('stores', 'StoreController@create')->name('stores');
     Route::put('update/{id}', 'StoreController@update')->name('stores.update');
 });
