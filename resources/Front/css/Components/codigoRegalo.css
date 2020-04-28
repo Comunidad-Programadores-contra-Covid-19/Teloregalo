@@ -1,3 +1,4 @@
+/* Navbar */
 #btnDonarNav {
     background-color: #E6F4E5;
     border-radius: 1rem;
@@ -15,17 +16,23 @@
     font-weight: bold;
 }
 
+
+/*  Contenedor  */
 .container {
   margin-top: -1em;
   margin-bottom: 2em;
 }
 
+
+/*  Botón "volver"  */
 .volver button {
     border: none;
     background-color: transparent;
     font-size: larger;
 }
 
+
+/*  Información del ticket regalo  */
 #codigoRegalo {
     text-align: center;
 }
@@ -50,6 +57,10 @@
     padding-right: 10em;
 }
 
+#ingresarRegalo {
+    font-weight: bold;
+}
+
 #ticket {
     height: auto;
     margin-left: auto;
@@ -67,6 +78,8 @@
     font-size: 45px;
 }
 
+
+/* Dibujo "like" */
 #dibujoLike {
    float: left;
    width: 21%;
@@ -74,6 +87,8 @@
    margin-top: -6em;
 }
 
+
+/*  Calificar comercio  */
 #calificar {
     width: 30%;
     margin-top: 4.5em;
@@ -96,27 +111,47 @@
     background-color: transparent;
 }
 
+
+/* Footer  */
 footer {
 margin-top: 6em;
 }
 
-@media handheld, screen and (max-width:991px) {
 
+@media handheld, (min-width:992px) and (max-width:1405px) {
+    #codigoRegalo p {
+        padding: 0em;
+    }
+
+    #calificar {
+        width: 50%;
+    }
+
+    #calificar h2 {
+        width: 100%;
+        margin: 0em;
+    }
+
+    #dibujoLike {
+      margin-left: 0em;
+    }
+}
+
+@media handheld, screen and (max-width:991px) {
     #codigoRegalo p {
         padding: 0em;
     }
 
     #dibujoLike {
         position: relative;
-        margin-top: -1em;
+        margin-top: 1em;
         margin-left: -1em;
-        /* float: none; */
-        width: 50%;
+        width: 180px;
     }
 
     #codigoRegalo {
         float: right;
-        width: 50%;
+        width: 55%;
         text-align: left;
     }
 
@@ -124,38 +159,58 @@ margin-top: 6em;
         margin: 0em;
         font-size: 30px;
         line-height: 44px;
-        margin-left: -1em;
+        margin-left: -0.5em;
     }
 
     #codigoRegalo p {
         margin: 0em;
         font-size: 24px;
         line-height: 38px;
+        margin-left: -0.5em;
     }
 
-    #ticket {
-       margin-top: 0em; 
-       margin-left: -10em;
+    #ticket { 
+       margin-left: -8em;
+       margin-top: 6em;
 
     }
     #ticket img {
-        width: 20em;
+
+        width: 17em;
     }
 
-    /* #ticket {
-        height: auto;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 8em;
-    }
-    
-    #ticket img {
-        width: 25em;
-    }
-    
     #ticket p {
-        margin-bottom: -3.2em;
-        padding: 0em;
-        font-size: 45px;
-    } */
+        margin-bottom: -4.3em;
+        width: 100%;
+        margin-left: 3.2em;
+    }
+
+    #calificar {
+        width: 90%;
+        clear: both;
+        padding-top: 2.5em;
+        margin-bottom: -4em;
+    }
+
+    #calificar h2 {
+        font-size: 1.7rem;
+        margin: 0em;
+    }
+
+    #calificar ul {
+        padding: 0.2em;
+        margin-top: 1rem;
+    }
+   
+    #calificar button img {
+        width: 35px;
+    }
+  
+    #calificar h3 {
+        font-size: 1.4em;
+    } 
+ 
+    #calificar p {
+        padding-bottom: 4em;
+    }
 }
