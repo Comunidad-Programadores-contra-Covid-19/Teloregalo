@@ -5,7 +5,7 @@
 // SDK de Mercado Pago
 require '../vendor/autoload.php';
 
-    MercadoPago\SDK::setAccessToken("TEST-4473036575801903-042214-90e96cb43dab864cda0953e27f5c8539-553262681");
+    \MercadoPago\SDK::setAccessToken("TEST-4473036575801903-042214-90e96cb43dab864cda0953e27f5c8539-553262681");
     
 
 // Crea un objeto de preferencia
