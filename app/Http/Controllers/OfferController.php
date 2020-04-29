@@ -19,9 +19,9 @@ class OfferController extends Controller
      */
     public function index()
     {
-        $commerceEmail = auth()->user()->email;
-        $offers = Offer::where('id_commerce', $commerceEmail)->paginate(4);
-        return view('offers.list',compact('offers'));
+        $commerceEmail = auth()->user()->id;
+        $offers = Offer::where('store_id', $commerceEmail)->paginate(4);
+        return view('offers.list', compact('offers'));
     }
 
     /**
@@ -55,9 +55,9 @@ class OfferController extends Controller
         $offer->description_offer = $request->description_offer;
         $offer->cost = $request->cost;
         $offer->amount = $request->amount;
-        $offer->is_enabled= $request->is_enabled;
-        
-        $offer->id_commerce = auth()->user()->email;
+        $offer->is_enabled = $request->is_enabled;
+
+        $offer->store_id = auth()->user()->id;
         $offer->save();
 
         return redirect('/offers')->with('success', 'Oferta creada.');

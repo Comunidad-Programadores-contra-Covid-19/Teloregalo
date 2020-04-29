@@ -39,6 +39,8 @@ Route::resource('offers', 'OfferController');
 
 Route::resource('stores', 'StoreController');
 
+Route::resource('otps', 'OtpController');
+
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth', 'store']], function () {

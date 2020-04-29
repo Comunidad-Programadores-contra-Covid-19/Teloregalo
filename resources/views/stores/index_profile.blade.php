@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <img src=https://1000marcas.net/wp-content/uploads/2019/12/Fila-Logo-600x338.png class="mx-left m-4 d-block col-2" >
-            <h1>{{ $store->name}}</h1>
+            <h1>{{ $store->name }}</h1>
         </div>
         <hr>
         <div class="row">
@@ -18,7 +18,7 @@
                 <h5 class="card-title">{{ $offer->name_offer }}</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   <a href="#" class="btn btn-primary">Comprar</a>
-                  <a href="#" class="btn btn-primary">Retirar</a>
+                  <a href="{{ route('otps.create') }}" class="btn btn-primary">Retirar</a>
                 </div>
               </div>
             @endforeach  
