@@ -5,7 +5,7 @@
 // SDK de Mercado Pago
 require '../vendor/autoload.php';
 
-    MercadoPago\SDK::setAccessToken("TEST-4473036575801903-042214-90e96cb43dab864cda0953e27f5c8539-553262681");
+    \MercadoPago\SDK::setAccessToken("TEST-4473036575801903-042214-90e96cb43dab864cda0953e27f5c8539-553262681");
     
 
 // Crea un objeto de preferencia
@@ -170,7 +170,7 @@ $preference->save();
                           <h6 class="card-title">Categoria: {{ $store->category}}</h6>
                           <p class="card-text">Descripcion :{{ $store->description}}</p>
                           <p class="card-text">Ubicacion :{{ $store->address}}</p>
-                            
+                            <a class="btn btn-primary" href=" {{ route('stores.show', $store->id) }}">Ver productos</a>
                         </div>
                       </div>
                       

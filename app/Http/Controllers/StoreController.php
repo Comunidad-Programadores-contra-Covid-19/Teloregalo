@@ -31,14 +31,18 @@ class StoreController extends Controller
         $store = Store::find($id);
         return view('stores.edit', ['store' => $store]);
     }
-
     public function update(Request $request, $id)
     {
-       $dataStore = request()->except(['_token', '_method']);
+        $dataStore = request()->except(['_token', '_method']);
         Store::where('id', '=', $id)->update($dataStore);
         return redirect('stores');
     }
 
+    public function show($id)
+    {
+        $store = Store::find($id);
+        return view('stores.index_profile', ['store' => $store]);
+    }
     public function destroy($id)
     {
         $store = Store::find($id);

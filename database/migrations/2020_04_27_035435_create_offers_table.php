@@ -20,7 +20,8 @@ class CreateOffersTable extends Migration
             $table->string('cost', 8, 2);
             $table->integer('amount');
             $table->boolean('is_enabled')->nullable();
-            $table->string('id_commerce');
+            $table->integer('store_id')->unsigned();
+            $table->foreign('store_id')->references('id')->on('stores');
             $table->timestamps();
         });
     }

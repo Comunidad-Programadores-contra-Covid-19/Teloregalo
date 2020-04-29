@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Offer extends Model
 {
-    //
+    public function store()
+    {
+        return $this->belongsTo('App\Store');
+    }
 }
