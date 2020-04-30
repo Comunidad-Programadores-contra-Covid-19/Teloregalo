@@ -11,7 +11,7 @@
 |
 */
 /* Auth::routes(); */
-// Authentication Routes...
+// Authentication Routes Client...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
@@ -19,6 +19,11 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('register', 'Auth\RegisterController@register');
 
+// Authentication Routes Store...
+Route::get('login/stores', 'Auth\LoginStoreController@showLoginForm')->name('login.stores');
+Route::post('login/stores', 'Auth\LoginStoreController@login');
+
+/* Route::post('logout', 'Auth\LoginController@logout')->name('logout'); */
 // Registration Comercios Routes...
 Route::get('stores/register', 'Auth\RegisterStoreController@showStoreRegistrationForm');
 Route::post('stores/register', 'Auth\RegisterStoreController@register');
@@ -33,6 +38,8 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 Route::get('login/google', 'Auth\LoginController@redirectToProvider');
 Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback');
 
+Route::get('register/google', 'Auth\RegisterController@redirectToProvider');
+Route::get('register/google/callback', 'Auth\RegisterController@handleProviderCallback');
 
 
 Route::resource('offers', 'OfferController');
@@ -42,6 +49,10 @@ Route::resource('stores', 'StoreController');
 Route::resource('otps', 'OtpController');
 
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('/chooseRegistration', function(){
+    return view('auth.storeOrClient');
+});
 
 Route::group(['middleware' => ['auth', 'store']], function () {
     Route::get('stores', 'StoreController@create')->name('stores');

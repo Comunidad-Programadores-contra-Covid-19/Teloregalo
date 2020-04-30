@@ -5,10 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Ingrese a su cuenta') }}</div>
+                <div class="card-header">{{ __('Comercio') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('login.stores') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -56,9 +56,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
-                                <a type="submit" href="{{url('register')}}"class="btn btn-primary">
-                                    {{ __('Registrarme') }}
-                                </a>
+
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}

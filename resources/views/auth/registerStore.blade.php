@@ -80,7 +80,7 @@
                         @csrf
                         <div>
                             <div class="form-group">
-                                <a href="" class="btn btn-primary">Registrarse con Google</a>
+                                <a href="{{ url('/login/google') }}" class="btn btn-primary">Registrarse con Google</a>
                             </div>
                         </div>
                         
