@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\OtpService;
+use App\Otp;
 
 class OtpController extends Controller
 {
@@ -17,7 +18,14 @@ class OtpController extends Controller
     {
         $otpService = new OtpService();
         $otp = $otpService->generateOtp(1);
-        //return view('otps.buy', ['otp' => $otp]);
         return $otp;
+    }
+
+    public function destroy(Request $request)
+    {
+        $id = $request->codigo;
+        $otp = Otp::find($id);
+        $otp->delete();
+        return back();
     }
 }

@@ -19,6 +19,8 @@ class CreateOtpsTable extends Migration
             $table->timestamp('otp_timestamp');
             $table->bigInteger('client_id')->unsigned();
             $table->foreign('client_id')->references('id')->on('clients');
+            $table->bigInteger('store_id')->unsigned();
+            $table->foreign('store_id')->references('id')->on('clients');
         });
     }
 

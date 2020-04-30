@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<?php  $user=Auth::user()->store ?>
+<?php   /* $user=Auth::user()->client */  ?>
 
 @section('content')
 <body>

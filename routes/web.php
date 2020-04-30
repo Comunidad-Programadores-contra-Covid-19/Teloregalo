@@ -41,9 +41,25 @@ Route::resource('stores', 'StoreController');
 
 Route::resource('otps', 'OtpController');
 
+Route::delete('/otps', 'OtpController@destroy');
+
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth', 'store']], function () {
     Route::get('stores', 'StoreController@create')->name('stores');
     Route::put('update/{id}', 'StoreController@update')->name('stores.update');
 });
+/* 
+Route::group(['middleware' => ['auth', 'client']], function () {
+    Route::get('otps', 'OtpController@create')->name('otps');
+    //Route::get('otps', 'OtpController@create')->name('otps.create');
+}); */
+
+/* Route::group(['middleware' => ['auth', 'client']], function () {
+    Route::get('otp', 'OtpController@create');
+    Route::get('/otp/create', 'OtpController@create');
+}); */
+
+/*Route::middleware(['auth', 'client'])->group(function () {
+    Route::get('otp', 'OtpController@create');
+});*/
