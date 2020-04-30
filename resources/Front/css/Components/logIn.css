@@ -1,0 +1,27 @@
+#LogIn{
+    text-align: left;
+    margin: 5em auto;
+
+}
+#btnIngreso {
+    font-weight: bold;
+    padding: 0.3em;
+    letter-spacing: 2px;
+    font-size: 19px;
+}
+
+#btnLogInHeroeGmail,
+#btnLogInHeroeFace {
+    font-weight: bold;
+}
+a{
+    color: #2E2C2C;
+}
+a:hover{
+    text-decoration: none;
+    color:#96D293 ;
+}
+
+.form-check-input {
+    position: relative !important;
+}
