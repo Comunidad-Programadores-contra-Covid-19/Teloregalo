@@ -1,0 +1,174 @@
+#menuPerfilHeroe {
+    display: inline-block;
+    position: relative;
+    top: -415px;
+    right: 3.5em;
+    width: 150px;
+}
+
+#menuPerfilHeroe li {
+    list-style: none;
+    font-weight: bold;
+    margin-bottom: 2em;
+}
+
+#menuPerfilHeroe li:hover {
+    border-bottom: solid 2px #96D293;
+    padding-right: 1em;
+}
+
+#menuPerfilHeroe a:hover {
+    color: #96D293;
+}
+
+#menuPerfilHeroe a {
+    text-decoration: none;
+    color: #263238; 
+    display: block; 
+}
+
+#miPerfilConFoto {
+    display: inline-block;
+    width: 270px;
+    height: 270px;
+    position: relative;
+    top: -315px;
+    left: 2em;
+}
+
+#fotoHeroe {
+    position: relative;
+    bottom: -50px;
+    border: solid 2px #96D293;
+}
+
+#fotoHeroe img {
+    width: 100%;
+}
+
+#datosPerfilHeroe {
+    display: inline-block;
+    width: 40%;
+    margin-top: 170px;
+    margin-left: 5em;
+    margin-bottom: 4em;
+}
+
+#botonesFormPerfilHeroe {
+    text-align: center;
+    margin-bottom: 5em;
+}
+#btnGuardarPerfilHeroe,
+#btnCancelarPerfilHeroe {
+    width: 40%;
+    display: inline-block;
+    margin: 0em;
+    font-weight: bold;
+    margin-top: 2em;
+    margin-left: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+#btnCancelarPerfilHeroe {
+    background-color: #FFF;
+}
+
+#btnCancelarPerfilHeroe:hover {
+    background-color: rgba(0,0,0,.1);
+}
+
+@media handheld, (min-width:531px) and (max-width:995px) {
+    #menuPerfilHeroe {
+        position: unset;
+        width: 100%;  
+        text-align: center;
+    } 
+
+    #menuPerfilHeroe li {
+        display: inline-block;
+        margin: 0.5em 4em;
+    }
+
+    #menuPerfilHeroe li:hover {
+        padding-left: 1em;
+    }
+
+    #miPerfilConFoto {
+        position: unset;
+        width: 100%;
+        height: auto;
+        margin-bottom: 4.5em;
+    }
+
+    #miPerfilConFoto h1 {
+        display: none;
+    }
+
+    #fotoHeroe {
+        width: 200px;
+        height: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -3em;
+    }
+
+    #datosPerfilHeroe {
+        position: unset;
+        width: 100%;
+        margin: 0em;
+    }
+
+    #btnGuardarPerfilHeroe,
+    #btnCancelarPerfilHeroe {
+        width: 80%;
+    }
+}
+
+@media handheld, screen and (max-width:530px) {
+
+    #menuPerfilHeroe {
+        position: unset;
+        width: 100%;  
+        text-align: center;
+    } 
+
+    #menuPerfilHeroe li {
+        display: inline-block;
+        margin: 0.5em 2.5em;
+    }
+
+    #menuPerfilHeroe li:hover {
+        padding-left: 1em;
+    }
+
+    #miPerfilConFoto {
+        position: unset;
+        width: 100%;
+        height: auto;
+        margin-bottom: 4.5em;
+    }
+
+    #miPerfilConFoto h1 {
+        display: none;
+    }
+
+    #fotoHeroe {
+        width: 200px;
+        height: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -3em;
+    }
+
+    #datosPerfilHeroe {
+        position: unset;
+        width: 100%;
+        margin: 0em;
+    }
+
+    #btnGuardarPerfilHeroe,
+    #btnCancelarPerfilHeroe {
+        width: 80%;
+    }
+}

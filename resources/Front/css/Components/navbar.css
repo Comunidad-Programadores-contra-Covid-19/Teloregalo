@@ -1,0 +1,35 @@
+.navbar-green{
+    background-color: #96D293;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-bottom: 2rem !important;
+}
+
+
+.navbar-brand{
+    font-family: "Poppins",sans-serif;
+    font-size: 2rem;
+    margin-right: 4rem;
+}
+
+.nav-link{
+    font-family: "Poppins",sans-serif;
+    font-size: 1.1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    color: #2E2C2C;
+    text-align: center;
+}
+
+
+.nav-link:hover{
+background-color: rgb(140, 193, 137);
+border-radius: 1rem;
+}
+
+
+.navbar-light .navbar-toggler{
+    border: none !important;
+    outline: none;
+}
+

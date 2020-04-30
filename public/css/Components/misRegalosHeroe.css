@@ -1,0 +1,97 @@
+#menuMisRegalosHeroe {
+    width: 20%;
+    float: left;
+    margin-top: 70px;
+    margin-right: 0em;
+    margin-left: -40px;
+}
+
+#menuMisRegalosHeroe li {
+    list-style: none;
+    font-weight: bold;
+    margin-bottom: 2em;
+}
+
+#menuMisRegalosHeroe a:hover {
+    border-bottom: solid 2px #96D293;
+    padding-right: 1em;
+}
+
+#menuMisRegalosHeroe a {
+    text-decoration: none;
+    color: #263238;
+}
+
+#menuMisRegalosHeroe a:hover {
+    color: #96D293;
+}
+
+#tarjetasMisRegalos {
+    float: left;
+    width: 70%;
+    margin-top: 70px;
+}
+
+#contenedorPendientes,
+#contenedorCalificados {
+    margin-right: 0em;
+    margin-bottom: 3em;
+}
+
+
+@media handheld, screen and (max-width:1350px) {
+
+    #menuMisRegalosHeroe {
+        float: none;
+        width: 100%;
+        text-align: center;
+        padding: 0em;
+        margin: 0em;
+    }
+
+    #menuMisRegalosHeroe ul {
+        margin: 0em;
+        padding: 0em;
+    }
+
+    #menuMisRegalosHeroe li {
+        display: inline-block;
+        margin-left: 2em;
+        margin-right: 2em;
+        margin-top: 0.5em;
+    }
+
+    #menuMisRegalosHeroe a:hover {
+        padding-left: 1em;
+    }
+
+    #tarjetasMisRegalos {
+        width: 100%;
+        margin: 0em;
+    }
+
+    
+    #tarjetasMisRegalos h2 {
+        font-size: 1.7rem;
+    }
+
+    .card-image {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .card-description {
+       right: 0.2rem;
+       top: 0.5rem;
+       left: 9rem;
+    }
+
+    .card-description h3 {
+        font-size: 1.4rem;
+    }
+
+    .card-description p {
+        padding-top: 0.2em;
+        font-size: 0.8rem;
+    }
+}

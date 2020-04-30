@@ -31,12 +31,6 @@ class StoreController extends Controller
         $store = Store::find($id);
         return view('stores.edit', ['store' => $store]);
     }
-    public function getMyStore($id)
-    {
-        $store  = Store::where('user_id', $id);
-
-        return view('stores.index', ['store' => $store]);
-    }
     public function update(Request $request, $id)
     {
         $dataStore = request()->except(['_token', '_method']);

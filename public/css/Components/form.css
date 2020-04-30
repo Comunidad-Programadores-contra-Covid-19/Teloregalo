@@ -1,0 +1,26 @@
+.form-control{
+    background-color:rgba(140, 193, 137, 0.1) !important;
+    border-color: #8CC189 !important;
+}
+
+/* .form-control:focus{
+    background-color:rgba(140, 193, 137, 0.1) !important;
+    border-color: #8CC189 !important;
+    border: solid 0.2rem;;
+} */
+
+.form-check-input{
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+
+textarea:focus,
+input:focus,
+.form-control:focus,
+.uneditable-input:focus {   
+  border-color: #8CC189;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(140, 193, 137, 0.6);
+  outline: 0 none;
+}
+
