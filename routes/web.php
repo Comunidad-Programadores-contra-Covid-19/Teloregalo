@@ -49,6 +49,7 @@ Route::group(['middleware' => ['auth', 'store']], function () {
     Route::get('stores', 'StoreController@create')->name('stores');
     Route::put('update/{id}', 'StoreController@update')->name('stores.update');
 });
+
 /* 
 Route::group(['middleware' => ['auth', 'client']], function () {
     Route::get('otps', 'OtpController@create')->name('otps');
