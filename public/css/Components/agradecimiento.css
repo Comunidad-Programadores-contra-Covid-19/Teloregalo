@@ -1,0 +1,48 @@
+#compartirAgradecimiento {
+    text-align: center;
+}
+
+#tituloGracias {
+    margin-top: 1.5em;
+    margin-bottom: 0.6em;
+}
+
+#subtituloGracias {
+    font-weight: normal;
+}
+
+#imgGracias {
+    width: 43em;
+    margin-top: 2em;
+    margin-bottom: 2.9em;
+}
+
+#iconosCompartir  {
+    padding-inline-start: 0px;
+    margin-bottom: 5.4em;
+}
+
+#iconosCompartir li {
+    list-style: none;
+    display: inline-block;
+}
+
+#iconosCompartir button {
+    border: none;
+    background-color: transparent;
+}
+
+@media handheld, screen and (max-width:991px) {
+    #tituloGracias {
+        margin-top: 0.7em;
+        font-size: 33px;
+    }
+    
+    #subtituloGracias {
+        font-size: 20px;
+    }
+
+    #imgGracias {
+        width: 90%;
+    }
+}

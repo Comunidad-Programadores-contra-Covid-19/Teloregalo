@@ -4,9 +4,13 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\User;
+
+use App\Store;
+
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class RegisterController extends Controller
 {
@@ -28,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -51,11 +55,6 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'address' => ['required', 'string', 'max:255'],
-            'phone' => ['required', 'string', 'max:255'],
-            'category' => ['required', 'string', 'max:255'],
-            'description' => ['required', 'string', 'max:255'],
-            'facebook' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -68,15 +67,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'address' => $data['address'],
-            'phone' => $data['phone'],
-            'category' => $data['category'],
-            'description' => $data['description'],
-            'facebook' => $data['facebook'],
-            'password' => Hash::make($data['password']),
-        ]);
+           return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'rol'=> 'client',
+                'password' => Hash::make($data['password']),
+            ]);
+    
     }
+ 
 }
