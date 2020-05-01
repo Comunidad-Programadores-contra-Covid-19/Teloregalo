@@ -1,0 +1,226 @@
+#menuMisProductos {
+    width: 20%;
+    float: left;
+    margin-top: 70px;
+    margin-right: 0em;
+    margin-left: -40px;
+}
+
+#menuMisProductos li {
+    list-style: none;
+    font-weight: bold;
+    margin-bottom: 2em;
+}
+
+#menuMisProductos a:hover {
+    border-bottom: solid 2px #96D293;
+    padding-right: 1em;
+}
+
+#menuMisProductos a {
+    text-decoration: none;
+    color: #263238;
+}
+
+#menuMisProductos a:hover {
+    color: #96D293;
+}
+
+#misProductos {
+    width: 100%;
+    height: auto;
+}
+
+#misProductos h1 {
+    padding-top: 1.5em;
+    padding-bottom: 1em;
+}
+
+#tarjetasMisProductos,
+#formProductos {
+    width: 40%;
+    height: auto;
+    display: inline-block;
+}
+
+#tarjProducto {
+    border: solid 2px #96D293;
+    border-radius: 0.5em;
+    margin-bottom: 2em;
+    padding-right: 0.5em;
+    min-height: 180px;
+}
+
+#tarjProducto img {
+    float: left;
+    border: solid 1px #96D293;
+    border-radius: 0.5em;
+    margin: 1em;
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+}
+
+#tarjProducto #eliminar {
+    float: right;
+    padding: 1em;
+    cursor: pointer;
+    border: none;
+    margin: 0em;
+    width: 50px;
+    height: auto;
+}
+
+#nombreProducto {
+    margin-top: 1em;
+    font-weight: bold;
+}
+
+#descrProducto {
+    padding-right: 0.2em;
+}
+
+#precioProd {
+    margin-left: 1em;
+    font-weight: bold;
+}
+
+#formProductos {
+    float: right;
+    padding: 1.5em;
+    border: solid 2px #96D293;
+    border-radius: 0.5em;
+    margin-bottom: 4em;
+    margin-top: 9.7em;
+}
+
+#imgAgregarProd {
+    width: 180px;
+    height: 180px;
+    border: solid 2px #96D293;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#imgAgregarProd img {
+    object-fit: contain;
+    width: 100%;
+}
+
+#formProductos label {
+    margin-bottom: 0em;
+    text-align: left;
+}
+
+#formProductos button {
+    margin-top: 2em;
+}
+
+@media handheld, (min-width:992px) and (max-width:1350px) {
+
+    #menuMisProductos {
+        float: none;
+        width: 100%;
+        text-align: center;
+        padding: 0em;
+        margin: 0em;
+    }
+
+    #menuMisProductos ul {
+        margin: 0em;
+        padding: 0em;
+    }
+
+    #menuMisProductos li {
+        display: inline-block;
+        margin-left: 2em;
+        margin-right: 2em;
+        margin-top: 0.5em;
+    }
+
+    #menuMisProductos a:hover {
+        padding-left: 1em;
+    }
+
+    #misProductos h1 {
+       text-align: left;
+       padding-top: 0em;
+    }
+
+    #tarjetasMisProductos,
+    #formProductos {
+        width: 45%;
+        margin-left: 0em;
+    }
+
+    #formProductos {
+    margin-top: 6em;
+    }
+
+    #descrProducto {
+        font-size: 15px;
+    }
+}
+
+@media handheld, screen and (max-width:991px) {
+    #menuMisProductos {
+        float: none;
+        width: 100%;
+        text-align: center;
+        padding: 0em;
+        margin: 0em;
+    }
+
+    #menuMisProductos ul {
+        margin: 0em;
+        padding: 0em;
+    }
+
+    #menuMisProductos li {
+        display: inline-block;
+        margin-left: 3em;
+        margin-right: 3em;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    #menuMisProductos a:hover {
+        padding-left: 1em;
+    }
+
+    #misProductos h1 {
+        display: none;
+     }
+
+    #tarjetasMisProductos,
+    #formProductos {
+        width: 100%;
+        display: block;
+    }
+
+    #formProductos {
+        float: none;
+        margin-top: 0.5em;
+        border: none;
+        width: 100%;
+        padding: 0em;
+    }
+
+    #imgAgregarProd {
+        width: 170px;
+        height: 170px;
+    }
+
+    #tarjProducto img {
+        float: left;
+        margin: 0.8em;
+        width: 120px;
+        height: 120px;
+    }
+    
+    #descrProducto {
+        padding-left: 1em;
+    }
+   
+}
