@@ -35,11 +35,8 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 /* Route::get('/home', 'HomeController@index')->name('home');
  */
-Route::get('login/google', 'Auth\LoginController@redirectToProvider');
-Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback');
-
-Route::get('register/google', 'Auth\RegisterController@redirectToProvider');
-Route::get('register/google/callback', 'Auth\RegisterController@handleProviderCallback');
+Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider')->name('social.auth');
+Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
 
 Route::resource('offers', 'OfferController');
@@ -61,17 +58,3 @@ Route::group(['middleware' => ['auth', 'store']], function () {
     Route::put('update/{id}', 'StoreController@update')->name('stores.update');
 });
 
-/* 
-Route::group(['middleware' => ['auth', 'client']], function () {
-    Route::get('otps', 'OtpController@create')->name('otps');
-    //Route::get('otps', 'OtpController@create')->name('otps.create');
-}); */
-
-/* Route::group(['middleware' => ['auth', 'client']], function () {
-    Route::get('otp', 'OtpController@create');
-    Route::get('/otp/create', 'OtpController@create');
-}); */
-
-/*Route::middleware(['auth', 'client'])->group(function () {
-    Route::get('otp', 'OtpController@create');
-});*/

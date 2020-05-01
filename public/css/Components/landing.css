@@ -2,17 +2,6 @@ header {
     width: 100%;
 }
 
-#btnDonarNav {
-    background-color: #E6F4E5;
-    border-radius: 1rem;
-    padding: 0.3em;
-    margin-top: 3px;
-} 
-
-#btnDonarNav:hover {
-    background-color: rgb(140, 193, 137);
-}
-
 /* Inicio Cabecera Presentación */
 #contenedorPresentacion {
     margin-top: -2em;
@@ -244,24 +233,6 @@ footer p {
 /* Fin Footer */
 
 @media handheld, (min-width:992px) and (max-width:1220px) {
-    .navbar-brand #logoNav a {
-        margin-right: 30px;
-    }
-    
-    #menuNav a {
-        margin: 0em;
-        font-size: 15px;
-        padding: 3.5px;
-    }
-
-    .navbar-brand {
-        margin-right: 1rem;
-    }
-    
-    li #btnDonarNav {
-      margin-top: 0.5em;
-    }
-
     #imgPresentacion {
         float: none;
         width: 50%

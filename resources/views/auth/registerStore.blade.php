@@ -72,28 +72,7 @@
                 </div>
             </div>
 
-            <div class="card">
-                <div class="card-header">{{ __('O registrate tambien con') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ url('stores/register') }}">
-                        @csrf
-                        <div>
-                            <div class="form-group">
-                                <a href="{{ url('/login/google') }}" class="btn btn-primary">Registrarse con Google</a>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <div class="form-group">
-                                <a href="" class="btn btn-primary">Registrarse con Facebook</a>
-                            </div>
-                        </div>
-                        
-
-                    </form>
-                </div>
-            </div>
+            
         </div>
     </div>
 </div>

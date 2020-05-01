@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/#';
 
     /**
      * Create a new controller instance.
@@ -38,25 +38,26 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-    public function redirectToProvider() 
+
+    public function redirectToProvider($provider) 
     { 
-        return Socialite::driver('google')->redirect(); 
+        return Socialite::driver($provider)->redirect(); 
     }
 /**
      * Obtain the user information from Google.
      *
      * @return \Illuminate\Http\Response
      */
-    public function handleProviderCallback()
+    public function handleProviderCallback($provider)
     {
-            $user = Socialite::driver('google')->stateless()->user();
+            $user = Socialite::driver($provider)->stateless()->user();
             $authUser = $this->findUserOrCreate($user);
             Auth::login($authUser,true);
             return redirect($this->redirectTo);
         
     }
     public function findUserOrCreate($user){
-        $authUser= User::where('google_id',$user->id)->first();
+        $authUser= User::where('email',$user->email)->first();
         if($authUser){
             return $authUser;
         }else{
@@ -65,7 +66,7 @@ class LoginController extends Controller
                 'email' => $user->email,
                 'rol' => 'client',
                 'avatar'=> $user->avatar_original,
-                'google_id' => $user->id,
+                'social_id' => $user->id,
             ]); 
         }
         

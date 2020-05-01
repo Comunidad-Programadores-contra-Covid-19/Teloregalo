@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  
     <!-- Styles -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -68,7 +68,7 @@
                   
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             @if(Auth::user()->avatar)
-                                <img class="rounded-circle" src="{{ Auth::user()->avatar }}" alt="avatar" width="45" height="45" style="margin-right: 8px;">
+                                <img class="rounded-circle" src="{{ Auth::user()->avatar }}" alt="avatar" width="40" height="40" style="margin-right: 8px;">
                             @endif
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
