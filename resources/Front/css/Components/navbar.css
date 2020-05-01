@@ -41,7 +41,8 @@ border-radius: 1rem;
     background-color: rgb(140, 193, 137);
 }
 
-#nombreHeroe {
+#nombreHeroe,
+#nombreComercio {
     background-color: transparent;
 }
 
@@ -49,6 +50,9 @@ border-radius: 1rem;
     font-weight: bold;
 }
 
+#nombreComercio:hover {
+    font-weight: bold;
+}
 
 @media handheld, (min-width:1423px) and (max-width:1555px) {
     .nav-link {
@@ -96,7 +100,8 @@ border-radius: 1rem;
         margin: 0.5em;
     }
 
-    #nombreHeroe {
+    #nombreHeroe,
+    #nombreComercio {
         width: 170px;
     }
 }
