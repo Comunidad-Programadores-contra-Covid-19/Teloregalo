@@ -58,3 +58,12 @@ Route::group(['middleware' => ['auth', 'store']], function () {
     Route::put('update/{id}', 'StoreController@update')->name('stores.update');
 });
 
+
+
+Route::get('/preguntasFrecuentes', function(){
+    return view('teloregalo.preguntasFrecuentes');
+});
+
+Route::get('/donar', function(){
+    return view('teloregalo.donar');
+});

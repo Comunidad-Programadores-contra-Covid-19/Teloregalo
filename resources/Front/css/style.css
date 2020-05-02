@@ -15,6 +15,9 @@
 @import url("Components/misRegalosHeroe.css");
 @import url("Components/agradecimiento.css");
 @import url("Components/preguntasFrecuentes.css");
+@import url("Components/logIn.css");
+@import url("Components/donar.css");
+@import url("Components/misProductosComercio.css");
 
 /*---Fonts--- */
 body{
@@ -39,6 +42,3 @@ h2, h3, h4, h6{
 .container{
     max-width: 90%;
 }
-
-
-
