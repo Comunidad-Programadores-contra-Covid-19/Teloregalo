@@ -71,7 +71,8 @@ class OfferController extends Controller
      */
     public function show($id)
     {
-        //
+        $offer = Offer::find($id);
+        return view('offers.buy_product', ['offer' => $offer]);
     }
 
     /**
