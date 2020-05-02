@@ -25,6 +25,7 @@ class CreateStoresTable extends Migration
             $table->string('facebook')->nullable();
             $table->string('category')->nullable();
             $table->string('phone')->nullable();
+            $table->integer('rating')->nullable();
             $table->timestamps();
         });
     }

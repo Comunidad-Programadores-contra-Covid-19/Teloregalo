@@ -113,11 +113,19 @@
                               <div class="card-description">
                                   <h3>{{ $store->name}}</h3>
                                   <p><span><i class="fas fa-map-marker-alt"></i></span>{{ $store->address}}</p>
-                                  <span class="fa fa-star checked"></span>
-                                  <span class="fa fa-star checked"></span>
-                                  <span class="fa fa-star checked"></span>
-                                  <span class="fa fa-star"></span>
-                                  <span class="fa fa-star"></span>
+                                  @if ($store->rating != 0)
+                                        @for ($i = 1; $i <= $store->rating; $i++)
+                                            <span class="fa fa-star checked"></span>
+                                        @endfor
+
+                                        @for ($i = 1; $i <= 5/$store->rating; $i++)
+                                            <span class="fa fa-star"></span>
+                                        @endfor
+                                  @else
+                                    @for ($i = 1; $i <= 5; $i++)
+                                            <span class="fa fa-star"></span>
+                                    @endfor
+                                  @endif
                               </div>
                               <div class="card-availability">
                                   <p><b>xx regalos</b> para entregar</p>
