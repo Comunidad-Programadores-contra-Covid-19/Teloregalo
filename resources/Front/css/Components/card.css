@@ -36,6 +36,10 @@
     left: 1rem;
 }
 
+#card-reputation{
+    margin-bottom: 1rem !important;
+}
+
 
 /*---Product card--- */
 
@@ -50,10 +54,9 @@
 }
 
 .card-image-product{
-    position: absolute;
-    height: 10rem;
-    width: 10rem;
-    margin: 2rem;
+    max-width: 100%;
+    position: relative;
+    margin: 1rem;
 }
 
 .card-description-product{
@@ -63,9 +66,54 @@
     right: 2rem;
 }
 
+.card-index-product{
+    position: relative;
+    text-align: center;
+    top: 1rem;
+    left: 0.5rem;
+    margin-right:2rem;
+
+}
+
 .card-btn-product{
     position: absolute;
     bottom: 2rem;
     left: 2rem !important;
     right: 2rem !important;
 }
+
+
+/*---Profile card--- */
+.card-profile{
+    height: 15rem;
+    position: relative;
+    border:none;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 0;
+}
+
+.card-image-profile{
+    position: relative;
+    height: 15rem;
+    width: 15rem;
+    margin-top: 3rem;
+}
+
+.card-description-profile{
+    margin-top: 3rem;
+}
+
+
+.card-btn-profile{
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1rem;
+}
+
+.card-availability-profile{
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+}
+

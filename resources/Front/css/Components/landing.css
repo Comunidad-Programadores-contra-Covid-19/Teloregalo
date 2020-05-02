@@ -7,27 +7,25 @@ header {
     margin-top: -2em;
     width: 100%;
     height: auto;
-}
+    }
 
 #presentacion {
     width: 50%;
     height: auto;
-    padding-right: 0em;
+    padding-right: 0;
     padding-left: 3em;
     float: left;
-    margin-bottom: 0em;
+    margin-bottom: 0;
 }
 
 #presentacion h1 {
-    width: 100%x;
+    width: 100%;
     height: 87px;
-    margin-top: 250px;
+    margin-top: 10rem;
     display: inline-block;
-    font-family: Poppins;
+    font-family: Poppins, sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 49px;
-    line-height: 60px;
     color: #263238;
     padding-bottom: 1em;
 }
@@ -35,22 +33,20 @@ header {
 #presentacion p {
     display: inline-block;
     width: 105%;
-    margin: 0em;
-    font-family: Poppins;
+    margin: 0;
+    font-family: Poppins, sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 23px;
-    line-height: 36px;
     color: #263238;
 }
 
 #imgPresentacion {
-    padding: 0em;
+    padding: 0;
     width: 50%;
     height: auto;
     float: right;
-    margin-right: 0px;
-    margin-left: 0px;
+    margin-right: 0;
+    margin-left: 0;
 }
 
 #imgPresentacion img {
@@ -81,7 +77,7 @@ header {
 #btnRegalar:hover {
     border: #96D293 solid 2px;
     background-color: #FFFFFF;
-    padding: 8px 35px;   
+    padding: 8px 35px;
     color: #96D293;
 }
 /* Fin Cabecera Presentación */
@@ -94,8 +90,8 @@ header {
     clear: both;
     margin-top: 3em;
     margin-bottom: 4em;
-    margin-left: 0em;
-    margin-right: 0em;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 #contenedorBuscador {
@@ -170,7 +166,7 @@ header {
     height: auto;
     margin-top: 2.5em;
 }
-/* Fin Tarjetas */ 
+/* Fin Tarjetas */
 
 /* Inicio Footer */
 footer {
@@ -178,9 +174,9 @@ footer {
     background-color: #96D293;
     padding-left: 5%;
     padding-right: 5%;
-    -moz-box-shadow: 0px 0px 30px #ffffff;
-    -webkit-box-shadow: 0px 0px 30px #ffffff;
-    box-shadow: 0px 0px 30px #ffffff;
+    -moz-box-shadow: 0 0 30px #ffffff;
+    -webkit-box-shadow: 0 0 30px #ffffff;
+    box-shadow: 0 0 30px #ffffff;
     clear: both;
 }
 
@@ -190,7 +186,7 @@ footer {
 }
 
 #logoFooter {
-    padding: 0em;
+    padding: 0;
     margin-top: 1.3em;
 }
 
@@ -201,7 +197,7 @@ footer {
 }
 
 #menuFooter ul {
-    padding-left: 0em;
+    padding-left: 0;
 }
 
 #menuFooter li {
@@ -237,52 +233,52 @@ footer p {
         float: none;
         width: 50%
     }
-    
+
     #imgPresentacion img {
         margin-top: 0.5em;
     }
-    
+
     #presentacion {
         width: 100%;
         float: none;
-        padding-left: 0em;
+        padding-left: 0;
         margin-right: auto;
         margin-left: auto;
     }
-    
+
     #presentacion h1 {
         width: 100%;
-        margin-top: 0em;
+        margin-top: 0;
         font-size: 43px;
     }
-    
+
     #presentacion p {
         width: 100%;
         margin-top: 5px;
         font-size: 17.5px;
         line-height: 30px;
     }
-    
+
     #btnRegistroRegalo {
         margin-top: 1em;
-        margin-bottom: 0em;
+        margin-bottom: 0;
     }
-    
+
     #btnRegistrar,
     #btnRegalar {
-        margin: 0em;
+        margin: 0;
         padding: 10px 10px;
         font-weight: normal;
     }
-    
+
     #btnRegistrar {
         width: 55%;
     }
-    
+
     #btnRegalar {
         width: 43%;
     }
-  
+
     #logoFooter {
         margin-top: 2em;
     }
@@ -297,7 +293,7 @@ footer p {
     }
 
     #menuFooter {
-        padding: 0em;
+        padding: 0;
     }
 }
 
@@ -315,16 +311,16 @@ footer p {
 #presentacion {
     width: 100%;
     float: none;
-    padding-left: 0em;
+    padding-left: 0;
     margin-right: auto;
     margin-left: auto;
 }
 
 #presentacion h1 {
     width: 100%;
-    margin-top: 0em;
+    margin-top: 0;
     font-size: 34px;
-    margin-bottom: 0em;
+    margin-bottom: 0;
 }
 
 #presentacion p {
@@ -335,13 +331,13 @@ footer p {
 }
 
 #btnRegistroRegalo {
-    margin-top: 0em;
-    margin-bottom: 0em;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 #btnRegistrar,
 #btnRegalar {
-    margin: 0em;
+    margin: 0;
     padding: 10px 10px;
     font-weight: normal;
 }
@@ -361,7 +357,7 @@ footer p {
 #contenedorBuscador h1 {
     font-size: 35px;
     padding-top: 1em;
-    margin-bottom: 0em;
+    margin-bottom: 0;
 }
 
 #buscador {
@@ -402,7 +398,7 @@ footer p {
     float: none;
     margin-left: auto;
     margin-right: auto;
-    padding: 0em;
+    padding: 0;
 }
 
 #menuFooter a,
