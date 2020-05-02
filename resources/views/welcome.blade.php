@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>TeLoRegalo</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -112,11 +113,19 @@
                               <div class="card-description">
                                   <h3>{{ $store->name}}</h3>
                                   <p><span><i class="fas fa-map-marker-alt"></i></span>{{ $store->address}}</p>
-                                  <span class="fa fa-star checked"></span>
-                                  <span class="fa fa-star checked"></span>
-                                  <span class="fa fa-star checked"></span>
-                                  <span class="fa fa-star"></span>
-                                  <span class="fa fa-star"></span>
+                                  @if ($store->rating != 0)
+                                        @for ($i = 1; $i <= $store->rating; $i++)
+                                            <span class="fa fa-star checked"></span>
+                                        @endfor
+
+                                        @for ($i = 1; $i <= 5/$store->rating; $i++)
+                                            <span class="fa fa-star"></span>
+                                        @endfor
+                                  @else
+                                    @for ($i = 1; $i <= 5; $i++)
+                                            <span class="fa fa-star"></span>
+                                    @endfor
+                                  @endif
                               </div>
                               <div class="card-availability">
                                   <p><b>xx regalos</b> para entregar</p>
@@ -183,21 +192,39 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.auto.min.js"></script>
+    <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
     <script>
-            mapboxgl.accessToken = 'pk.eyJ1Ijoibmljb2xpZW5kcm8xNCIsImEiOiJjazlvcHU5eWMwMzdzM2hxcTNoN3lleGRmIn0.sPpU8gUReCtWeFS8z0ccsw';
-            var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v11',
-            zoom: 15,
-            center: [-58.237580, -34.826970]
-            });
-            map.addControl(
-                new MapboxGeocoder({
-                accessToken: mapboxgl.accessToken,
-                mapboxgl: mapboxgl
+        	mapboxgl.accessToken = 'pk.eyJ1Ijoibmljb2xpZW5kcm8xNCIsImEiOiJjazlvcHU5eWMwMzdzM2hxcTNoN3lleGRmIn0.sPpU8gUReCtWeFS8z0ccsw';
+            var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+            const stores = {!! $stores->toJson() !!};
+            const locationCity = stores[0].address
+            mapboxClient.geocoding
+                .forwardGeocode({
+                    query: locationCity,
+                    autocomplete: false,
+                    limit: 1
                 })
-                );
-        </script>
+                .send()
+                .then(function(response) {
+                    if (
+                        response &&
+                        response.body &&
+                        response.body.features &&
+                        response.body.features.length
+                    ) {
+                        var feature = response.body.features[0];
+                        
+                        var map = new mapboxgl.Map({
+                        container: 'map',
+                        style: 'mapbox://styles/mapbox/streets-v11',
+                        center: feature.center,
+                        zoom: 15
+                    });
+                    new mapboxgl.Marker().setLngLat(feature.center).addTo(map);
+                }
+            });
+    </script>
 
 </body>
 @endsection
