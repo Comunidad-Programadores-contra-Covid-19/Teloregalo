@@ -165,6 +165,14 @@ header {
     width: 100%;
     height: auto;
     margin-top: 2.5em;
+    margin-bottom: 2.5em;
+    overflow: hidden;
+
+}
+
+.scrollable {
+    overflow-y: scroll;
+    height: 30rem;
 }
 /* Fin Tarjetas */
 
