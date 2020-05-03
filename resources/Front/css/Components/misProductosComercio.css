@@ -22,8 +22,6 @@
     color: #263238;
 }
 
-
-
 #misProductos {
     width: 100%;
     height: auto;
@@ -72,10 +70,12 @@
 #nombreProducto {
     margin-top: 1em;
     font-weight: bold;
+    padding-left: 0.5em;
 }
 
 #descrProducto {
     padding-right: 0.2em;
+    padding-left: 0.5em;
 }
 
 #precioProd {
@@ -115,7 +115,7 @@
     margin-top: 2em;
 }
 
-@media handheld, (min-width:531px) and (max-width:995px) {
+@media handheld, (min-width:661px) and (max-width:995px) {
 
     #menuMisProductos {
         float: none;
@@ -137,8 +137,6 @@
         margin-top: 0.5em;
     }
 
-
-
     #misProductos h1 {
        text-align: left;
        padding-top: 0;
@@ -156,10 +154,11 @@
 
     #descrProducto {
         font-size: 15px;
+        padding-left: 0.5em;
     }
 }
 
-@media handheld, screen and (max-width:530px) {
+@media handheld, screen and (max-width:660px) {
     #menuMisProductos {
         float: none;
         width: 100%;
