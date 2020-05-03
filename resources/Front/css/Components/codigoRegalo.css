@@ -92,12 +92,28 @@
     background-color: transparent;
 }
 
-
 /* Footer  */
 footer {
 margin-top: 6em;
 }
 
+#reportarComercio {
+    text-align: center;
+    margin-top: 6em;
+    font-weight: bold;
+}
+
+#btnReportar {
+    background-color: transparent;
+    border: red solid 1px;
+    border-radius: 2em;
+    padding: 6px 20px;
+}
+
+#btnReportar:hover {
+    background-color: red;
+    color: #FFF;
+}
 
 @media handheld, (min-width:992px) and (max-width:1405px) {
     #codigoRegalo p {
@@ -156,7 +172,6 @@ margin-top: 6em;
 
     }
     #ticket img {
-
         width: 17em;
     }
 
