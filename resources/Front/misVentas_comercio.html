@@ -61,9 +61,9 @@
         <!-- Inicio Menú Comercio-->
         <div id="menuMisVentas">
             <ul>
-                <li><a href="#">Perfil de mi comercio</a></li>
-                <li><a href="#">Mis ventas</a></li>
-                <li><a href="#">Mis productos</a></li>
+                <li><a href="#">Perfil</a></li>
+                <li><a href="#">Ventas</a></li>
+                <li><a href="#">Productos</a></li>
             </ul>
         </div>
         <!-- Fin Menú Comercio -->
@@ -71,7 +71,7 @@
         <!-- Inicio Contenedor Ventas del comercio -->
         <section id="contenedorMisVentas">
 
-            <h1 id="tituloVentas">Mis Ventas</h1>
+            <h1 id="tituloVentas">Ventas</h1>
 
             <p id="subtituloVentas">Ingresá el código de validación para registrar la entrega.</p>
            
@@ -86,24 +86,30 @@
                         <input type="text" id="inputCodigo" placeholder="Código de validación">
                         <p id="descrVentas">Queda a total discreción del comerciante entregar los regalos a las personas que acrediten estar trabajando para ayudarnos a todos.</p>
                         <button type="submit" class="btn btn-principal btn-block" style="font-weight: bold;" id="btnRegistrarEntrega">Registrar entrega</button>
+                   
+
+                    <!-- Inicio Reportar usuario -->
+                    <div id="reportarUsuario">
+                        <p>Si creés que el usuario no es personal esencial, te recomendamos entregar el producto y luego reportarlo.</p>
+                        <button id="btnReportar">Reportar usuario</button>
                     </div>
+                    <!-- Fin Reportar usuario -->
                 </div>
+
+            </div>
             </div>
             <!-- Fin ingresar código -->
-       
+
             <!-- Inicio Stock de Productos -->
             <section id="stock">
 
                 <div id="stockProducto">
         
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-4">
                             <h5 id="nombreProductoVentas">Opción Producto</h5>
                             <ul>
-                                <li>
-                                    <p id="tituloStockVendidos">Total vendidos</p>
-                                    <p id="cantidadProdVendidos">XX</p>
-                                </li>
+                                <span id="totalStock">
                                 <li>
                                     <p id="tituloStock">Disponibles</p>
                                     <p id="cantidadProd">XX</p>
@@ -111,17 +117,21 @@
                                 <li>
                                     <p id="tituloStock" style="opacity: 50%;">Entregados</p>
                                     <p id="cantidadProd" style="opacity: 50%;">XX</p>
+                                </li>
+                            </span>
+                                <li>
+                                    <span id="totalVendidos">
+                                        <p id="tituloStockVendidos">Total vendidos</p>
+                                        <p id="cantidadProdVendidos">XX</p>
+                                    </span>
                                 </li>
                             </ul>
                         </div>
 
-                        <div class="col-lg-6">
+                        <div class="col-lg-4">
                             <h5 id="nombreProductoVentas">Opción Producto</h5>
                             <ul>
-                                <li>
-                                    <p id="tituloStockVendidos">Total vendidos</p>
-                                    <p id="cantidadProdVendidos">XX</p>
-                                </li>
+                                <span id="totalStock">
                                 <li>
                                     <p id="tituloStock">Disponibles</p>
                                     <p id="cantidadProd">XX</p>
@@ -129,6 +139,35 @@
                                 <li>
                                     <p id="tituloStock" style="opacity: 50%;">Entregados</p>
                                     <p id="cantidadProd" style="opacity: 50%;">XX</p>
+                                </li>
+                            </span>
+                                <li>
+                                    <span id="totalVendidos">
+                                        <p id="tituloStockVendidos">Total vendidos</p>
+                                        <p id="cantidadProdVendidos">XX</p>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <h5 id="nombreProductoVentas">Opción Producto</h5>
+                            <ul>
+                                <span id="totalStock">
+                                <li>
+                                    <p id="tituloStock">Disponibles</p>
+                                    <p id="cantidadProd">XX</p>
+                                </li>
+                                <li>
+                                    <p id="tituloStock" style="opacity: 50%;">Entregados</p>
+                                    <p id="cantidadProd" style="opacity: 50%;">XX</p>
+                                </li>
+                            </span>
+                                <li>
+                                    <span id="totalVendidos">
+                                        <p id="tituloStockVendidos">Total vendidos</p>
+                                        <p id="cantidadProdVendidos">XX</p>
+                                    </span>
                                 </li>
                             </ul>
                         </div>
