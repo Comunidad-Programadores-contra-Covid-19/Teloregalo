@@ -97,10 +97,12 @@ footer {
 margin-top: 6em;
 }
 
+/* Reportar */
 #reportarComercio {
     text-align: center;
     margin-top: 6em;
     font-weight: bold;
+    font-size: 18px;
 }
 
 #btnReportar {
@@ -177,7 +179,6 @@ margin-top: 6em;
 
     #ticket p {
         margin-bottom: -4.3em;
-        width: 100%;
         margin-left: 3.2em;
     }
 
