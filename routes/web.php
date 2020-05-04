@@ -45,11 +45,13 @@ Route::resource('stores', 'StoreController');
 
 Route::resource('otps', 'OtpController');
 
-Route::delete('/otps', 'OtpController@destroy');
+Route::get('create/{idstore}/{idclient}', 'OtpController@create')->name('otps.create');
+
+Route::delete('/otps/{idstore}', 'OtpController@destroy');
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/chooseRegistration', function(){
+Route::get('/chooseRegistration', function () {
     return view('auth.storeOrClient');
 });
 
@@ -58,12 +60,15 @@ Route::group(['middleware' => ['auth', 'store']], function () {
     Route::put('update/{id}', 'StoreController@update')->name('stores.update');
 });
 
+Route::group(['middleware' => ['auth', 'client']], function () {
+    Route::get('otps', 'OtpController@create');
+});
 
 
-Route::get('/preguntasFrecuentes', function(){
+Route::get('/preguntasFrecuentes', function () {
     return view('teloregalo.preguntasFrecuentes');
 });
 
-Route::get('/donar', function(){
+Route::get('/donar', function () {
     return view('teloregalo.donar');
 });
