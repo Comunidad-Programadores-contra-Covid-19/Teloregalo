@@ -16,7 +16,7 @@
 
 
 <body>
-    <header>    
+    <header>
         <!--Inicio Navbar -->
         <nav class="mb-1 navbar navbar-expand-lg navbar-light navbar-green shadow-sm sticky-top">
             <a class="navbar-brand" href="#">
@@ -57,7 +57,7 @@
 
     <!-- Inicio contenedor -->
     <div class="container">
-      
+
         <!-- Inicio Menú Comercio-->
         <div id="menuMisVentas">
             <ul>
@@ -74,7 +74,6 @@
             <h1 id="tituloVentas">Ventas</h1>
 
             <p id="subtituloVentas">Ingresá el código de validación para registrar la entrega.</p>
-           
             <!-- Inicio ingresar código -->
             <div class="row">
                 <div class="col-lg-3">
@@ -83,16 +82,37 @@
 
                 <div class="col-lg-9">
                     <div id="codigoValidacion">
-                        <input type="text" id="inputCodigo" placeholder="Código de validación">
-                        <p id="descrVentas">Queda a total discreción del comerciante entregar los regalos a las personas que acrediten estar trabajando para ayudarnos a todos.</p>
-                        <button type="submit" class="btn btn-principal btn-block" style="font-weight: bold;" id="btnRegistrarEntrega">Registrar entrega</button>
-                   
+                        <!-- Modal Trigger -->
+                        <label for="inputCodigo"></label><input type="text" id="inputCodigo" placeholder="Código de validación">
+                        <button type="submit" class="btn btn-principal btn-block " data-toggle="modal" data-target="#exampleModal" id="btnRegistrarEntrega">Registrar entrega</button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel"><b>¡La entrega del regalo fue realizada con exito!</b></h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <b>NOTA:</b>Si concideras que a la persona que acabas de entregar un regalo no pertenece al personal esencial, hace click en la opción reportar usuario.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" id="btnReportar" >Reportar usuario</button>
+                                        <button type="button" class="btn btn-principal" data-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fin Modal -->
 
                     <!-- Inicio Reportar usuario -->
-                    <div id="reportarUsuario">
+                  <!--  <div id="reportarUsuario">
                         <p>Si creés que el usuario no es personal esencial, te recomendamos entregar el producto y luego reportarlo.</p>
                         <button id="btnReportar">Reportar usuario</button>
-                    </div>
+                    </div> -->
                     <!-- Fin Reportar usuario -->
                 </div>
 
@@ -102,9 +122,13 @@
 
             <!-- Inicio Stock de Productos -->
             <section id="stock">
-
+                <div id="descrVentas">
+                    <p><span><i class="fas fa-exclamation-circle"></i></span>Queda a total discreción del comerciante entregar los regalos a las personas que acrediten estar trabajando para ayudarnos a todos.
+                    </p>
+                    <p><span><i class="fas fa-exclamation-circle"></i></span>Si creés que el usuario no es personal esencial, te recomendamos entregar el producto y luego reportarlo.</p>
+                </div>
                 <div id="stockProducto">
-        
+
                     <div class="row">
                         <div class="col-lg-4">
                             <h5 id="nombreProductoVentas">Opción Producto</h5>
@@ -193,7 +217,7 @@
                         <img src="Regursos%20graficos/logo.svg" width="35" height="35" alt="">
                     </a>
                 </div>
-                
+
                 <div class="col-lg-7" id="menuFooter">
                     <ul>
                         <li>

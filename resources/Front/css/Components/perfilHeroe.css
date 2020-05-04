@@ -23,8 +23,8 @@
 
 #menuPerfilHeroe a {
     text-decoration: none;
-    color: #263238; 
-    display: block; 
+    color: #263238;
+    display: block;
 }
 
 #miPerfilConFoto {
@@ -62,10 +62,8 @@
 #btnCancelarPerfilHeroe {
     width: 40%;
     display: inline-block;
-    margin: 0em;
     font-weight: bold;
-    margin-top: 2em;
-    margin-left: 1em;
+    margin: 2em 0 0 1em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
 }
@@ -81,9 +79,9 @@
 @media handheld, (min-width:531px) and (max-width:995px) {
     #menuPerfilHeroe {
         position: unset;
-        width: 100%;  
+        width: 100%;
         text-align: center;
-    } 
+    }
 
     #menuPerfilHeroe li {
         display: inline-block;
@@ -116,7 +114,7 @@
     #datosPerfilHeroe {
         position: unset;
         width: 100%;
-        margin: 0em;
+        margin: 0;
     }
 
     #btnGuardarPerfilHeroe,
@@ -129,9 +127,9 @@
 
     #menuPerfilHeroe {
         position: unset;
-        width: 100%;  
+        width: 100%;
         text-align: center;
-    } 
+    }
 
     #menuPerfilHeroe li {
         display: inline-block;
@@ -164,7 +162,7 @@
     #datosPerfilHeroe {
         position: unset;
         width: 100%;
-        margin: 0em;
+        margin: 0;
     }
 
     #btnGuardarPerfilHeroe,

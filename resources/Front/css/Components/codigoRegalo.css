@@ -55,7 +55,7 @@
 
 #ticket p {
     margin-bottom: -3.2em;
-    padding: 0em;
+    padding: 0;
     font-size: 45px;
 }
 
@@ -108,9 +108,11 @@ margin-top: 6em;
 #btnReportar {
     background-color: transparent;
     border: red solid 1px;
-    border-radius: 2em;
-    padding: 6px 20px;
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 
 #btnReportar:hover {
     background-color: red;
@@ -119,7 +121,7 @@ margin-top: 6em;
 
 @media handheld, (min-width:992px) and (max-width:1405px) {
     #codigoRegalo p {
-        padding: 0em;
+        padding: 0;
     }
 
     #calificar {
@@ -128,17 +130,17 @@ margin-top: 6em;
 
     #calificar h2 {
         width: 100%;
-        margin: 0em;
+        margin: 0;
     }
 
     #dibujoLike {
-      margin-left: 0em;
+      margin-left: 0;
     }
 }
 
 @media handheld, screen and (max-width:991px) {
     #codigoRegalo p {
-        padding: 0em;
+        padding: 0;
     }
 
     #dibujoLike {
@@ -155,20 +157,20 @@ margin-top: 6em;
     }
 
     #codigoRegalo h1 {
-        margin: 0em;
+        margin: 0;
         font-size: 30px;
         line-height: 44px;
         margin-left: -0.5em;
     }
 
     #codigoRegalo p {
-        margin: 0em;
+        margin: 0;
         font-size: 24px;
         line-height: 38px;
         margin-left: -0.5em;
     }
 
-    #ticket { 
+    #ticket {
        margin-left: -8em;
        margin-top: 6em;
 
@@ -191,22 +193,22 @@ margin-top: 6em;
 
     #calificar h2 {
         font-size: 1.7rem;
-        margin: 0em;
+        margin: 0;
     }
 
     #calificar ul {
         padding: 0.2em;
         margin-top: 1rem;
     }
-   
+
     #calificar button img {
         width: 35px;
     }
-  
+
     #calificar h3 {
         font-size: 1.4em;
-    } 
- 
+    }
+
     #calificar p {
         padding-bottom: 4em;
     }

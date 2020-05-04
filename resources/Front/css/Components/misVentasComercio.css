@@ -2,7 +2,7 @@
     width: 20%;
     float: left;
     margin-top: 70px;
-    margin-right: 0em;
+    margin-right: 0;
     margin-left: -40px;
 }
 
@@ -24,29 +24,31 @@
 
 #tituloVentas {
     padding-top: 1.5em;
-    margin-left: 8em;
 }
 
 #subtituloVentas {
     padding-top: 0.5em;
     font-size: 20px;
-    margin-left: 16.2em;
 }
 
-#codigoValidacion,
-#stock {
+#codigoValidacion{
     text-align: center;
-    float: right;
 }
 
 #imgCodigoVal {
     float: right;
     margin-top: 3.5em;
-    padding: 0em;
+    padding: 0;
 }
 
 #codigoValidacion {
     padding-right: 7em;
+    float: left;
+}
+
+#stock > p {
+    text-align: left;
+    margin-left: 3em;
 }
 
 #inputCodigo {
@@ -61,15 +63,13 @@
 }
 
 #descrVentas {
-    font-weight: bold;
     margin-top: 2em;
-    margin-bottom: 1.5em;
-    padding-left: 6em;
-    padding-right: 6em;
+    margin-bottom: 5em;
 }
 
 #btnRegistrarEntrega {
     width: 350px;
+    margin-top: 2rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -94,7 +94,7 @@
     border-radius: 2em;
     padding: 6px 20px;
     font-size: 14px;
-  
+
 }
 
 #btnReportar:hover {
@@ -103,20 +103,19 @@
 }
 
 #stock {
-    margin-top: 5em;
     margin-bottom: 4.5em;
     min-height: 16em;
-    width: 80%;
+    width: 82%;
+    float: right;
 }
 
 #nombreProductoVentas {
-    text-align: center;
     font-weight: bold;
     margin-bottom: 1.5em;
 }
 
 #stockProducto ul {
-    padding: 0em; 
+    padding: 0;
 }
 
 #stockProducto li {
@@ -128,7 +127,7 @@
 
 #stockProducto li p {
     display: inline-block;
-    
+
 }
 
 #stockProducto #tituloStockVendidos,
@@ -153,19 +152,19 @@
     font-size: 20px;
 }
 
-@media handheld, (min-width:992px) and (max-width:1500px) {
+@media handheld, (min-width:531px) and (max-width:995px){
 
     #menuMisVentas {
         float: none;
         width: 100%;
         text-align: center;
-        padding: 0em;
-        margin: 0em;
+        padding: 0;
+        margin: 0;
     }
 
     #menuMisVentas ul {
-        margin: 0em;
-        padding: 0em;
+        margin: 0;
+        padding: 0;
     }
 
     #menuMisVentas li {
@@ -177,12 +176,12 @@
 
     #tituloVentas {
         padding-top: 1em;
-        margin-left: 0em;
+        margin-left: 0;
     }
-    
+
     #subtituloVentas {
         padding-top: 0.5em;
-        margin-left: 0em;
+        margin-left: 0;
     }
 
     #codigoValidacion,
@@ -193,7 +192,7 @@
 
     #nombreProductoVentas {
         text-align: center;
-        margin-left: 0em;
+        margin-left: 0;
     }
 
     #imgCodigoVal {
@@ -201,18 +200,18 @@
     }
 }
 
-@media handheld, screen and (max-width:991px) {
+@media handheld, screen and (max-width:530px) {
     #menuMisVentas {
         float: none;
         width: 100%;
         text-align: center;
-        padding: 0em;
-        margin: 0em;
+        padding: 0;
+        margin: 0;
     }
 
     #menuMisVentas ul {
-        margin: 0em;
-        padding: 0em;
+        margin: 0;
+        padding: 0;
         padding-inline-start:0;
     }
 
@@ -232,8 +231,8 @@
     #subtituloVentas {
         width: 100%;
         font-weight: bold;
-        margin-left: 0em;
-        margin-top: 0em;
+        margin-left: 0;
+        margin-top: 0;
         font-size: 25px;
         text-align: center;
     }
@@ -247,7 +246,7 @@
     }
 
     #codigoValidacion {
-        padding-right: 0em;
+        padding-right: 0;
         float: none;
     }
 
@@ -258,25 +257,25 @@
 
     #stockProducto {
         width: 100%;
-        padding: 0em;
+        padding: 0;
     }
 
     #nombreProductoVentas {
         text-align: center;
-        margin-left: 0em;
+        margin-left: 0;
         margin-top: 1em;
     }
 
     #descrVentas {
         margin-top: 1em;
         margin-bottom: 2em;
-        padding-left: 0em;
-        padding-right: 0em;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     #reportarUsuario p {
-        padding-left: 0em;
-        padding-right: 0em;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     #inputCodigo {
@@ -308,9 +307,9 @@
         float: left;
         border-top: none;
         border-left: solid 2px #96D293;
-        padding-top: 0em;
+        padding-top: 0;
         padding-left: 1em;
-        padding-right: 0em;
+        padding-right: 0;
         margin-top: -0.6em;
     }
 

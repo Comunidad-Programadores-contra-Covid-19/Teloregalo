@@ -111,7 +111,7 @@ header {
 
 #btnUbicacion {
     background-color: #96D293;
-    color: #263238;
+    color: #2E2C2C;
     border-radius: 2em;
     border: none;
     padding: 6px 26px;
@@ -125,8 +125,9 @@ header {
 
 #btnUbicacion:hover {
     border: #96D293 solid 2px;
-    background-color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 0);
     padding: 4px 28px;
+    color: #96D293;
 }
 
 #buscarComercio,
@@ -168,6 +169,10 @@ header {
     margin-bottom: 2.5em;
     overflow: hidden;
 
+}
+.map{
+    height: 30rem;
+    width: 100%;
 }
 
 .scrollable {
@@ -296,7 +301,7 @@ footer p {
         font-size: 14px;
         padding: 6px 15px;
     }
-    
+
     #btnUbicacion img {
        width: 25px;
        height: 25px;
