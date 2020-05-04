@@ -51,29 +51,14 @@
     width: 40%;
     margin-top: 170px;
     margin-left: 5em;
-    margin-bottom: 4em;
 }
 
 #botonesFormPerfilHeroe {
-    text-align: center;
     margin-bottom: 5em;
 }
 #btnGuardarPerfilHeroe,
 #btnCancelarPerfilHeroe {
-    width: 40%;
-    display: inline-block;
-    font-weight: bold;
-    margin: 2em 0 0 1em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-}
-
-#btnCancelarPerfilHeroe {
-    background-color: #FFF;
-}
-
-#btnCancelarPerfilHeroe:hover {
-    background-color: rgba(0,0,0,.1);
+    width: 100%;
 }
 
 @media handheld, (min-width:531px) and (max-width:995px) {
@@ -117,10 +102,7 @@
         margin: 0;
     }
 
-    #btnGuardarPerfilHeroe,
-    #btnCancelarPerfilHeroe {
-        width: 80%;
-    }
+
 }
 
 @media handheld, screen and (max-width:530px) {

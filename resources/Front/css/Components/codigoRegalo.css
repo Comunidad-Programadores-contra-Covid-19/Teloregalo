@@ -1,8 +1,5 @@
 /*  Contenedor  */
-.container {
-  margin-top: -1em;
-  margin-bottom: 2em;
-}
+
 
 
 /*  Botón "volver"  */
@@ -92,10 +89,7 @@
     background-color: transparent;
 }
 
-/* Footer  */
-footer {
-margin-top: 6em;
-}
+
 
 /* Reportar */
 #reportarComercio {

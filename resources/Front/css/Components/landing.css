@@ -33,7 +33,6 @@ header {
 #presentacion p {
     display: inline-block;
     width: 105%;
-    margin: 0;
     font-family: Poppins, sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -181,65 +180,6 @@ header {
 }
 /* Fin Tarjetas */
 
-/* Inicio Footer */
-footer {
-    width: 100%;
-    background-color: #96D293;
-    padding-left: 5%;
-    padding-right: 5%;
-    -moz-box-shadow: 0 0 30px #ffffff;
-    -webkit-box-shadow: 0 0 30px #ffffff;
-    box-shadow: 0 0 30px #ffffff;
-    clear: both;
-}
-
-#contenedorFooter {
-    width: 100%;
-    height: auto;
-}
-
-#logoFooter {
-    padding: 0;
-    margin-top: 1.3em;
-}
-
-#logoFooter a {
-    color: #263238;
-    font-size: 1.8rem;
-    text-decoration: none;
-}
-
-#menuFooter ul {
-    padding-left: 0;
-}
-
-#menuFooter li {
-    padding-top: 2em;
-    padding-bottom: 2em;
-    display: inline-block;
-}
-
-#menuFooter li a {
-    color: #263238;
-    text-decoration: none;
-    padding: .5rem 1rem;
-}
-
-footer li a:hover {
-    color: #263238;
-    text-decoration: none;
-    background-color: rgb(140, 193, 137);
-    border-radius: 1rem;
-    padding: .5rem 1rem;
-}
-
-footer p {
-    font-size: 1rem;
-    padding-top: 2em;
-    padding-bottom: 2em;
-    float: right;
-}
-/* Fin Footer */
 
 @media handheld, (min-width:992px) and (max-width:1220px) {
     #imgPresentacion {
@@ -305,23 +245,6 @@ footer p {
     #btnUbicacion img {
        width: 25px;
        height: 25px;
-    }
-
-    #logoFooter {
-        margin-top: 2em;
-    }
-
-    #logoFooter a {
-        font-size: 1.2rem;
-    }
-
-    #menuFooter a,
-    #año p {
-        font-size: 0.8em;
-    }
-
-    #menuFooter {
-        padding: 0;
     }
 }
 
@@ -417,30 +340,7 @@ footer p {
 #contenedorTarjetas {
     margin-top: 2em;
 }
-
-#logoFooter {
-    display: none;
-}
-
-#menuFooter ul {
-    margin-top: 1em;
-    text-align: center;
-}
-
-#menuFooter li {
-    padding: 0.5em;
-}
-
-footer p {
-    text-align: center;
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0;
-}
-
-#menuFooter a,
-#año p {
-    font-size: 0.8em;
-}
+    .scrollable {
+      margin-top: 2rem;
+    }
 }

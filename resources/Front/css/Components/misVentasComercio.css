@@ -102,12 +102,7 @@
     color: #FFF;
 }
 
-#stock {
-    margin-bottom: 4.5em;
-    min-height: 16em;
-    width: 82%;
-    float: right;
-}
+
 
 #nombreProductoVentas {
     font-weight: bold;

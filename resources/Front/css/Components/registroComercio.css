@@ -1,18 +1,18 @@
 #imgRegistroComercio {
-    width: 40%;
-    float: left;
-    margin-top: 5em;
-    margin-bottom:8em;
+    width: 80%;
+    margin-top: 2em;
+    margin-bottom:6em;
     margin-right: 5em;
 }
 
-#RegistroComercio {
-    width: 50%;
-    float: left;
-    padding-left: 2em;
-    margin-top: 4em;
-    margin-bottom: 8em;
+#imgRegistroComercio2 {
+    width: 90%;
+    margin-top: 5em;
+    margin-bottom:10em;
+    margin-right: 5em;
 }
+
+
 
 #RegistroComercio h1 {
     margin-bottom: 0.5em;
@@ -45,14 +45,23 @@
 @media handheld, screen and (max-width:991px) {
 
     #imgRegistroComercio {
+        width: 40%;
         float: right;
-        margin-top: -8em;
         margin-bottom: 0;
+margin-top: -1rem;
+    }
+
+    #imgRegistroComercio2 {
+        width: 40%;
+        float: right;
+        margin-bottom: 0;
+        margin-top: -1rem;
     }
 
     #RegistroComercio {
         width: 100%;
         float: none;
+        margin-top: -12rem;
         padding-left: 0;
         margin-bottom: 2em;
     }
