@@ -11,7 +11,7 @@
 |
 */
 
- Auth::routes(['verify' => true]); 
+ /* Auth::routes(['verify' => true]);  */
     // Authentication Routes Client...
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
     Route::post('login', 'Auth\LoginController@login');
@@ -43,27 +43,27 @@ Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider')->name(
 Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
 
-Route::resource('offers', 'OfferController')->middleware('verified');
+Route::resource('offers', 'OfferController')/* ->middleware('verified') */;
 
-Route::resource('stores', 'StoreController')->middleware('verified');
+Route::resource('stores', 'StoreController')/* ->middleware('verified') */;
 
-Route::resource('otps', 'OtpController')->middleware('verified');
+Route::resource('otps', 'OtpController')/* ->middleware('verified') */;
 
-Route::get('create/{idstore}/{idclient}', 'OtpController@create')->name('otps.create')->middleware('verified');
+Route::get('create/{idstore}/{idclient}', 'OtpController@create')->name('otps.create')/* ->middleware('verified') */;
 
-Route::delete('/otps/{idstore}', 'OtpController@destroy')->middleware('verified');
+Route::delete('/otps/{idstore}', 'OtpController@destroy')/* ->middleware('verified') */;
 
-Route::get('/', 'HomeController@index')->name('home')->middleware('verified');
+Route::get('/', 'HomeController@index')->name('home')/* ->middleware('verified') */;
 
 
 
 Route::group(['middleware' => ['auth', 'store']], function () {
-    Route::get('stores', 'StoreController@create')->name('stores')->middleware('verified');
-    Route::put('update/{id}', 'StoreController@update')->name('stores.update')->middleware('verified');
+    Route::get('stores', 'StoreController@create')->name('stores')/* ->middleware('verified') */;
+    Route::put('update/{id}', 'StoreController@update')->name('stores.update')/* ->middleware('verified') */;
 });
 
 Route::group(['middleware' => ['auth', 'client']], function () {
-    Route::get('otps', 'OtpController@create')->middleware('verified');
+    Route::get('otps', 'OtpController@create')/* ->middleware('verified') */;
 });
 
 
