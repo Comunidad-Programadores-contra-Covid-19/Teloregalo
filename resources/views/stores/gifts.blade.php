@@ -5,7 +5,7 @@
             <div class="card">
                 <div class="card-header">Dashboard</div>
                 
-                <form action="{{ route('otps.destroy', 'codigo') }}" method="POST">
+                <form action="{{ route('otps.destroy', Auth::user()->id) }}" method="POST">
                 @csrf
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="text" name="codigo">

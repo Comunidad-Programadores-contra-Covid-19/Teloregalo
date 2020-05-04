@@ -198,7 +198,12 @@
         	mapboxgl.accessToken = 'pk.eyJ1Ijoibmljb2xpZW5kcm8xNCIsImEiOiJjazlvcHU5eWMwMzdzM2hxcTNoN3lleGRmIn0.sPpU8gUReCtWeFS8z0ccsw';
             var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
             const stores = {!! $stores->toJson() !!};
-            const locationCity = stores[0].address
+            let locationCity = stores[0].address
+            console.log(locationCity)
+            if(locationCity == null){
+                locationCity = "Argentina"
+            }
+            console.log(locationCity)
             mapboxClient.geocoding
                 .forwardGeocode({
                     query: locationCity,

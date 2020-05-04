@@ -8,7 +8,7 @@ use App\Otp;
 class OtpService
 {
 
-    public function generateOtp($client_id)
+    public function generateOtp($client_id, $store_id)
     {
         // generate() : create a new OTP
         // PARAM $id : user ID, order ID, or just any unique transaction ID
@@ -22,7 +22,8 @@ class OtpService
         $date = date("Y-m-d H:i:s");
         $otp = new Otp();
         $otp->otp_pass = $pass;
-        $otp->client_id = $client_id;
+        $otp->user_id = $client_id;
+        $otp->store_id = $store_id;
         $otp->save();
         return $otp;
     }

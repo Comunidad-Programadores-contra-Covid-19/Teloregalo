@@ -31,6 +31,7 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
 
     <hr class="solid">
     <div class="row">
@@ -59,6 +60,33 @@
                     <h4>{{ $offer->name_offer }}</h4>
                     <p>{{ $offer->description_offer }}</p>
                     <h3>$ {{ $offer->cost }}</h3>
+=======
+        <hr>
+        @if(Session::has('info'))
+        <div class="alert alert-info">
+            <button type="button" class="close" data-dismiss="alert">
+                &times;
+            </button>
+            {{ Session::get('info') }}
+        </div>
+      @endif
+      </div>
+        <div class="row">
+              @foreach ($store->offers as $offer)
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://www.pngkit.com/png/full/47-477296_clip-freeuse-library-grocery-products-svg-png-icon.png" alt="Card image cap">
+                <div class="card-body">
+                <h5 class="card-title">{{ $offer->name_offer }}</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Comprar</a>
+
+                  @if (!Auth::guest())
+                      @if (Auth::user()->rol == 'client')
+                        <a class="btn btn-primary" href="{{ route('otps.create', ['idstore' => $store->id, 'idclient' => Auth::user()->id]) }}">Retirar</a>   
+                      @endif
+                  @endif
+
+>>>>>>> 96ba60cdc2ddc4e10bbf3e81a8608a13f56a2f2c
                 </div>
                 <div class="card-btn-product ">
                     <a href="{{ route('offers.show', $offer->id) }}" class="btn-principal btn-block ">Comprar</a>

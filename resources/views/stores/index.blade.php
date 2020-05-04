@@ -8,7 +8,18 @@
         <div class="row">
             <img src="https://lifeatbrio.com/wp-content/uploads/2016/11/user-placeholder.jpg" class="rounded mx-auto m-4 d-block col-2" >
         </div>
-        
+
+    <div>
+      @if(Session::has('info'))
+        <div class="alert alert-info">
+            <button type="button" class="close" data-dismiss="alert">
+                &times;
+            </button>
+            {{ Session::get('info') }}
+        </div>
+      @endif
+    </div>
+    
     </div>
     <nav class="container">
         <div class="nav nav-tabs row" id="nav-tab" role="tablist">
