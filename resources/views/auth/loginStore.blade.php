@@ -40,8 +40,8 @@
         <br>
         <br>
         @if (Route::has('password.request'))
-        <p> ¿Olvidaste tu contraseña? no te preocupes <a href="href="{{ route('password.request') }}""><b>te ayudamos a recuperarla</b></a></p>
-        <p> Si aún no te registraste hacelo <a href="#"><b>aquí</b></a></p>
+        <p> ¿Olvidaste tu contraseña? no te preocupes <a href="{{ route('password.request') }}"><b>te ayudamos a recuperarla</b></a></p>
+        <p> Si aún no te registraste hacelo <a href="{{ route('register.stores') }}"><b>aquí</b></a></p>
                                 @endif
      
 

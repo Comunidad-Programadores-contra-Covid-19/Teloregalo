@@ -84,7 +84,7 @@ class RegisterStoreController extends Controller
             ]);
     
             $user->storeRelation()->create([
-                'name' => '',
+                'name' => $data['name'],
                 'description'=> '',
                 'address'=> '',
                 'sector'=> '',

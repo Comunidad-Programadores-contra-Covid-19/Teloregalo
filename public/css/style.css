@@ -20,6 +20,7 @@
 @import url("Components/misProductosComercio.css");
 
 /*---Fonts--- */
+
 body{
     background-color:white;
     font-family: "Poppins Sans-serif",sans-serif;
@@ -41,4 +42,16 @@ h2, h3, h4, h6{
 
 .container{
     max-width: 90%;
+}
+
+
+/* Solid border */
+hr.solid {
+    border-top: 0.1rem solid #96D293;
+}
+
+
+.volver{
+    font-size: small;
+    color: #96D293 !important;
 }

@@ -25,7 +25,7 @@ Route::post('login/stores', 'Auth\LoginStoreController@login');
 
 /* Route::post('logout', 'Auth\LoginController@logout')->name('logout'); */
 // Registration Comercios Routes...
-Route::get('stores/register', 'Auth\RegisterStoreController@showStoreRegistrationForm');
+Route::get('stores/register', 'Auth\RegisterStoreController@showStoreRegistrationForm')->name('register.stores');;
 Route::post('stores/register', 'Auth\RegisterStoreController@register');
 // Password Reset Routes...
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
@@ -49,14 +49,12 @@ Route::delete('/otps', 'OtpController@destroy');
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/chooseRegistration', function(){
-    return view('auth.storeOrClient');
-});
 
 Route::group(['middleware' => ['auth', 'store']], function () {
     Route::get('stores', 'StoreController@create')->name('stores');
     Route::put('update/{id}', 'StoreController@update')->name('stores.update');
 });
+
 
 
 

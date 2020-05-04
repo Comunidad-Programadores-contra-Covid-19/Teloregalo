@@ -9,3 +9,8 @@ color: #EEEEEE;
 .checked{
     color: #FEEA4D;
 }
+
+.fa-clock{
+    color: #96D293;
+    padding-right: 0.5rem;
+}
