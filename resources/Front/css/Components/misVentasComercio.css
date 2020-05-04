@@ -152,55 +152,7 @@
     font-size: 20px;
 }
 
-@media handheld, (min-width:531px) and (max-width:995px){
-
-    #menuMisVentas {
-        float: none;
-        width: 100%;
-        text-align: center;
-        padding: 0;
-        margin: 0;
-    }
-
-    #menuMisVentas ul {
-        margin: 0;
-        padding: 0;
-    }
-
-    #menuMisVentas li {
-        display: inline-block;
-        margin-left: 2em;
-        margin-right: 2em;
-        margin-top: 0.5em;
-    }
-
-    #tituloVentas {
-        padding-top: 1em;
-        margin-left: 0;
-    }
-
-    #subtituloVentas {
-        padding-top: 0.5em;
-        margin-left: 0;
-    }
-
-    #codigoValidacion,
-    #stock {
-        float: none;
-        width: 100%;
-    }
-
-    #nombreProductoVentas {
-        text-align: center;
-        margin-left: 0;
-    }
-
-    #imgCodigoVal {
-        margin-right: -5em;
-    }
-}
-
-@media handheld, screen and (max-width:530px) {
+@media handheld, screen and (max-width:991px) {
     #menuMisVentas {
         float: none;
         width: 100%;
