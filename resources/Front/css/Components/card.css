@@ -117,3 +117,54 @@
     left: 1rem;
 }
 
+#card-reputation{
+    margin-bottom: 1rem !important;
+}
+
+
+/*---map card--- */
+
+.card-map{
+    height: 8rem;
+    position: relative;
+    border:none;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: small;
+}
+
+.card-image-map{
+    position: absolute;
+    height: 5rem;
+    width: 5rem;
+}
+
+.card-description-map{
+    position: absolute;
+    bottom: auto;
+    left: 6rem;
+    right: 1rem;
+    top: auto;
+}
+
+.card-description-map > p{
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+.card-btn-map{
+    position: absolute;
+    bottom: 0;
+    right: 0.5rem;
+}
+
+.card-availability-map{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.card-availability-map > p {
+    margin:0;
+}
+#card-reputation{
+    margin-bottom: 1rem !important;
+}

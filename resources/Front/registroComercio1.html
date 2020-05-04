@@ -14,12 +14,12 @@
     <link rel="icon" href="Regursos%20graficos/logo.svg" sizes="16x16" type="image/svg">
 </head>
 
-
 <body>
 <header>
     <!--Inicio Navbar -->
-    <nav class="mb-1 navbar navbar-expand-lg navbar-light navbar-green shadow-sm sticky-top">
-        <a class="navbar-brand" href="#">
+
+    <nav class="mb-1 navbar navbar-expand-xl navbar-light navbar-green shadow-sm sticky-top">
+        <a class="navbar-brand" href="#" id="logoNav">
             teloregalo
             <img src="Regursos%20graficos/logo.svg" width="40" height="40" class="d-inline-block align-bottom" alt="">
         </a>
@@ -28,7 +28,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav mr-auto" id="menuNav">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Comercios adheridos
                         <span class="sr-only">(current)</span>
@@ -46,74 +46,64 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item button">
-                    <a class="nav-link p-0 btn-navbar" href="#" id="nombreHeroe">
-                        NOMBRE DE HÉROE</a>
+                    <a class="nav-link p-0 btn-navbar" href="#">
+                        Soy un comercio</a>
+                </li>
+                <li class="nav-item button">
+                    <a class="nav-link p-0 btn-navbar" href="#">
+                        Soy un héroe</a>
                 </li>
             </ul>
         </div>
     </nav>
+
     <!--Fin Navbar -->
 </header>
 
-<!-- Inicio contenedor -->
 
 <div class="container">
     <div class="row">
         <div class="col-lg-6">
-            <img src="Regursos%20graficos/registroHeroe.svg" alt="registroHeroe" id="imgRegistroHeroe">
+            <img src="Regursos%20graficos/RegistroComercio.svg" alt="imgRegistro" id="imgRegistroComercio">
         </div>
-
         <div class="col-lg-6">
-            <section id="RegistroHeroe">
-                <h1>Registro</h1>
-                <p>Al registrarte podrás recibir los regalos que los vecinos hacen en calidad de agradecimiento por tu
-                    labor durante la pandemia.</p>
+            <section id="RegistroComercio">
 
+                <h1>Paso 1</h1>
+                <p>Al registrar tu comercio los vecinos podrán elegirte para comprar regalos a nuestros héroes.</p>
                 <form>
                     <div class="form-group ">
-                        <label for="inputNombreApellido">Nombre y apellido</label>
-                        <input type="text" class="form-control" id="inputNombreApellido" placeholder="">
+                        <label for="inputNombreComercio">Nombre del Comercio</label>
+                        <input type="text" class="form-control" id="inputNombreComercio" placeholder="">
                     </div>
                     <div class="form-group">
                         <label for="inputEmail">Email</label>
                         <input type="email" class="form-control" id="inputEmail" placeholder="">
                     </div>
                     <div class="form-group">
-                        <label for="profesionesHeroes">Profesión</label>
-                        <select class="form-control" id="profesionesHeroes">
-                            <option>Profesión 1</option>
-                            <option>Profesión 2</option>
-                            <option>Profesión 3</option>
-                            <option>Profesión 4</option>
-                            <option>Profesión 5</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
                         <label for="inputPass">Contraseña</label>
                         <input type="password" class="form-control" id="inputPass" placeholder="">
                     </div>
 
-                    <div class="form-check" id="chekRegistroHeroe">
+                    <div class="form-check" id="chekRegistroComercio">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1"><b> Aceptar <a href="#">términos y
-                            condiciones</a></b></label>
+                        <label class="form-check-label" for="exampleCheck1"><b> Aceptar términos y
+                            condiciones</b></label>
                     </div>
 
                     <p id="tycRegistroComercio">Al hacer click en "Registrarme" aceptás nuestras <a href="#"><b>condiciones,
                         la Política de Datos y la Política de Cookies.</b></a></p>
-                    <button type="submit" class="btn btn-principal btn-block" >Registrarme</button>
+                    <button type="submit" class="btn btn-principal btn-block" id="btnRegistroComercio1">Registrar mi
+                        comercio
+                    </button>
+
                 </form>
-
-                <img src="Regursos%20graficos/separador.svg" alt="separador" id="separadorRegistroHeroe">
-
-                <button class="btn btn-principal btn-block" >Registrarme con Gmail</button>
-                <button class="btn btn-principal btn-block mb-5" >Registrarme con Facebook</button>
             </section>
 
         </div>
     </div>
 </div>
-<!-- Fin contenedor -->
+
 
 <!-- Footer -->
 <footer class="page-footer ">
@@ -182,7 +172,9 @@
     <!-- Footer Links -->
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3" style="background-color:#2E2C2C; color: mintcream">© <script>document.write( new Date().getFullYear() );</script>  teloregalo.com.ar
+    <div class="footer-copyright text-center py-3" style="background-color:#2E2C2C; color: mintcream">©
+        <script>document.write(new Date().getFullYear());</script>
+        teloregalo.com.ar
     </div>
     <!-- Copyright -->
 
@@ -203,3 +195,4 @@
 </body>
 
 </html>
+

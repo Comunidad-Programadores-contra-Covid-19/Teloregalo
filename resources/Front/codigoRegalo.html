@@ -16,7 +16,7 @@
 
 
 <body>
-    <header>    
+    <header>
         <!--Inicio Navbar -->
         <nav class="mb-1 navbar navbar-expand-lg navbar-light navbar-green shadow-sm sticky-top">
             <a class="navbar-brand" href="#">
@@ -57,7 +57,7 @@
 
     <!-- Inicio contenedor -->
     <div class="container">
-      
+
         <!-- Inicio Botón "volver" -->
         <div class="volver">
             <button><  Volver</button>
@@ -67,20 +67,20 @@
         <!-- Inicio Información del ticket regalo -->
         <div id="codigoRegalo">
             <h1>¡Gracias por cuidarnos!</h1>
-            <p>Para poder retirar <span id="ingresarRegalo">{regalo}</span> presentá el siguiente código en el comercio</p>
+            <p>Para poder retirar <span id="ingresarRegalo">{regalo}</span> dictá el siguiente código en el comercio</p>
             <div id="ticket">
                 <p>#12345678</p>
-                <img src="Regursos%20graficos/ticketConfirmacion.svg">
+                <img src="Regursos%20graficos/ticketConfirmacion.svg" alt="ticket">
             </div>
         </div>
         <!-- Fin Información del ticket regalo -->
 
         <!-- Inicio Calificar comercio -->
         <div>
-            <img src="Regursos%20graficos/like.svg" alt="like" id="dibujoLike">  
+            <img src="Regursos%20graficos/like.svg" alt="like" id="dibujoLike">
             <div id="calificar">
                 <h2>Calificá tu experiencia</h2>
-            
+
             <ul>
                 <li><button id="estrella1"><img src="Regursos%20graficos/estrella.svg" alt=""></button></li>
                 <li><button id="estrella2"><img src="Regursos%20graficos/estrella.svg" alt=""></button></li>
@@ -88,50 +88,96 @@
                 <li><button id="estrella4"><img src="Regursos%20graficos/estrella.svg" alt=""></button></li>
                 <li><button id="estrella5"><img src="Regursos%20graficos/estrella.svg" alt=""></button></li>
             </ul>
-               
+
                 <h3>Nombre de comercio</h3>
                 <p><img src="Regursos%20graficos/gota.svg" alt="ubicacion">Av. Defensa 700, Buenos Aires</p>
             </div>
-        </div> 
+        </div>
         <!-- Fin Calificar comercio -->
+
+        <!-- Inicio Reportar comercio -->
+        <section id="reportarComercio">
+            <p>¿Tuviste algún inconveniente con la entrega del producto?</p>
+            <button id="btnReportar">Reportar comercio</button>
+        </section>
+        <!-- Fin Reportar comercio -->
+
     </div>
     <!-- Fin contenedor -->
 
-    <!-- Inicio Footer -->
-    <footer>
-        <div id="contenedorFooter">
-            <div class="row">
-                <div class="col-lg-2" id="logoFooter">
-                    <a href="#" >
+    <!-- Footer -->
+    <footer class="page-footer ">
+
+        <!-- Footer Links -->
+        <div class="container mt-5 ">
+
+            <!-- Grid row -->
+            <div class="row mt-3">
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
+
+                    <div class="navbar-brand">
                         teloregalo
-                        <img src="Regursos%20graficos/logo.svg" width="35" height="35" alt="">
-                    </a>
+                        <img src="Regursos%20graficos/logo.svg" width="40" height="40" class="d-inline-block " alt="Logo">
+                    </div>
                 </div>
-                
-                <div class="col-lg-7" id="menuFooter">
-                    <ul>
-                        <li>
-                        <a href="#">Comercios adheridos</a>
-                        </li>
-                        <li>
-                        <a href="#">Preguntas frecuentes</a>
-                        </li>
-                        <li>
-                            <a href="#">Quiénes somos</a>
-                            </li>
-                        <li>
-                            <a href="#">Donar</a>
-                        </li>
-                    </ul>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-3 mb-4 " style="margin-bottom: 1rem !important;">
+                    <h6 class="text-uppercase font-weight-bold">Sitio</h6>
+                    <!-- Links -->
+                    <div class="row">
+                        <div class="col-auto">
+                            <p>
+                                <a href="#">Comercios adheridos</a>
+                            </p>
+                            <p>
+                                <a href="#">Preguntas frecuentes</a>
+                            </p>
+                        </div>
+
+                        <div class="col-auto">
+                            <p>
+                                <a href="#">Quienes somos</a>
+                            </p>
+                            <p>
+                                <a href="#">Donar</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-md-0 mb-4">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Contacto</h6>
+                    <p><i class="fas fa-lg fa-envelope mr-3"></i>info@example.com</p>
                 </div>
 
-                <div class="col-lg-3">
-                    <p>2020 Te lo regalo</p>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase font-weight-bold">Seguinos</h6>
+                    <a href="#"> <span class="fab fa-2x fa-facebook-square"></span></a>
+                    <a href="#"><span class="fab fa-2x fa-instagram"></span></a>
                 </div>
+                <!-- Grid column -->
+
             </div>
+            <!-- Grid row -->
+
         </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3" style="background-color:#2E2C2C; color: mintcream">© <script>document.write( new Date().getFullYear() );</script>  teloregalo.com.ar
+        </div>
+        <!-- Copyright -->
+
     </footer>
-    <!-- Fin Footer -->
+    <!-- Footer -->
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

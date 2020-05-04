@@ -18,6 +18,10 @@
 @import url("Components/logIn.css");
 @import url("Components/donar.css");
 @import url("Components/misProductosComercio.css");
+@import url("Components/quienesSomos.css");
+@import url('Components/registroComercio.css');
+@import url("Components/misVentasComercio.css");
+@import url("Components/footer.css");
 
 /*---Fonts--- */
 
@@ -26,6 +30,7 @@ body{
     font-family: "Poppins Sans-serif",sans-serif;
     font-weight: 400;
     color: #2E2C2C;
+
 }
 
 h1{
@@ -45,7 +50,7 @@ h2, h3, h4, h6{
 }
 
 
-/* Solid border */
+/* Solid separator */
 hr.solid {
     border-top: 0.1rem solid #96D293;
 }
@@ -55,3 +60,4 @@ hr.solid {
     font-size: small;
     color: #96D293 !important;
 }
+
