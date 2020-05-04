@@ -19,7 +19,7 @@
 
 #RegistroHeroe label {
     margin-bottom: 0em;
-    margin-top: 1em;
+    margin-top: 0em;
 }
 
 #chekRegistroHeroe input{
@@ -75,11 +75,11 @@
     }
 
    #RegistroHeroe .form-group {
-       margin-bottom: 0em;
+       margin-bottom: 0.6em;
    }
 
    #RegistroHeroe p {
-       margin-bottom: 1em;
+       margin-bottom: 2.5em;
    }
 
    #tycRegistroHeroe {
