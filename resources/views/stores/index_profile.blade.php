@@ -31,36 +31,6 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-
-    <hr class="solid">
-    <div class="row">
-
- 
-        <div class="col-xs-12 col-md-6 col-xl-4">
-          @foreach ($store->offers as $offer)
-            <div class="card-product">
-                <div class="row">
-                    <div class="col-6">
-                        <img src="https://via.placeholder.com/150" alt="" class="card-image-product ">
-                    </div>
-                    <div class="col-6">
-                        <div class=" card-index-product" >
-                            <div>
-                                <p>Total vendidos</p>
-                                <p><b>70</b></p>
-                                <hr class="solid">
-                                <p>Disponibles </p>
-                                <p><b>70</b></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-description-product">
-                    <h4>{{ $offer->name_offer }}</h4>
-                    <p>{{ $offer->description_offer }}</p>
-                    <h3>$ {{ $offer->cost }}</h3>
-=======
         <hr>
         @if(Session::has('info'))
         <div class="alert alert-info">
@@ -86,7 +56,6 @@
                       @endif
                   @endif
 
->>>>>>> 96ba60cdc2ddc4e10bbf3e81a8608a13f56a2f2c
                 </div>
                 <div class="card-btn-product ">
                     <a href="{{ route('offers.show', $offer->id) }}" class="btn-principal btn-block ">Comprar</a>
