@@ -51,7 +51,7 @@ Route::resource('otps', 'OtpController')/* ->middleware('verified') */;
 
 Route::get('create/{idstore}/{idclient}', 'OtpController@create')->name('otps.create')/* ->middleware('verified') */;
 
-Route::delete('/otps/{idstore}', 'OtpController@destroy')/* ->middleware('verified') */;
+Route::delete('/otps/{idstore}', 'OtpController@destroy');/* ->middleware('verified') */
 
 Route::get('/', 'HomeController@index')->name('home')/* ->middleware('verified') */;
 

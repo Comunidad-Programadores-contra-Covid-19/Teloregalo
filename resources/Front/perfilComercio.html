@@ -86,37 +86,8 @@
         </div>
 
     <hr class="solid">
-    <div class="row">
-        <div class="col-xs-12 col-md-6 col-xl-4">
-            <div class="card-product">
-                <div class="row">
-                    <div class="col-6">
-                        <img src="https://via.placeholder.com/150" alt="" class="card-image-product ">
-                    </div>
-                    <div class="col-6">
-                        <div class=" card-index-product" >
-                            <div>
-                                <p>Total vendidos</p>
-                                <p><b>70</b></p>
-                                <hr class="solid">
-                                <p>Disponibles </p>
-                                <p><b>70</b></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-description-product">
-                    <h4>Producto para regalo</h4>
-                    <p>Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet.</p>
-                    <h3>$200</h3>
-                </div>
-                <div class="card-btn-product ">
-                    <a href="#" class="btn-principal btn-block ">Comprar</a>
-                    <a href="#" class="btn-alternative btn-block ">Retirar</a>
-                </div>
-            </div>
-        </div>
 
+        @foreach ($store->offers as $offer)
         <div class="col-xs-12 col-md-6 col-xl-4">
             <div class="card-product">
                 <div class="row">
@@ -136,123 +107,56 @@
                     </div>
                 </div>
                 <div class="card-description-product">
-                    <h4>Producto para regalo</h4>
-                    <p>Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet.</p>
-                    <h3>$200</h3>
+                    <h4>{{ $offer->name_offer }}</h4>
+                    <p>{{ $offer->description_offer }}</p>
+                    <h3>$ {{ $offer->cost }}</h3>
                 </div>
                 <div class="card-btn-product ">
-                    <a href="#" class="btn-principal btn-block ">Comprar</a>
-                    <a href="#" class="btn-alternative btn-block ">Retirar</a>
+                    <a href="{{ route('offers.show', $offer->id) }}" class="btn-principal btn-block ">Comprar</a>
+                    <a href="{{ route('otps.create') }}" class="btn-alternative btn-block ">Retirar</a>
                 </div>
             </div>
         </div>
-
-        <div class="col-xs-12 col-md-6 col-xl-4">
-            <div class="card-product">
-                <div class="row">
-                    <div class="col-6">
-                        <img src="https://via.placeholder.com/150" alt="" class="card-image-product ">
-                    </div>
-                    <div class="col-6">
-                        <div class=" card-index-product" >
-                            <div>
-                                <p>Total vendidos</p>
-                                <p><b>70</b></p>
-                                <hr class="solid">
-                                <p>Disponibles </p>
-                                <p><b>70</b></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-description-product">
-                    <h4>Producto para regalo</h4>
-                    <p>Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet.</p>
-                    <h3>$200</h3>
-                </div>
-                <div class="card-btn-product ">
-                    <a href="#" class="btn-principal btn-block ">Comprar</a>
-                    <a href="#" class="btn-alternative btn-block ">Retirar</a>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 <!-- Fin contenedor -->
 
-<!-- Footer -->
-<footer class="page-footer ">
-
-    <!-- Footer Links -->
-    <div class="container mt-5 ">
-
-        <!-- Grid row -->
-        <div class="row mt-3">
-
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-
-                <div class="navbar-brand">
+<!-- Inicio Footer -->
+<footer style="margin-top: 1.5em;">
+    <div id="contenedorFooter">
+        <div class="row">
+            <div class="col-lg-2" id="logoFooter">
+                <a href="#" >
                     teloregalo
-                    <img src="Regursos%20graficos/logo.svg" width="40" height="40" class="d-inline-block " alt="Logo">
-                </div>
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-3 col-xl-3 mx-3 mb-4 " style="margin-bottom: 1rem !important;">
-                <h6 class="text-uppercase font-weight-bold">Sitio</h6>
-                <!-- Links -->
-                <div class="row">
-                    <div class="col-auto">
-                        <p>
-                            <a href="#">Comercios adheridos</a>
-                        </p>
-                        <p>
-                            <a href="#">Preguntas frecuentes</a>
-                        </p>
-                    </div>
-
-                    <div class="col-auto">
-                        <p>
-                            <a href="#">Quienes somos</a>
-                        </p>
-                        <p>
-                            <a href="#">Donar</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-md-0 mb-4">
-
-                <!-- Links -->
-                <h6 class="text-uppercase font-weight-bold">Contacto</h6>
-                <p><i class="fas fa-lg fa-envelope mr-3"></i>info@example.com</p>
+                    <img src="Regursos%20graficos/logo.svg" width="35" height="35" alt="">
+                </a>
             </div>
 
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-md-0 mb-4">
-                <h6 class="text-uppercase font-weight-bold">Seguinos</h6>
-                <a href="#"> <span class="fab fa-2x fa-facebook-square"></span></a>
-                <a href="#"><span class="fab fa-2x fa-instagram"></span></a>
+            <div class="col-lg-7" id="menuFooter">
+                <ul>
+                    <li>
+                        <a href="#">Comercios adheridos</a>
+                    </li>
+                    <li>
+                        <a href="#">Preguntas frecuentes</a>
+                    </li>
+                    <li>
+                        <a href="#">Quiénes somos</a>
+                    </li>
+                    <li>
+                        <a href="#">Donar</a>
+                    </li>
+                </ul>
             </div>
-            <!-- Grid column -->
 
+            <div class="col-lg-3" id="año">
+                <p>2020 Te lo regalo</p>
+            </div>
         </div>
-        <!-- Grid row -->
-
     </div>
-    <!-- Footer Links -->
-
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3" style="background-color:#2E2C2C; color: mintcream">© <script>document.write( new Date().getFullYear() );</script>  teloregalo.com.ar
-    </div>
-    <!-- Copyright -->
-
 </footer>
-<!-- Footer -->
+<!-- Fin Footer -->
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

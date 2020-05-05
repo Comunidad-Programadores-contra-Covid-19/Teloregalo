@@ -1,25 +1,18 @@
 #imgRegistroHeroe {
-    width: 50%;
-    float: left;
+    width: 90%;
     margin-top: 5em;
-    margin-bottom: 5em;
+    margin-bottom:10em;
+    margin-right: 5em;
 }
 
-#RegistroHeroe {
-    width: 50%;
-    float: left;
-    padding-left: 2em;
-    margin-top: 4em;
-    margin-bottom: 2em;
-}
 
 #RegistroHeroe h1 {
     margin-bottom: 0.5em;
 }
 
 #RegistroHeroe label {
-    margin-bottom: 0em;
-    margin-top: 1em;
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
 #chekRegistroHeroe input{
@@ -28,42 +21,31 @@
 
 #chekRegistroHeroe label {
     margin-left: 1em;
-    margin-bottom: 0.5em;   
+    margin-bottom: 0.5em;
 }
 
-#btnRegistroHeroe {
-    font-weight: bold;
-    padding: 0.3em;
-    letter-spacing: 2px;
-    font-size: 19px;
-}
 
 #separadorRegistroHeroe {
     width: 100%;
     padding: 1.6em 4.5em;
 }
 
-#btnRegistroHeroeGmail,
-#btnRegistroHeroeFace {
-    width: 18em;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: bold;
-}
 
 @media handheld, screen and (max-width:991px) {
 
     #imgRegistroHeroe {
+        width: 40%;
         float: right;
-        margin-top: -8em;
-        margin-bottom: 0em;
+        margin-bottom: 0;
+        margin-top: -1rem;
     }
-    
+
     #RegistroHeroe {
         width: 100%;
         float: none;
-        padding-left: 0em;
-        margin-bottom: -4em;
+        margin-top: -12rem;
+        padding-left: 0;
+        margin-bottom: 2em;
     }
 
     #RegistroHeroe h1 {
@@ -75,11 +57,11 @@
     }
 
    #RegistroHeroe .form-group {
-       margin-bottom: 0em;
+       margin-bottom: 0.6em;
    }
 
    #RegistroHeroe p {
-       margin-bottom: 1em;
+       margin-bottom: 2.5em;
    }
 
    #tycRegistroHeroe {

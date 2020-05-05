@@ -1,9 +1,10 @@
 #compartirAgradecimiento {
     text-align: center;
+    border-bottom: solid #96D293 2px;
 }
 
 #tituloGracias {
-    margin-top: 1.5em;
+    margin-top: 0.8em;
     margin-bottom: 0.6em;
 }
 
@@ -12,14 +13,14 @@
 }
 
 #imgGracias {
-    width: 43em;
-    margin-top: 2em;
-    margin-bottom: 2.9em;
+    width: 27em;
+    margin-top: 1.5em;
+    margin-bottom: 2.3em;
 }
 
 #iconosCompartir  {
     padding-inline-start: 0px;
-    margin-bottom: 5.4em;
+    margin-bottom: 1.5em;
 }
 
 #iconosCompartir li {
@@ -32,6 +33,30 @@
     background-color: transparent;
 }
 
+#pedirEmail h5 {
+    margin-top: 1em;
+    text-align: center;
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+#formAgradecimiento {
+margin-left: auto;
+margin-right: auto;
+   width: 600px;
+    
+}
+
+#pedirEmail #btnConfirmar {
+    margin-top: 1.5em;
+    font-weight: bold;
+    
+}
+
+#pedirEmail {
+    margin-bottom: 4em;
+}
+
+
 @media handheld, screen and (max-width:991px) {
     #tituloGracias {
         margin-top: 0.7em;
@@ -43,6 +68,14 @@
     }
 
     #imgGracias {
-        width: 90%;
+        width: 50%;
+    }
+
+    #formAgradecimiento {
+        width: 85%;
+    }
+
+    #formAgradecimiento label {
+        margin-bottom: 0em;       
     }
 }

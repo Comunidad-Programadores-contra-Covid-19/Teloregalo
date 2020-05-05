@@ -6,6 +6,7 @@
 .fa-star{
 color: #EEEEEE;
 }
+
 .checked{
     color: #FEEA4D;
 }
@@ -13,4 +14,17 @@ color: #EEEEEE;
 .fa-clock{
     color: #96D293;
     padding-right: 0.5rem;
+}
+
+.fa-exclamation-circle{
+    color: #96D293;
+    padding-right: 0.5rem;
+}
+
+.fa-facebook-square{
+    margin: 0.2rem;
+}
+
+.fa-instagram{
+    margin: 0.2rem;
 }
