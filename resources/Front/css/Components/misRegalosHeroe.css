@@ -2,7 +2,7 @@
     width: 20%;
     float: left;
     margin-top: 70px;
-    margin-right: 0em;
+    margin-right: 0;
     margin-left: -40px;
 }
 
@@ -27,31 +27,29 @@
 }
 
 #tarjetasMisRegalos {
-    float: left;
-    width: 70%;
     margin-top: 70px;
 }
 
 #contenedorPendientes,
 #contenedorCalificados {
-    margin-right: 0em;
+    margin-right: 0;
     margin-bottom: 3em;
 }
 
 
-@media handheld, screen and (max-width:1350px) {
+@media handheld, (min-width:531px) and (max-width:995px) {
 
     #menuMisRegalosHeroe {
         float: none;
         width: 100%;
         text-align: center;
-        padding: 0em;
-        margin: 0em;
+        padding: 0;
+        margin: 0;
     }
 
     #menuMisRegalosHeroe ul {
-        margin: 0em;
-        padding: 0em;
+        margin: 0;
+        padding: 0;
     }
 
     #menuMisRegalosHeroe li {
@@ -67,10 +65,10 @@
 
     #tarjetasMisRegalos {
         width: 100%;
-        margin: 0em;
+        margin: 0;
     }
 
-    
+
     #tarjetasMisRegalos h2 {
         font-size: 1.7rem;
     }
