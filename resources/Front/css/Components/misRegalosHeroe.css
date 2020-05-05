@@ -28,6 +28,8 @@
 
 #tarjetasMisRegalos {
     margin-top: 70px;
+    float: left;
+    width: 70%;
 }
 
 #contenedorPendientes,
@@ -37,7 +39,7 @@
 }
 
 
-@media handheld, (min-width:531px) and (max-width:995px) {
+@media handheld, screen and (max-width:1350px) {
 
     #menuMisRegalosHeroe {
         float: none;
