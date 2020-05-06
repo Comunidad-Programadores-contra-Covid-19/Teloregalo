@@ -45,7 +45,8 @@ Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCall
 
 Route::resource('offers', 'OfferController')/* ->middleware('verified') */;
 
-Route::resource('stores', 'StoreController')/* ->middleware('verified') */;
+/*  Route::resource('stores', 'StoreController') ; *///* ->middleware('verified') */
+
 
 Route::resource('otps', 'OtpController')/* ->middleware('verified') */;
 
@@ -57,8 +58,13 @@ Route::get('/', 'HomeController@index')->name('home')/* ->middleware('verified')
 
 
 
+
 Route::group(['middleware' => ['auth', 'store']], function () {
-    Route::get('stores', 'StoreController@create')->name('stores')/* ->middleware('verified') */;
+    Route::get('store/{id}','StoreController@show')->name('stores.perfil');
+    Route::get('stores/miPerfil','StoreController@renderPerfil')->name('stores.miPerfil');/* ->middleware('verified') */;
+Route::get('stores/misVentas','StoreController@renderVentas')->name('stores.misVentas');
+Route::get('stores/misProductos','StoreController@renderProductos')->name('stores.misProductos');
+   
     Route::put('update/{id}', 'StoreController@update')->name('stores.update')/* ->middleware('verified') */;
 });
 

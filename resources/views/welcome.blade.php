@@ -47,8 +47,10 @@
                     <br></br>
                 </div>
                 <div id="btnRegistroRegalo">
+                    @guest
                     <a href="#" class="btn btn-primary" id="btnRegistrar">Registrar comercio</a>
-                    <a href="#" class="btn btn-secondary" id="btnRegalar">Regalar</a>
+                    @endguest
+                    <a href="#Comercios" class="btn btn-secondary" id="btnRegalar">Regalar</a>
                 </div>
             </section> 
         </section>
@@ -57,7 +59,7 @@
         <!-- Inicio Busqueda de comercios -->
         <section id="contenedorBusquedaComercios">
             <div class="container features" id="contenedorBuscador">
-                <h1>Comercios que ya forman parte</h1>
+                <h1 id="Comercios">Comercios que ya forman parte</h1>
            
                 <div id="buscador">
                     <div class="row">
@@ -131,7 +133,7 @@
                                   <p><b>xx regalos</b> para entregar</p>
                               </div>
                               <div class="card-btn">
-                                  <a href="{{ route('stores.show', $store->id) }}" class="btn-principal">Ver productos</a>
+                                  <a href="{{ route('stores.perfil', $store->id) }}" class="btn-principal">Ver productos</a>
                               </div>
                           </div>
                       </div>
@@ -144,43 +146,7 @@
         </section>
         <!-- Fin contenedor tarjetas -->
     </div>
-    <!-- Fin contenedor -->
 
-    <!-- Inicio Footer -->
-    <footer style="margin-top: 1.5em;">
-        <div id="contenedorFooter">
-            <div class="row">
-                <div class="col-lg-2" id="logoFooter">
-                    <a href="#" >
-                        teloregalo
-                        <img src="assets/logo.svg" width="35" height="35" alt="">
-                    </a>
-                </div>
-                
-                <div class="col-lg-7" id="menuFooter">
-                    <ul>
-                        <li>
-                        <a href="#">Comercios adheridos</a>
-                        </li>
-                        <li>
-                        <a href="#">Preguntas frecuentes</a>
-                        </li>
-                        <li>
-                            <a href="#">Quiénes somos</a>
-                            </li>
-                        <li>
-                            <a href="#">Donar</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3" id="año">
-                    <p>2020 Te lo regalo</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Fin Footer -->
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

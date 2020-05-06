@@ -14,6 +14,6 @@ class StoreSeeder extends Seeder
     {
         DB::table('stores')->insert([
             'name' => "Fila",
-        ])
+        ]);
     }
 }
