@@ -107,7 +107,7 @@
 
                 <div class="navbar-brand">
                     teloregalo
-                    <img src="assets/logo.svg" width="40" height="40" class="d-inline-block " alt="Logo">
+                    <img src="{{ asset('assets/logo.svg') }}" width="40" height="40" class="d-inline-block " alt="Logo">
                 </div>
             </div>
             <!-- Grid column -->

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Store extends Model
 {
-    protected $fillable = ['name','user_id','description','adress','sector','avatar','facebook','category','phone'];
+    protected $fillable = ['name','user_id','description','address','sector','avatar','facebook','instagram','horarios','category','phone'];
 
     public function offers()
     {

@@ -12,12 +12,47 @@
         </ul>
     </div>
     <h1 class="tituloPerfilCom">Perfil</h1>
-    <form class="row" method="POST" action=" {{ route('stores.update', $storeInfo->id) }}">
+    <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Elige una foto de perfil..</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form class="row" method="POST" action=" {{ route('stores.updateImage', $storeInfo->id) }}" enctype="multipart/form-data">
     
+            {{ method_field('put') }}
+            {{ csrf_field() }}
+      
+        <div class="modal-body">
+            <input id="file-input" name="avatar" type="file"/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="input" class="btn btn-primary">Guardar</button>
+
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+    <form class="row" method="POST" action=" {{ route('stores.update', $storeInfo->id) }}" enctype="multipart/form-data">
         {{ method_field('put') }}
         {{ csrf_field() }}
         <div class="col-md-auto mb-5">
-            <div class="logoPerfil"><img src="{{asset('assets/camera_ 1.svg')}}" alt="FotoHeroe"></div>
+            <div class="logoPerfil">
+                <div class="image-upload d-flex flex-row-reverse " data-toggle="modal" data-target="#exampleModal">
+                        <span class="far fa-edit " ></span>
+                </div>
+            @if($storeInfo->avatar)
+                <img src="{{ Storage::url($storeInfo->avatar)}}" alt="FotoHeroe"> 
+            @else
+            <img src="{{asset('assets/camera_ 1.svg')}}" alt="FotoHeroe"> 
+            @endif
+        </div>
         </div>
 
         <div class="col text-center mt-3 mb-5">
@@ -56,9 +91,10 @@
                     </div>
                     <div class="form-group">
                         <label for="inputPass">Contraseña</label>
+                    
                         <input type="password" class="form-control" id="inputPass" placeholder="">
                     </div>
-
+          
 
             </section>
         </div>
@@ -104,13 +140,13 @@
 
                     <div class="form-group">
                         <label for="inputCategoria" id="Category">Categorías</label>
-                        <select class="form-control" id="inputCategoria" name='category' value="{{ $storeInfo->category}}">
-                            <option>Cafetería</option>
-                            <option>Cervecería</option>
-                            <option>Pizzería</option>
-                            <option>Farmacia</option>
-                            <option>Kiosco</option>
-                            <option>Otro</option>
+                        <select class="form-control" id="inputCategoria" name='category' selected="{{ $storeInfo->category}}">
+                            <option {{ ($storeInfo->category == 'Cafetería') ? "selected" : ""}}>Cafetería</option>
+                            <option {{ ($storeInfo->category == 'Cervecería') ? "selected" : ""}}>Cervecería</option>
+                            <option {{ ($storeInfo->category == 'Pizzería') ? "selected" : ""}}>Pizzería</option>
+                            <option {{ ($storeInfo->category == 'Farmacia') ? "selected" : ""}}>Farmacia</option>
+                            <option {{ ($storeInfo->category == 'Kiosco') ? "selected" : ""}}>Kiosco</option>
+                            <option {{ ($storeInfo->category == 'Otro') ? "selected" : ""}}>Otro</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -126,7 +162,7 @@
                     </div>
                     <div class="form-group">
                         <label for="inputInsta">Link perfil de Instagram</label>
-                        <input type="text" class="form-control" id="inputInsta">
+                        <input type="text" name="instagram" class="form-control" id="inputInsta"  value="{{ $storeInfo->instagram}}">
                     </div>
 
 
@@ -137,7 +173,10 @@
 
         <div class="col-lg-6">
             <label for="horarios">Horarios</label>
-            <section id="horarios">
+            <div class="form-group">
+                <input type="text" class="form-control" name="horarios" id="inputHorario"  value="{{ $storeInfo->horarios }}">
+            </div>
+           {{--  <section id="horarios">
                 <!-- Lunes -->
                 <div class="col-6 mt-3"></div>
                 <input type="checkbox" class="form-check-input" id="inputL">
@@ -299,7 +338,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> --}}
 
         </div>
 

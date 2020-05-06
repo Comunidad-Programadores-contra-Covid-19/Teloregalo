@@ -111,7 +111,12 @@
                    
                       <div class="col-md-12 col-lg-6">
                           <div class="card">
-                              <img src="https://via.placeholder.com/150" alt="" class="card-image">
+                            @if($store->avatar)
+                            <img src="{{ Storage::url($store->avatar)}}"  alt="" class="card-image"> 
+                            @else
+                            <img src="https://via.placeholder.com/150" alt="" class="card-image"> 
+                            @endif
+                             
                               <div class="card-description">
                                   <h3>{{ $store->name}}</h3>
                                   <p><span><i class="fas fa-map-marker-alt"></i></span>{{ $store->address}}</p>

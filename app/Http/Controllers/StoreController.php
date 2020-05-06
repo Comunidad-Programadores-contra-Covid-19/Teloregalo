@@ -48,12 +48,39 @@ class StoreController extends Controller
     } */
     public function update(Request $request, $id)
     {
-        $dataStore = request()->except(['_token', '_method']);
-        
-        Store::where('id', '=', $id)->update($dataStore);
+        $storeUpdate = Store::findOrFail($id);
+        /* ['name','user_id','description','adress','sector','avatar','facebook','instagram','horarios','category','phone'] */
+
+        $storeUpdate->name =$request->name;
+        $storeUpdate->description =$request->description;
+        $storeUpdate->address =$request->address;
+        $storeUpdate->sector =$request->sector;
+        $storeUpdate->facebook =$request->facebook;
+        $storeUpdate->instagram =$request->instagram;
+        $storeUpdate->horarios =$request->horarios;
+        $storeUpdate->category =$request->category;
+        $storeUpdate->phone =$request->phone;
+       
+        $storeUpdate->update();
+    
         return redirect('stores/miPerfil')->with('success', 'Se han modificado los datos Correctamente');
     }
+    public function updateImage(Request $request, $id)
+    {
+        $storeUpdate = Store::findOrFail($id);
+        /* ['name','user_id','description','adress','sector','avatar','facebook','instagram','horarios','category','phone'] */
 
+        if($request->has('avatar')) {
+            $storeUpdate->avatar = $request->file('avatar')->store('public');
+        }else{
+            $storeUpdate->avatar=$storeUpdate->avatar;
+        }
+    
+       
+        $storeUpdate->update();
+    
+        return redirect('stores/miPerfil')->with('success', 'Se han modificado los datos Correctamente');
+    }
      public function show($id)
     {
         $store = Store::find($id);

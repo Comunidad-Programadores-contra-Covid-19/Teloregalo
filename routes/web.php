@@ -58,13 +58,13 @@ Route::get('/', 'HomeController@index')->name('home')/* ->middleware('verified')
 
 
 
-
+Route::get('store/{id}','StoreController@show')->name('stores.perfil');
 Route::group(['middleware' => ['auth', 'store']], function () {
-    Route::get('store/{id}','StoreController@show')->name('stores.perfil');
+    
     Route::get('stores/miPerfil','StoreController@renderPerfil')->name('stores.miPerfil');/* ->middleware('verified') */;
 Route::get('stores/misVentas','StoreController@renderVentas')->name('stores.misVentas');
 Route::get('stores/misProductos','StoreController@renderProductos')->name('stores.misProductos');
-   
+Route::put('updateImage/{id}', 'StoreController@updateImage')->name('stores.updateImage');
     Route::put('update/{id}', 'StoreController@update')->name('stores.update')/* ->middleware('verified') */;
 });
 
