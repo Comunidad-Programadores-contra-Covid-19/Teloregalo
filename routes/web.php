@@ -11,7 +11,7 @@
 |
 */
 
- /* Auth::routes(['verify' => true]);  */
+ /*  Auth::routes(['verify' => true]);   */
     // Authentication Routes Client...
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
     Route::post('login', 'Auth\LoginController@login');
@@ -61,7 +61,7 @@ Route::get('/', 'HomeController@index')->name('home')/* ->middleware('verified')
 Route::get('store/{id}','StoreController@show')->name('stores.perfil');
 Route::group(['middleware' => ['auth', 'store']], function () {
     
-    Route::get('stores/miPerfil','StoreController@renderPerfil')->name('stores.miPerfil');/* ->middleware('verified') */;
+    Route::get('stores/miPerfil','StoreController@renderPerfil')->name('stores.miPerfil')/* ->middleware('verified') */ ;
 Route::get('stores/misVentas','StoreController@renderVentas')->name('stores.misVentas');
 Route::get('stores/misProductos','StoreController@renderProductos')->name('stores.misProductos');
 Route::put('updateImage/{id}', 'StoreController@updateImage')->name('stores.updateImage');
@@ -74,10 +74,12 @@ Route::group(['middleware' => ['auth', 'client']], function () {
 
 
 
-Route::get('/preguntasFrecuentes', function(){
-    return view('teloregalo.preguntasFrecuentes');
+Route::get('/quienes-somos', function(){
+    return view('teloregalo.quienes-somos');
 });
-
+Route::get('/preguntas-frecuentes', function(){
+    return view('teloregalo.preguntas-frecuentes');
+});
 Route::get('/donar', function () {
     return view('teloregalo.donar');
 });

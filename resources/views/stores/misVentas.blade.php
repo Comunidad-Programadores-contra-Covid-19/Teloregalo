@@ -1,7 +1,14 @@
 @extends('layouts.app')
 @section('content')
 <!-- Inicio contenedor -->
+
+
+
+    <!-- Inicio Contenedor Ventas del comercio -->
+ <!-- Inicio contenedor -->
 <div class="container">
+
+    <!-- Inicio Menú Comercio-->
     <div id="menuMisProductos">
         <ul class="nav flex-lg-column justify-content-center nav-pills " id="myTab" role="tablist">
             <li ><a class="nav-item" id="nav-perfil-tab"    href="{{route('stores.miPerfil')}}"  aria-controls="nav-perfil" aria-selected="false">Perfil</a></li>
@@ -9,6 +16,7 @@
             <li><a class="nav-item " id="nav-productos-tab"  href="{{route('stores.misProductos')}}"  aria-controls="nav-productos" aria-selected="false">Productos</a></li>
         </ul>
     </div>
+    <!-- Fin Menú Comercio -->
 
     <!-- Inicio Contenedor Ventas del comercio -->
     <div id="contenedorMisVentas">
@@ -19,17 +27,34 @@
         <!-- Inicio ingresar código -->
         <div class="row">
             <div class="col-lg-3">
-                <img src="{{ asset('assets/ticketEntrega.svg') }}" alt="ticket" id="imgCodigoVal">
+                <img src="{{asset('assets/ticketEntrega.svg')}}" alt="ticket" id="imgCodigoVal">
             </div>
 
             <div class="col-lg-9">
                 <div id="codigoValidacion">
                     <!-- Modal Trigger -->
-                    <label for="inputCodigo"></label><input type="text" id="inputCodigo"
-                                                            placeholder="Código de validación">
-                    <button type="submit" class="btn btn-principal btn-block " data-toggle="modal"
+                    <label for="inputCodigo"></label>
+               
+ 
+                    <form action="{{ route('otps.destroy', Auth::user()->id) }}" method="POST">
+                        @csrf
+                            <input type="hidden" name="_method" value="DELETE">
+                            
+                            <input type="text" name="codigo" id="inputCodigo" placeholder="Código de validación">
+                           
+                            <button type="submit" class="btn btn-principal btn-block " data-toggle="modal"
                             data-target="#exampleModal" id="btnRegistrarEntrega">Registrar entrega
                     </button>
+                 </form>
+                 @if(Session::has('info'))
+                 <div class="alert alert-info">
+                    <button type="button" class="close" data-dismiss="alert">
+                        &times;
+                    </button>
+                    {{ Session::get('info') }}
+                </div>
+            @endif
+        
 
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
@@ -74,75 +99,77 @@
                         esencial, te recomendamos entregar el producto y luego reportarlo.</p>
                 </div>
 
-                <div id="stockProducto">
-                    <div class="row text-center">
-                        <div class="col-4">
-                            <h5 id="nombreProductoVentas">Opción Producto</h5>
-                            <ul>
-                                <span id="totalStock">
-                                <li>
-                                    <p id="tituloStock">Disponibles</p>
-                                    <p id="cantidadProd">XX</p>
-                                </li>
-                                <li>
-                                    <p id="tituloStock" style="opacity: 50%;">Entregados</p>
-                                    <p id="cantidadProd" style="opacity: 50%;">XX</p>
-                                </li>
-                            </span>
-                                <li>
-                                    <span id="totalVendidos">
-                                        <p id="tituloStockVendidos">Total vendidos</p>
-                                        <p id="cantidadProdVendidos">XX</p>
-                                    </span>
-                                </li>
-                            </ul>
-                        </div>
+                <section id="stock">
+                    <div id="stockProducto">
+                        <div class="row text-center">
+                            <div class="col-lg-4">
+                                <h5 id="nombreProductoVentas">Opción Producto</h5>
+                                <ul>
+                                    <span id="totalStock">
+                                    <li>
+                                        <p id="tituloStock">Disponibles</p>
+                                        <p id="cantidadProd">XX</p>
+                                    </li>
+                                    <li>
+                                        <p id="tituloStock" style="opacity: 50%;">Entregados</p>
+                                        <p id="cantidadProd" style="opacity: 50%;">XX</p>
+                                    </li>
+                                </span>
+                                    <li>
+                                        <span id="totalVendidos">
+                                            <p id="tituloStockVendidos">Total vendidos</p>
+                                            <p id="cantidadProdVendidos">XX</p>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
 
-                        <div class="col-4">
-                            <h5 id="nombreProductoVentas">Opción Producto</h5>
-                            <ul>
-                                <span id="totalStock">
-                                <li>
-                                    <p id="tituloStock">Disponibles</p>
-                                    <p id="cantidadProd">XX</p>
-                                </li>
-                                <li>
-                                    <p id="tituloStock" style="opacity: 50%;">Entregados</p>
-                                    <p id="cantidadProd" style="opacity: 50%;">XX</p>
-                                </li>
-                            </span>
-                                <li>
-                                    <span id="totalVendidos">
-                                        <p id="tituloStockVendidos">Total vendidos</p>
-                                        <p id="cantidadProdVendidos">XX</p>
-                                    </span>
-                                </li>
-                            </ul>
-                        </div>
+                            <div class="col-lg-4">
+                                <h5 id="nombreProductoVentas">Opción Producto</h5>
+                                <ul>
+                                    <span id="totalStock">
+                                    <li>
+                                        <p id="tituloStock">Disponibles</p>
+                                        <p id="cantidadProd">XX</p>
+                                    </li>
+                                    <li>
+                                        <p id="tituloStock" style="opacity: 50%;">Entregados</p>
+                                        <p id="cantidadProd" style="opacity: 50%;">XX</p>
+                                    </li>
+                                </span>
+                                    <li>
+                                        <span id="totalVendidos">
+                                            <p id="tituloStockVendidos">Total vendidos</p>
+                                            <p id="cantidadProdVendidos">XX</p>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
 
-                        <div class="col-4 ">
-                            <h5 id="nombreProductoVentas">Opción Producto</h5>
-                            <ul>
-                                <span id="totalStock">
-                                <li>
-                                    <p id="tituloStock">Disponibles</p>
-                                    <p id="cantidadProd">XX</p>
-                                </li>
-                                <li>
-                                    <p id="tituloStock" style="opacity: 50%;">Entregados</p>
-                                    <p id="cantidadProd" style="opacity: 50%;">XX</p>
-                                </li>
-                            </span>
-                                <li>
-                                    <span id="totalVendidos">
-                                        <p id="tituloStockVendidos">Total vendidos</p>
-                                        <p id="cantidadProdVendidos">XX</p>
-                                    </span>
-                                </li>
-                            </ul>
+                            <div class="col-lg-4 ">
+                                <h5 id="nombreProductoVentas">Opción Producto</h5>
+                                <ul>
+                                    <span id="totalStock">
+                                    <li>
+                                        <p id="tituloStock">Disponibles</p>
+                                        <p id="cantidadProd">XX</p>
+                                    </li>
+                                    <li>
+                                        <p id="tituloStock" style="opacity: 50%;">Entregados</p>
+                                        <p id="cantidadProd" style="opacity: 50%;">XX</p>
+                                    </li>
+                                </span>
+                                    <li>
+                                        <span id="totalVendidos">
+                                            <p id="tituloStockVendidos">Total vendidos</p>
+                                            <p id="cantidadProdVendidos">XX</p>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
         </div>
         <!-- Fin ingresar código -->
@@ -153,5 +180,7 @@
     </div>
 
 </div>
+<!-- Fin contenedor -->
+
 <!-- Fin contenedor -->
 @endsection

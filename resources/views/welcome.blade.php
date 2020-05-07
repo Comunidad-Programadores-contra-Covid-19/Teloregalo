@@ -56,56 +56,58 @@
         </section>
         <!-- Fin cabecera presentación -->
 
-        <!-- Inicio Busqueda de comercios -->
-        <section id="contenedorBusquedaComercios">
-            <div class="container features" id="contenedorBuscador">
-                <h1 id="Comercios">Comercios que ya forman parte</h1>
-           
-                <div id="buscador">
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <div class="input-group" id="buscarComercio">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button"><img src="assets/lupa.svg" alt=""></button>
-                                </span>
-                                <input type="text" class="form-control" placeholder="Buscar comercio por nombre">
+                <!-- Inicio Busqueda de comercios -->
+                <section id="contenedorBusquedaComercios">
+                    <div class="container features" id="contenedorBuscador">
+                        <h1>Comercios que ya forman parte</h1>
+        
+                        <div id="buscador">
+                            <div class="row">
+        
+                                <div class="col-lg-3">
+                                    <button id="btnUbicacion"><img src="Regursos%20graficos/ubicacion.svg" alt="">Usar mi ubicación actual</button>
+                                </div>
+        
+                                <div class="col-lg-4">
+                                    <div class="input-group" id="buscarComercio">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button"><img src="Regursos%20graficos/lupa.svg" alt=""></button>
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="Buscar comercio por nombre">
+                                    </div>
+                                </div>
+        
+                                <div class="col-lg-5">
+                                    <div class="input-group" id="ingresarDireccion">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button"><img src="Regursos%20graficos/gota.svg" alt=""></button>
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="Ingresá tu dirección">
+                                    </div>
+                                </div>
+        
                             </div>
-                        </div>
-                        
-                        <div class="col-lg-6">
-                            <div class="input-group" id="ingresarDireccion">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button"><img src="assets/gota.svg" alt=""></button>
-                                </span>
-                                <input type="text" class="form-control" placeholder="Ingresá tu dirección">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3">
-                            <button id="btnUbicacion"><img src="assets/ubicacion.svg" alt="">Usar mi ubicación actual</button>                         
                         </div>
                     </div>
-                </div>   
-            </div>
-        </section>
-        <!-- Fin Busqueda de comercios -->
+                </section>
+                <!-- Fin Busqueda de comercios -->
 
         <!-- Inicio Botón Lista/Mapa -->
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
             <label class="btn btn-alternative active">
-              <input id="btnLista" type="radio" name="options" id="option1" autocomplete="off" checked> Lista
+              <input id="btnLista" type="radio" name="options" id="option1" autocomplete="off" checked onclick="mostrarLista()"> Lista
             </label>
             <label class="btn btn-alternative">
-              <input id="btnMapa" type="radio" name="options" id="option2" autocomplete="off"> Mapa
+              <input id="btnMapa" type="radio" name="options" id="option2" autocomplete="off"  onclick="mostrarMapa()"> Mapa
             </label>
         </div>
         <!-- Fin Botón Lista/Mapa -->
 
         <!-- Inicio contenedor tarjetas -->
-        <section id="contenedorTarjetas">
+        <section id="contenedorTarjetas" class="">
 
             <!-- Inicio fila 1 -->
-            <div class="row">
+            <div class="row" id="contenedorTarjetasHidde">
                 <!-- Inicio tarjeta 1.1 -->                   
                 @foreach($stores as $store)
                    
@@ -150,6 +152,119 @@
             <!-- Fin fila 2 -->
         </section>
         <!-- Fin contenedor tarjetas -->
+             <!-- Inicio contenedor MAPA tarjetas -->
+             <section id="contenedorTarjetas" >
+
+
+                <div class="row d-none" id="contenedorTarjetasMapHidde">
+                    <div class="col-md-12 col-lg-8 ">
+                        <img class="map" src="https://via.placeholder.com/1000" alt="mapa">
+                    </div>
+                    <div class="col-md-12 col-lg-4 scrollable">
+                        <div class="card-map">
+    
+                            <img src="https://via.placeholder.com/150" alt="" class="card-image-map">
+                            <div class="card-description-map">
+                                <h6>Nombre del Comercio</h6>
+                                <p><span><i class="fas fa-map-marker-alt"></i></span>Ubicación</p>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+    
+                            </div>
+    
+                            <div class="card-availability-map">
+                                <p><b>xx regalos</b> para entregar</p>
+                            </div>
+                            <div class="card-btn-map">
+                                <a href="#" class="btn-principal">Ver</a>
+                            </div>
+    
+                        </div>
+    
+                    <hr class="solid">
+                        <div class="card-map">
+    
+                            <img src="https://via.placeholder.com/150" alt="" class="card-image-map">
+                            <div class="card-description-map">
+                                <h6>Nombre del Comercio</h6>
+                                <p><span><i class="fas fa-map-marker-alt"></i></span>Ubicación</p>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+    
+                            </div>
+    
+                            <div class="card-availability-map">
+                                <p><b>xx regalos</b> para entregar</p>
+                            </div>
+                            <div class="card-btn-map">
+                                <a href="#" class="btn-principal">Ver</a>
+                            </div>
+    
+                        </div>
+    
+                        <hr class="solid">
+    
+                        <div class="card-map">
+                            <img src="https://via.placeholder.com/150" alt="" class="card-image-map">
+                            <div class="card-description-map">
+                                <h6>Nombre del Comercio</h6>
+                                <p><span><i class="fas fa-map-marker-alt"></i></span>Ubicación</p>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+    
+                            </div>
+    
+                            <div class="card-availability-map">
+                                <p><b>xx regalos</b> para entregar</p>
+                            </div>
+                            <div class="card-btn-map">
+                                <a href="#" class="btn-principal">Ver</a>
+                            </div>
+    
+                        </div>
+    
+                        <hr class="solid">
+    
+                        <div class="card-map">
+    
+                            <img src="https://via.placeholder.com/150" alt="" class="card-image-map">
+                            <div class="card-description-map">
+                                <h6>Nombre del Comercio</h6>
+                                <p><span><i class="fas fa-map-marker-alt"></i></span>Ubicación</p>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+    
+                            </div>
+    
+                            <div class="card-availability-map">
+                                <p><b>xx regalos</b> para entregar</p>
+                            </div>
+                            <div class="card-btn-map">
+                                <a href="#" class="btn-principal">Ver</a>
+                            </div>
+    
+                        </div>
+    
+    
+                    </div>
+    
+                </div>
+            </section>
+            <!-- Fin contenedor  MAPA tarjetas -->
+        </div>
+        <!-- Fin contenedor -->
     </div>
 
 
@@ -162,6 +277,23 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+        <script type="application/javascript">
+                function mostrarLista(){
+                    const domLista = document.getElementById('contenedorTarjetasHidde')
+                    const domMapa = document.getElementById('contenedorTarjetasMapHidde')
+                    domMapa.classList.add('d-none'); 
+                    domLista.classList.remove('d-none'); 
+                    console.log('watra')
+            }
+            function mostrarMapa(){
+           
+                const domLista= document.getElementById('contenedorTarjetasHidde')
+                const domMapa= document.getElementById('contenedorTarjetasMapHidde')
+                domMapa.classList.remove('d-none'); 
+                domLista.classList.add('d-none'); 
+         
+            }
+        </script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.auto.min.js"></script>
     <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
@@ -202,6 +334,10 @@
                 }
             });
 
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 0c369217de4658c69e5d8f36a499111d52c47ea3
     </script>
 
 </body>

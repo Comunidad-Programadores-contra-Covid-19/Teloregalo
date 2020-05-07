@@ -46,6 +46,7 @@ class OtpController extends Controller
             if ($otp->store_id == $store->id) {
                 $validTill = strtotime($otp->otp_timestamp) + ($OTP_VALID * 60);
                 if (strtotime("now") > $validTill) {
+
                     $message = "El codigo expiro!";
                 } else {
                     $otp->delete();

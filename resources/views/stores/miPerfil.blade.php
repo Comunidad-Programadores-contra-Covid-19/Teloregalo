@@ -104,7 +104,10 @@
 
                     <div class="form-group ">
                         <label for="inputDireccion">Dirección del comercio</label>
-                        <input type="text" id="inputDireccion" placeholder="" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ $storeInfo->address }}" required autocomplete="address">
+                     
+
+                     
+                        <input type="text" id="inputDireccion" placeholder="Donde está tu local?" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ $storeInfo->address }}" required autocomplete="address">
                         @error('address')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
