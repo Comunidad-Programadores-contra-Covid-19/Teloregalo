@@ -16,6 +16,7 @@
 
 
 <body>
+
 <header>
     <!--Inicio Navbar -->
     <nav class="mb-1 navbar navbar-expand-lg navbar-light navbar-green shadow-sm sticky-top">
@@ -86,18 +87,18 @@
 
             <section>
 
-                    <div class="form-group ">
-                        <label for="inputNombrecomercio">Nombre del comercio</label>
-                        <input type="text" class="form-control" id="inputNombrecomercio" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputEmail">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" placeholder="" >
-                    </div>
-                    <div class="form-group">
-                        <label for="inputPass">Contraseña</label>
-                        <input type="password" class="form-control" id="inputPass" placeholder="">
-                    </div>
+                <div class="form-group ">
+                    <label for="inputNombrecomercio">Nombre del comercio</label>
+                    <input type="text" class="form-control" id="inputNombrecomercio" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="inputPass">Contraseña</label>
+                    <input type="password" class="form-control" id="inputPass" placeholder="">
+                </div>
 
 
             </section>
@@ -106,19 +107,18 @@
         <div class="col-lg-6">
             <section>
 
-                    <div class="form-group ">
-                        <label for="inputDireccion">Dirección del comercio</label>
-                        <input type="text" class="form-control" id="inputDireccion" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputNombreApellido">Tu nombre y apellido</label>
-                        <input type="email" class="form-control" id="inputNombreApellido" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputTel">Teléfono de contacto</label>
-                        <input type="password" class="form-control" id="inputTel" placeholder="">
-                    </div>
-
+                <div class="form-group ">
+                    <label for="inputDireccion">Dirección del comercio</label>
+                    <input type="text" class="form-control" id="inputDireccion" placeholder="Donde está tu local?"/>
+                </div>
+                <div class="form-group">
+                    <label for="inputNombreApellido">Tu nombre y apellido</label>
+                    <input type="email" class="form-control" id="inputNombreApellido" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="inputTel">Teléfono de contacto</label>
+                    <input type="password" class="form-control" id="inputTel" placeholder="">
+                </div>
 
 
             </section>
@@ -132,221 +132,55 @@
         <div class="col-lg-6">
             <section>
 
-                    <div class="form-group">
-                        <label for="inputCategoria" id="Category">Categorías</label>
-                        <select class="form-control" id="inputCategoria">
-                            <option>Cafetería</option>
-                            <option>Cervecería</option>
-                            <option>Pizzería</option>
-                            <option>Farmacia</option>
-                            <option>Kiosco</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputDesc">Descripción</label>
-                        <textarea class="form-control" id="inputDesc" rows="3"
-                                  placeholder="Contale brevemente a tus vecinos sobre tu comercio"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="inputFace">Link perfil de Facebook</label>
-                        <input type="text" class="form-control" id="inputFace">
-
-                    </div>
-                    <div class="form-group">
-                        <label for="inputInsta">Link perfil de Instagram</label>
-                        <input type="text" class="form-control" id="inputInsta">
-                    </div>
-
-
-
+                <div class="form-group">
+                    <label for="inputCategoria" id="Category">Categorías</label>
+                    <select class="form-control" id="inputCategoria">
+                        <option>Cafetería</option>
+                        <option>Cervecería</option>
+                        <option>Pizzería</option>
+                        <option>Farmacia</option>
+                        <option>Kiosco</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inputDesc">Descripción</label>
+                    <textarea class="form-control" id="inputDesc" rows="5"
+                              placeholder="Contale brevemente a tus vecinos sobre tu comercio"></textarea>
+                </div>
 
             </section>
         </div>
 
         <div class="col-lg-6">
-            <label for="horarios">Horarios</label>
-            <section id="horarios">
-                <!-- Lunes -->
-                <div class="col-6 mt-3"></div>
-                <input type="checkbox" class="form-check-input" id="inputL">
-                <label for="inputL" class="form-check-label mb-2"><b>Lunes</b></label>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeAperturaL" class="col-5  col-form-label text-right">Apertura</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeAperturaL">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeCierreL"  class="col-5 col-form-label text-right">Cierre</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeCierreL">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="form-group">
+                <label for="inputFace">Link perfil de Facebook</label>
+                <input type="text" class="form-control" id="inputFace">
 
-                <!-- Martes -->
-                <div class="col-6 mt-3"></div>
-                <input type="checkbox" class="form-check-input" id="inputM">
-                <label for="inputM" class="form-check-label mb-2"><b>Martes</b></label>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeAperturaM" class="col-5  col-form-label text-right">Apertura</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeAperturaM">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeCierreM"  class="col-5 col-form-label text-right">Cierre</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeCierreM">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Miercoles -->
-                <div class="col-6 mt-3"></div>
-                <input type="checkbox" class="form-check-input" id="inputX">
-                <label for="inputX" class="form-check-label mb-2"><b>Miércoles</b></label>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeAperturaX" class="col-5  col-form-label text-right">Apertura</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeAperturaX">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeCierreX"  class="col-5 col-form-label text-right">Cierre</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeCierreX">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Jueves -->
-                <div class="col-6 mt-3"></div>
-                <input type="checkbox" class="form-check-input" id="inputJ">
-                <label for="inputJ" class="form-check-label mb-2"><b>Jueves</b></label>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeAperturaJ" class="col-5  col-form-label text-right">Apertura</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeAperturaJ">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeCierreJ"  class="col-5 col-form-label text-right">Cierre</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeCierreJ">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Viernes -->
-                <div class="col-6 mt-3"></div>
-                <input type="checkbox" class="form-check-input" id="inputV">
-                <label for="inputV" class="form-check-label mb-2"><b>Viernes</b></label>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeAperturaV" class="col-5  col-form-label text-right">Apertura</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeAperturaV">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeCierreV"  class="col-5 col-form-label text-right">Cierre</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeCierreV">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sabado -->
-                <div class="col-6 mt-3"></div>
-                <input type="checkbox" class="form-check-input" id="inputS">
-                <label for="inputS" class="form-check-label mb-2"><b>Sabado</b></label>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeAperturaS" class="col-5  col-form-label text-right">Apertura</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeAperturaS">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeCierreS"  class="col-5 col-form-label text-right">Cierre</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeCierreS">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Domingo -->
-                <div class="col-6 mt-3"></div>
-                <input type="checkbox" class="form-check-input" id="inputD">
-                <label for="inputD" class="form-check-label mb-2"><b>Domingo</b></label>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeAperturaD" class="col-5  col-form-label text-right">Apertura</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeAperturaD">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeCierreD"  class="col-5 col-form-label text-right">Cierre</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeCierreD">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        </div>
-
-        <div class="col-lg-12 mt-5">
-            <div class="row">
-                <div class="col-4">
-                    <button class="btn btn-alternative btn-block">Cancelar</button>
-                </div>
-                <div class="col-8">
-                    <button type="submit" class="btn btn-principal btn-block mb-5">Guardar cambios</button>
-                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputInsta">Link perfil de Instagram</label>
+                <input type="text" class="form-control" id="inputInsta">
+            </div>
+            <div class="form-group">
+                <label for="horario">Horarios</label>
+                <input type="text" class="form-control" id="horario">
+                <p><em>Ejemplo: Lunes a Viernes 10:00 a 18:00 / Sabados 10:00 a 13:00</em></p>
             </div>
         </div>
-    </form>
+
+
+<div class="col-lg-12 mt-5">
+    <div class="row">
+        <div class="col-4">
+            <button class="btn btn-alternative btn-block">Cancelar</button>
+        </div>
+        <div class="col-8">
+            <button type="submit" class="btn btn-principal btn-block mb-5">Guardar cambios</button>
+        </div>
     </div>
-
-
-
+</div>
+</form>
+</div>
 
 
 <!-- Footer -->
@@ -439,6 +273,18 @@
         crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.18.2"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.18.2"></script>
+
+
+<script>
+    var placesAutocomplete = places({
+        appId: 'pl8NRH7GW6B5',
+        apiKey: '434d496eb4f5cc8f25cdcf631051eb5e',
+        container: document.querySelector('#inputDireccion')
+    });
+</script>
 
 
 </html>
