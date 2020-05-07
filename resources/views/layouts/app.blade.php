@@ -36,10 +36,10 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('preguntasFrecuentes') }}">Preguntas frecuentes</a>
+                        <a class="nav-link" href="{{ url('preguntas-frecuentes') }}">Preguntas frecuentes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Quiénes somos</a>
+                        <a class="nav-link" href="{{ url('quienes-somos') }}">Quiénes somos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('donar') }}" id="btnDonarNav">Donar</a>
@@ -173,6 +173,17 @@
     </script>
     
  
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.18.2"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.18.2"></script>
+
+<script>
+    var placesAutocomplete = places({
+        appId: 'pl8NRH7GW6B5',
+        apiKey: '434d496eb4f5cc8f25cdcf631051eb5e',
+        container: document.querySelector('#inputDireccion')
+    });
+</script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
