@@ -199,7 +199,6 @@
             var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
             const stores = {!! $stores->toJson() !!};
             let locationCity = stores[0].address
-            console.log(locationCity)
             if(locationCity == null){
                 locationCity = "Argentina"
             }
@@ -217,18 +216,21 @@
                         response.body &&
                         response.body.features &&
                         response.body.features.length
-                    ) {
-                        var feature = response.body.features[0];
-                        
-                        var map = new mapboxgl.Map({
-                        container: 'map',
-                        style: 'mapbox://styles/mapbox/streets-v11',
-                        center: feature.center,
-                        zoom: 15
-                    });
-                    new mapboxgl.Marker().setLngLat(feature.center).addTo(map);
+                    ) 
+                        {
+                            var feature = response.body.features[0];
+                            
+                            var map = new mapboxgl.Map({
+                            container: 'map',
+                            style: 'mapbox://styles/mapbox/streets-v11',
+                            center: feature.center,
+                            zoom: 15
+                        });
+                        console.log("Feature center: "+feature);
+                        new mapboxgl.Marker().setLngLat(feature.center).addTo(map);
                 }
             });
+
     </script>
 
 </body>
