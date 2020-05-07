@@ -46,42 +46,4 @@
 
     </div>
     <!-- Fin contenedor -->
-
-    
-    <!-- Inicio Footer -->
-    <footer style="margin-top: 1.5em;">
-        <div id="contenedorFooter">
-            <div class="row">
-                <div class="col-lg-2" id="logoFooter">
-                    <a href="#" >
-                        teloregalo
-                        <img src="assets/logo.svg" width="35" height="35" alt="">
-                    </a>
-                </div>
-                
-                <div class="col-lg-7" id="menuFooter">
-                    <ul>
-                        <li>
-                        <a href="#">Comercios adheridos</a>
-                        </li>
-                        <li>
-                        <a href="#">Preguntas frecuentes</a>
-                        </li>
-                        <li>
-                            <a href="#">Quiénes somos</a>
-                            </li>
-                        <li>
-                            <a href="#">Donar</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3" id="año">
-                    <p>2020 Te lo regalo</p>
-                </div>
-            </div>
-        </div>
-    </footer>
- 
-
 @endsection

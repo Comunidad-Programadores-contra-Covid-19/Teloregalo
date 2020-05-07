@@ -23,6 +23,8 @@ class CreateStoresTable extends Migration
             $table->string('sector')->nullable();
             $table->string('avatar')->nullable();
             $table->string('facebook')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('horarios')->nullable();
             $table->string('category')->nullable();
             $table->string('phone')->nullable();
             $table->integer('rating')->nullable();

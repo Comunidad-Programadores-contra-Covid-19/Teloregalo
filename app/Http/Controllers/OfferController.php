@@ -20,7 +20,7 @@ class OfferController extends Controller
     public function index()
     {
         $commerceEmail = auth()->user()->id;
-        $offers = Offer::where('store_id', $commerceEmail)->paginate(4);
+        $offers = Offer::where('store_id', $commerceEmail)->get();
         return view('offers.list', compact('offers'));
     }
 
@@ -49,7 +49,7 @@ class OfferController extends Controller
             'last_name'=>'required',
             'email'=>'required'
         ]);*/
-
+ 
         $offer = new Offer();
         $offer->name_offer = $request->name_offer;
         $offer->description_offer = $request->description_offer;
@@ -59,8 +59,8 @@ class OfferController extends Controller
 
         $offer->store_id = auth()->user()->id;
         $offer->save();
-
-        return redirect('/offers')->with('success', 'Oferta creada.');
+ 
+        return back()->with('success', 'Oferta creada '. $request->name_offer);
     }
 
     /**
@@ -120,6 +120,6 @@ class OfferController extends Controller
         $offer = Offer::find($id);
         $offer->delete();
 
-        return redirect('/offers')->with('success', 'Oferta eliminada.');
+        return redirect('stores/misProductos')->with('success', 'Oferta eliminada.');
     }
 }

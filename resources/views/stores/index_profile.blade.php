@@ -68,9 +68,7 @@
     </div>
 </div>
 <!-- Fin contenedor -->
-<!-- Inicio Footer -->
 
-@include('layouts.footer')
 
 
 @endsection

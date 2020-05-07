@@ -1,0 +1,57 @@
+.logoPerfil {
+    position: relative;
+    border: solid 2px #96D293;
+    margin-top: 1rem;
+}
+.logoPerfil img {
+    width: 100%;
+}
+
+.tituloPerfilCom{
+    padding-top: 1.5em;
+}
+
+.formComercio{
+    padding-left: 12rem;
+}
+
+#horarios{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 2px solid #96D293 !important;
+    border-radius: 1rem;
+
+}
+
+@media handheld, (min-width:531px) and (max-width:995px) {
+    .logoPerfil {
+        width: 200px;
+        height: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .tituloPerfilCom {
+        display: none;
+    }
+    .formComercio{
+        padding-left: 0;
+    }
+}
+
+
+
+@media handheld, screen and (max-width:530px) {
+    .logoPerfil {
+        width: 200px;
+        height: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .tituloPerfilCom {
+        display: none;
+    }
+
+    .formComercio{
+        padding-left: 0;
+    }
+}

@@ -34,18 +34,7 @@
                 name="cost"
                 placeholder="Precio"
                 class="form-control mb-2"/>
-
-                <input
-                type="number"
-                name="amount"
-                placeholder="Cantidad"
-                class="form-control mb-2"/>
-
-                Habilitar<input
-                type="checkbox"
-                id="is_enabled"
-                class="form-control mb-2"/>
-
+ 
                 <button class="btn btn-primary btn-block"
                 type="submit">Agregar</button>
                 </form>

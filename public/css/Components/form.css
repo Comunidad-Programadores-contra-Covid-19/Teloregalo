@@ -10,17 +10,23 @@
 } */
 
 .form-check-input{
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.1rem;
+    height: 1.1rem;
 }
 
 
 textarea:focus,
 input:focus,
 .form-control:focus,
-.uneditable-input:focus {   
+.uneditable-input:focus {
   border-color: #8CC189;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(140, 193, 137, 0.6);
   outline: 0 none;
 }
 
+.form-check-input {
+    position: absolute;
+    margin-top: .3rem;
+    margin-bottom: .3rem;
+    margin-left: 0;
+}
