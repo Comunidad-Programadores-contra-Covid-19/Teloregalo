@@ -66,6 +66,7 @@ Route::get('stores/misVentas','StoreController@renderVentas')->name('stores.misV
 Route::get('stores/misProductos','StoreController@renderProductos')->name('stores.misProductos');
 Route::put('updateImage/{id}', 'StoreController@updateImage')->name('stores.updateImage');
     Route::put('update/{id}', 'StoreController@update')->name('stores.update')/* ->middleware('verified') */;
+    Route::get('/procesar-pago', 'LinkMercadoPagoController@linked' ); 
 });
 
 Route::group(['middleware' => ['auth', 'client']], function () {
@@ -83,3 +84,4 @@ Route::get('/preguntas-frecuentes', function(){
 Route::get('/donar', function () {
     return view('teloregalo.donar');
 });
+

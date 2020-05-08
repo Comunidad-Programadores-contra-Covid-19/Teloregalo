@@ -19,4 +19,5 @@ class Store extends Model
     }
 
 
+
 }

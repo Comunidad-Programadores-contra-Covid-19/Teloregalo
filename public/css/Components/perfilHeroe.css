@@ -40,6 +40,8 @@
     position: relative;
     bottom: -50px;
     border: solid 2px #96D293;
+    width: 15rem;
+    height: 15rem;
 }
 
 #fotoHeroe img {
@@ -89,8 +91,8 @@
     }
 
     #fotoHeroe {
-        width: 200px;
-        height: 200px;
+        width: 15rem;
+        height: 15rem;
         margin-left: auto;
         margin-right: auto;
         margin-top: -3em;
@@ -134,8 +136,8 @@
     }
 
     #fotoHeroe {
-        width: 200px;
-        height: 200px;
+        width: 15rem;
+        height: 15rem;
         margin-left: auto;
         margin-right: auto;
         margin-top: -3em;

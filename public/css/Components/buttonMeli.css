@@ -1,0 +1,13 @@
+button.mercadopago-button {
+    color:#2E2C2C;
+    background-color: #96D293;
+    border: 0.1rem solid;
+    border-color: #96D293;
+    border-radius: 1rem;
+
+    font-weight: 400;
+    margin-bottom: 5px;
+    text-align: center;
+    height:40px;
+    width: 100%;
+  }

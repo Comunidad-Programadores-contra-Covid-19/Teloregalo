@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Store;
 use Auth;
 use App\Offer;
-
+use App\Credentials;
 class StoreController extends Controller
 {
 
@@ -22,6 +22,7 @@ class StoreController extends Controller
     {
         
         $commerceEmail = Auth::user()->store->id;
+        
         $storeOffers = Offer::where('store_id', $commerceEmail)->orderBy('created_at','desc')->get();
         
         return view('stores.misProductos',compact('storeOffers'));
@@ -84,7 +85,11 @@ class StoreController extends Controller
      public function show($id)
     {
         $store = Store::find($id);
-        return view('stores.index_profile', ['store' => $store]);
+        
+        $credencialStore = Credentials::where('store_id',$id)->get();
+        $credentials = $credencialStore[0];
+       /*  var_dump($storeCredentials); */
+        return view('stores.index_profile', ['store' => $store,'credentials'=> $credentials]);
     }
     public function destroy($id)
     {

@@ -60,7 +60,7 @@
             <p>https://www.figma.com/file/8mOR2VUQF08JLjzeHQBfC2/</p>
             <button class="btn btn-principal">Compartir</button>
         </div>
-
+        
         <div class="col-lg-6">
 
             <section>
@@ -173,178 +173,12 @@
 
             </section>
         </div>
-
         <div class="col-lg-6">
             <label for="horarios">Horarios</label>
             <div class="form-group">
                 <input type="text" class="form-control" name="horarios" id="inputHorario"  value="{{ $storeInfo->horarios }}">
             </div>
-           {{--  <section id="horarios">
-                <!-- Lunes -->
-                <div class="col-6 mt-3"></div>
-                <input type="checkbox" class="form-check-input" id="inputL">
-                <label for="inputL" class="form-check-label mb-2"><b>Lunes</b></label>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeAperturaL" class="col-5  col-form-label text-right">Apertura</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeAperturaL">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeCierreL"  class="col-5 col-form-label text-right">Cierre</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeCierreL">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Martes -->
-                <div class="col-6 mt-3"></div>
-                <input type="checkbox" class="form-check-input" id="inputM">
-                <label for="inputM" class="form-check-label mb-2"><b>Martes</b></label>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeAperturaM" class="col-5  col-form-label text-right">Apertura</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeAperturaM">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeCierreM"  class="col-5 col-form-label text-right">Cierre</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeCierreM">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Miercoles -->
-                <div class="col-6 mt-3"></div>
-                <input type="checkbox" class="form-check-input" id="inputX">
-                <label for="inputX" class="form-check-label mb-2"><b>Miércoles</b></label>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeAperturaX" class="col-5  col-form-label text-right">Apertura</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeAperturaX">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeCierreX"  class="col-5 col-form-label text-right">Cierre</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeCierreX">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Jueves -->
-                <div class="col-6 mt-3"></div>
-                <input type="checkbox" class="form-check-input" id="inputJ">
-                <label for="inputJ" class="form-check-label mb-2"><b>Jueves</b></label>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeAperturaJ" class="col-5  col-form-label text-right">Apertura</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeAperturaJ">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeCierreJ"  class="col-5 col-form-label text-right">Cierre</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeCierreJ">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Viernes -->
-                <div class="col-6 mt-3"></div>
-                <input type="checkbox" class="form-check-input" id="inputV">
-                <label for="inputV" class="form-check-label mb-2"><b>Viernes</b></label>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeAperturaV" class="col-5  col-form-label text-right">Apertura</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeAperturaV">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeCierreV"  class="col-5 col-form-label text-right">Cierre</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeCierreV">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sabado -->
-                <div class="col-6 mt-3"></div>
-                <input type="checkbox" class="form-check-input" id="inputS">
-                <label for="inputS" class="form-check-label mb-2"><b>Sabado</b></label>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeAperturaS" class="col-5  col-form-label text-right">Apertura</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeAperturaS">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeCierreS"  class="col-5 col-form-label text-right">Cierre</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeCierreS">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Domingo -->
-                <div class="col-6 mt-3"></div>
-                <input type="checkbox" class="form-check-input" id="inputD">
-                <label for="inputD" class="form-check-label mb-2"><b>Domingo</b></label>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeAperturaD" class="col-5  col-form-label text-right">Apertura</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeAperturaD">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="timeCierreD"  class="col-5 col-form-label text-right">Cierre</label>
-                            <div class="col-7">
-                                <input type="time" class="form-control" id="timeCierreD">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> --}}
-
         </div>
-
         <div class="col-lg-12 mt-5">
             <div class="row">
                 <div class="col-4">
@@ -355,6 +189,9 @@
                 </div>
             </div>
         </div>
+        <a href="https://auth.mercadopago.com.ar/authorization?client_id=5841017781823689&response_type=code&platform_id=mp&redirect_uri=http%3A%2F%2Flocalhost:8000/procesar-pago">
+            Vincular mi cuenta de mercado pago
+        </a>
     </form>
    
 
