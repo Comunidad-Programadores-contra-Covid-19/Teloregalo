@@ -55,8 +55,7 @@ class OfferController extends Controller
         $offer->description_offer = $request->description_offer;
         $offer->cost = $request->cost;
         $offer->amount = 0;
-        $offer->is_enabled = $request->is_enabled;
-
+        $offer->total_amount=0;
         $offer->store_id = auth()->user()->id;
         $offer->save();
  
@@ -101,7 +100,7 @@ class OfferController extends Controller
         $offer->description_offer = $request->get('description_offer');
         $offer->cost = $request->get('cost');
         $offer->amount = $request->get('amount');
-        $offer->is_enabled = $request->get('is_enabled');
+     
         $offer->save();
 
         //To stay in /edit when updated

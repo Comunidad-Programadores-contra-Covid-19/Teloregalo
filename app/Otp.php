@@ -9,7 +9,7 @@ class Otp extends Model
 {
     public $timestamps = false;
     protected $fillable = [
-        'otp_pass', 'otp_timestamp', 'user_id', 'store_id'
+        'otp_pass', 'otp_timestamp', 'user_id', 'store_id','offer_id'
     ];
 
     public function client()
