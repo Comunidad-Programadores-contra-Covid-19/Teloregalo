@@ -54,7 +54,7 @@ class OfferController extends Controller
         $offer->name_offer = $request->name_offer;
         $offer->description_offer = $request->description_offer;
         $offer->cost = $request->cost;
-        $offer->amount = $request->amount;
+        $offer->amount = 0;
         $offer->is_enabled = $request->is_enabled;
 
         $offer->store_id = auth()->user()->id;

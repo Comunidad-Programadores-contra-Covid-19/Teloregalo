@@ -4,58 +4,68 @@
     margin-top: 1rem;
     height: 15rem;
     width: 15rem;
+    overflow: hidden;
 }
 .logoPerfil img {
     width: 100%;
+    height: auto;
 }
 
-.tituloPerfilCom{
-    padding-top: 1.5em;
-}
-
-.formComercio{
-    padding-left: 12rem;
-}
-
-#horarios{
-    padding-left: 1rem;
-    padding-right: 1rem;
-    border: 2px solid #96D293 !important;
-    border-radius: 1rem;
-
-}
-
-@media handheld, (min-width:531px) and (max-width:995px) {
-    .logoPerfil {
-        margin-left: auto;
-        margin-right: auto;
-        height: 15rem;
-        width: 15rem;
+@supports(object-fit: cover) {
+    .logoPerfil img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
     }
+}
     .tituloPerfilCom {
-        display: none;
+        padding-top: 1.5em;
     }
-    .formComercio{
-        padding-left: 0;
+
+    .formComercio {
+        padding-left: 12rem;
     }
-}
+
+    #horarios {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        border: 2px solid #96D293 !important;
+        border-radius: 1rem;
+
+    }
+
+    @media handheld, (min-width: 531px) and (max-width: 995px) {
+        .logoPerfil {
+            margin-left: auto;
+            margin-right: auto;
+            height: 15rem;
+            width: 15rem;
+        }
+
+        .tituloPerfilCom {
+            display: none;
+        }
+
+        .formComercio {
+            padding-left: 0;
+        }
+    }
 
 
 
-@media handheld, screen and (max-width:530px) {
-    .logoPerfil {
-        width: 200px;
-        height: 200px;
-        margin-left: auto;
-        margin-right: auto;
-        height: 15rem;
-        width: 15rem;
-    }
-    .tituloPerfilCom {
-        display: none;
-    }
+    @media handheld, screen and (max-width: 530px) {
+        .logoPerfil {
+            margin-left: auto;
+            margin-right: auto;
+            height: 15rem;
+            width: 15rem;
+        }
 
-    .formComercio{
-        padding-left: 0;
+        .tituloPerfilCom {
+            display: none;
+        }
+
+        .formComercio {
+            padding-left: 0;
+        }
     }
-}

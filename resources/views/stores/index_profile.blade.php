@@ -21,6 +21,8 @@
         </div>
         <div class="col">
             <div class="card-description-profile">
+             
+                
                 <h3>{{$store->name}}</h3>
                 <div id="card-reputation">
                     <span class="fa fa-star checked"></span>
@@ -36,7 +38,7 @@
             </div>
         </div>
     </div>
-   
+  
     @if(Session::has('info'))
         <div class="alert alert-info">
             <button type="button" class="close" data-dismiss="alert">
@@ -48,7 +50,23 @@
     
     <hr class="solid">
     <div class="row">
+        <?php
+        // SDK de Mercado Pago
+        require '../vendor/autoload.php'; 
+        // Agrega credenciales
+        \MercadoPago\SDK::setAccessToken($credentials->access_token);
+        ?>
         @foreach ($store->offers as $offer)
+        <?php 
+        $preference = new MercadoPago\Preference();
+        $item = new MercadoPago\Item();
+        $item->title = $offer->name_offer;
+        $item->quantity = 1;
+        $item->unit_price = $offer->cost;
+        $item->description ="dasasdasd";
+        $preference->items = array($item);
+        $preference->save();
+        ?>
         <div class="col-xs-12 col-md-6 col-xl-4">
             <div class="card-product">
                 <div class="row">
@@ -73,7 +91,11 @@
                     <h3>$ {{ $offer->cost }}</h3>
                 </div>
                 <div class="card-btn-product ">
-                    <a href="#" class="btn-principal btn-block ">Comprar</a>
+                        <script 
+                        data-button-label="Comprar"
+                        src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
+                        data-preference-id="<?php echo $preference->id; ?>">
+                        </script>
                     @if (!Auth::guest())
                         @if (Auth::user()->rol == 'client')
                             <a class="btn-alternative btn-block" href="{{ route('otps.create', ['idstore' => $store->id, 'idclient' => Auth::user()->id]) }}">Retirar</a>   

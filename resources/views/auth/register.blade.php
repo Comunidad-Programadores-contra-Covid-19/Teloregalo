@@ -3,9 +3,11 @@
 @section('content')
 <!-- Inicio contenedor -->
 <div class="container">
-  
-    <img src="{{ asset('assets/registroHeroe.svg') }}" alt="registroHeroe" id="imgRegistroHeroe">
-   
+    <div class="row">
+        <div class="col-lg-6">
+            <img src="{{ asset('assets/registroHeroe.svg') }}" alt="registroHeroe" id="imgRegistroHeroe">
+        </div>
+    <div class="col-lg-6">
     <section id="RegistroHeroe">
         <h1>Registro</h1>
         <p>Al registrarte podrás recibir los regalos que los vecinos hacen en calidad de agradecimiento por tu labor durante la pandemia.</p>
@@ -28,6 +30,16 @@
                     <strong>{{ $message }}</strong>
                 </span>
                 @enderror
+            </div>
+            <div class="form-group">
+                <label for="profesionesHeroes">Profesión</label>
+                <select class="form-control" id="profesionesHeroes">
+                    <option>Profesión 1</option>
+                    <option>Profesión 2</option>
+                    <option>Profesión 3</option>
+                    <option>Profesión 4</option>
+                    <option>Profesión 5</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="inputPass">Contraseña</label>
@@ -60,135 +72,10 @@
 </div>
 <!-- Fin contenedor -->
 
-<!-- Inicio Footer -->
-<footer style="margin-top: 1.5em;">
-    <div id="contenedorFooter">
-        <div class="row">
-            <div class="col-lg-2" id="logoFooter">
-                <a href="#" >
-                    teloregalo
-                    <img src="{{ asset('assets/logo.svg') }}" width="35" height="35" alt="">
-                </a>
-            </div>
-            
-            <div class="col-lg-7" id="menuFooter">
-                <ul>
-                    <li>
-                    <a href="#">Comercios adheridos</a>
-                    </li>
-                    <li>
-                    <a href="#">Preguntas frecuentes</a>
-                    </li>
-                    <li>
-                        <a href="#">Quiénes somos</a>
-                        </li>
-                    <li>
-                        <a href="#">Donar</a>
-                    </li>
-                </ul>
-            </div>
+</div>
+</div>
 
-            <div class="col-lg-3" id="año">
-                <p>2020 Te lo regalo</p>
-            </div>
-        </div>
-    </div>
-</footer>
 
-{{-- <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Registrar como beneficiario') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre completo') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirme su contraseña') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Registrar') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">{{ __('O registrate tambien con') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-                        <div>
-                            <div class="form-group">
-                                <a href="{{ url('/login/google') }}" class="btn btn-primary">Registrarse con Google</a>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <div class="form-group">
-                                <a href="" class="btn btn-primary">Registrarse con Facebook</a>
-                            </div>
-                        </div>
-                        
-
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> --}}
 @endsection
