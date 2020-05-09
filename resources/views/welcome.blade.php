@@ -65,7 +65,7 @@
                             <div class="row">
         
                                 <div class="col-lg-3">
-                                    <button id="btnUbicacion"><img src="Regursos%20graficos/ubicacion.svg" alt="">Usar mi ubicación actual</button>
+                                    <button onclick="setMyUbicationOnMap()" id="btnUbicacion"><img src="Regursos%20graficos/ubicacion.svg" alt="">Usar mi ubicación actual</button>
                                 </div>
         
                                 <div class="col-lg-4">
@@ -80,9 +80,9 @@
                                 <div class="col-lg-5">
                                     <div class="input-group" id="ingresarDireccion">
                                         <span class="input-group-btn">
-                                            <button class="btn btn-default" type="button"><img src="Regursos%20graficos/gota.svg" alt=""></button>
+                                            <button onclick="setUbicationByAddress()" class="btn btn-default" type="button"><img src="{{ asset('assets/gota.svg') }}" alt=""></button>
                                         </span>
-                                        <input type="text" class="form-control" placeholder="Ingresá tu dirección">
+                                        <input type="text" class="form-control" placeholder="Ingresá tu dirección" id="address">
                                     </div>
                                 </div>
         
@@ -144,7 +144,7 @@
                               </div>
                           </div>
                       </div>
-                      <div class="col-md-12 col-lg-6" id="map"></div>
+                      {{-- <div class="col-md-12 col-lg-6" id="map"></div> --}}
                     @endforeach
                 
                 <!-- Fin tarjeta 2.2 -->
@@ -158,7 +158,7 @@
 
                 <div class="row d-none" id="contenedorTarjetasMapHidde">
                     <div class="col-md-12 col-lg-8 ">
-                        <img class="map" src="https://via.placeholder.com/1000" alt="mapa">
+                        <div class="map" id="map"></div>
                     </div>
                     <div class="col-md-12 col-lg-4 scrollable">
                         <div class="card-map">
@@ -298,46 +298,196 @@
     <script src="https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.auto.min.js"></script>
     <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
     <script>
-        	mapboxgl.accessToken = 'pk.eyJ1Ijoibmljb2xpZW5kcm8xNCIsImEiOiJjazlvcHU5eWMwMzdzM2hxcTNoN3lleGRmIn0.sPpU8gUReCtWeFS8z0ccsw';
+        mapboxgl.accessToken = 'pk.eyJ1Ijoibmljb2xpZW5kcm8xNCIsImEiOiJjazlvcHU5eWMwMzdzM2hxcTNoN3lleGRmIn0.sPpU8gUReCtWeFS8z0ccsw';
+        var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+        const stores = {!! $stores->toJson() !!};
+        const locationCity = stores[0].address
+
+        function setDefaultMap(){
+            mapboxgl.accessToken = 'pk.eyJ1Ijoibmljb2xpZW5kcm8xNCIsImEiOiJjazlvcHU5eWMwMzdzM2hxcTNoN3lleGRmIn0.sPpU8gUReCtWeFS8z0ccsw';
             var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
-            const stores = {!! $stores->toJson() !!};
-            let locationCity = stores[0].address
-            if(locationCity == null){
-                locationCity = "Argentina"
-            }
-            console.log(locationCity)
-            mapboxClient.geocoding
-                .forwardGeocode({
+            var map = new mapboxgl.Map({
+                container: "map",
+                style: "mapbox://styles/mapbox/streets-v11",
+                center: [-65.368819, -35.389050],
+                zoom: 3,
+            });
+        }
+
+        function createMyMap() {
+            mapboxgl.accessToken =
+            "pk.eyJ1Ijoibmljb2xpZW5kcm8xNCIsImEiOiJjazlvcHU5eWMwMzdzM2hxcTNoN3lleGRmIn0.sPpU8gUReCtWeFS8z0ccsw";
+            var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+            //Coordenadas
+            getMyCoordinates(function (coordinates) {
+                //Creacion del mapa
+                var map = new mapboxgl.Map({
+                    container: "map",
+                    style: "mapbox://styles/mapbox/streets-v11",
+                    center: [coordinates[0], coordinates[1]],
+                    zoom: 13,
+                });
+                //Añade marcador al mapa
+                let lngLat = new mapboxgl.LngLat(coordinates[0], coordinates[1]);
+                let marker = new mapboxgl.Marker().setLngLat(lngLat).addTo(map);
+
+                    //Añade los comercios
+                const stores = {!! $stores->toJson() !!};
+                for (let index = 0; index < stores.length; index++) {
+                    const locationCity = stores[index].address
+                    mapboxClient.geocoding
+                        .forwardGeocode({
+                        query: locationCity,
+                        autocomplete: true,
+                        limit: 1,
+                        })
+                        .send()
+                        .then(function (response) {
+                        if (
+                            response &&
+                            response.body &&
+                            response.body.features &&
+                            response.body.features.length
+                        ) {
+                            var feature = response.body.features[0];
+                            //Creacion del mapa
+                            //Añade marcador al mapa
+                            console.log("Se añade marcador al mapa: "+feature.center);
+                            let lngLat = new mapboxgl.LngLat(feature.center[0],feature.center[1]);
+                            let marker = new mapboxgl.Marker().setLngLat(lngLat).addTo(map);
+                        }
+                        });
+                    
+                }
+            });
+            
+        }
+
+        function getMyCoordinates(callback, enableHighAccuracy= true) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+            callback([position.coords.longitude, position.coords.latitude]);
+            });
+        }
+
+        function setMyUbicationOnMap(){
+            createMyMap();
+        }
+        function setUbicationByAddress(){
+
+            var locationCity = document.getElementById("address").value;
+            console.log(locationCity);
+            
+            if(locationCity != ""){
+                mapboxgl.accessToken =
+                "pk.eyJ1Ijoibmljb2xpZW5kcm8xNCIsImEiOiJjazlvcHU5eWMwMzdzM2hxcTNoN3lleGRmIn0.sPpU8gUReCtWeFS8z0ccsw";
+                var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+                //Obtencion de coordenadas respecto a la direccion.
+                mapboxClient.geocoding
+                    .forwardGeocode({
                     query: locationCity,
-                    autocomplete: false,
-                    limit: 1
-                })
-                .send()
-                .then(function(response) {
+                    autocomplete: true,
+                    limit: 1,
+                    })
+                    .send()
+                    .then(function (response) {
                     if (
                         response &&
                         response.body &&
                         response.body.features &&
                         response.body.features.length
-                    ) 
-                        {
-                            var feature = response.body.features[0];
-                            
-                            var map = new mapboxgl.Map({
-                            container: 'map',
-                            style: 'mapbox://styles/mapbox/streets-v11',
+                    ) {
+                        debugger;
+                        var feature = response.body.features[0];
+                        //Creacion del mapa
+                        var map = new mapboxgl.Map({
+                            container: "map",
+                            style: "mapbox://styles/mapbox/streets-v11",
                             center: feature.center,
-                            zoom: 15
+                            zoom: 15,
                         });
-                        console.log("Feature center: "+feature);
-                        new mapboxgl.Marker().setLngLat(feature.center).addTo(map);
-                }
-            });
-
-<<<<<<< HEAD
-=======
-  
->>>>>>> 0c369217de4658c69e5d8f36a499111d52c47ea3
+                        //Añade marcador al mapa
+                        console.log("Se añade marcador al mapa: "+feature.center);
+                        let lngLat = new mapboxgl.LngLat(feature.center[0],feature.center[1]);
+                        let marker = new mapboxgl.Marker().setLngLat(lngLat).addTo(map);
+                    }
+                    });
+            
+            //Añade los comercios
+            const stores = {!! $stores->toJson() !!};
+            for (let index = 0; index < array.length; index++) {
+                const locationCity = stores[index].address
+                mapboxClient.geocoding
+                    .forwardGeocode({
+                    query: locationCity,
+                    autocomplete: true,
+                    limit: 1,
+                    })
+                    .send()
+                    .then(function (response) {
+                    if (
+                        response &&
+                        response.body &&
+                        response.body.features &&
+                        response.body.features.length
+                    ) {
+                        debugger;
+                        var feature = response.body.features[0];
+                        //Creacion del mapa
+                        //Añade marcador al mapa
+                        console.log("Se añade marcador al mapa: "+feature.center);
+                        let lngLat = new mapboxgl.LngLat(feature.center[0],feature.center[1]);
+                        let marker = new mapboxgl.Marker().setLngLat(lngLat).addTo(map);
+                    }
+                    });
+                
+            }
+                
+            }
+            
+        }
+        
+        function prueba() {
+                mapboxgl.accessToken =
+                "pk.eyJ1Ijoibmljb2xpZW5kcm8xNCIsImEiOiJjazlvcTNibjIwMzZmM2dxcWY5aHkzMDc0In0.xtdr9upJ9OCfimC6CNVY8A";
+                var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+                //Coordenadas
+                var locationCity = "Salta Argentina, Lerma 42"
+                
+                
+                    //Obtencion de coordenadas respecto a la direccion.
+                    debugger;
+                    mapboxClient.geocoding
+                        .forwardGeocode({
+                        query: "Calle falsa 123",
+                        autocomplete: false,
+                        limit: 1,
+                        })
+                        .send()
+                        .then(function (response) {
+                        if (
+                            response &&
+                            response.body &&
+                            response.body.features &&
+                            response.body.features.length
+                        ) {
+                            var feature = response.body.features[0];
+                            var map = new mapboxgl.Map({
+                            container: "map",
+                            style: "mapbox://styles/mapbox/streets-v11",
+                            center: feature.center,
+                            zoom: 13,
+                        });
+                        }
+                        });
+                    //Creacion del mapa
+                    
+                    //Añade marcador al mapa
+                    //let lngLat = new mapboxgl.LngLat(feature.center);
+                    //let marker = new mapboxgl.Marker().setLngLat(lngLat).addTo(map);
+                
+        }
+        //setDefaultMap();
+        //prueba();
     </script>
 
 </body>
