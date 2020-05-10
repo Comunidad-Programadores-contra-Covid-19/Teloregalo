@@ -8,7 +8,7 @@
 
 #imgDonar {
     margin-top: 1em;
-    margin-bottom: 1em;
+    margin-bottom: 5.5em;
 }
 
 #subtituloDonar {
@@ -16,146 +16,69 @@
     font-weight: normal;
     margin-left: auto;
     margin-right: auto;
-    line-height: 30px;
+    line-height: 32px;
     text-align: justify;
-    font-size: 18px;
-    margin-bottom: 2em;
+    font-size: 22px;
+    margin-top: 2.7em;
+    margin-bottom: 2.7em;
+}
+
+#subtituloDonar p {
+    margin-bottom: 0.2em;
 }
 
 #donaciones {
-    width: 900px;
+    display: flex;
+    width: 1000px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 2.7em;
 }
 
-#bordeLogo1 {
+#donar {
     border: solid 2px #96D293;
-    border-radius: 500px;
-    padding: 1em;
-    width: 120px;
-    height: 120px;
-    float: left;
-    margin-top: 1em;
+    border-radius: 1rem;
+    padding: 2em;
+    margin: 0.3em;
+}
+
+#valorDonacion {
+    font-weight: bold;
+    font-size: 35px;
     margin-bottom: 1em;
-    margin-left: 2em;
-    margin-right: 2.5em;
+    margin-top: 0.5em;
 }
 
-#donarTeloregalo img {
-    width: 100%;
-    padding: 0.5em;
-}
-
-#bordeLogo2 {
-    border: solid 2px #96D293;
-    border-radius: 500px;
-    padding: 0.2em;
-    width: 100px;
-    height: 100px;
-    margin-left: 2em;
-    margin-right: auto;
-    float: left;
+#tiempoDonacion {
+    font-weight: bold;
+    font-size: 25px;
     margin-top: 1em;
     margin-bottom: 1em;
 }
 
-#donarBcoAlimentos img,
-#donarCruzRoja img {
-    width: 100%;
-    padding: 0.5em;
+#btnColaborar {
+    margin-top: 1.2em;
+    font-weight: bold;
 }
 
-#donarTeloregalo {
-    width: 95%;
-    display: inline-block;
-    border: solid 2px #96D293;
-    border-radius: 0.5em;
-    margin-bottom: 2em;
+#graciasDonar {
+    margin-bottom: 3em;
 }
 
-#donarTeloregalo p {
-    width: 40%;
-    height: 80px;
-    text-align: left;
-    margin-top: 40px;
-    float: left;
-    margin-right: 1em;
-    font-size: 16px; 
-}
-
-#btnDonarTeloregalo {
-    width: 11em;
-    float: right;
-    margin-top: 52px;
-    margin-right: 1em;
-    padding: 0.5em;
-}
-
-#otrasDonaciones {
-    width: 100%;
-}
-
-#otrasDonaciones h5 {
-    font-size: 17px;
-    line-height: 25px;
-    font-weight: bold
-}
-
-#donarBcoAlimentos,
-#donarCruzRoja {
-    margin: 1em;
-    display: inline-block;
-    width: 45%;
-    border: solid 2px #96D293;
-    border-radius: 0.5em;
-}
-
-#otrasDonaciones p {
-    margin-top: 1.7em;
-}
-
-#btnDonarBcoAlimentos,
-#btnDonarCruzRoja {
-    padding-left: 2em;
-    padding-right: 2em;
-    font-size: 16px;
-}
-
-@media handheld, (min-width:701px) and (max-width:1385px) {
-    #imgDonar {
-        width: 80%;
-    }
-    
-    #subtituloDonar {
-       width: 85%;
-    }
-
-    #donaciones {
-        padding-left: 5em;
-        padding-right: 5em;
-    }
-
-    
-    #bordeLogo1 {
-        margin-left: 1em;
-        margin-right: 1em;
-    }
-
-    #donarBcoAlimentos,
-    #donarCruzRoja {
-        width: 70%;
-    }
-}
-
-@media handheld, (min-width:801px) and (max-width:1050px) {
+@media handheld, (min-width:1001px) and (max-width:1386px) {
      #donaciones {
          width: 100%;
         padding-left: 1em;
         padding-right: 1em;
     }
+
+    #donar {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
 }
 
-@media handheld, screen and (max-width:800px) {
+@media handheld, screen and (max-width:1000px) {
     #imgAyuda {
         margin-top: 0.5em;
         width: 75px;
@@ -163,56 +86,54 @@
 
     #tituloDonar {
         font-size: 35px;
-        margin-top: 0.2em;
+        margin-top: 0.1em;
     }
    
     #imgDonar {
         width: 100%;
+        margin-top: 2.5em;
+        margin-bottom: 2.5em;
     }
 
     #subtituloDonar {
-       width: 100%;
-        margin-bottom: 1.5em;
+        width: 100%;
+        margin-top: 1em;
+        margin-bottom: 1.2em;
+        font-size: 20px;
     }
 
-    #donaciones {
+    #donaciones {     
+        display: unset;  
         width: 100%;
+        height: auto;
         padding-left: 0em;
         padding-right: 0em;
     }
 
-    #donarTeloregalo {
-        margin-top: 0em;
-    }
-
-    #donarBcoAlimentos,
-    #donarCruzRoja {
-        width: 90%;
-    }
-
-    #bordeLogo1 {
-        margin-top: 1em;
-        margin-bottom: 1em;
-        margin-left: 1em;
-        margin-right: 1em;
-    }
-
-    #donarTeloregalo p {
-        width: 55%;
-        height: auto;
-        margin-right: auto;
-        margin-left: auto;
-        text-align: left;
-        margin-top: 1.8em;
-        font-size: 15px;
+    #donar {
+        display: inline-block;
+        padding: 0.5em;
+        margin-right: 0em;
+        width: 45%;
     }
     
-    #btnDonarTeloregalo {
-        width: 180px;
-        float: none;
-        margin-top: 1.5em;
-        margin-right: auto;
-        margin-left: auto;
-        margin-bottom: 1em;
+    #valorDonacion {
+        font-size: 33px;
+        margin-bottom: 0.3em;
+        margin-top: 0em;
+    }
+    
+    #tiempoDonacion {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+    
+    #btnColaborar {
+        margin-top: 1em;
+    }
+   
+    #graciasDonar {
+        font-size: 32px;
+        margin-bottom: 1.5em;
     }
 }
