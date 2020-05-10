@@ -54,18 +54,34 @@
         // SDK de Mercado Pago
         require '../vendor/autoload.php'; 
         // Agrega credenciales
-        \MercadoPago\SDK::setAccessToken($credentials->access_token);
+  /*        \MercadoPago\SDK::setAccessToken($credentials->access_token);  */
+      \MercadoPago\SDK::setAccessToken('TEST-5841017781823689-050723-4081492e6e230f3f7078e56332de7955-318863690'); 
+     
         ?>
         @foreach ($store->offers as $offer)
         <?php 
         $preference = new MercadoPago\Preference();
+   
+
+
+     
         $item = new MercadoPago\Item();
-        $item->title = $offer->name_offer;
+        $item->id =$offer->id; 
+        $item->title = $offer->name_offer ;
+        $item->description =$offer->description_offer ;
         $item->quantity = 1;
         $item->unit_price = $offer->cost;
-        $item->description ="dasasdasd";
+        $item->category_id =$offer->id;
+        $preference->back_urls = array(
+        "success" => "https://www.tu-sitio/success",
+        "failure" => "http://www.tu-sitio/failure",
+        "pending" => "http://www.tu-sitio/pending"
+    );
         $preference->items = array($item);
-        $preference->save();
+    
+        $preference->save(); 
+
+
         ?>
         <div class="col-xs-12 col-md-6 col-xl-4">
             <div class="card-product">
@@ -77,10 +93,10 @@
                         <div class=" card-index-product" >
                             <div>
                                 <p>Total vendidos</p>
-                                <p><b>70</b></p>
+                                <p><b>{{$offer->total_amount}}</b></p>
                                 <hr class="solid">
                                 <p>Disponibles </p>
-                                <p><b>70</b></p>
+                                <p><b>{{$offer->amount}}</b></p>
                             </div>
                         </div>
                     </div>
@@ -89,16 +105,24 @@
                     <h4>{{ $offer->name_offer }}</h4>
                     <p>{{ $offer->description_offer }}</p>
                     <h3>$ {{ $offer->cost }}</h3>
+                    
                 </div>
                 <div class="card-btn-product ">
+                 <form action="{{ route('verificar.pago')}}" method="POST"> 
+                    <input type="hidden" name="ofert" value="TEST-5841017781823689-050723-4081492e6e230f3f7078e56332de7955-318863690">
+                    @csrf
+                        
                         <script 
                         data-button-label="Comprar"
                         src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
-                        data-preference-id="<?php echo $preference->id; ?>">
+                        data-preference-id="<?php echo $preference->id;?>">
+                      
                         </script>
+                     
+                  </form> 
                     @if (!Auth::guest())
                         @if (Auth::user()->rol == 'client')
-                            <a class="btn-alternative btn-block" href="{{ route('otps.create', ['idstore' => $store->id, 'idclient' => Auth::user()->id]) }}">Retirar</a>   
+                            <a class="btn-alternative btn-block" href="{{ route('otps.create', ['idstore' => $store->id, 'idclient' => Auth::user()->id,'idOffer'=>$offer->id]) }}">Retirar</a>   
                         @endif
                     @endif
                   

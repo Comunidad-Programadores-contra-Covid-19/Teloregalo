@@ -50,7 +50,7 @@ Route::resource('offers', 'OfferController')/* ->middleware('verified') */;
 
 Route::resource('otps', 'OtpController')/* ->middleware('verified') */;
 
-Route::get('create/{idstore}/{idclient}', 'OtpController@create')->name('otps.create')/* ->middleware('verified') */;
+Route::get('create/{idstore}/{idclient}/{idOffer}', 'OtpController@create')->name('otps.create')/* ->middleware('verified') */;
 
 Route::delete('/otps/{idstore}', 'OtpController@destroy');/* ->middleware('verified') */
 
@@ -60,15 +60,20 @@ Route::get('/', 'HomeController@index')->name('home')/* ->middleware('verified')
 
 Route::get('store/{id}','StoreController@show')->name('stores.perfil');
 Route::group(['middleware' => ['auth', 'store']], function () {
-    
     Route::get('stores/miPerfil','StoreController@renderPerfil')->name('stores.miPerfil')/* ->middleware('verified') */ ;
-Route::get('stores/misVentas','StoreController@renderVentas')->name('stores.misVentas');
-Route::get('stores/misProductos','StoreController@renderProductos')->name('stores.misProductos');
-Route::put('updateImage/{id}', 'StoreController@updateImage')->name('stores.updateImage');
+    Route::get('stores/misVentas','StoreController@renderVentas')->name('stores.misVentas');
+    Route::get('stores/misProductos','StoreController@renderProductos')->name('stores.misProductos');   
+    Route::put('updateImage/{id}', 'StoreController@updateImage')->name('stores.updateImage');
     Route::put('update/{id}', 'StoreController@update')->name('stores.update')/* ->middleware('verified') */;
-    Route::get('/procesar-pago', 'LinkMercadoPagoController@linked' ); 
-});
+    Route::put('register/paso2/{id}', 'StoreController@registerTwo')->name('stores.updateRegister');
 
+    Route::get('register/pasortwo', function(){
+        return view('auth.registerStore2');
+    });
+    Route::get('/procesar-pago', 'LinkMercadoPagoController@linked' ); 
+     
+});
+Route::post('/verificar-pago', 'LinkMercadoPagoController@verificar' )->name('verificar.pago');
 Route::group(['middleware' => ['auth', 'client']], function () {
     Route::get('otps', 'OtpController@create')/* ->middleware('verified') */;
 });
@@ -83,5 +88,9 @@ Route::get('/preguntas-frecuentes', function(){
 });
 Route::get('/donar', function () {
     return view('teloregalo.donar');
+});
+
+Route::get('/agradecimiento', function () {
+    return view('teloregalo.agradecimiento');
 });
 

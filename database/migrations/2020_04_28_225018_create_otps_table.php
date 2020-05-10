@@ -21,6 +21,9 @@ class CreateOtpsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('store_id')->unsigned();
             $table->foreign('store_id')->references('id')->on('stores');
+            $table->integer('offer_id')->unsigned();
+            $table->foreign('offer_id')->references('id')->on('offers');
+            $table->boolean('is_used')->default(0);
         });
     }
 

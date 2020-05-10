@@ -2,78 +2,84 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Registra tu comercio') }}</div>
+    <div class="row">
+        <div class="col-lg-6">
+            <img src="{{asset('assets/RegistroComercio.svg')}}" alt="imgRegistro" id="imgRegistroComercio">
+        </div>
+        <div class="col-lg-6">
+            <section id="RegistroComercio">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ url('stores/register') }}">
-                        @csrf
+                <h1>Paso 1</h1>
+                <p>Al registrar tu comercio los vecinos podrán elegirte para comprar regalos a nuestros héroes.</p>
+                <form method="POST" action="{{ url('stores/register') }}">
+                    @csrf
+                    <div class="form-group ">
+                        <label for="inputNombreComercio">Tu nombre y apellido</label>
+                        <input type="text" id="inputNombreComercio" placeholder="" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                        
+                        @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" id="inputEmail" placeholder="" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                        
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPass">Contraseña</label>
+                        <input type="password" id="inputPass" placeholder="" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="password-confirm">Confirme su contraseña</label>
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre del comercio') }}</label>
+                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                    </div>
+                    <div class="form-check" id="chekRegistroComercio">
+                        
+                        <input type="checkbox" name="terminos" onclick="isChecked()" class="form-check-input" id="exampleCheck1"/>
+                        <label class="form-check-label" for="exampleCheck1"><b> Acepto términos y
+                            condiciones</b></label>
+                          
+                    </div>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                    <p id="tycRegistroComercio">Al hacer click en "Registrarme" aceptás nuestras <a href="#"><b>condiciones,
+                        la Política de Datos y la Política de Cookies.</b></a></p>
+                
+                    <button type="submit" class="btn btn-principal btn-block" id="btnRegistroComercio1" disabled>Registrar mi
+                        comercio
+                    </button>
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                </form>
+            </section>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirme su contraseña') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Registrar') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            
         </div>
     </div>
 </div>
+<script>
+
+    function isChecked(){
+        checkDom= document.getElementById('exampleCheck1')
+        btnRegistroDom= document.getElementById('btnRegistroComercio1')
+        if(checkDom.checked){
+            btnRegistroDom.disabled = false; 
+        }else
+       
+            btnRegistroDom.disabled = true; 
+                   
+            
+    }
+</script>
 @endsection
