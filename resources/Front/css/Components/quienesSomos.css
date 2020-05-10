@@ -4,9 +4,34 @@
     margin: 5rem auto 3rem;
 }
 
-#content h3 {
-    margin-top: 5rem;
-    margin-bottom: 0;
+.subtitulosQuienesSomos {
+    margin-top: 3em;
+    margin-bottom: 1.5em;
+}
+
+#ntrosProyectos {
+    text-align: center;
+}
+
+#ntrosProyectos h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 3em;
+}
+
+#ntrosProyectos p {
+    margin-top: 1.2em;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+}
+
+#miembrosEquipo h3 {
+    text-align: center;
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+    font-weight: bold;
 }
 
 .card-member{
@@ -26,9 +51,46 @@
     margin-bottom: auto;
 }
 
+#contactanos {
+    margin-top: 5em;
+    margin-bottom: 4em;
+}
+
+#contactanos h3 {
+    margin-bottom: 1.5em;
+}
+
+#contactanos p {
+    margin-bottom: 1.5em;
+}
+#contactanos img {
+    margin-right: 0.7em;
+}
+
 @media handheld, screen and (max-width:991px) {
     #content {
         width: 100%;
-        margin-top: 2.5em;
+        margin-top: 2em;
+        margin-bottom: 0em;
+    }
+
+    #content img {
+        width: 60px;
+    }
+
+    .subtitulosQuienesSomos {
+        margin-top: 1.7em;
+        margin-bottom: 1em;
+        text-align: center;
+    }
+
+    #ntrosProyectos h2 {
+        margin-top: 1em;
+        font-size: 27px;
+    }
+
+    #ntrosProyectos p {
+        margin-top: 1em;
+        width: 90%;
     }
 }
