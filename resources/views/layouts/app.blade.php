@@ -183,6 +183,7 @@
         apiKey: '434d496eb4f5cc8f25cdcf631051eb5e',
         container: document.querySelector('#inputDireccion')
     });
+
 </script>
 <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>

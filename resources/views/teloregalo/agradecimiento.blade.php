@@ -5,7 +5,7 @@
 
     <!-- Inicio Botón "volver" -->
     <div class="volver">
-        <button><  Volver</button>
+        <a href="{{ url()->previous() }}"><button ><  Volver</button></a>
     </div>
     <!-- Fin Botón "volver" -->
 
@@ -16,15 +16,15 @@
 
         <h4 id="subtituloGracias">Compartí esta buena acción para que otros te imiten</h4>
 
-        <img src="Regursos%20graficos/gracias.svg" alt="gracias" id="imgGracias">
+        <img src="{{asset('assets/gracias.svg')}}" alt="gracias" id="imgGracias">
 
         <ul id="iconosCompartir">
-            <li><button id="compartirDescargar"><img src="Regursos%20graficos/descarga.svg" alt="icono descargar"></button></li>
-            <li><button id="compartirWhatsapp"><img src="Regursos%20graficos/whatsapp.svg" alt="icono whatsapp"></button></li>
-            <li><button id="compartirInstagram"><img src="Regursos%20graficos/instagram.svg" alt="icono instagram"></button></li>
-            <li><button id="compartirFacebook"><img src="Regursos%20graficos/facebook.svg" alt="icono facebook"></button></li>
-            <li><button id="compartirTwitter"><img src="Regursos%20graficos/twitter.svg" alt="icono twitter"></button></li>
-            <li><button id="compartirCorreo"><img src="Regursos%20graficos/correo.svg" alt="icono correo"></button></li>
+            <li><button id="compartirDescargar"><img src="{{asset('assets/descarga.svg')}}" alt="icono descargar"></button></li>
+            <li><button id="compartirWhatsapp"><img src="{{asset('assets/whatsapp.svg')}}" alt="icono whatsapp"></button></li>
+            <li><button id="compartirInstagram"><img src="{{asset('assets/instagram.svg')}}" alt="icono instagram"></button></li>
+            <li><button id="compartirFacebook"><img src="{{asset('assets/facebook.svg')}}" alt="icono facebook"></button></li>
+            <li><button id="compartirTwitter"><img src="{{asset('assets/twitter.svg')}}" alt="icono twitter"></button></li>
+            <li><button id="compartirCorreo"><img src="{{asset('assets/correo.svg')}}" alt="icono correo"></button></li>
         </ul>
     </section>
     <!-- Fin Compartir -->
