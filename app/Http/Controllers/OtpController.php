@@ -7,20 +7,21 @@ use App\OtpService;
 use App\Otp;
 use App\Store;
 use App\Offer;
+
 class OtpController extends Controller
 {
-    public function create($idstore, $idclient,$offer_id)
+    public function create($idstore, $idclient, $offer_id)
     {
         $otpClient = Otp::where('user_id', $idclient)
             ->orderBy('otp_timestamp', 'ASC')->first();
         if ($otpClient == null) {
-            $otp = $this->store($idstore, $idclient,$offer_id);
+            $otp = $this->store($idstore, $idclient, $offer_id);
             return view('otps.buy', ['otp' => $otp]);
         } else {
             $OTP_VALID = 1440; // Equivale a 24 horas.
             $validTill = strtotime($otpClient->otp_timestamp) + ($OTP_VALID * 60);
             if (strtotime("now") > $validTill) {
-                $otpClient = $this->store($idstore, $idclient,$offer_id);
+                $otpClient = $this->store($idstore, $idclient, $offer_id);
                 return view('otps.buy', ['otp' => $otp]);
             } else {
                 return back()->with('info', 'Ya pediste o consumiste un beneficio!');
@@ -28,10 +29,10 @@ class OtpController extends Controller
         }
     }
 
-    public function store($store_id, $client_id,$offer_id)
+    public function store($store_id, $client_id, $offer_id)
     {
         $otpService = new OtpService();
-        $otp = $otpService->generateOtp($client_id, $store_id,$offer_id);
+        $otp = $otpService->generateOtp($client_id, $store_id, $offer_id);
         return $otp;
     }
 
@@ -45,15 +46,19 @@ class OtpController extends Controller
         $message = "";
         if ($otp != null && $store != null) {
             if ($otp->store_id == $store->id) {
-                $validTill = strtotime($otp->otp_timestamp) + ($OTP_VALID * 60);
-                if (strtotime("now") > $validTill) {
+                if ($otp->is_used == 0) {
+                    $validTill = strtotime($otp->otp_timestamp) + ($OTP_VALID * 60);
+                    if (strtotime("now") > $validTill) {
+                        $message = "El codigo expiro!";
+                    } else {
+                        $this->discountOffer($otp->offer_id);
+                        $otp->is_used = 1;
+                        //$otp->delete();
 
-                    $message = "El codigo expiro!";
+                        $message = "Codigo ingresado correctamente!";
+                    }
                 } else {
-                    $this->discountOffer($otp->offer_id);
-                    $otp->delete();
-                  
-                    $message = "Codigo ingresado correctamente!";
+                    $message = "Ya usaste este codigo!";
                 }
             } else {
                 $message = "Ups! El codigo o el comercio es incorrecto";
@@ -64,8 +69,9 @@ class OtpController extends Controller
         return back()->with('info', $message);
     }
 
-    public function discountOffer($idOffer){
-        $offer = Offer::where('id',$idOffer)->first();
+    public function discountOffer($idOffer)
+    {
+        $offer = Offer::where('id', $idOffer)->first();
         var_dump($offer->id);
 
         $offer->amount = $offer->amount - 1;
@@ -73,5 +79,4 @@ class OtpController extends Controller
         $offer->total_amount = $offer->total_amount + 1;
         $offer->save();
     }
-    
 }
