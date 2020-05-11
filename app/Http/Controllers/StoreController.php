@@ -88,12 +88,7 @@ class StoreController extends Controller
         return redirect('stores/miPerfil')->with('success', 'Se han modificado los datos Correctamente');
     }
 
-<<<<<<< HEAD
-    public function registerTwo(Request $request, $id)
-    {
-=======
     public function registerTwo(Request $request, $id){
->>>>>>> 353ec50107d109104c6040c78a26e1dc6c2809d1
         $storeUpdate = Store::findOrFail($id);
         /* ['name','user_id','description','adress','sector','avatar','facebook','instagram','horarios','category','phone'] */
 
