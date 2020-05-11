@@ -59,26 +59,32 @@
                         </li>
                     @endif
                 @else
-                    @if(Auth::user()->rol == 'store')
-                    <li> <a id="navbarDropdown" class="nav-link " href="{{ route('stores.miPerfil') }}" role="button">
-                        Mi Comercio
-                    </a></li>
-                    @endif
+             
                     <li class="nav-item dropdown">
 
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             @if(Auth::user()->avatar)
-                                <img class="rounded-circle" src="{{ Auth::user()->avatar }}" alt="avatar" width="40" height="40" style="margin-right: 8px;">
+                                <img class="rounded-circle" src="{{ Storage::url(Auth::user()->avatar)}}" alt="avatar" width="40" height="40" style="margin-right: 8px;">
                             @endif
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                {{ __('Salir de la cuenta') }}
+                     
+                            @if(Auth::user()->rol == 'store')
+                            <a id="navbarDropdown" class="nav-link " href="{{ route('stores.miPerfil') }}" role="button">
+                                Mi Comercio
                             </a>
-
+                            @endif
+                            @if(Auth::user()->rol == 'client')
+                            <a id="navbarDropdown" class="nav-link " href="{{ route('cliente.miperfil') }}" role="button">
+                                Mi Perfil
+                            </a>
+                            @endif
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                          document.getElementById('logout-form').submit();">
+                             {{ __('Salir de la cuenta') }}
+                         </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>

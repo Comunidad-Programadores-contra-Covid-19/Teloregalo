@@ -65,6 +65,7 @@ Route::group(['middleware' => ['auth', 'store']], function () {
     Route::get('stores/misProductos','StoreController@renderProductos')->name('stores.misProductos');   
     Route::put('updateImage/{id}', 'StoreController@updateImage')->name('stores.updateImage');
     Route::put('update/{id}', 'StoreController@update')->name('stores.update')/* ->middleware('verified') */;
+    
     Route::put('register/paso2/{id}', 'StoreController@registerTwo')->name('stores.updateRegister');
 
     Route::get('register/pasortwo', function(){
@@ -76,6 +77,12 @@ Route::group(['middleware' => ['auth', 'store']], function () {
 Route::post('/verificar-pago', 'LinkMercadoPagoController@verificar' )->name('verificar.pago');
 Route::group(['middleware' => ['auth', 'client']], function () {
     Route::get('otps', 'OtpController@create')/* ->middleware('verified') */;
+    Route::get('/mi-perfil', 'ClientController@renderPerfil')->name('cliente.miperfil')/* ->middleware('verified') */;
+    Route::get('/mis-regalos', 'ClientController@renderMisRegalos')->name('cliente.mis-regalos')/* ->middleware('verified') */;
+
+    Route::put('/updateHero/{id}', 'ClientController@updateHero')->name('clientes.updateHero')/* ->middleware('verified') */;
+    Route::put('/updateImageHero/{id}', 'ClientController@updateImage')->name('clientes.updateImage')/* ->middleware('verified') */;
+
 });
 
 

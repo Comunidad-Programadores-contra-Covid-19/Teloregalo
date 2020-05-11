@@ -54,8 +54,8 @@
         // SDK de Mercado Pago
         require '../vendor/autoload.php'; 
         // Agrega credenciales
-  /*        \MercadoPago\SDK::setAccessToken($credentials->access_token);  */
-      \MercadoPago\SDK::setAccessToken('TEST-5841017781823689-050723-4081492e6e230f3f7078e56332de7955-318863690'); 
+         \MercadoPago\SDK::setAccessToken($credentials->access_token);  
+    /*   \MercadoPago\SDK::setAccessToken('TEST-5841017781823689-050723-4081492e6e230f3f7078e56332de7955-318863690');  */
      
         ?>
         @foreach ($store->offers as $offer)

@@ -37,7 +37,7 @@
         <!-- Inicio cabecera presentación -->
         <section id="contenedorPresentacion">
             <div class="container features" id="imgPresentacion">
-                <img src="assets/ilustracionLandingPage.svg" alt="imagenPresentacion" class="img-fluid"> 
+                <img src="{{asset('assets/ilustracionLandingPage.svg')}}" /> 
             </div>
             <section class="container features" id="presentacion">
                 <h1>Ayudá desde casa.</h1>
@@ -51,7 +51,7 @@
                 </div>
                 <div id="btnRegistroRegalo">
                     @guest
-                    <a href="#" class="btn btn-primary" id="btnRegistrar">Registrar comercio</a>
+                    <a href="{{route('register.stores')}}" class="btn btn-primary" id="btnRegistrar">Registrar comercio</a>
                     @endguest
                     <a href="#Comercios" class="btn btn-secondary" id="btnRegalar">Regalar</a>
                 </div>

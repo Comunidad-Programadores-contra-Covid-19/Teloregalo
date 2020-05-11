@@ -33,7 +33,7 @@
             </div>
             <div class="form-group">
                 <label for="profesionesHeroes">Profesión</label>
-                <select class="form-control" id="profesionesHeroes">
+                <select class="form-control" name='profesion' id="profesionesHeroes">
                     <option>Profesión 1</option>
                     <option>Profesión 2</option>
                     <option>Profesión 3</option>
