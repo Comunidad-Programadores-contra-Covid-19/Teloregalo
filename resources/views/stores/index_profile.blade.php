@@ -121,7 +121,7 @@
                      
                   </form> 
                     @if (!Auth::guest())
-                        @if (Auth::user()->rol == 'client')
+                        @if (Auth::user()->rol == 'client' && $offer->amount > 0)
                             <a class="btn-alternative btn-block" href="{{ route('otps.create', ['idstore' => $store->id, 'idclient' => Auth::user()->id,'idOffer'=>$offer->id]) }}">Retirar</a>   
                         @endif
                     @endif

@@ -7,16 +7,14 @@
     <title>TeLoRegalo</title>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!-- Fonts -->
-
     <!-- Styles -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link  href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link  href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="icon" href="{{ asset('assets/logo.svg') }}" sizes="32x32" type="image/svg">
     <link rel="icon" href="{{ asset('assets/logo.svg') }}" sizes="16x16" type="image/svg">
 </head>
 <body>
+  
         <!--Inicio Navbar -->
         <header>
         <nav class="mb-1 navbar navbar-expand-lg navbar-light navbar-green shadow-sm sticky-top">
@@ -63,15 +61,25 @@
                     <li class="nav-item dropdown">
 
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            @if(Auth::user()->avatar)
-                                <img class="rounded-circle" src="{{ Storage::url(Auth::user()->avatar)}}" alt="avatar" width="40" height="40" style="margin-right: 8px;">
+                            @if(Auth::user()->rol == 'client')
+                                @if(Auth::user()->avatar)
+                                    <img class="rounded-circle" src="{{ Storage::url(Auth::user()->avatar)}}" alt="avatar" width="40" height="40" style="margin-right: 8px;">
+                                @else
+                                    <img class="rounded-circle" src="{{Auth::user()->avatar_social}}" alt="avatar" width="40" height="40" style="margin-right: 8px;">
+                                @endif
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            @else
+                                @if(Auth::user()->store->avatar)
+                                    <img class="rounded-circle" src="{{ Storage::url(Auth::user()->store->avatar)}}" alt="avatar" width="40" height="40" style="margin-right: 8px;">
+                                @endif
+                                {{ Auth::user()->store->name }} <span class="caret"></span>
                             @endif
-                            {{ Auth::user()->name }} <span class="caret"></span>
+                           
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                      
                             @if(Auth::user()->rol == 'store')
-                            <a id="navbarDropdown" class="nav-link " href="{{ route('stores.miPerfil') }}" role="button">
+                            <a id="navbarDropdown" class="nav-link button" href="{{ route('stores.miPerfil') }}" role="button">
                                 Mi Comercio
                             </a>
                             @endif
@@ -80,7 +88,8 @@
                                 Mi Perfil
                             </a>
                             @endif
-                            <a class="dropdown-item" href="{{ route('logout') }}"
+                            <div class="dropdown-divider"></div>
+                            <a class="nav-link" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                           document.getElementById('logout-form').submit();">
                              {{ __('Salir de la cuenta') }}
@@ -173,27 +182,17 @@
 </footer>
 <!-- Footer -->
 
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.18.2"></script>
+    <script>
+        var placesAutocomplete = places({
+            appId: 'pl8NRH7GW6B5',
+            apiKey: '434d496eb4f5cc8f25cdcf631051eb5e',
+            container: document.querySelector('#inputDireccion')
+        });
     </script>
-
-
-<script src="https://cdn.jsdelivr.net/npm/places.js@1.18.2"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/places.js@1.18.2"></script>
-
-<script>
-    var placesAutocomplete = places({
-        appId: 'pl8NRH7GW6B5',
-        apiKey: '434d496eb4f5cc8f25cdcf631051eb5e',
-        container: document.querySelector('#inputDireccion')
-    });
-
-</script>
-<script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
+    <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </body>
 </html>
