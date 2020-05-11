@@ -54,8 +54,8 @@
         // SDK de Mercado Pago
         require '../vendor/autoload.php'; 
         // Agrega credenciales
-         \MercadoPago\SDK::setAccessToken($credentials->access_token);  
-    /*   \MercadoPago\SDK::setAccessToken('TEST-5841017781823689-050723-4081492e6e230f3f7078e56332de7955-318863690');  */
+   /*       \MercadoPago\SDK::setAccessToken($credentials->access_token);   */
+       \MercadoPago\SDK::setAccessToken('TEST-5841017781823689-050723-4081492e6e230f3f7078e56332de7955-318863690');
      
         ?>
         @foreach ($store->offers as $offer)
@@ -87,7 +87,11 @@
             <div class="card-product">
                 <div class="row">
                     <div class="col-6">
+                        @if($offer->image_offer)
+                        <img src="{{ Storage::url($offer->image_offer)}}" alt="" class="card-image-product ">
+                        @else
                         <img src="https://via.placeholder.com/150" alt="" class="card-image-product ">
+                        @endif
                     </div>
                     <div class="col-6">
                         <div class=" card-index-product" >
@@ -109,7 +113,7 @@
                 </div>
                 <div class="card-btn-product ">
                  <form action="{{ route('verificar.pago')}}" method="POST"> 
-                    <input type="hidden" name="ofert" value="TEST-5841017781823689-050723-4081492e6e230f3f7078e56332de7955-318863690">
+                    <input type="hidden" name="ofert" value="TEST-5841017781823689-050723-4081492e6e230f3f7078e56332de7955-318863690"> {{-- cambiar esto tambien --}}
                     @csrf
                         
                         <script 
@@ -121,7 +125,7 @@
                      
                   </form> 
                     @if (!Auth::guest())
-                        @if (Auth::user()->rol == 'client')
+                        @if (Auth::user()->rol == 'client' && $offer->amount > 0)
                             <a class="btn-alternative btn-block" href="{{ route('otps.create', ['idstore' => $store->id, 'idclient' => Auth::user()->id,'idOffer'=>$offer->id]) }}">Retirar</a>   
                         @endif
                     @endif

@@ -67,6 +67,8 @@ Route::group(['middleware' => ['auth', 'store']], function () {
     Route::put('updateImage/{id}', 'StoreController@updateImage')->name('stores.updateImage');
     Route::put('update/{id}', 'StoreController@update')->name('stores.update')/* ->middleware('verified') */;
 
+
+
     Route::put('register/paso2/{id}', 'StoreController@registerTwo')->name('stores.updateRegister');
 
     Route::get('/procesar-pago', 'LinkMercadoPagoController@linked');
@@ -75,6 +77,7 @@ Route::group(['middleware' => ['auth', 'store']], function () {
     });
     Route::get('/procesar-pago', 'LinkMercadoPagoController@linked');
 });
+
 Route::post('/verificar-pago', 'LinkMercadoPagoController@verificar')->name('verificar.pago');
 Route::group(['middleware' => ['auth', 'client']], function () {
     Route::get('otps', 'OtpController@create')/* ->middleware('verified') */;

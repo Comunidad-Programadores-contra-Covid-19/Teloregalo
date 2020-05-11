@@ -49,6 +49,7 @@ class LinkMercadoPagoController extends Controller
                 ]);
                 $credentials->save();
                 $messag="Tu cuenta se vinculo con exito";
+                return redirect('stores/miPerfil')->with('success', $messag);
         }
         
         

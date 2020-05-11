@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/#';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -65,11 +65,12 @@ class LoginController extends Controller
                 'name' => $user->name,
                 'email' => $user->email,
                 'rol' => 'client',
-                'avatar'=> $user->avatar_original,
+                'avatar_social'=> $user->avatar_original,
                 'social_id' => $user->id,
             ]); 
         }
         
     }
- 
+
+  
 }
