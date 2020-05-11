@@ -136,7 +136,7 @@
                 <div class="card-member">
                     <img src="{{asset('asset/Florencia%20De%20Mollein.jpg')}}" alt="" class="avatar">
                     <h6>Florencia De Mollein</h6>
-                    <a href="https://www.linkedin.com/in/maría-florencia-de-mollein-a42a5770/" target="_blank"><span><i class="fab fa-linkedin"></i></span> linkedin.com/in/maría-florencia-de-mollein-a42a5770/</a>
+                    <a href="https://www.linkedin.com/in/maría-florencia-de-mollein/" target="_blank"><span><i class="fab fa-linkedin"></i></span> linkedin.com/in/maría-florencia-de-mollein-a42a5770/</a>
                     <p><em>"A todos los héroes anónimos. A mi familia."</em></p>
                 </div>
             </div>
