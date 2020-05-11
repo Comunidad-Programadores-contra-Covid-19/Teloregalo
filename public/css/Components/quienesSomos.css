@@ -9,22 +9,23 @@
     margin-bottom: 1.5em;
 }
 
-#ntrosProyectos {
-    text-align: center;
-}
 
 #ntrosProyectos h2 {
     text-align: center;
     font-weight: bold;
-    margin-top: 3em;
+    margin-top: 2rem;
 }
 
 #ntrosProyectos p {
     margin-top: 1.2em;
-    width: 50%;
+    width: 75%;
     margin-left: auto;
     margin-right: auto;
-    text-align: justify;
+}
+
+.box-line{
+    border: solid 2px #96D293;
+    border-radius: 0.5em;
 }
 
 #miembrosEquipo h3 {
@@ -71,7 +72,7 @@
     #content {
         width: 100%;
         margin-top: 2em;
-        margin-bottom: 0em;
+        margin-bottom: 0;
     }
 
     #content img {
