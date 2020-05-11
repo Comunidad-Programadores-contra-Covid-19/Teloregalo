@@ -17,7 +17,8 @@
         "laravel/tinker": "^1.0",
         "laraveles/spanish": "^1.4",
         "mercadopago/dx-php": "^2.0",
-        "nesbot/carbon": "^2.32"
+        "nesbot/carbon": "^2.32",
+        "willvincent/laravel-rateable": "^2.1"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.3",

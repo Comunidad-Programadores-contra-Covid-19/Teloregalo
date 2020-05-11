@@ -3,10 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use willvincent\Rateable\Rateable;
 
 class Store extends Model
 {
-    protected $fillable = ['name','user_id','description','address','sector','avatar','facebook','instagram','horarios','category','phone'];
+    use Rateable;
+
+    protected $fillable = ['name', 'user_id', 'description', 'address', 'sector', 'avatar', 'facebook', 'instagram', 'horarios', 'category', 'phone'];
 
     public function offers()
     {
@@ -17,7 +20,4 @@ class Store extends Model
     {
         return $this->hasOne('App\User');
     }
-
-
-
 }

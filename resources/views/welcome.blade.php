@@ -68,13 +68,13 @@
                             <div class="row">
         
                                 <div class="col-lg-3">
-                                    <button onclick="setMyUbicationOnMap()" id="btnUbicacion"><img src="Regursos%20graficos/ubicacion.svg" alt="">Usar mi ubicación actual</button>
+                                    <button onclick="setMyUbicationOnMap()" id="btnUbicacion"><img src="{{ asset('assets/ubicacion.svg') }}" alt="">Usar mi ubicación actual</button>
                                 </div>
         
                                 <div class="col-lg-4">
                                     <div class="input-group" id="buscarComercio">
                                         <span class="input-group-btn">
-                                            <button class="btn btn-default" type="button"><img src="Regursos%20graficos/lupa.svg" alt=""></button>
+                                            <button class="btn btn-default" type="button"><img src="{{ asset('assets/lupa.svg') }}" alt=""></button>
                                         </span>
                                         <input type="text" class="form-control" placeholder="Buscar comercio por nombre">
                                     </div>
