@@ -56,6 +56,7 @@ class OfferController extends Controller
         $offer->cost = $request->cost;
         $offer->amount = 0;
         $offer->total_amount=0;
+        $offer->image_offer = $request->file('imageOffer')->store('public');
         $offer->store_id = auth()->user()->id;
         $offer->save();
  
@@ -120,5 +121,20 @@ class OfferController extends Controller
         $offer->delete();
 
         return redirect('stores/misProductos')->with('success', 'Oferta eliminada.');
+    }
+    public function offerImageUpdate($id){
+        
+       
+
+        if ($request->has('imageOffer')) {
+            $offerImageUpdate = Store::findOrFail($id);
+            $offerImageUpdate->image_offer = $request->file('imageOffer')->store('public');
+            $offerImageUpdate->update();
+        }
+
+
+    
+
+        return redirect('stores/miPerfil')->with('success', 'Se han modificado los datos Correctamente');
     }
 }

@@ -30,12 +30,27 @@
             <div id="calificar">
                 <h2>Calificá tu experiencia</h2>
             
-            <ul>
-                <li><button id="estrella1"><img src="{{ asset('assets/estrella.svg')}}" alt=""></button></li>
-                <li><button id="estrella2"><img src="{{ asset('assets/estrella.svg')}}" alt=""></button></li>
-                <li><button id="estrella3"><img src="{{ asset('assets/estrella.svg')}}" alt=""></button></li>
-                <li><button id="estrella4"><img src="{{ asset('assets/estrella.svg')}}" alt=""></button></li>
-                <li><button id="estrella5"><img src="{{ asset('assets/estrella.svg')}}" alt=""></button></li>
+            <ul class="row justify-content-center">
+                <li><form action="{{ route('puntuacion', 1) }}" method="POST">
+                    {{ csrf_field() }}
+                    <button type="submit" id="estrella1" onclick="getRating(this.id)"><img src="{{ asset('assets/estrella.svg')}}" alt=""></button>
+                </form></li>
+                <li><form action="{{ route('puntuacion', 2) }}" method="POST">
+                    {{ csrf_field() }}
+                    <button type="submit" id="estrella1" onclick="getRating(this.id)"><img src="{{ asset('assets/estrella.svg')}}" alt=""></button>
+                </form></li>
+                <li><form action="{{ route('puntuacion', 3) }}" method="POST">
+                    {{ csrf_field() }}
+                    <button type="submit" id="estrella1" onclick="getRating(this.id)"><img src="{{ asset('assets/estrella.svg')}}" alt=""></button>
+                </form></li>
+                <li><form action="{{ route('puntuacion', 4) }}" method="POST">
+                    {{ csrf_field() }}
+                    <button type="submit" id="estrella1" onclick="getRating(this.id)"><img src="{{ asset('assets/estrella.svg')}}" alt=""></button>
+                </form></li>
+                <li><form action="{{ route('puntuacion', 5) }}" method="POST">
+                    {{ csrf_field() }}
+                    <button type="submit" id="estrella1" onclick="getRating(this.id)"><img src="{{ asset('assets/estrella.svg')}}" alt=""></button>
+                </form></li>
             </ul>
                
                 <h3>Nombre de comercio</h3>

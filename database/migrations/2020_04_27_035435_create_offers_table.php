@@ -20,6 +20,7 @@ class CreateOffersTable extends Migration
             $table->string('cost', 8, 2);
             $table->integer('amount')->nullable();
             $table->integer('total_amount')->nullable();
+            $table->string('image_offer')->nullable();
             $table->integer('store_id')->unsigned();
             $table->foreign('store_id')->references('id')->on('stores');
             $table->timestamps();

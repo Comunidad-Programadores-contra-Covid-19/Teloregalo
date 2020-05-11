@@ -13,12 +13,22 @@
     </ul>
 </div>
 <div id="formProductos">
-    <div id="imgAgregarProd">
-        <img src="{{ asset('assets/camera_ 1.svg') }}" alt="producto">
-    </div>
-    
 
-    <form class="col-md-12 col-lg-12" method="POST" action="/offers">
+        
+
+    <form class="col-md-12 col-lg-12" method="POST" action="/offers"   enctype="multipart/form-data">
+
+    
+        {{ csrf_field() }}
+        <div id="imgAgregarProd">
+            <div class="image-upload d-flex flex-row-reverse " data-toggle="modal" data-target="#exampleModal">
+                <span class="far fa-edit ">  </span>
+            </div>
+            
+            <img  src="{{ asset('assets/camera_ 1.svg') }}" alt="producto">
+    
+        </div>
+        <input class="btn  btn-block" id="file-input" name="imageOffer" type="file"/>
         @csrf
         <div class="form-group ">
             <label for="inputTitulo">Título</label>
@@ -64,16 +74,24 @@
     @endif
     @foreach($storeOffers as $offers)
         <div id="tarjProducto">
+            @if($offers->image_offer)
+            <img src="{{asset(Storage::url($offers->image_offer))}}" alt="producto">
+            @else
             <img src="{{asset('assets/logo%20regalo.svg')}}" alt="producto">
-            <form action="{{ route('offers.destroy', $offers->id)}}" method="post">
-                @csrf
-                @method('DELETE')
-                <input src="{{asset('assets/borrar.svg')}}" type="image" alt="borrar" title="Eliminar" id="eliminar">
-            </form>
-       
+            @endif
+            
+            @if($offers->amount == 0)
+                <form action="{{ route('offers.destroy', $offers->id)}}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <input src="{{asset('assets/borrar.svg')}}" type="image" alt="borrar" title="Eliminar" id="eliminar">
+                </form>
+            @endif
             <p id="nombreProducto">{{$offers->name_offer}}</p>
             <p id="descrProducto">{{$offers->description_offer}}</p>
             <p id="precioProd">$ {{$offers->cost}}</p>
+            
+            <p id="precioProd">Total vendidos {{$offers->total_amount}}    Por entregar {{$offers->amount}}</p>
         </div>
 
     @endforeach
