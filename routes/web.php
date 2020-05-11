@@ -65,7 +65,12 @@ Route::group(['middleware' => ['auth', 'store']], function () {
     Route::get('stores/misProductos', 'StoreController@renderProductos')->name('stores.misProductos');
     Route::put('updateImage/{id}', 'StoreController@updateImage')->name('stores.updateImage');
     Route::put('update/{id}', 'StoreController@update')->name('stores.update')/* ->middleware('verified') */;
+    Route::put('register/paso2/{id}', 'StoreController@registerTwo')->name('stores.updateRegister');
 
+    Route::get('/procesar-pago', 'LinkMercadoPagoController@linked');
+    Route::get('register/pasortwo', function () {
+        return view('auth.registerStore2');
+    });
     Route::get('/procesar-pago', 'LinkMercadoPagoController@linked');
 });
 Route::post('/verificar-pago', 'LinkMercadoPagoController@verificar')->name('verificar.pago');

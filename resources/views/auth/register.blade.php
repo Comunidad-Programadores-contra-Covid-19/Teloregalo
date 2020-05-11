@@ -56,18 +56,18 @@
             </div>
 
             <div class="form-check" id="chekRegistroHeroe">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="isChecked()">
                 <label class="form-check-label" for="exampleCheck1"><b> Aceptar términos y condiciones</b></label>
             </div>
         
             <p id="tycRegistroHeroe">Al hacer click en "Registrarme" aceptás nuestras condiciones, la Política de Datos y la Política de Cookies.</p>
-            <button type="submit" class="btn btn-principal btn-block" id="btnRegistroHeroe">Registrarme</button>
+            <button type="submit" class="btn btn-principal btn-block" id="btnRegistroHeroe" disabled>Registrarme</button>
         </form>
 
         <img src="{{ asset('assets/separador.svg') }}" alt="separador" id="separadorRegistroHeroe">
 
-        <a class="btn btn-principal btn-block" id="btnRegistroHeroeGmail" href="{{ url('/login/google') }}">Registrarme con Gmail</a>
-        <a class="btn btn-principal btn-block" id="btnRegistroHeroeFace">Registrarme con Facebook</a>
+        <a class="btn btn-principal btn-block disabled" id="btnRegistroHeroeGmail" href="{{ url('/login/google') }}">Registrarme con Gmail</a>
+        <a class="btn btn-principal btn-block disabled" id="btnRegistroHeroeFace" disabled>Registrarme con Facebook</a>
     </section>
 </div>
 <!-- Fin contenedor -->
@@ -75,7 +75,28 @@
 </div>
 </div>
 
+<script>
 
+    function isChecked(){
+        checkDom= document.getElementById('exampleCheck1')
+        btnRegistroHeroDom= document.getElementById('btnRegistroHeroe')
+        btnGoogleDom= document.getElementById('btnRegistroHeroeGmail')
+        btnFacebookDom= document.getElementById('btnRegistroHeroeFace')
+        
+        if(checkDom.checked){
+            btnRegistroHeroDom.disabled = false; 
+            btnGoogleDom.classList.remove('disabled');
+            btnFacebookDom.classList.remove('disabled');
+        }else{
+
+        
+        btnGoogleDom.classList.add('disabled');
+            btnFacebookDom.classList.add('disabled');
+            btnRegistroHeroDom.disabled = true; 
+        }           
+            
+    }
+</script>
 
 
 @endsection

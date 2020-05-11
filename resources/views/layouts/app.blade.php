@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Fonts -->
-  
+
     <!-- Styles -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -65,7 +65,7 @@
                     </a></li>
                     @endif
                     <li class="nav-item dropdown">
-                  
+
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             @if(Auth::user()->avatar)
                                 <img class="rounded-circle" src="{{ Auth::user()->avatar }}" alt="avatar" width="40" height="40" style="margin-right: 8px;">
@@ -143,7 +143,7 @@
 
                 <!-- Links -->
                 <h6 class="text-uppercase font-weight-bold">Contacto</h6>
-                <p><i class="fas fa-lg fa-envelope mr-3"></i>info@example.com</p>
+                <a href="mailto:hola@teloregalo.com.ar?Subject=Mensage"><p><i class="fas fa-lg fa-envelope mr-3"></i>hola@teloregalo.com.ar</p></a>
             </div>
 
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-md-0 mb-4">
@@ -169,10 +169,10 @@
 
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    
+
     </script>
-    
- 
+
+
 <script src="https://cdn.jsdelivr.net/npm/places.js@1.18.2"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/places.js@1.18.2"></script>
@@ -183,6 +183,7 @@
         apiKey: '434d496eb4f5cc8f25cdcf631051eb5e',
         container: document.querySelector('#inputDireccion')
     });
+
 </script>
 <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>

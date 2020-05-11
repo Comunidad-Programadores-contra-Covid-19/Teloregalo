@@ -32,7 +32,7 @@ class RegisterStoreController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'stores/miPerfil';
+    protected $redirectTo = 'register/pasortwo';
 
     /**
      * Create a new controller instance.
