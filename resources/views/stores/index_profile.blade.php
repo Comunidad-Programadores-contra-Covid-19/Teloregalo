@@ -87,7 +87,11 @@
             <div class="card-product">
                 <div class="row">
                     <div class="col-6">
+                        @if($offer->image_offer)
+                        <img src="{{ Storage::url($offer->image_offer)}}" alt="" class="card-image-product ">
+                        @else
                         <img src="https://via.placeholder.com/150" alt="" class="card-image-product ">
+                        @endif
                     </div>
                     <div class="col-6">
                         <div class=" card-index-product" >
