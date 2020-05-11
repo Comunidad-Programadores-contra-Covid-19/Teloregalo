@@ -73,10 +73,12 @@
         
                                 <div class="col-lg-4">
                                     <div class="input-group" id="buscarComercio">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-default" type="button"><img src="{{ asset('assets/lupa.svg') }}" alt=""></button>
-                                        </span>
-                                        <input type="text" class="form-control" placeholder="Buscar comercio por nombre">
+                                        <form action="{{ route('stores.index') }}">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" type="submit"><img src="{{ asset('assets/lupa.svg') }}" alt=""></button>
+                                            </span>
+                                                <input type="search" class="form-control" placeholder="Buscar comercio por nombre">
+                                        </form>
                                     </div>
                                 </div>
         
@@ -130,7 +132,7 @@
                                             <span class="fa fa-star checked"></span>
                                         @endfor
 
-                                        @for ($i = 1; $i <= 5/$store->rating; $i++)
+                                        @for ($i = 1; $i < 5/$store->rating; $i++)
                                             <span class="fa fa-star"></span>
                                         @endfor
                                   @else

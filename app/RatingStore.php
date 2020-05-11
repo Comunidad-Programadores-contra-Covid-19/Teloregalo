@@ -8,18 +8,16 @@ use Illuminate\Support\Facades\Auth;
 class RatingStore
 {
 
-    public function rateStore($storeId)
+    public function rateStore($storeId, $rate)
     {
         $store = Store::find($storeId);
         $rating = new \willvincent\Rateable\Rating;
-        $rating->rating = 5;
+        $rating->rating = $rate;
         $rating->user_id = Auth::id();
         $store->ratings()->save($rating);
-        //dd(Store::find($storeId)->ratings);
-        //$store->rating = $this->getAverageRating($storeId);
-        /* $store->rating = $store->averageRating();
-        var_dump($store->averageRating());
-        $store->save(); */
+        $store->rating = $store->averageRating();
+        $store->sum_rating = $store->sum_rating + $rate;
+        $store->save();
     }
 
     public function getAverageRating($storeId)

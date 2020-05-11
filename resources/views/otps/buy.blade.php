@@ -30,16 +30,27 @@
             <div id="calificar">
                 <h2>Calificá tu experiencia</h2>
             
-            <ul>
-                <form action="{{ route('puntuacion') }}" method="POST">
+            <ul class="row justify-content-center">
+                <li><form action="{{ route('puntuacion', 1) }}" method="POST">
                     {{ csrf_field() }}
-                    <input type="submit" value="Puntuar" class="btn btn-primary">
-                </form>
-                <li><button id="estrella1" onclick="getRating(this.id)"><img src="{{ asset('assets/estrella.svg')}}" alt=""></button></li>
-                <li><button id="estrella2" onclick="getRating(this.id)"><img src="{{ asset('assets/estrella.svg')}}" alt=""></button></li>
-                <li><button id="estrella3" onclick="getRating(this.id)"><img src="{{ asset('assets/estrella.svg')}}" alt=""></button></li>
-                <li><button id="estrella4" onclick="getRating(this.id)"><img src="{{ asset('assets/estrella.svg')}}" alt=""></button></li>
-                <li><button id="estrella5" onclick="getRating(this.id)"><img src="{{ asset('assets/estrella.svg')}}" alt=""></button></li>
+                    <button type="submit" id="estrella1" onclick="getRating(this.id)"><img src="{{ asset('assets/estrella.svg')}}" alt=""></button>
+                </form></li>
+                <li><form action="{{ route('puntuacion', 2) }}" method="POST">
+                    {{ csrf_field() }}
+                    <button type="submit" id="estrella1" onclick="getRating(this.id)"><img src="{{ asset('assets/estrella.svg')}}" alt=""></button>
+                </form></li>
+                <li><form action="{{ route('puntuacion', 3) }}" method="POST">
+                    {{ csrf_field() }}
+                    <button type="submit" id="estrella1" onclick="getRating(this.id)"><img src="{{ asset('assets/estrella.svg')}}" alt=""></button>
+                </form></li>
+                <li><form action="{{ route('puntuacion', 4) }}" method="POST">
+                    {{ csrf_field() }}
+                    <button type="submit" id="estrella1" onclick="getRating(this.id)"><img src="{{ asset('assets/estrella.svg')}}" alt=""></button>
+                </form></li>
+                <li><form action="{{ route('puntuacion', 5) }}" method="POST">
+                    {{ csrf_field() }}
+                    <button type="submit" id="estrella1" onclick="getRating(this.id)"><img src="{{ asset('assets/estrella.svg')}}" alt=""></button>
+                </form></li>
             </ul>
                
                 <h3>Nombre de comercio</h3>
@@ -49,24 +60,5 @@
         <!-- Fin Calificar comercio -->
     </div>
     <!-- Fin contenedor -->
-    <script>
-        function getRating(rating){
-            rating = parseInt(rating[8],10);
-            console.log(rating);
-            const token = document.querySelector('meta[name="csrf-token"]').content;
-            url = '/stores/setPuntuacion';
-
-            fetch(url,{
-                method: 'PUT',
-                credentials: 'omit',
-                mode: 'same-origin',
-                headers:{
-                    "Content-Type": "application/json; charset=utf-8",
-                    "X-CSRF-TOKEN": token
-                },
-                body: JSON.stringify({puntuacion: rating, cant: 1})
-            });
-        }
-    </script>
 </body>
 @endsection

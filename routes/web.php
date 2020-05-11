@@ -57,6 +57,7 @@ Route::delete('/otps/{idstore}', 'OtpController@destroy');/* ->middleware('verif
 Route::get('/', 'HomeController@index')->name('home')/* ->middleware('verified') */;
 
 
+Route::get('/stores', 'StoreController@index')->name('stores.index');
 
 Route::get('store/{id}', 'StoreController@show')->name('stores.perfil');
 Route::group(['middleware' => ['auth', 'store']], function () {
@@ -65,7 +66,7 @@ Route::group(['middleware' => ['auth', 'store']], function () {
     Route::get('stores/misProductos', 'StoreController@renderProductos')->name('stores.misProductos');
     Route::put('updateImage/{id}', 'StoreController@updateImage')->name('stores.updateImage');
     Route::put('update/{id}', 'StoreController@update')->name('stores.update')/* ->middleware('verified') */;
-    
+
     Route::put('register/paso2/{id}', 'StoreController@registerTwo')->name('stores.updateRegister');
 
     Route::get('/procesar-pago', 'LinkMercadoPagoController@linked');
@@ -82,10 +83,9 @@ Route::group(['middleware' => ['auth', 'client']], function () {
 
     Route::put('/updateHero/{id}', 'ClientController@updateHero')->name('clientes.updateHero')/* ->middleware('verified') */;
     Route::put('/updateImageHero/{id}', 'ClientController@updateImage')->name('clientes.updateImage')/* ->middleware('verified') */;
-
 });
 
-Route::post('/puntuacion', 'StoreController@setPuntuacion')->name('puntuacion');
+Route::post('/puntuacion/{rate}', 'StoreController@setPuntuacion')->name('puntuacion');
 
 Route::get('/puntuacion', 'StoreController@getPuntuacion')->name('get-puntuacion');
 

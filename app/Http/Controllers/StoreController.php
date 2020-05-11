@@ -31,10 +31,12 @@ class StoreController extends Controller
         return view('stores.misProductos', compact('storeOffers'));
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $stores = Store::all();
-        return $stores;
+        $name = $request->get('searchName');
+        $stores = Store::where('name', 'like', "%$name%")->paginate(5);
+        return view('welcome', ['stores' => $stores]);
+        //return (['stores' => $stores]);
     }
 
     /*     public function store(Request $request)
@@ -85,21 +87,22 @@ class StoreController extends Controller
 
         return redirect('stores/miPerfil')->with('success', 'Se han modificado los datos Correctamente');
     }
-    public function show($id)
-    public function registerTwo(Request $request, $id){
+
+    public function registerTwo(Request $request, $id)
+    {
         $storeUpdate = Store::findOrFail($id);
         /* ['name','user_id','description','adress','sector','avatar','facebook','instagram','horarios','category','phone'] */
 
-        $storeUpdate->name =$request->name;
-        $storeUpdate->address =$request->address;
-        $storeUpdate->category =$request->category;
-        $storeUpdate->phone =$request->phone;
+        $storeUpdate->name = $request->name;
+        $storeUpdate->address = $request->address;
+        $storeUpdate->category = $request->category;
+        $storeUpdate->phone = $request->phone;
 
         $storeUpdate->update();
-    
+
         return redirect('stores/miPerfil')->with('success', 'Se han guardado tus datos Correctamente');
     }
-     public function show($id)
+    public function show($id)
     {
         $store = Store::find($id);
 
@@ -115,11 +118,11 @@ class StoreController extends Controller
         return back();
     }
 
-    public function setPuntuacion(Request $request)
+    public function setPuntuacion($rate)
     {
         $rating = new RatingStore();
         //$storeId =
-        $rating->rateStore(1);
+        $rating->rateStore(1, $rate);
         return redirect('/');
     }
 
