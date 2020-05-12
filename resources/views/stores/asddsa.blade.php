@@ -5,11 +5,11 @@
 
 <!-- Inicio contenedor -->
 <div class="container">
-    <!-- Inicio Botón "volver" -->
+    <!-- Inicio Bot贸n "volver" -->
     <div class="volver">
-        <a href="{{ url()->previous() }}"><  Volver</a>
+        
     </div>
-        <!-- Fin Botón "volver" -->
+        <!-- Fin Bot贸n "volver" -->
     <div class="row ">
         <div class="col-md-auto">
             @if($store->avatar)
@@ -50,17 +50,15 @@
     
     <hr class="solid">
     <div class="row">
-        <?php
+       <?php
         // SDK de Mercado Pago
-        require_once('/home/uv029862/te-lo-regalo/vendor/autoload.php');
+        require __DIR__.'/../te-lo-regalo/vendor/autoload.php';
         // Agrega credenciales
    /*       \MercadoPago\SDK::setAccessToken($credentials->access_token);   */
-       \MercadoPago\SDK::setAccessToken('TEST-5841017781823689-050723-4081492e6e230f3f7078e56332de7955-318863690');
-     
+       MercadoPago\SDK::setAccessToken('TEST-5841017781823689-050723-4081492e6e230f3f7078e56332de7955-318863690');
         ?>
-        @if($store)
         @foreach ($store->offers as $offer)
-        <?php 
+       <?php
         $preference = new MercadoPago\Preference();
         $item = new MercadoPago\Item();
         $item->id =$offer->id; 
@@ -69,13 +67,11 @@
         $item->quantity = 1;
         $item->unit_price = $offer->cost;
         $item->category_id =$offer->id;
-
         $preference->items = array($item);
     
         $preference->save(); 
-
-
         ?>
+
         <div class="col-xs-12 col-md-6 col-xl-4">
             <div class="card-product">
                 <div class="row">
@@ -112,7 +108,7 @@
                         <script 
                         data-button-label="Comprar"
                         src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
-                        data-preference-id="<?php echo $preference->id;?>">
+                        data-preference-id="{{ $preference->id}}">
                       
                         </script>
                      
@@ -126,9 +122,7 @@
                 </div>
             </div>
         </div>
-       
         @endforeach
-         @endif
 </div>
 <!-- Fin contenedor -->
 
