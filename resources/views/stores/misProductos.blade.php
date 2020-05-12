@@ -1,9 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<?php /* $storeOffers=Auth::user()->store->offers;  */
 
-   
-?>
 <div class="container">
 <div id="menuMisProductos">
     <ul class="nav flex-lg-column justify-content-center nav-pills " id="myTab" role="tablist">

@@ -56,7 +56,9 @@ class OfferController extends Controller
         $offer->cost = $request->cost;
         $offer->amount = 0;
         $offer->total_amount=0;
-        $offer->image_offer = $request->file('imageOffer')->store('public');
+        if ($request->has('imageOffer')) {
+            $offer->image_offer = $request->file('imageOffer')->store('public');
+        }
         $offer->store_id = auth()->user()->id;
         $offer->save();
  
