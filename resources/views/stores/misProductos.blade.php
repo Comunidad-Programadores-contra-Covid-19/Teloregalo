@@ -72,7 +72,7 @@
     @foreach($storeOffers as $offers)
         <div id="tarjProducto">
             @if($offers->image_offer)
-            <img src="{{asset(Storage::url($offers->image_offer))}}" alt="producto">
+            <img src="{{asset($offers->image_offer)}}" alt="producto">
             @else
             <img src="{{asset('assets/logo%20regalo.svg')}}" alt="producto">
             @endif

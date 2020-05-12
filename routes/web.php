@@ -105,3 +105,7 @@ Route::get('/donar', function () {
 Route::get('/agradecimiento', function () {
     return view('teloregalo.agradecimiento');
 });
+
+/* Route::get('storage-link',function(){
+    Artisan::call('storage:link');
+}); */
