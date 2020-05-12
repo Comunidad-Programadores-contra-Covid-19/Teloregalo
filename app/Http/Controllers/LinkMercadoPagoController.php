@@ -29,7 +29,7 @@ class LinkMercadoPagoController extends Controller
                     'client_secret'=>'F5Hvsm74a2FoXBekd1IbgVaEXLquUmsN' , //teloregalo credeencial
                     'grant_type'=>'authorization_code' ,
                     'code'=> $request->code ,
-                    'redirect_uri'=>'http://localhost:8000/procesar-pago',
+                    'redirect_uri'=>'https://teloregalo.com.ar/procesar-pago',
                 ]
             ]);
     
