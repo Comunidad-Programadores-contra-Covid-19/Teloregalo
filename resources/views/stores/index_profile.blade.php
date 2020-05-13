@@ -5,11 +5,11 @@
 
 <!-- Inicio contenedor -->
 <div class="container">
-    <!-- Inicio Botón "volver" -->
+    <!-- Inicio Bot車n "volver" -->
     <div class="volver">
         <a href="{{ url()->previous() }}"><  Volver</a>
     </div>
-        <!-- Fin Botón "volver" -->
+        <!-- Fin Bot車n "volver" -->
     <div class="row ">
         <div class="col-md-auto">
             @if($store->avatar)
@@ -52,19 +52,17 @@
     <div class="row">
         <?php
         // SDK de Mercado Pago
-        require '../vendor/autoload.php'; 
+        require_once('/home/uv029862/te-lo-regalo/vendor/autoload.php');
         // Agrega credenciales
-   /*       \MercadoPago\SDK::setAccessToken($credentials->access_token);   */
-       \MercadoPago\SDK::setAccessToken('TEST-5841017781823689-050723-4081492e6e230f3f7078e56332de7955-318863690');
+          \MercadoPago\SDK::setAccessToken($credentials->access_token);   
+      /* \MercadoPago\SDK::setAccessToken('TEST-5841017781823689-050723-4081492e6e230f3f7078e56332de7955-318863690');*/
      
         ?>
+        @if($store)
         @foreach ($store->offers as $offer)
         <?php 
         $preference = new MercadoPago\Preference();
-   
-
-
-     
+        
         $item = new MercadoPago\Item();
         $item->id =$offer->id; 
         $item->title = $offer->name_offer ;
@@ -72,11 +70,7 @@
         $item->quantity = 1;
         $item->unit_price = $offer->cost;
         $item->category_id =$offer->id;
-        $preference->back_urls = array(
-        "success" => "https://www.tu-sitio/success",
-        "failure" => "http://www.tu-sitio/failure",
-        "pending" => "http://www.tu-sitio/pending"
-    );
+
         $preference->items = array($item);
     
         $preference->save(); 
@@ -113,7 +107,7 @@
                 </div>
                 <div class="card-btn-product ">
                  <form action="{{ route('verificar.pago')}}" method="POST"> 
-                    <input type="hidden" name="ofert" value="TEST-5841017781823689-050723-4081492e6e230f3f7078e56332de7955-318863690"> {{-- cambiar esto tambien --}}
+                    <input type="hidden" name="ofert" value="{{$credentials->access_token}}"> {{-- cambiar esto tambien --}}
                     @csrf
                         
                         <script 
@@ -133,7 +127,9 @@
                 </div>
             </div>
         </div>
+       
         @endforeach
+         @endif
 </div>
 <!-- Fin contenedor -->
 
