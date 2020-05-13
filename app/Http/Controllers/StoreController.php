@@ -77,6 +77,7 @@ class StoreController extends Controller
         /* ['name','user_id','description','adress','sector','avatar','facebook','instagram','horarios','category','phone'] */
 
         if ($request->has('avatar')) {
+            \Storage::delete($storeUpdate->avatar);
             $storeUpdate->avatar = $request->file('avatar')->store('public');
         } else {
             $storeUpdate->avatar = $storeUpdate->avatar;
@@ -113,6 +114,7 @@ class StoreController extends Controller
     public function destroy($id)
     {
         $store = Store::find($id);
+        \Storage::delete($store->avatar);
         $store->delete();
         return back();
     }
