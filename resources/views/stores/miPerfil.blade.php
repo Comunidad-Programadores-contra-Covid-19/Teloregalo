@@ -193,12 +193,7 @@
                         <input type="text" class="form-control" name="horarios" id="inputHorario"
                                value="{{ $storeInfo->horarios }}">
                     </div>
-                    {{-- localhost --}}
-              {{--       <a class="btn btn-alternative btn-block"
-                       href="https://auth.mercadopago.com.ar/authorization?client_id=5661899751765285&response_type=code&platform_id=mp&redirect_uri=http%3A%2F%2Flocalhost:8000/procesar-pago">
-                        Vincular mi cuenta de mercado pago
-                    </a> --}}
-                    {{-- production --}}
+
                     <a class="btn btn-alternative btn-block"
                        href="https://auth.mercadopago.com.ar/authorization?client_id=5661899751765285&response_type=code&platform_id=mp&redirect_uri=https%3A%2F%2Fteloregalo.com.ar/procesar-pago">
                         Vincular mi cuenta de mercado pago

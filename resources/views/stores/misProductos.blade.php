@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('content')
+<?php /* $storeOffers=Auth::user()->store->offers;  */
 
+   
+?>
 <div class="container">
 <div id="menuMisProductos">
     <ul class="nav flex-lg-column justify-content-center nav-pills " id="myTab" role="tablist">
@@ -28,14 +31,14 @@
         <input class="btn  btn-block" id="file-input" name="imageOffer" type="file"/>
         @csrf
         <div class="form-group ">
-            <label for="inputTitulo">Título</label>
+            <label for="inputTitulo">T铆tulo</label>
                <input type="text" name="name_offer" placeholder="Nombre" required class="form-control mb-2"/>
         </div>
         <div class="form-group">
-            <label for="exampleFormControlTextarea1">Descripción</label>
+            <label for="exampleFormControlTextarea1">Descripci贸n</label>
             
       
-            <textarea name="description_offer" placeholder="Descripción" required class="form-control mb-2" id="exampleFormControlTextarea1" rows="3" ></textarea>
+            <textarea name="description_offer" placeholder="Descripci贸n" required class="form-control mb-2" id="exampleFormControlTextarea1" rows="3" ></textarea>
         </div>
         <div class="form-group">
             <label for="inputPrecio">Precio</label>
@@ -72,7 +75,7 @@
     @foreach($storeOffers as $offers)
         <div id="tarjProducto">
             @if($offers->image_offer)
-            <img src="{{asset($offers->image_offer)}}" alt="producto">
+            <img src="{{asset(Storage::url($offers->image_offer))}}" alt="producto">
             @else
             <img src="{{asset('assets/logo%20regalo.svg')}}" alt="producto">
             @endif

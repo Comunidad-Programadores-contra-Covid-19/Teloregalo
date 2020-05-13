@@ -25,8 +25,8 @@ class LinkMercadoPagoController extends Controller
                 'headers' => ['accept' => 'application/json','content-type' => 'application/x-www-form-urlencoded'],
                 // array de datos del formulario
                 'form_params' => [
-                    'client_id'=>'5661899751765285' , //teloregalo credeencial
-                    'client_secret'=>'F5Hvsm74a2FoXBekd1IbgVaEXLquUmsN' , //teloregalo credeencial
+                    'client_id'=>'5661899751765285' , //teloregalo credeencial test
+                    'client_secret'=>'F5Hvsm74a2FoXBekd1IbgVaEXLquUmsN' , //teloregalo credeencial test
                     'grant_type'=>'authorization_code' ,
                     'code'=> $request->code ,
                     'redirect_uri'=>'https://teloregalo.com.ar/procesar-pago',

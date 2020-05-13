@@ -106,6 +106,7 @@ Route::get('/agradecimiento', function () {
     return view('teloregalo.agradecimiento');
 });
 
-/* Route::get('storage-link',function(){
+
+Route::get('storage-link',function(){
     Artisan::call('storage:link');
-}); */
+});

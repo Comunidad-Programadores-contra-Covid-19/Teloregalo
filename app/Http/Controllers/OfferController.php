@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Offer;
-
+use Auth;
 class OfferController extends Controller
 {
     // function _construct() doesn't allow users see offers until login 
@@ -57,10 +57,9 @@ class OfferController extends Controller
         $offer->amount = 0;
         $offer->total_amount=0;
         if ($request->has('imageOffer')) {
-  
             $offer->image_offer = $request->file('imageOffer')->store('public');
         }
-        $offer->store_id = auth()->user()->id;
+        $offer->store_id = Auth::user()->store->id;
         $offer->save();
  
         return back()->with('success', 'Oferta creada '. $request->name_offer);
@@ -121,7 +120,6 @@ class OfferController extends Controller
     public function destroy($id)
     {
         $offer = Offer::find($id);
-        \Storage::delete($offer->image_offer);
         $offer->delete();
 
         return redirect('stores/misProductos')->with('success', 'Oferta eliminada.');
