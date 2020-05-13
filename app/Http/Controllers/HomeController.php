@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use \App\Store;
 use Illuminate\Http\Request;
 use App\Http\Controllers\StoreController;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -25,8 +26,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $stores = Store::orderBy('rating', 'DESC')
-            ->orderBy('sum_rating', 'DESC')->get();
+
+
+        $stores = DB::table('stores')
+            ->join('credentials', 'stores.id', '=', 'credentials.store_id')
+            ->select('stores.*', 'credentials.store_id')
+            ->get();
+
+
+        /* $stores = Store::orderBy('rating', 'DESC')
+            ->orderBy('sum_rating', 'DESC')->get(); */
 
         return view('welcome',  [
             'stores' => $stores

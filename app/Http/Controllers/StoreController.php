@@ -8,6 +8,7 @@ use Auth;
 use App\Offer;
 use App\Credentials;
 use App\RatingStore;
+use Illuminate\Support\Facades\DB;
 use willvincent\Rateable\Rating;
 
 class StoreController extends Controller
@@ -33,10 +34,13 @@ class StoreController extends Controller
 
     public function index(Request $request)
     {
-        $name = $request->get('searchName');
-        $stores = Store::where('name', 'like', "%$name%")->paginate(5);
+        $name = $request->searchName;
+        $stores = DB::table('stores')
+            ->join('credentials', 'stores.id', '=', 'credentials.store_id')
+            ->where('name', $name)
+            ->select('stores.*', 'credentials.store_id')
+            ->get();
         return view('welcome', ['stores' => $stores]);
-        //return (['stores' => $stores]);
     }
 
     /*     public function store(Request $request)
@@ -88,7 +92,8 @@ class StoreController extends Controller
         return redirect('stores/miPerfil')->with('success', 'Se han modificado los datos Correctamente');
     }
 
-    public function registerTwo(Request $request, $id){
+    public function registerTwo(Request $request, $id)
+    {
         $storeUpdate = Store::findOrFail($id);
         /* ['name','user_id','description','adress','sector','avatar','facebook','instagram','horarios','category','phone'] */
 

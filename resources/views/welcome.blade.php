@@ -70,14 +70,16 @@
                                 </div>
         
                                 <div class="col-lg-4">
+                                    <form action="{{ route('stores.index') }}">
                                     <div class="input-group" id="buscarComercio">
-                                        <form action="{{ route('stores.index') }}">
+                                        
                                             <span class="input-group-btn">
                                                 <button class="btn btn-default" type="submit"><img src="{{ asset('assets/lupa.svg') }}" alt=""></button>
                                             </span>
-                                                <input type="search" class="form-control" placeholder="Buscar comercio por nombre">
-                                        </form>
+                                                <input name="searchName" id="searchName" type="search" class="form-control" placeholder="Buscar comercio por nombre">
+                                        
                                     </div>
+                                </form>
                                 </div>
         
                                 <div class="col-lg-5">
@@ -481,7 +483,7 @@
                     //let marker = new mapboxgl.Marker().setLngLat(lngLat).addTo(map);
                 
         }
-        //setDefaultMap();
+        setDefaultMap();
         //prueba();
     </script>
 
