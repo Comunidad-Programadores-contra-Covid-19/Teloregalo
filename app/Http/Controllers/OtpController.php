@@ -75,8 +75,10 @@ class OtpController extends Controller
         var_dump($offer->id);
 
         $offer->amount = $offer->amount - 1;
-
         $offer->total_amount = $offer->total_amount + 1;
         $offer->save();
+        $store = Store::find($offer->store_id);
+        $store->gifts = $store->gifts - 1;
+        $store->save();
     }
 }

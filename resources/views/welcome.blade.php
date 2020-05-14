@@ -142,7 +142,7 @@
                                   @endif
                               </div>
                               <div class="card-availability">
-                                  <p><b>xx regalos</b> para entregar</p>
+                                  <p><b>{{$stores->gifts}}</b> para entregar</p>
                               </div>
                               <div class="card-btn">
                                   <a href="{{ route('stores.perfil', $store->id) }}" class="btn-principal">Ver productos</a>
@@ -166,103 +166,45 @@
                         <div class="map" id="map"></div>
                     </div>
                     <div class="col-md-12 col-lg-4 scrollable">
-                        <div class="card-map">
-    
-                            <img src="https://via.placeholder.com/150" alt="" class="card-image-map">
-                            <div class="card-description-map">
-                                <h6>Nombre del Comercio</h6>
-                                <p><span><i class="fas fa-map-marker-alt"></i></span>Ubicación</p>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-    
+                        @foreach ($stores as $store)
+                            
+                            <div class="card-map">
+                                @if($store->avatar)
+                                    <img src="{{ Storage::url($store->avatar)}}"  alt="" class="card-image-map"> 
+                                @else
+                                    <img src="https://via.placeholder.com/150" alt="" class="card-image-map"> 
+                                @endif
+                                
+                                <div class="card-description-map">
+                                    <h6>{{$store->name}}</h6>
+                                    <p><span><i class="fas fa-map-marker-alt"></i></span>{{$store->address}}</p>
+                                    @if ($store->rating != 0)
+                                        @for ($i = 1; $i <= $store->rating; $i++)
+                                            <span class="fa fa-star checked"></span>
+                                        @endfor
+
+                                        @for ($i = 1; $i < 5/$store->rating; $i++)
+                                            <span class="fa fa-star"></span>
+                                        @endfor
+                                    @else
+                                        @for ($i = 1; $i <= 5; $i++)
+                                            <span class="fa fa-star"></span>
+                                        @endfor
+                                    @endif
+        
+                                </div>
+        
+                                <div class="card-availability-map">
+                                    <p><b>{{$stores->gifts}}</b> para entregar</p>
+                                </div>
+                                <div class="card-btn-map">
+                                    <a href="#" class="btn-principal">Ver</a>
+                                </div>
+        
                             </div>
-    
-                            <div class="card-availability-map">
-                                <p><b>xx regalos</b> para entregar</p>
-                            </div>
-                            <div class="card-btn-map">
-                                <a href="#" class="btn-principal">Ver</a>
-                            </div>
-    
-                        </div>
-    
-                    <hr class="solid">
-                        <div class="card-map">
-    
-                            <img src="https://via.placeholder.com/150" alt="" class="card-image-map">
-                            <div class="card-description-map">
-                                <h6>Nombre del Comercio</h6>
-                                <p><span><i class="fas fa-map-marker-alt"></i></span>Ubicación</p>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-    
-                            </div>
-    
-                            <div class="card-availability-map">
-                                <p><b>xx regalos</b> para entregar</p>
-                            </div>
-                            <div class="card-btn-map">
-                                <a href="#" class="btn-principal">Ver</a>
-                            </div>
-    
-                        </div>
-    
-                        <hr class="solid">
-    
-                        <div class="card-map">
-                            <img src="https://via.placeholder.com/150" alt="" class="card-image-map">
-                            <div class="card-description-map">
-                                <h6>Nombre del Comercio</h6>
-                                <p><span><i class="fas fa-map-marker-alt"></i></span>Ubicación</p>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-    
-                            </div>
-    
-                            <div class="card-availability-map">
-                                <p><b>xx regalos</b> para entregar</p>
-                            </div>
-                            <div class="card-btn-map">
-                                <a href="#" class="btn-principal">Ver</a>
-                            </div>
-    
-                        </div>
-    
-                        <hr class="solid">
-    
-                        <div class="card-map">
-    
-                            <img src="https://via.placeholder.com/150" alt="" class="card-image-map">
-                            <div class="card-description-map">
-                                <h6>Nombre del Comercio</h6>
-                                <p><span><i class="fas fa-map-marker-alt"></i></span>Ubicación</p>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-    
-                            </div>
-    
-                            <div class="card-availability-map">
-                                <p><b>xx regalos</b> para entregar</p>
-                            </div>
-                            <div class="card-btn-map">
-                                <a href="#" class="btn-principal">Ver</a>
-                            </div>
-    
-                        </div>
-    
-    
+        
+                            <hr class="solid">
+                        @endforeach
                     </div>
     
                 </div>
@@ -297,10 +239,9 @@
     <script>
         mapboxgl.accessToken = 'pk.eyJ1Ijoibmljb2xpZW5kcm8xNCIsImEiOiJjazlvcHU5eWMwMzdzM2hxcTNoN3lleGRmIn0.sPpU8gUReCtWeFS8z0ccsw';
         var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
-        const stores = {!! $stores->toJson() !!};
-        const locationCity = stores[0].address
 
         function setDefaultMap(){
+
             mapboxgl.accessToken = 'pk.eyJ1Ijoibmljb2xpZW5kcm8xNCIsImEiOiJjazlvcHU5eWMwMzdzM2hxcTNoN3lleGRmIn0.sPpU8gUReCtWeFS8z0ccsw';
             var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
             var map = new mapboxgl.Map({
@@ -443,48 +384,7 @@
             
         }
         
-        function prueba() {
-                mapboxgl.accessToken =
-                "pk.eyJ1Ijoibmljb2xpZW5kcm8xNCIsImEiOiJjazlvcTNibjIwMzZmM2dxcWY5aHkzMDc0In0.xtdr9upJ9OCfimC6CNVY8A";
-                var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
-                //Coordenadas
-                var locationCity = "Salta Argentina, Lerma 42"
-                
-                
-                    //Obtencion de coordenadas respecto a la direccion.
-                    debugger;
-                    mapboxClient.geocoding
-                        .forwardGeocode({
-                        query: "Calle falsa 123",
-                        autocomplete: false,
-                        limit: 1,
-                        })
-                        .send()
-                        .then(function (response) {
-                        if (
-                            response &&
-                            response.body &&
-                            response.body.features &&
-                            response.body.features.length
-                        ) {
-                            var feature = response.body.features[0];
-                            var map = new mapboxgl.Map({
-                            container: "map",
-                            style: "mapbox://styles/mapbox/streets-v11",
-                            center: feature.center,
-                            zoom: 13,
-                        });
-                        }
-                        });
-                    //Creacion del mapa
-                    
-                    //Añade marcador al mapa
-                    //let lngLat = new mapboxgl.LngLat(feature.center);
-                    //let marker = new mapboxgl.Marker().setLngLat(lngLat).addTo(map);
-                
-        }
         setDefaultMap();
-        //prueba();
     </script>
 
 </body>

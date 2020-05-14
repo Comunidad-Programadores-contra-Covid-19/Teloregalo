@@ -30,7 +30,7 @@ class HomeController extends Controller
 
         $stores = DB::table('stores')
             ->join('credentials', 'stores.id', '=', 'credentials.store_id')
-            ->select('stores.*', 'credentials.store_id')
+            ->select('stores.*')
             ->get();
 
 

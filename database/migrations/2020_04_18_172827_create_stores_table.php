@@ -29,6 +29,7 @@ class CreateStoresTable extends Migration
             $table->string('phone')->nullable();
             $table->integer('rating')->default(0);
             $table->integer('sum_rating')->default(0);
+            $table->integer('gifts')->default(0);
             $table->timestamps();
         });
     }
