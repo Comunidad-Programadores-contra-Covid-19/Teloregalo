@@ -31,11 +31,9 @@ class HomeController extends Controller
         $stores = DB::table('stores')
             ->join('credentials', 'stores.id', '=', 'credentials.store_id')
             ->select('stores.*')
+            ->orderBy('rating', 'DESC')
+            ->orderBy('sum_rating', 'DESC')
             ->get();
-
-
-        /* $stores = Store::orderBy('rating', 'DESC')
-            ->orderBy('sum_rating', 'DESC')->get(); */
 
         return view('welcome',  [
             'stores' => $stores

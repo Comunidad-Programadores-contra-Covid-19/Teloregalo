@@ -39,6 +39,8 @@ class StoreController extends Controller
             ->join('credentials', 'stores.id', '=', 'credentials.store_id')
             ->where('name', $name)
             ->select('stores.*', 'credentials.store_id')
+            ->orderBy('rating', 'DESC')
+            ->orderBy('sum_rating', 'DESC')
             ->get();
         return view('welcome', ['stores' => $stores]);
     }
