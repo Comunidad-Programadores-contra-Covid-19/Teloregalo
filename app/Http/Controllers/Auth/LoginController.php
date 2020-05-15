@@ -41,7 +41,7 @@ class LoginController extends Controller
 
     public function redirectToProvider($provider) 
     { 
-        return Socialite::driver($provider)->redirect(); 
+      Socialite::driver($provider)->redirect(); 
     }
 /**
      * Obtain the user information from Google.
@@ -51,6 +51,7 @@ class LoginController extends Controller
     public function handleProviderCallback($provider)
     {
             $user = Socialite::driver($provider)->stateless()->user();
+            var_dump($user);
             $authUser = $this->findUserOrCreate($user);
             Auth::login($authUser,true);
             return redirect($this->redirectTo);
