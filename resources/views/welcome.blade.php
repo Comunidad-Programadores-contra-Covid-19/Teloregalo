@@ -142,7 +142,7 @@
                                   @endif
                               </div>
                               <div class="card-availability">
-                                  <p><b>{{$stores->gifts}}</b> para entregar</p>
+                                  <p><b>{{$store->gifts}}</b> para entregar</p>
                               </div>
                               <div class="card-btn">
                                   <a href="{{ route('stores.perfil', $store->id) }}" class="btn-principal">Ver productos</a>
@@ -195,7 +195,7 @@
                                 </div>
         
                                 <div class="card-availability-map">
-                                    <p><b>{{$stores->gifts}}</b> para entregar</p>
+                                    <p><b>{{$store->gifts}}</b> para entregar</p>
                                 </div>
                                 <div class="card-btn-map">
                                     <a href="#" class="btn-principal">Ver</a>
