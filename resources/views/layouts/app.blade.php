@@ -14,7 +14,7 @@
     <link rel="icon" href="{{ asset('assets/logo.svg') }}" sizes="16x16" type="image/svg">
 </head>
 <body>
-  
+
         <!--Inicio Navbar -->
         <header>
         <nav class="mb-1 navbar navbar-expand-lg navbar-light navbar-green shadow-sm sticky-top">
@@ -40,7 +40,7 @@
                         <a class="nav-link" href="{{ url('quienes-somos') }}">Quiénes somos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('donar') }}" id="btnDonarNav">Donar</a>
+                        <a class="nav-link" href="{{ url('donar') }}">Donar</a>
                     </li>
                 </ul>
 
@@ -73,10 +73,10 @@
                                 @endif
                                 {{ Auth::user()->store->name }} <span class="caret"></span>
                             @endif
-                           
+
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                     
+
                             @if(Auth::user()->rol == 'store')
                             <a id="navbarDropdown" class="nav-link button" href="{{ route('stores.miPerfil') }}" role="button">
                                 Mi Comercio

@@ -3,13 +3,13 @@
 @section('content')
 <div class="container">
     <section id="LogIn" class="col-md-12 col-lg-6 center">
-        <h1 style="text-align: center">¡Bienvenido Heroe!</h1>
+        <h1 style="text-align: center">¡Bienvenido Héroe!</h1>
         <br>
         <form method="POST" action="{{ route('login') }}">
             @csrf
             <div class="form-group">
                 <label for="inputEmail">Email</label>
-                <input type="email" id="inputEmail" placeholder="" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> 
+                <input type="email" id="inputEmail" placeholder="" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                 @error('email')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>

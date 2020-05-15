@@ -32,13 +32,12 @@
                         {{ method_field('put') }}
                         {{ csrf_field() }}
 
-                        <div class="modal-body">
+                        <div class="modal-body pl-3">
                             <input id="file-input" name="avatar" type="file"/>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="input" class="btn btn-primary">Guardar</button>
-
+                        <div class="modal-footer pl-3">
+                            <button type="button" class="btn btn-alternative" data-dismiss="modal">Cancelar</button>
+                            <button type="input" class=" btn btn-principal">Guardar</button>
                         </div>
                     </form>
                 </div>
@@ -98,11 +97,11 @@
                         <input type="email" class="form-control" id="inputEmail" readonly
                                value="{{ $userInfo->email }}">
                     </div>
-                    <div class="form-group">
+                  <!--  <div class="form-group">
                         <label for="inputPass">Contraseña</label>
 
                         <input type="password" class="form-control" id="inputPass" placeholder="">
-                    </div>
+                    </div>-->
 
 
                 </section>
@@ -155,7 +154,7 @@
 
                     <div class="form-group">
                         <label for="inputCategoria" id="Category">Categorías</label>
-                        <select class="form-control" id="inputCategoria" name='category'
+                        <select class="form-control disabled" id="inputCategoria" name='category'
                                 selected="{{ $storeInfo->category}}">
                             <option {{ ($storeInfo->category == 'Cafetería') ? "selected" : ""}}>Cafetería</option>
                             <option {{ ($storeInfo->category == 'Cervecería') ? "selected" : ""}}>Cervecería</option>
