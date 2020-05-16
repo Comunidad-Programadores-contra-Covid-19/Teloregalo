@@ -97,11 +97,11 @@
                         <input type="email" class="form-control" id="inputEmail" readonly
                                value="{{ $userInfo->email }}">
                     </div>
-                  <!--  <div class="form-group">
-                        <label for="inputPass">Contraseña</label>
+                    <!--  <div class="form-group">
+                          <label for="inputPass">Contraseña</label>
 
-                        <input type="password" class="form-control" id="inputPass" placeholder="">
-                    </div>-->
+                          <input type="password" class="form-control" id="inputPass" placeholder="">
+                      </div>-->
 
 
                 </section>
@@ -193,11 +193,14 @@
                                value="{{ $storeInfo->horarios }}">
                     </div>
 
-                    <a class="btn btn-alternative btn-block"
-                       href="https://auth.mercadopago.com.ar/authorization?client_id=5661899751765285&response_type=code&platform_id=mp&redirect_uri=https%3A%2F%2Fteloregalo.com.ar/procesar-pago">
-                        Vincular mi cuenta de mercado pago
-                    </a>
                 </section>
+            </div>
+
+            <div class="mercadoPago">
+                <a id="mercadoPago"
+                   href="https://auth.mercadopago.com.ar/authorization?client_id=5661899751765285&response_type=code&platform_id=mp&redirect_uri=https%3A%2F%2Fteloregalo.com.ar/procesar-pago">
+                    Vincular mi cuenta de mercado pago
+                </a>
             </div>
 
             <div class="col-lg-12 mt-5">
