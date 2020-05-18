@@ -125,7 +125,7 @@
                     </div>
                     <div class="form-group">
                         <label for="inputNombreApellido">Tu nombre y apellido</label>
-                        <input type="text" class="form-control" id="inputNombreApellido" placeholder=""
+                        <input type="text" class="form-control" id="inputNombreApellido" name="nombreCompleto" placeholder=""
                                value="{{ $userInfo->name}}">
                     </div>
                     <div class="form-group">

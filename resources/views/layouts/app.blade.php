@@ -22,6 +22,7 @@
                 teloregalo
                 <img src="{{ asset('assets/logo.svg') }}" width="40" height="40" class="d-inline-block align-bottom" alt="">
             </a>
+{{--            {{Auth::user()->notifications}} --}}
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
             aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -79,7 +80,7 @@
 
                             @if(Auth::user()->rol == 'store')
                             <a id="navbarDropdown" class="nav-link button" href="{{ route('stores.miPerfil') }}" role="button">
-                                Mi Comercio
+                                Mi Comercio <span class="badge badge-light">9</span>
                             </a>
                             @endif
                             @if(Auth::user()->rol == 'client')
