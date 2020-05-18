@@ -101,6 +101,10 @@
     width: 80%;
 }
 
+#vtasProd {
+    display: flex;
+}
+
 #nombreProductoVentas {
     font-weight: bold;
     margin-bottom: 1.5em;
