@@ -67,8 +67,17 @@
 #botonesFormPerfilHeroe {
     margin-bottom: 5em;
 }
+
 #btnGuardarPerfilHeroe,
 #btnCancelarPerfilHeroe {
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#btnGuardarPerfilHeroe button,
+#btnCancelarPerfilHeroe button {
     width: 100%;
 }
 
@@ -112,7 +121,11 @@
         width: 100%;
         margin: 0;
     }
-
+    #btnGuardarPerfilHeroe,
+    #btnCancelarPerfilHeroe {
+        width: 90%;
+        margin-bottom: 1em;
+    }
 
 }
 
@@ -160,6 +173,7 @@
 
     #btnGuardarPerfilHeroe,
     #btnCancelarPerfilHeroe {
-        width: 90%;
+        width: 100%;
+        margin-bottom: 1em;
     }
 }
