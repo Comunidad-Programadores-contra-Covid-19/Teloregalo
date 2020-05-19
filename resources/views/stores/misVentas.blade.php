@@ -34,14 +34,14 @@
                 <div id="codigoValidacion">
                     <!-- Modal Trigger -->
                     <label for="inputCodigo"></label>
-               
- 
+
+
                     <form action="{{ route('otps.destroy', Auth::user()->id) }}" method="POST">
                         @csrf
                             <input type="hidden" name="_method" value="DELETE">
-                            
+
                             <input type="text" name="codigo" id="inputCodigo" placeholder="Código de validación">
-                           
+
                             <button type="submit" class="btn btn-principal btn-block " data-toggle="modal"
                             data-target="#exampleModal" id="btnRegistrarEntrega">Registrar entrega
                     </button>
@@ -54,7 +54,7 @@
                     {{ Session::get('info') }}
                 </div>
             @endif
-        
+
 
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
@@ -101,7 +101,8 @@
 
                 <section id="stock">
                     <div id="stockProducto">
-                        <div class="row text-center">
+                        <div class="row text-center"
+                             id="vtasProd">
                             <div class="col-lg-4">
                                 <h5 id="nombreProductoVentas">Opción Producto</h5>
                                 <ul>
