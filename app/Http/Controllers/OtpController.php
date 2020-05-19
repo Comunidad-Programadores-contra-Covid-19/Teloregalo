@@ -68,7 +68,12 @@ class OtpController extends Controller
         }
         return back()->with('info', $message);
     }
-
+    public function clientCancel($idOtp){
+        $message="se cancelo tu pedido";
+        $otp = Otp::where('id', $idOtp)->first();
+        $otp->delete();
+        return back()->with('info', $message);
+    }
     public function discountOffer($idOffer)
     {
         $offer = Offer::where('id', $idOffer)->first();

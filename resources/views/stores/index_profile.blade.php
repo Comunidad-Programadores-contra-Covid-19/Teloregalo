@@ -38,7 +38,15 @@
             </div>
         </div>
     </div>
-  
+    @if(Auth::user())
+    @if( Auth::user()->rol == 'client')
+        @if($otp != '' && $otp->is_used == 0)
+        <div class="alert alert-info">
+            <p>Tienes un codigo generado pendiente: {{ $otp->otp_pass}}   <a class="btn-alternative" href="{{ route('otp.cancel', ['idOtp'=>$otp->id]) }}">Cancelar pedido</a>   </p>
+        </div>
+        @endif
+    @endif
+   @endif
     @if(Session::has('info'))
         <div class="alert alert-info">
             <button type="button" class="close" data-dismiss="alert">
@@ -52,7 +60,7 @@
     <div class="row">
         <?php
         // SDK de Mercado Pago
-        require_once('/home/uv029862/te-lo-regalo/vendor/autoload.php');
+        require '../vendor/autoload.php';
         // Agrega credenciales
           \MercadoPago\SDK::setAccessToken($credentials->access_token);   
       /* \MercadoPago\SDK::setAccessToken('TEST-5841017781823689-050723-4081492e6e230f3f7078e56332de7955-318863690');*/
@@ -77,6 +85,11 @@
 
 
         ?>
+       {{--  @if(Auth::user()->rol == 'client')
+            @if()
+        @endif --}}
+     
+
         <div class="col-xs-12 col-md-6 col-xl-4">
             <div class="card-product">
                 <div class="row">

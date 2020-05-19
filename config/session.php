@@ -153,7 +153,7 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN','https://teloregalo.com.ar'),
+    'domain' => env('SESSION_DOMAIN',null),
 
     /*
     |--------------------------------------------------------------------------

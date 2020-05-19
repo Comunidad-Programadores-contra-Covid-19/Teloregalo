@@ -12,7 +12,7 @@
                 <h1>Paso 1</h1>
                 <p>Al registrar tu comercio los vecinos podrán elegirte para comprar regalos a nuestros héroes.</p>
                 <form method="POST" action="{{ url('stores/register') }}">
-                    @csrf
+                    {!! csrf_field() !!}
                     <div class="form-group ">
                         <label for="inputNombreComercio">Tu nombre y apellido</label>
                         <input type="text" id="inputNombreComercio" placeholder="" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
