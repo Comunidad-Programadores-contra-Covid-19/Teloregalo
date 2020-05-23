@@ -57,6 +57,19 @@
     border-radius: 1rem;
 }
 
+.modal-full {
+    min-width: 20%;
+    margin-left: 80px;
+}
+
+.modal-full .modal-content {
+    min-height: 100vh;
+}
+
+#imgMp{
+    width: 80%;
+}
+
 @media handheld, (min-width: 531px) and (max-width: 995px) {
     .logoPerfil {
         margin-left: auto;
@@ -136,13 +149,10 @@
         font-size: 1rem;
         font-weight: 700;
         padding: 1.5rem 0rem;
-        margin: 1rem 32rem;
         border-radius: .4em;
         border-width: .05556em;
         border-style: solid;
         line-height: 1.55556;
-        position: relative;
-        right: 31rem;
         width: 100%;
     }
 
@@ -163,5 +173,8 @@
         top: -5.29rem;
         right: 1rem;
         width: 100%;
+    }
+    #imgMp{
+        width: 40%;
     }
 }
