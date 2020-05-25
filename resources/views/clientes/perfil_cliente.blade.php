@@ -32,8 +32,8 @@
                             <input id="file-input" name="avatar" type="file"/>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="input" class="btn btn-primary">Guardar</button>
+                            <button type="button" class="btn btn-alternative" data-dismiss="modal">Cancelar</button>
+                            <button type="input" class="btn btn-principal">Guardar</button>
 
                         </div>
                     </form>
@@ -45,22 +45,22 @@
         <h1>Mi perfil</h1>
         <div id="fotoHeroe">
             <div class="image-upload d-flex flex-row-reverse " data-toggle="modal" data-target="#exampleModal">
-                <span class="far fa-edit "></span>
+                <span class="far fa-edit " id="editPicture"></span>
             </div>
              @if($userProfile->avatar)
                 <img src="{{ Storage::url( $userProfile->avatar)}}" alt="FotoHeroe">
             @else
                 <img src="{{asset('assets/camera_ 1.svg')}}" alt="FotoHeroe">
             @endif
-            
+
         </div>
     </div>
     <!-- Fin Título con foto -->
 
     <!-- Inicio Form -->
-  
+
     <section id="datosPerfilHeroe">
-        <form class="col-md-12 col-lg-12" method="POST" action=" {{ route('clientes.updateHero', $userProfile->id) }}"enctype="multipart/form-data">
+        <form class="col-md-12 col-lg-12" method="POST" action=" {{ route('clientes.updateHero', $userProfile->id) }}" enctype="multipart/form-data">
             {{ method_field('put') }}
             {{ csrf_field() }}
             <div class="form-group ">
@@ -81,11 +81,11 @@
             </div>
 
             <div class="row">
-                <div class="col-7">
-            <button type="submit" class=" btn-principal " id="btnGuardarPerfilHeroe">Guardar cambios</button>
+                <div id="btnGuardarPerfilHeroe">
+            <button type="submit" class=" btn-principal">Guardar cambios</button>
             </div>
-            <div class="col-5">
-                <button type="submit" class=" btn-alternative " id="btnCancelarPerfilHeroe">Cancelar</button>
+            <div id="btnCancelarPerfilHeroe">
+                <button type="submit" class="btn-alternative">Cancelar</button>
             </div>
         </div>
         </form>

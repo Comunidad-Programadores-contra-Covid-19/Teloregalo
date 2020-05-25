@@ -46,7 +46,16 @@
 
 #fotoHeroe img {
     width: 100%;
+    height: 90%;
+    object-fit: contain;
 }
+
+/* #editPicture{
+    position: absolute;
+    right:5px;
+    top:5px;
+    color: white;
+} */
 
 #datosPerfilHeroe {
     display: inline-block;
@@ -58,8 +67,17 @@
 #botonesFormPerfilHeroe {
     margin-bottom: 5em;
 }
+
 #btnGuardarPerfilHeroe,
 #btnCancelarPerfilHeroe {
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#btnGuardarPerfilHeroe button,
+#btnCancelarPerfilHeroe button {
     width: 100%;
 }
 
@@ -103,7 +121,11 @@
         width: 100%;
         margin: 0;
     }
-
+    #btnGuardarPerfilHeroe,
+    #btnCancelarPerfilHeroe {
+        width: 90%;
+        margin-bottom: 1em;
+    }
 
 }
 
@@ -151,6 +173,7 @@
 
     #btnGuardarPerfilHeroe,
     #btnCancelarPerfilHeroe {
-        width: 90%;
+        width: 100%;
+        margin-bottom: 1em;
     }
 }

@@ -7,7 +7,7 @@ header {
     margin-top: -2em;
     width: 100%;
     height: auto;
-    }
+}
 
 #presentacion {
     width: 50%;
@@ -62,23 +62,13 @@ header {
 
 #btnRegistrar,
 #btnRegalar {
-    background-color: #96D293;
-    color: #263238;
-    border-radius: 2em;
-    border: none;
     margin: 0.5em;
     display: inline-block;
     font-weight: bold;
     padding: 10px 35px;
+    border-radius: 2em;
 }
 
-#btnRegistrar:hover,
-#btnRegalar:hover {
-    border: #96D293 solid 2px;
-    background-color: #FFFFFF;
-    padding: 8px 35px;
-    color: #96D293;
-}
 /* Fin Cabecera Presentación */
 
 /* Inicio Búsqueda Comercios */
@@ -208,7 +198,7 @@ header {
     #presentacion p {
         width: 100%;
         margin-top: 5px;
-        font-size: 17.5px;
+        font-size: 19px;
         line-height: 30px;
     }
 
@@ -243,104 +233,111 @@ header {
     }
 
     #btnUbicacion img {
-       width: 25px;
-       height: 25px;
+        width: 25px;
+        height: 25px;
     }
 }
 
 @media handheld, screen and (max-width:991px) {
 
-#imgPresentacion {
-    float: none;
-    width: 50%
-}
+    #contenedorPresentacion {
+        text-align: center;
+    }
 
-#imgPresentacion img {
-    margin-top: 0.5em;
-}
+    #imgPresentacion {
+        float: none;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-#presentacion {
-    width: 100%;
-    float: none;
-    padding-left: 0;
-    margin-right: auto;
-    margin-left: auto;
-}
+    #imgPresentacion img {
+        margin-top: 0.5em;
+    }
 
-#presentacion h1 {
-    width: 100%;
-    margin-top: 0;
-    font-size: 34px;
-    margin-bottom: 0;
-}
+    #presentacion {
+        width: 100%;
+        float: none;
+        padding-left: 0;
+        margin-right: auto;
+        margin-left: auto;
+    }
 
-#presentacion p {
-    width: 100%;
-    margin-top: 5px;
-    font-size: 15px;
-    line-height: 30px;
-}
+    #presentacion h1 {
+        width: 100%;
+        margin-top: 0;
+        font-size: 34px;
+        margin-bottom: 0;
+        font-size: 2.1rem;
+    }
 
-#btnRegistroRegalo {
-    margin-top: 0;
-    margin-bottom: 0;
-}
+    #presentacion p {
+        width: 100%;
+        line-height: 30px;
+        font-size: 19px;
+    }
 
-#btnRegistrar,
-#btnRegalar {
-    margin: 0;
-    padding: 10px 10px;
-    font-weight: normal;
-}
+    #btnRegistroRegalo {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
 
-#btnRegistrar {
-    width: 55%;
-}
+    #btnRegistrar,
+    #btnRegalar {
+        margin: 0;
+        padding: 10px 10px;
+        font-weight: normal;
+    }
 
-#btnRegalar {
-    width: 43%;
-}
+    #btnRegistrar {
+        width: 90%;
+        margin-bottom: 1em
+    }
 
-#contenedorBusquedaComercios {
-    margin-bottom: 2em;
-}
+    #btnRegalar {
+        width: 90%;
+    }
 
-#contenedorBuscador h1 {
-    font-size: 35px;
-    padding-top: 1em;
-    margin-bottom: 0;
-}
+    #contenedorBusquedaComercios {
+        margin-bottom: 2em;
+    }
 
-#buscador {
-    margin-top: 2em;
-    margin-bottom: 3em;
-    padding: 0.6em;
-}
+    #contenedorBuscador h1 {
+        font-size: 35px;
+        padding-top: 1em;
+        margin-bottom: 0;
+    }
 
-#btnUbicacion {
-    font-size: 14px;
-    margin-bottom: 1em;
-}
+    #buscador {
+        margin-top: 2em;
+        margin-bottom: 3em;
+        padding: 0.6em;
+    }
 
-#btnUbicacion img {
-   width: 25px;
-   height: 25px;
-}
+    #btnUbicacion {
+        font-size: 14px;
+        margin-bottom: 1em;
+    }
 
-#buscarComercio,
-#ingresarDireccion {
-    margin-bottom: 0.7em;
-}
+    #btnUbicacion img {
+        width: 25px;
+        height: 25px;
+    }
 
-#buscarComercio input,
-#ingresarDireccion input {
-    text-align: left;
-}
+    #buscarComercio,
+    #ingresarDireccion {
+        margin-bottom: 0.7em;
+    }
 
-#contenedorTarjetas {
-    margin-top: 2em;
-}
+    #buscarComercio input,
+    #ingresarDireccion input {
+        text-align: left;
+    }
+
+    #contenedorTarjetas {
+        margin-top: 2em;
+    }
     .scrollable {
-      margin-top: 2rem;
+        margin-top: 2rem;
     }
 }

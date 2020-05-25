@@ -32,13 +32,12 @@
                         {{ method_field('put') }}
                         {{ csrf_field() }}
 
-                        <div class="modal-body">
+                        <div class="modal-body pl-3">
                             <input id="file-input" name="avatar" type="file"/>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="input" class="btn btn-primary">Guardar</button>
-
+                        <div class="modal-footer pl-3">
+                            <button type="button" class="btn btn-alternative" data-dismiss="modal">Cancelar</button>
+                            <button type="input" class=" btn btn-principal">Guardar</button>
                         </div>
                     </form>
                 </div>
@@ -61,7 +60,7 @@
                 </div>
             </div>
 
-            <div class="col text-center mt-3 mb-5">
+            <div class="col-md-auto text-center mt-3 mb-5">
                 <h4>La Url de tu negocio es:</h4>
                 <p>https://www.figma.com/file/8mOR2VUQF08JLjzeHQBfC2/</p>
                 <button class="btn btn-principal">Compartir</button>
@@ -98,11 +97,11 @@
                         <input type="email" class="form-control" id="inputEmail" readonly
                                value="{{ $userInfo->email }}">
                     </div>
-                    <div class="form-group">
-                        <label for="inputPass">Contraseña</label>
+                    <!--  <div class="form-group">
+                          <label for="inputPass">Contraseña</label>
 
-                        <input type="password" class="form-control" id="inputPass" placeholder="">
-                    </div>
+                          <input type="password" class="form-control" id="inputPass" placeholder="">
+                      </div>-->
 
 
                 </section>
@@ -126,7 +125,7 @@
                     </div>
                     <div class="form-group">
                         <label for="inputNombreApellido">Tu nombre y apellido</label>
-                        <input type="text" class="form-control" id="inputNombreApellido" placeholder=""
+                        <input type="text" class="form-control" id="inputNombreApellido" name="nombreCompleto" placeholder=""
                                value="{{ $userInfo->name}}">
                     </div>
                     <div class="form-group">
@@ -155,7 +154,7 @@
 
                     <div class="form-group">
                         <label for="inputCategoria" id="Category">Categorías</label>
-                        <select class="form-control" id="inputCategoria" name='category'
+                        <select class="form-control disabled" id="inputCategoria" name='category'
                                 selected="{{ $storeInfo->category}}">
                             <option {{ ($storeInfo->category == 'Cafetería') ? "selected" : ""}}>Cafetería</option>
                             <option {{ ($storeInfo->category == 'Cervecería') ? "selected" : ""}}>Cervecería</option>
@@ -194,11 +193,14 @@
                                value="{{ $storeInfo->horarios }}">
                     </div>
 
-                    <a class="btn btn-alternative btn-block"
-                       href="https://auth.mercadopago.com.ar/authorization?client_id=5661899751765285&response_type=code&platform_id=mp&redirect_uri=https%3A%2F%2Fteloregalo.com.ar/procesar-pago">
-                        Vincular mi cuenta de mercado pago
-                    </a>
                 </section>
+            </div>
+
+            <div class="mercadoPago">
+                <a id="mercadoPago" class="btn btn-block"
+                   href="https://auth.mercadopago.com.ar/authorization?client_id=5661899751765285&response_type=code&platform_id=mp&redirect_uri=https%3A%2F%2Fteloregalo.com.ar/procesar-pago">
+                    Vincular mi cuenta de mercado pago
+                </a>
             </div>
 
             <div class="col-lg-12 mt-5">
@@ -211,124 +213,43 @@
                     </div>
                 </div>
             </div>
-
         </form>
-
-
     </div>
 
-    {{-- <div class="container">
 
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="">
+    <div class="modal fade" id="mpModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">¡Ya casi estas listo!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body p-4" id="result">
+                    <img id="imgMp" src="{{ asset('assets/money_transfer_.svg') }}" alt="ilustracion transferencia" id="imgRegistroHeroe">
+                    <h1>Vinculá tu cuenta de Mercado Pago</h1>
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-3">
+                            <p>Es importante que vincules tu cuenta <b>Mercado Pago</b> para poder empezar a operar en el sitio.</p>
+                        </div>
 
-                    <div class="card-body">
-
-
-                        <form method="POST" action=" {{ route('stores.update', $storeInfo->id) }}">
-                            {{ method_field('put') }}
-                            {{ csrf_field() }}
-                            <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre del comercio') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $storeInfo->name }}" required autocomplete="name" autofocus>
-
-                                    @error('name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-
-
-                            <div class="form-group row">
-                                <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Dirección') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="address" type="address" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ $storeInfo->address }}" required autocomplete="address">
-
-                                    @error('address')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Telefono') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ $storeInfo->phone }}" required autocomplete="phone">
-
-                                    @error('phone')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="category" class="col-md-4 col-form-label text-md-right">{{ __('Categoría') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="category" type="category" class="form-control @error('category') is-invalid @enderror" name="category" value="{{ $storeInfo->category }}" required autocomplete="category">
-
-                                    @error('category')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Descripción') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="description" type="description" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ $storeInfo->description }}" required autocomplete="description">
-
-                                    @error('description')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="facebook" class="col-md-4 col-form-label text-md-right">{{ __('Facebook') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="facebook" type="facebook" class="form-control @error('facebook') is-invalid @enderror" name="facebook" value="{{ $storeInfo->facebook }}" required autocomplete="facebook">
-
-                                    @error('facebook')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-
-
-                            <div class="form-group row mb-0">
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Guardar Cambios') }}
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <a  href="https://auth.mercadopago.com.ar/authorization?client_id=5661899751765285&response_type=code&platform_id=mp&redirect_uri=https%3A%2F%2Fteloregalo.com.ar/procesar-pago"
+                    type="button" class="btn btn-block" id="mercadoPago" data-dismiss="modal">Vincular Mercado Pago</a>
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
+
+
+    <script type="text/javascript">
+        $(window).on('load',function(){
+            $('#mpModal').modal('show');
+        });
+    </script>
+
 
 @endsection

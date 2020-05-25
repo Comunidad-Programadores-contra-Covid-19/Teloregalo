@@ -143,6 +143,11 @@
     font-size: 20px;
 }
 
+#vtasProd {
+    display: flex;
+}
+
+
 @media handheld, screen and (max-width:991px) {
     #menuMisVentas {
         float: none;
@@ -183,7 +188,7 @@
     #contenedorMisVentas {
         text-align: center;
     }
-    
+
     #imgCodigoVal {
         float: none;
         margin-top: 0.5em;

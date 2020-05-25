@@ -16,7 +16,7 @@
         <form  method="POST" action=" {{ route('stores.updateRegister', $storeId) }}"
             enctype="multipart/form-data">
           {{ method_field('put') }}
-          @csrf
+          {!! csrf_field() !!}
           <div class="form-group">
             <label for="inputNombreComercio">Nombre del comercio</label>
             <input type="text" id="inputNombrecomercio" placeholder=""

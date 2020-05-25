@@ -12,11 +12,11 @@
                 <h1>Paso 1</h1>
                 <p>Al registrar tu comercio los vecinos podrán elegirte para comprar regalos a nuestros héroes.</p>
                 <form method="POST" action="{{ url('stores/register') }}">
-                    @csrf
+                    {!! csrf_field() !!}
                     <div class="form-group ">
                         <label for="inputNombreComercio">Tu nombre y apellido</label>
                         <input type="text" id="inputNombreComercio" placeholder="" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                        
+
                         @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -26,7 +26,7 @@
                     <div class="form-group">
                         <label for="inputEmail">Email</label>
                         <input type="email" id="inputEmail" placeholder="" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-                        
+
                         @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -48,16 +48,16 @@
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                     </div>
                     <div class="form-check" id="chekRegistroComercio">
-                        
+
                         <input type="checkbox" name="terminos" onclick="isChecked()" class="form-check-input" id="exampleCheck1"/>
                         <label class="form-check-label" for="exampleCheck1"><b> Acepto términos y
                             condiciones</b></label>
-                          
+
                     </div>
 
-                    <p id="tycRegistroComercio">Al hacer click en "Registrarme" aceptás nuestras <a href="#"><b>condiciones,
+                    <p id="tycRegistroComercio">Al hacer click en "Registrar mi comercio" aceptás nuestras <a href="#"><b>condiciones,
                         la Política de Datos y la Política de Cookies.</b></a></p>
-                
+
                     <button type="submit" class="btn btn-principal btn-block" id="btnRegistroComercio1" disabled>Registrar mi
                         comercio
                     </button>
@@ -74,12 +74,12 @@
         checkDom= document.getElementById('exampleCheck1')
         btnRegistroDom= document.getElementById('btnRegistroComercio1')
         if(checkDom.checked){
-            btnRegistroDom.disabled = false; 
+            btnRegistroDom.disabled = false;
         }else
-       
-            btnRegistroDom.disabled = true; 
-                   
-            
+
+            btnRegistroDom.disabled = true;
+
+
     }
 </script>
 @endsection

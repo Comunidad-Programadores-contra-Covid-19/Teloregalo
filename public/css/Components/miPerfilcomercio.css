@@ -6,66 +6,175 @@
     width: 15rem;
     overflow: hidden;
 }
+
 .logoPerfil img {
-    width: 100%;
-    height: auto;
+    height: 90%;
+    object-fit: contain;
 }
 
-@supports(object-fit: cover) {
-    .logoPerfil img {
-        height: 100%;
-        object-fit: cover;
-        object-position: center center;
-    }
+#mercadoPago {
+    background: #009ee3;
+    border-color: #009ee3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.125em;
+    padding: 0 6rem;
+    border-radius: .4em;
+    border-width: .05556em;
+    border-style: solid;
+    line-height: 2.55556;
+    margin-left: 32rem;
+    margin-top: 1rem;
 }
+
+#cancell {
+    width: 80%;
+    position: relative;
+    right: -14rem;
+}
+
+#save {
+    width: 75%;
+    margin-left: 10rem;
+}
+
+
+
+.tituloPerfilCom {
+    padding-top: 1.5em;
+}
+
+
+.formComercio {
+    padding-left: 12rem;
+}
+
+#horarios {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 2px solid #96D293 !important;
+    border-radius: 1rem;
+}
+
+.modal-full {
+    min-width: 20%;
+    margin-left: 80px;
+}
+
+.modal-full .modal-content {
+    min-height: 100vh;
+}
+
+#imgMp{
+    width: 80%;
+}
+
+@media handheld, (min-width: 531px) and (max-width: 995px) {
+    .logoPerfil {
+        margin-left: auto;
+        margin-right: auto;
+        height: 15rem;
+        width: 15rem;
+    }
+
     .tituloPerfilCom {
-        padding-top: 1.5em;
+        display: none;
     }
 
     .formComercio {
-        padding-left: 12rem;
+        padding-left: 0;
     }
 
-    #horarios {
-        padding-left: 1rem;
-        padding-right: 1rem;
-        border: 2px solid #96D293 !important;
-        border-radius: 1rem;
-
+    #mercadoPago {
+        background: #009ee3;
+        border-color: #009ee3;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 1.12rem;
+        font-weight: 700;
+        padding: 1.5rem 0rem;
+        margin: 1rem 32rem;
+        border-radius: .4em;
+        border-width: .05556em;
+        border-style: solid;
+        line-height: 1.55556;
+        position: relative;
+        right: 31rem;
+        width: 34rem;
     }
 
-    @media handheld, (min-width: 531px) and (max-width: 995px) {
-        .logoPerfil {
-            margin-left: auto;
-            margin-right: auto;
-            height: 15rem;
-            width: 15rem;
-        }
-
-        .tituloPerfilCom {
-            display: none;
-        }
-
-        .formComercio {
-            padding-left: 0;
-        }
+    .row {
+        display: inline;
     }
 
-
-
-    @media handheld, screen and (max-width: 530px) {
-        .logoPerfil {
-            margin-left: auto;
-            margin-right: auto;
-            height: 15rem;
-            width: 15rem;
-        }
-
-        .tituloPerfilCom {
-            display: none;
-        }
-
-        .formComercio {
-            padding-left: 0;
-        }
+    #cancell {
+        position: relative;
+        right: 1rem;
+        top: -3rem;
+        width: 34rem;
     }
+
+    #save {
+        position: relative;
+        top: -2rem;
+        right: 11rem;
+        width: 34rem;
+    }
+}
+
+@media handheld, screen and (max-width: 530px) {
+    .logoPerfil {
+        margin-left: auto;
+        margin-right: auto;
+        height: 15rem;
+        width: 15rem;
+    }
+
+    .tituloPerfilCom {
+        display: none;
+    }
+
+    .formComercio {
+        padding-left: 0;
+    }
+
+    #mercadoPago {
+        background: #009ee3;
+        border-color: #009ee3;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 700;
+        padding: 1.5rem 0rem;
+        border-radius: .4em;
+        border-width: .05556em;
+        border-style: solid;
+        line-height: 1.55556;
+        width: 100%;
+    }
+
+    .row {
+        display: inline;
+    }
+
+    #cancell {
+        position: relative;
+        right: 1rem;
+        top: -3rem;
+        width: 100%;
+        margin-left: 3rem;
+    }
+
+    #save {
+        position: relative;
+        top: -5.29rem;
+        right: 1rem;
+        width: 100%;
+    }
+    #imgMp{
+        width: 40%;
+    }
+}

@@ -12,9 +12,11 @@
     <link  href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="icon" href="{{ asset('assets/logo.svg') }}" sizes="32x32" type="image/svg">
     <link rel="icon" href="{{ asset('assets/logo.svg') }}" sizes="16x16" type="image/svg">
+
+    @include('analytics')
 </head>
 <body>
-  
+
         <!--Inicio Navbar -->
         <header>
         <nav class="mb-1 navbar navbar-expand-lg navbar-light navbar-green shadow-sm sticky-top">
@@ -22,6 +24,7 @@
                 teloregalo
                 <img src="{{ asset('assets/logo.svg') }}" width="40" height="40" class="d-inline-block align-bottom" alt="">
             </a>
+{{--            {{Auth::user()->notifications}} --}}
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
             aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -40,7 +43,7 @@
                         <a class="nav-link" href="{{ url('quienes-somos') }}">Quiénes somos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('donar') }}" id="btnDonarNav">Donar</a>
+                        <a class="nav-link" href="{{ url('donar') }}">Donar</a>
                     </li>
                 </ul>
 
@@ -73,13 +76,13 @@
                                 @endif
                                 {{ Auth::user()->store->name }} <span class="caret"></span>
                             @endif
-                           
+
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                     
+
                             @if(Auth::user()->rol == 'store')
                             <a id="navbarDropdown" class="nav-link button" href="{{ route('stores.miPerfil') }}" role="button">
-                                Mi Comercio
+                                Mi Comercio <span class="badge badge-light">9</span>
                             </a>
                             @endif
                             @if(Auth::user()->rol == 'client')

@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Store;
+use App\User;
 use Auth;
 use App\Offer;
 use App\Credentials;
 use App\RatingStore;
+use App\Otp;
 use Illuminate\Support\Facades\DB;
 use willvincent\Rateable\Rating;
 
@@ -63,6 +65,12 @@ class StoreController extends Controller
         $storeUpdate = Store::findOrFail($id);
         /* ['name','user_id','description','adress','sector','avatar','facebook','instagram','horarios','category','phone'] */
 
+        if ($request->has('nombreCompleto')) {
+            $userid =Auth::user()->id;
+            $user = User::findOrFail($userid);
+            $user->name = $request->nombreCompleto;
+            $user->update();
+        }
         $storeUpdate->name = $request->name;
         $storeUpdate->description = $request->description;
         $storeUpdate->address = $request->address;
@@ -112,11 +120,19 @@ class StoreController extends Controller
     public function show($id)
     {
         $store = Store::find($id);
+        $otp='';
+        if(Auth::user()){
+            if(Auth::user()->rol == "client"){
+                $userId=Auth::user()->id;
+                $otp = Otp::where('user_id',  $userId)->first();
+            }
+        }
+        
 
         $credencialStore = Credentials::where('store_id', $id)->get();
         $credentials = $credencialStore[0];
         /*  var_dump($storeCredentials); */
-        return view('stores.index_profile', ['store' => $store, 'credentials' => $credentials]);
+        return view('stores.index_profile', ['store' => $store, 'credentials' => $credentials,'otp'=> $otp]);
     }
     public function destroy($id)
     {
