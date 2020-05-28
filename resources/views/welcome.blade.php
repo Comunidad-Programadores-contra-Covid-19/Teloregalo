@@ -16,6 +16,7 @@
     <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
     <link rel="icon" href="assets/logo.svg" sizes="32x32" type="image/svg">
     <link rel="icon" href="assets/logo.svg" sizes="16x16" type="image/svg">
+    <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 
 
@@ -216,29 +217,56 @@
 
 
 
-        <script type="application/javascript">
-                function mostrarLista(){
-                    const domLista = document.getElementById('contenedorTarjetasHidde')
-                    const domMapa = document.getElementById('contenedorTarjetasMapHidde')
-                    domMapa.classList.add('d-none');
-                    domLista.classList.remove('d-none');
-                    console.log('watra')
-            }
-            function mostrarMapa(){
-
-                const domLista= document.getElementById('contenedorTarjetasHidde')
-                const domMapa= document.getElementById('contenedorTarjetasMapHidde')
-                domMapa.classList.remove('d-none');
-                domLista.classList.add('d-none');
-
-            }
-        </script>
+        
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.auto.min.js"></script>
     <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="{{ asset('./js/search.js')}}"></script>
+    <script type="application/javascript">
+        function mostrarLista(){
+            axios.get('{{ route('stores.search')}}',{
+                params:{
+                    searchName: '',
+                }
+            })
+            .then(function(res){
+                if(res.status==200){
+                    console.log(res.data);
+                }
+                else{
+                    console.log("Fallo!");
+                }
+            });
+            //
+            const domLista = document.getElementById('contenedorTarjetasHidde')
+            const domMapa = document.getElementById('contenedorTarjetasMapHidde')
+            domMapa.classList.add('d-none');
+            domLista.classList.remove('d-none');
+            
+        }
+        function mostrarMapa(){
+
+        const domLista= document.getElementById('contenedorTarjetasHidde')
+        const domMapa= document.getElementById('contenedorTarjetasMapHidde')
+        domMapa.classList.remove('d-none');
+        domLista.classList.add('d-none');
+        }
+    </script>
+
     <script>
         mapboxgl.accessToken = 'pk.eyJ1Ijoibmljb2xpZW5kcm8xNCIsImEiOiJjazlvcHU5eWMwMzdzM2hxcTNoN3lleGRmIn0.sPpU8gUReCtWeFS8z0ccsw';
         var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+
+        // Codigo boton
+
+        $(document).ready(function() {
+            $("#btnRegalar").click(function () {
+                $('html,body').animate({
+                    scrollTop: $("#contenedorTarjetas").offset().top
+                }, 500);
+            });
+        });
 
         function setDefaultMap(){
 

@@ -11,7 +11,7 @@
 |
 */
 
-  Auth::routes(['verify' => true]);   
+Auth::routes(['verify' => true]);
 // Authentication Routes Client...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
@@ -59,6 +59,8 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/stores', 'StoreController@index')->name('stores.index');
 
+Route::get('/search', 'StoreController@search')->name('stores.search');
+
 Route::get('store/{id}', 'StoreController@show')->name('stores.perfil');
 Route::group(['middleware' => ['auth', 'store']], function () {
     Route::get('stores/miPerfil', 'StoreController@renderPerfil')->name('stores.miPerfil')->middleware('verified');
@@ -75,7 +77,6 @@ Route::group(['middleware' => ['auth', 'store']], function () {
     Route::get('register/pasortwo', function () {
         return view('auth.registerStore2');
     });
-    
 });
 
 Route::post('/verificar-pago', 'LinkMercadoPagoController@verificar')->name('verificar.pago');
@@ -108,12 +109,12 @@ Route::get('/agradecimiento', function () {
 });
 
 
-Route::get('storage-link',function(){
+Route::get('storage-link', function () {
     Artisan::call('cache:clear');
 });
 
-Route::get('/google9885af1ba3907d18',function(){
-   return view('google9885af1ba3907d18.html');
+Route::get('/google9885af1ba3907d18', function () {
+    return view('google9885af1ba3907d18.html');
 });
 
 Route::get('/enviar', 'sendEmailController@mandar');

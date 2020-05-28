@@ -13,7 +13,7 @@
     <link rel="icon" href="{{ asset('assets/logo.svg') }}" sizes="32x32" type="image/svg">
     <link rel="icon" href="{{ asset('assets/logo.svg') }}" sizes="16x16" type="image/svg">
 
-    @include('analytics')
+    @include('analytics.analytics')
 </head>
 <body>
 

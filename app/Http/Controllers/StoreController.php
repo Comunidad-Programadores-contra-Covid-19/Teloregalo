@@ -37,16 +37,29 @@ class StoreController extends Controller
     public function index(Request $request)
     {
         $name = $request->searchName;
+
         $stores = DB::table('stores')
             ->join('credentials', 'stores.id', '=', 'credentials.store_id')
-            ->where('name', $name)
+            ->where('name', 'LIKE', "%$name%")
             ->select('stores.*', 'credentials.store_id')
             ->orderBy('rating', 'DESC')
             ->orderBy('sum_rating', 'DESC')
             ->get();
         return view('welcome', ['stores' => $stores]);
     }
+    public function search(Request $request)
+    {
+        $name = $request->searchName;
 
+        $stores = DB::table('stores')
+            ->join('credentials', 'stores.id', '=', 'credentials.store_id')
+            ->where('name', 'LIKE', "%$name%")
+            ->select('stores.*', 'credentials.store_id')
+            ->orderBy('rating', 'DESC')
+            ->orderBy('sum_rating', 'DESC')
+            ->get();
+        return $stores;
+    }
     /*     public function store(Request $request)
     {
         $store = new Store;
@@ -66,7 +79,7 @@ class StoreController extends Controller
         /* ['name','user_id','description','adress','sector','avatar','facebook','instagram','horarios','category','phone'] */
 
         if ($request->has('nombreCompleto')) {
-            $userid =Auth::user()->id;
+            $userid = Auth::user()->id;
             $user = User::findOrFail($userid);
             $user->name = $request->nombreCompleto;
             $user->update();
@@ -120,19 +133,19 @@ class StoreController extends Controller
     public function show($id)
     {
         $store = Store::find($id);
-        $otp='';
-        if(Auth::user()){
-            if(Auth::user()->rol == "client"){
-                $userId=Auth::user()->id;
+        $otp = '';
+        if (Auth::user()) {
+            if (Auth::user()->rol == "client") {
+                $userId = Auth::user()->id;
                 $otp = Otp::where('user_id',  $userId)->first();
             }
         }
-        
+
 
         $credencialStore = Credentials::where('store_id', $id)->get();
         $credentials = $credencialStore[0];
         /*  var_dump($storeCredentials); */
-        return view('stores.index_profile', ['store' => $store, 'credentials' => $credentials,'otp'=> $otp]);
+        return view('stores.index_profile', ['store' => $store, 'credentials' => $credentials, 'otp' => $otp]);
     }
     public function destroy($id)
     {
