@@ -1,9 +1,15 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TeLoRegalo</title>
+</head>
 <body>
 <table style="max-width: 600px; padding: 10px; margin: 0 auto; border-collapse: collapse;">
     <tr>
-        <td style="text-align: center;">
-            <img style="max-width: 350px; height: auto" alt="Bienvenido" src="{{ $message->embed(public_path() . '/assets/comercio.png') }}" /> 
+        <td>
         </td>
     </tr>
     <tr>

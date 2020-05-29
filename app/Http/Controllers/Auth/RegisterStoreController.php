@@ -7,6 +7,7 @@ use App\User;
 
 use App\Store;
 
+
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -90,9 +91,10 @@ class RegisterStoreController extends Controller
                 'sector'=> '',
                 'avatar'=> '',
             ]);
-                return $user;
-         
+     
+            
         });
+   
         return $users;
     }
 

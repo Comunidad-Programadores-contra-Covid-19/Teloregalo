@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class pruebaEmail extends Mailable
+class registroComercioEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -30,9 +30,6 @@ class pruebaEmail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Pruebaa')->view('mails.prueba');
-        
-   
-    
+        return $this->subject('Asunto de ejemplo')->view('Emails.RegistroComercio');
     }
 }
