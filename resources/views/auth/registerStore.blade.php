@@ -50,8 +50,7 @@
                     <div class="form-check" id="chekRegistroComercio">
 
                         <input type="checkbox" name="terminos" onclick="isChecked()" class="form-check-input" id="exampleCheck1"/>
-                        <label class="form-check-label" for="exampleCheck1"><b> Acepto términos y
-                            condiciones</b></label>
+                        <a target="_blank" href="{{ url('../terminos-condiciones') }}"><label class="form-check-label" for="exampleCheck1"><b> Aceptar términos y condiciones</b></label></a>
 
                     </div>
 
