@@ -34,11 +34,15 @@
             <div class="form-group">
                 <label for="profesionesHeroes">Profesión</label>
                 <select class="form-control" name='profesion' id="profesionesHeroes">
-                    <option>Profesión 1</option>
-                    <option>Profesión 2</option>
-                    <option>Profesión 3</option>
-                    <option>Profesión 4</option>
-                    <option>Profesión 5</option>
+                    <option>Personal de Salud</option>
+                    <option>Científicos</option>
+                    <option>Fuerzas de seguridad</option>
+                    <option>Bomberos</option>
+                    <option>Asistentes sociales</option>
+                    <option>Transporte</option>
+                    <option>Recolectores de residuos/Servicios de limpieza </option>
+                    <option>Repartidores</option>
+                    <option>Voluntarios </option>
                 </select>
             </div>
             <div class="form-group">

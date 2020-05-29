@@ -12,7 +12,7 @@
     <!-- Inicio Compartir -->
     <section id="compartirAgradecimiento">
 
-        <h1 id="tituloGracias">¡Hoy te convertiste en Héroe!</h1>
+        <h1 id="tituloGracias">¡Hoy ayudaste a un Héroe!</h1>
 
         <h4 id="subtituloGracias">Compartí esta buena acción para que otros te imiten</h4>
 

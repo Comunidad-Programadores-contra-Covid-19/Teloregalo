@@ -191,6 +191,7 @@
                         <label for="inputHorario">Horarios</label>
                         <input type="text" class="form-control" name="horarios" id="inputHorario"
                                value="{{ $storeInfo->horarios }}">
+                        <p class="text-muted">Ejemplo: Lunes a Viernes de 9:00 a 18:00. Sabados de 10:00 a 13:00</p>
                     </div>
 
                 </section>
@@ -232,6 +233,7 @@
                     <div class="row">
                         <div class="col-sm-6 col-lg-3">
                             <p>Es importante que vincules tu cuenta <b>Mercado Pago</b> para poder empezar a operar en el sitio.</p>
+                            <p>Si no tenes una cuenta, no te preocupes, presionando el siguiente botón también vas a poder crearla.</p>
                         </div>
 
                     </div>
