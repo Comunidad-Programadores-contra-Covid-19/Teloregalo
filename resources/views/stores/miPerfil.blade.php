@@ -60,10 +60,11 @@
                 </div>
             </div>
 
-            <div class="col-md-auto text-center mt-3 mb-5">
+       
+            <div class="col text-center mt-3 mb-5">
                 <h4>La Url de tu negocio es:</h4>
-                <p>https://www.figma.com/file/8mOR2VUQF08JLjzeHQBfC2/</p>
-                <button class="btn btn-principal">Compartir</button>
+                <p>https://teloregalo.com.ar/store/{{$storeInfo->id}}</p>
+                <div class="sharethis-inline-share-buttons" data-url="https://www.teloregalo.com.ar/store/{{$storeInfo->id}}"></div>       
             </div>
 
             <div class="col-lg-6">
@@ -197,11 +198,18 @@
                 </section>
             </div>
 
-            <div class="mercadoPago">
-                <a id="mercadoPago" class="btn btn-block"
-                   href="https://auth.mercadopago.com.ar/authorization?client_id=5661899751765285&response_type=code&platform_id=mp&redirect_uri=https%3A%2F%2Fteloregalo.com.ar/procesar-pago">
-                    Vincular mi cuenta de mercado pago
-                </a>
+          
+            <div class="mercadoPago" >
+                @if(!$storeInfo->verificado)
+                    <a id="mercadoPago" class="btn"
+                       href="https://auth.mercadopago.com.ar/authorization?client_id=5661899751765285&response_type=code&platform_id=mp&redirect_uri=https%3A%2F%2Fteloregalo.com.ar/procesar-pago">
+                        Vincular mi cuenta de mercado pago
+                    </a>
+                @else
+                     <a id="mercadoPago" class="btn" style='pointer-events: none; cursor: default; font-size:15px;' >
+                        Tu cuenta esta vinculada a mercado pago
+                    </a>
+                @endif
             </div>
 
             <div class="col-lg-12 mt-5">

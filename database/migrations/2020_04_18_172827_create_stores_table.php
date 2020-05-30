@@ -27,6 +27,7 @@ class CreateStoresTable extends Migration
             $table->string('horarios')->nullable();
             $table->string('category')->nullable();
             $table->string('phone')->nullable();
+            $table->integer('vinculado')->default(0);
             $table->integer('rating')->default(0);
             $table->integer('sum_rating')->default(0);
             $table->integer('gifts')->default(0);

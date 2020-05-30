@@ -13,7 +13,7 @@ class LinkMercadoPagoController extends Controller
 {
     public function linked(Request $request)
     {
-        var_dump($request->code);
+       /*  var_dump($request->code); */
         $store_id = Auth::user()->store->id;
         $ifExist = Credentials::where('store_id', $store_id)->first();
         if ($ifExist) {
@@ -49,6 +49,11 @@ class LinkMercadoPagoController extends Controller
                 "refresh_token" => $content->refresh_token,
             ]);
             $credentials->save();
+
+            $verificate = Store::findOrFail($store_id);
+            $verificate->verificado = 1;
+            $verificate->update();
+
             $messag = "Tu cuenta se vinculo con exito";
             return redirect('stores/miPerfil')->with('success', $messag);
         }

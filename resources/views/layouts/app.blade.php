@@ -139,16 +139,16 @@
                             <a href="#">Comercios adheridos</a>
                         </p>
                         <p>
-                            <a href="#">Preguntas frecuentes</a>
+                            <a  href="{{ url('preguntas-frecuentes') }}">Preguntas frecuentes</a>
                         </p>
                     </div>
 
                     <div class="col-auto">
                         <p>
-                            <a href="#">Quienes somos</a>
+                            <a href="{{ url('quienes-somos') }}">Quienes somos</a>
                         </p>
                         <p>
-                            <a href="#">Donar</a>
+                            <a href="{{ url('donar') }}">Donar</a>
                         </p>
                     </div>
                 </div>
