@@ -30,6 +30,6 @@ class registroComercioEmail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Asunto de ejemplo')->view('Emails.RegistroComercio');
+        return $this->subject('Te lo regalo')->markdown('Emails.RegistroComercio');
     }
 }

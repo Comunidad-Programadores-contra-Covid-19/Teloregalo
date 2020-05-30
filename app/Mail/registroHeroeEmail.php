@@ -16,9 +16,11 @@ class registroHeroeEmail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public $params;
+
+    public function __construct($params)
     {
-        //
+        $this->params = $params;
     }
 
     /**
@@ -28,6 +30,6 @@ class registroHeroeEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->subject('Te lo Regalo')->markdown('Emails.RegistroHeroe');
     }
 }
