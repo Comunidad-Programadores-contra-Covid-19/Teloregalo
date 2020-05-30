@@ -34,11 +34,15 @@
             <div class="form-group">
                 <label for="profesionesHeroes">Profesión</label>
                 <select class="form-control" name='profesion' id="profesionesHeroes">
-                    <option>Profesión 1</option>
-                    <option>Profesión 2</option>
-                    <option>Profesión 3</option>
-                    <option>Profesión 4</option>
-                    <option>Profesión 5</option>
+                    <option>Personal de Salud</option>
+                    <option>Científicos</option>
+                    <option>Fuerzas de seguridad</option>
+                    <option>Bomberos</option>
+                    <option>Asistentes sociales</option>
+                    <option>Transporte</option>
+                    <option>Recolectores de residuos/Servicios de limpieza </option>
+                    <option>Repartidores</option>
+                    <option>Voluntarios </option>
                 </select>
             </div>
             <div class="form-group">
@@ -57,9 +61,9 @@
 
             <div class="form-check" id="chekRegistroHeroe">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="isChecked()">
-                <label class="form-check-label" for="exampleCheck1"><b> Aceptar términos y condiciones</b></label>
+                <a target="_blank" href="{{ url('../terminos-condiciones') }}"><label class="form-check-label" for="exampleCheck1"><b> Aceptar términos y condiciones</b></label></a>
             </div>
-        
+
             <p id="tycRegistroHeroe">Al hacer click en "Registrarme" aceptás nuestras condiciones, la Política de Datos y la Política de Cookies.</p>
             <button type="submit" class="btn btn-principal btn-block" id="btnRegistroHeroe" disabled>Registrarme</button>
         </form>
@@ -82,19 +86,19 @@
         btnRegistroHeroDom= document.getElementById('btnRegistroHeroe')
         btnGoogleDom= document.getElementById('btnRegistroHeroeGmail')
         btnFacebookDom= document.getElementById('btnRegistroHeroeFace')
-        
+
         if(checkDom.checked){
-            btnRegistroHeroDom.disabled = false; 
+            btnRegistroHeroDom.disabled = false;
             btnGoogleDom.classList.remove('disabled');
             btnFacebookDom.classList.remove('disabled');
         }else{
 
-        
+
         btnGoogleDom.classList.add('disabled');
             btnFacebookDom.classList.add('disabled');
-            btnRegistroHeroDom.disabled = true; 
-        }           
-            
+            btnRegistroHeroDom.disabled = true;
+        }
+
     }
 </script>
 
