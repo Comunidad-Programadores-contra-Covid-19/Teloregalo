@@ -247,7 +247,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a  href="https://auth.mercadopago.com.ar/authorization?client_id=5661899751765285&response_type=code&platform_id=mp&redirect_uri=https%3A%2F%2Fteloregalo.com.ar/procesar-pago"
+                    <a  href="https://auth.mercadopago.com.ar/authorization?client_id=5661899751765285&response_type=code&platform_id=mp&redirect_uri=http%3A%2F%2Flocalhost:8000/procesar-pago"
                     type="button" class="btn btn-block" id="mercadoPago" data-dismiss="modal">Vincular Mercado Pago</a>
                 </div>
             </div>

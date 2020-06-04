@@ -5,6 +5,10 @@ namespace App;
 use Illuminate\Http\Request;
 use App\Otp;
 
+use App\User;
+use App\Offer;
+use Mail;
+use App\Mail\HeroeCodigoEmail;
 class OtpService
 {
 
@@ -26,6 +30,12 @@ class OtpService
         $otp->store_id = $store_id;
         $otp->offer_id = $offer_id;
         $otp->save();
+
+        $clientEmail = User::findOrFail($client_id);
+        $offerEmail = Offer::findOrFail($offer_id);
+        $params= array('offer'=>$offerEmail->name_offer,'otp'=>$otp);
+        Mail::to($clientEmail->email)->send(new HeroeCodigoEmail($params)); 
+
         return $otp;
     }
 }

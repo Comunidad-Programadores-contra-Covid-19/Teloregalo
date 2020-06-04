@@ -43,7 +43,7 @@ Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider')->name(
 Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
 
-Route::resource('offers', 'OfferController')->middleware('verified');
+Route::resource('offers', 'OfferController')/* ->middleware('verified') */;
 
 /*  Route::resource('stores', 'StoreController') ; */ //* ->middleware('verified') */
 
@@ -63,11 +63,11 @@ Route::get('/search', 'StoreController@search')->name('stores.search');
 
 Route::get('store/{id}', 'StoreController@show')->name('stores.perfil');
 Route::group(['middleware' => ['auth', 'store']], function () {
-    Route::get('stores/miPerfil', 'StoreController@renderPerfil')->name('stores.miPerfil')->middleware('verified');
-    Route::get('stores/misVentas', 'StoreController@renderVentas')->name('stores.misVentas')->middleware('verified');
-    Route::get('stores/misProductos', 'StoreController@renderProductos')->name('stores.misProductos')->middleware('verified');
-    Route::put('updateImage/{id}', 'StoreController@updateImage')->name('stores.updateImage')->middleware('verified');
-    Route::put('update/{id}', 'StoreController@update')->name('stores.update')->middleware('verified');
+    Route::get('stores/miPerfil', 'StoreController@renderPerfil')->name('stores.miPerfil')/* ->middleware('verified') */;
+    Route::get('stores/misVentas', 'StoreController@renderVentas')->name('stores.misVentas')/* ->middleware('verified') */;
+    Route::get('stores/misProductos', 'StoreController@renderProductos')->name('stores.misProductos')/* ->middleware('verified') */;
+    Route::put('updateImage/{id}', 'StoreController@updateImage')->name('stores.updateImage')/* ->middleware('verified') */;
+    Route::put('update/{id}', 'StoreController@update')->name('stores.update')/* ->middleware('verified') */;
 
 
 

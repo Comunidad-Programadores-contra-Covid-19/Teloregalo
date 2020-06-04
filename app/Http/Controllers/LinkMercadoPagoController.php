@@ -26,11 +26,11 @@ class LinkMercadoPagoController extends Controller
                 'headers' => ['accept' => 'application/json', 'content-type' => 'application/x-www-form-urlencoded'],
                 // array de datos del formulario
                 'form_params' => [
-                    'client_id' => '5661899751765285', //teloregalo credeencial test
-                    'client_secret' => 'F5Hvsm74a2FoXBekd1IbgVaEXLquUmsN', //teloregalo credeencial test
+                    'client_id' => '5841017781823689', //teloregalo credeencial test
+                    'client_secret' => '9E46rD3IlnFAe1aXfsuTkPCx0gTWqsAq', //teloregalo credeencial test
                     'grant_type' => 'authorization_code',
                     'code' => $request->code,
-                    'redirect_uri' => 'https://teloregalo.com.ar/procesar-pago',
+                    'redirect_uri' => 'https://localhost/procesar-pago',
                 ]
             ]);
 
@@ -65,7 +65,7 @@ class LinkMercadoPagoController extends Controller
 
     public function verificar(Request $request)
     {
-        $access_token = $request->ofert; // token de comercio
+        $access_token = 'TEST-5841017781823689-050723-4081492e6e230f3f7078e56332de7955-318863690'; // token de comercio
         $idPago = $request->preference_id;  // id del pago realizado
         $payStatus = $request->payment_status;  // estado del pago realizado
 
