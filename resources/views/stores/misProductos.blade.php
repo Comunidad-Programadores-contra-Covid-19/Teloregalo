@@ -7,9 +7,12 @@
 <div class="container">
 <div id="menuMisProductos">
     <ul class="nav flex-lg-column justify-content-center nav-pills " id="myTab" role="tablist">
-        <li ><a class="nav-item" id="nav-perfil-tab"    href="{{route('stores.miPerfil')}}"  aria-controls="nav-perfil" aria-selected="false">Perfil</a></li>
-        <li ><a class="nav-item active" id="nav-ventas-tab" href="{{route('stores.misVentas')}}"  aria-controls="nav-ventas" aria-selected="true">Ventas</a></li>
-        <li><a class="nav-item " id="nav-productos-tab"  href="{{route('stores.misProductos')}}"  aria-controls="nav-productos" aria-selected="false">Productos</a></li>
+        <li><a class="nav-item" id="nav-perfil-tab" href="{{route('stores.miPerfil')}}"
+               aria-controls="nav-perfil" aria-selected="false">Perfil</a></li>
+        <li><a class="nav-item " id="nav-productos-tab" href="{{route('stores.misProductos')}}"
+            aria-controls="nav-productos" aria-selected="false">Productos</a></li>
+        <li><a class="nav-item active" id="nav-ventas-tab" href="{{route('stores.misVentas')}}"
+            aria-controls="nav-ventas" aria-selected="true">Entrega de productos</a></li>
     </ul>
 </div>
 <div id="formProductos">
