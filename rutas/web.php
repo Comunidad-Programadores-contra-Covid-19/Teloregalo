@@ -109,7 +109,7 @@ Route::get('/donar', function () {
 Route::get('/agradecimiento', function () {
     return view('teloregalo.agradecimiento');
 });
-
+Route::post('/agradecimiento', 'LinkMercadoPagoController@UserMailSend')->name('UserMail'); 
 Route::get('/terminos-condiciones', function () {
     return view('teloregalo.terminos-condiciones');
 });
