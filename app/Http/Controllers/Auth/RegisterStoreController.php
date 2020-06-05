@@ -92,7 +92,7 @@ class RegisterStoreController extends Controller
                 'avatar'=> '',
             ]);
      
-            
+            return $user;
         });
    
         return $users;

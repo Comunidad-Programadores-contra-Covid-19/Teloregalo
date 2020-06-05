@@ -200,7 +200,7 @@
 
           
             <div class="mercadoPago" >
-                @if(!$storeInfo->verificado)
+                @if(!$storeInfo->vinculado)
                     <a id="mercadoPago" class="btn"
                        href="https://auth.mercadopago.com.ar/authorization?client_id=5661899751765285&response_type=code&platform_id=mp&redirect_uri=https%3A%2F%2Fteloregalo.com.ar/procesar-pago">
                         Vincular mi cuenta de mercado pago
@@ -247,19 +247,25 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a  href="https://auth.mercadopago.com.ar/authorization?client_id=5661899751765285&response_type=code&platform_id=mp&redirect_uri=https%3A%2F%2Fteloregalo.com.ar/procesar-pago"
-                    type="button" class="btn btn-block" id="mercadoPago" data-dismiss="modal">Vincular Mercado Pago</a>
+                    <a id="mercadoPago" class="btn"
+                    href="https://auth.mercadopago.com.ar/authorization?client_id=5661899751765285&response_type=code&platform_id=mp&redirect_uri=https%3A%2F%2Fteloregalo.com.ar/procesar-pago">
+                        Vincular mi cuenta de mercado pago
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
+    {{-- Esta mal que esto este aca, pero no se estaba incluyendo JQuery y lo necesitaba. Hay que incluirlo bien en el layout --}}
+    <script src="https://code.jquery.com/jquery.js"></script>
 
-    <script type="text/javascript">
-        $(window).on('load',function(){
-            $('#mpModal').modal('show');
-        });
-    </script>
+    @if(!$storeInfo->vinculado)
+        <script type="text/javascript">
+            $(window).on('load',function(){
+                $('#mpModal').modal('show');
+            });
+        </script>
+    @endif
 
 
 @endsection
