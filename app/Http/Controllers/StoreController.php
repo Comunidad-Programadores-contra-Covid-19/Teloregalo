@@ -33,7 +33,12 @@ class StoreController extends Controller
     }
     public function renderVentas()
     {
-        return view('stores.misVentas');
+
+        $storeId = Auth::user()->store->id;
+
+        $storeOffers = Offer::where('store_id', $storeId)->orderBy('created_at', 'desc')->get();
+
+        return view('stores.misVentas', compact('storeOffers'));
     }
     public function renderProductos()
     {

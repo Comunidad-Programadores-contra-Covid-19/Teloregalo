@@ -19,8 +19,6 @@
     <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 
-
-
 <body>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
     <link

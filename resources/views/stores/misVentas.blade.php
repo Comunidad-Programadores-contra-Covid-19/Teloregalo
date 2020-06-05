@@ -39,28 +39,28 @@
                     <label for="inputCodigo"></label>
 
 
-                    <form action="{{ route('otps.destroy', Auth::user()->id) }}" method="POST">
+                    {{-- <form action="{{ route('otps.destroy', Auth::user()->id) }}" method="POST">
                         @csrf
-                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_method" value="DELETE"> --}}
 
-                            <input type="text" name="codigo" id="inputCodigo" placeholder="Código de validación">
+                        <input type="text" name="codigo" id="inputCodigo" placeholder="Código de validación">
 
-                            <button type="submit" class="btn btn-principal btn-block " data-toggle="modal"
-                            data-target="#exampleModal" id="btnRegistrarEntrega">Registrar entrega
+                        <button id="sendcode" class="btn btn-principal btn-block">Registrar entrega
                     </button>
-                 </form>
-                 @if(Session::has('info'))
-                 <div class="alert alert-info">
+                 {{-- </form> --}}
+                 {{-- @if(Session::has('info')) --}}
+                 <div id="infoCard" class="alert alert-info d-none">
                     <button type="button" class="close" data-dismiss="alert">
                         &times;
                     </button>
-                    {{ Session::get('info') }}
+                    <span id="infoMessage"></span>
+                    {{-- {{ Session::get('info') }} --}}
                 </div>
-            @endif
+            {{-- @endif --}}
 
 
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    <div class="modal fade" id="successCodeModal" tabindex="-1" role="dialog"
                          aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -105,72 +105,32 @@
                 <section id="stock">
                     <div id="stockProducto">
                         <div class="row text-center"
-                             id="vtasProd">
-                            <div class="col-lg-4">
-                                <h5 id="nombreProductoVentas">Opción Producto</h5>
-                                <ul>
-                                    <span id="totalStock">
-                                    <li>
-                                        <p id="tituloStock">Disponibles</p>
-                                        <p id="cantidadProd">XX</p>
-                                    </li>
-                                    <li>
-                                        <p id="tituloStock" style="opacity: 50%;">Entregados</p>
-                                        <p id="cantidadProd" style="opacity: 50%;">XX</p>
-                                    </li>
-                                </span>
-                                    <li>
-                                        <span id="totalVendidos">
-                                            <p id="tituloStockVendidos">Total vendidos</p>
-                                            <p id="cantidadProdVendidos">XX</p>
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
+                            id="vtasProd">
 
-                            <div class="col-lg-4">
-                                <h5 id="nombreProductoVentas">Opción Producto</h5>
-                                <ul>
-                                    <span id="totalStock">
-                                    <li>
-                                        <p id="tituloStock">Disponibles</p>
-                                        <p id="cantidadProd">XX</p>
-                                    </li>
-                                    <li>
-                                        <p id="tituloStock" style="opacity: 50%;">Entregados</p>
-                                        <p id="cantidadProd" style="opacity: 50%;">XX</p>
-                                    </li>
-                                </span>
-                                    <li>
-                                        <span id="totalVendidos">
-                                            <p id="tituloStockVendidos">Total vendidos</p>
-                                            <p id="cantidadProdVendidos">XX</p>
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
+                            @foreach ($storeOffers as $offer)
+                                <div class="col-lg-4">
+                                    <h5 id="offerName-{{$offer->id}}">{{$offer->name_offer}}</h5>
+                                    <ul>
+                                        <span id="totalStock">
+                                        <li>
+                                            <p id="tituloStock">Disponibles</p>
+                                            <p id="offerAmount-{{$offer->id}}">{{$offer->amount}}</p>
+                                        </li>
+                                        <li>
+                                            <p id="tituloStock" style="opacity: 50%;">Entregados</p>
+                                            <p id="offerDelivered-{{$offer->id}}" style="opacity: 50%;">{{$offer->total_amount - $offer->amount}}</p>
+                                        </li>
+                                    </span>
+                                        <li>
+                                            <span id="totalVendidos">
+                                                <p id="tituloStockVendidos">Total vendidos</p>
+                                                <p id="cantidadProdVendidos">{{$offer->total_amount}}</p>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            @endforeach
 
-                            <div class="col-lg-4 ">
-                                <h5 id="nombreProductoVentas">Opción Producto</h5>
-                                <ul>
-                                    <span id="totalStock">
-                                    <li>
-                                        <p id="tituloStock">Disponibles</p>
-                                        <p id="cantidadProd">XX</p>
-                                    </li>
-                                    <li>
-                                        <p id="tituloStock" style="opacity: 50%;">Entregados</p>
-                                        <p id="cantidadProd" style="opacity: 50%;">XX</p>
-                                    </li>
-                                </span>
-                                    <li>
-                                        <span id="totalVendidos">
-                                            <p id="tituloStockVendidos">Total vendidos</p>
-                                            <p id="cantidadProdVendidos">XX</p>
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
                 </section>
@@ -187,4 +147,38 @@
 <!-- Fin contenedor -->
 
 <!-- Fin contenedor -->
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script type="text/javascript">
+    $(window).on('load', function(){
+        $("#sendcode").click(function(){
+
+            let code = $("#inputCodigo").val();
+
+            $('#sendcode').prop('disabled', true);
+
+            axios.delete('{{route('otps.destroy', Auth::user()->id)}}', {params: {codigo: code}})
+                .then(response => {
+                    
+                    $("#infoCard").removeClass("d-none");;
+                    $("#infoMessage").text(response.data.info);
+
+                    if(response.data.success){
+                        let id = response.data.offerId;
+                        $('#successCodeModal').modal('show');
+                        $(`#offerDelivered-${id}`).text(parseInt($(`#offerDelivered-${id}`).text(), 10) + 1);
+                        $(`#offerAmount-${id}`).text(parseInt($(`#offerAmount-${id}`).text(), 10) - 1);
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    $('#infoCard').removeClass("d-none");;
+                    $('#infoMessage').text("Hubo un error inesperado. Intenta de nuevo!");
+                })
+                .finally(() => $('#sendcode').prop('disabled', false));
+        });
+    });
+</script>
 @endsection
