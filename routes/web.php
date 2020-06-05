@@ -110,6 +110,9 @@ Route::get('/agradecimiento', function () {
     return view('teloregalo.agradecimiento');
 });
 
+Route::get('/terminos-condiciones', function () {
+    return view('teloregalo.terminos-condiciones');
+});
 
 Route::get('storage-link', function () {
     Artisan::call('cache:clear');
