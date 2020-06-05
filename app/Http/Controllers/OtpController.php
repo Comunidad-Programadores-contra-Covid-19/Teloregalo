@@ -83,7 +83,8 @@ class OtpController extends Controller
         return response()->json([
             'success' => $success,
             'info' => $message,
-            'offerId' => $otp->offer_id
+            'offerId' => $otp->offer_id,
+            'buyerId' => $otp->user_id
         ]);
     }
     public function clientCancel($idOtp){

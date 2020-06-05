@@ -40,4 +40,24 @@ class ClientController extends Controller
     
         return redirect('/mi-perfil')->with('success', 'Se han modificado los datos Correctamente');
     }
+
+    public function report($id){
+        $success = false;
+        
+        $user = User::find($id);
+        if($user){
+
+            $user->reports++;
+            
+            if($user->reports > 5){ // Constante arbitraria
+                // Hacer algo
+                ;
+            }
+
+            $user->update();
+
+            $success = true;
+        }
+        return response()->json(['success' => $success]);
+    }
 }

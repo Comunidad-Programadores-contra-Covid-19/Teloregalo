@@ -153,6 +153,8 @@
 
 <script type="text/javascript">
     $(window).on('load', function(){
+        var buyerId;
+
         $("#sendcode").click(function(){
 
             let code = $("#inputCodigo").val();
@@ -167,6 +169,7 @@
 
                     if(response.data.success){
                         let id = response.data.offerId;
+                        buyerId = response.data.buyerId;
                         $('#successCodeModal').modal('show');
                         $(`#offerDelivered-${id}`).text(parseInt($(`#offerDelivered-${id}`).text(), 10) + 1);
                         $(`#offerAmount-${id}`).text(parseInt($(`#offerAmount-${id}`).text(), 10) - 1);
@@ -178,6 +181,32 @@
                     $('#infoMessage').text("Hubo un error inesperado. Intenta de nuevo!");
                 })
                 .finally(() => $('#sendcode').prop('disabled', false));
+        });
+
+        $('#btnReportar').click(function(){
+            if(!buyerId)
+                return;
+
+            $('#btnReportar').prop('disabled', true);
+            
+            axios.put(`/reportar-cliente/${buyerId}`)
+                .then(response => {
+                    console.log(response);
+                    if(response.data.success)
+                        $('#infoMessage').text("El usuario ya fue reportado. Muchas gracias.");
+                    else
+                        $('#infoMessage').text("Sucedio un problema al reportar al usuario. Disculpe las molestias.");
+                })
+                .catch(error => {
+                    console.log(error);
+                    $('#infoMessage').text("Sucedio un problema al reportar al usuario. Disculpe las molestias.");
+                })
+                .finally(() => {
+                    $('#successCodeModal').modal('hide');
+                    $('#btnReportar').prop('disabled', false);
+                })
+
+            
         });
     });
 </script>

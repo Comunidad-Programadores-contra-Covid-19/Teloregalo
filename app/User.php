@@ -35,6 +35,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'reports' => 'integer'
     ];
     public function storeRelation(){
         return $this->hasOne(Store::class);

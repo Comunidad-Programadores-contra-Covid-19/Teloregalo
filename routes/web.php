@@ -90,6 +90,8 @@ Route::group(['middleware' => ['auth', 'client']], function () {
     Route::put('/updateImageHero/{id}', 'ClientController@updateImage')->name('clientes.updateImage')/* ->middleware('verified') */;
 });
 
+Route::put('/reportar-cliente/{id}', 'ClientController@report')->name('cliente.reportar');
+
 Route::post('/puntuacion/{rate}', 'StoreController@setPuntuacion')->name('puntuacion');
 
 Route::get('/puntuacion', 'StoreController@getPuntuacion')->name('get-puntuacion');
