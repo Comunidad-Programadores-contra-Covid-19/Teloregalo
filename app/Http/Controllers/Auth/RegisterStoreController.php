@@ -74,6 +74,7 @@ class RegisterStoreController extends Controller
     public function showStoreRegistrationForm(){
         return view('auth.registerStore');
     }
+    
     protected function create(array $data)
     {
       $users = DB::transaction(function () use($data) {

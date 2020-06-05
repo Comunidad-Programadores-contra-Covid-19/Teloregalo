@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 use App\OtpService;
 use App\Otp;
 use App\Store;
+use App\User;
 use App\Offer;
-
+use Mail;
+use App\Mail\HeroeCodigoEmail;
 class OtpController extends Controller
 {
     public function create($idstore, $idclient, $offer_id)
@@ -22,6 +24,9 @@ class OtpController extends Controller
             $validTill = strtotime($otpClient->otp_timestamp) + ($OTP_VALID * 60);
             if (strtotime("now") > $validTill) {
                 $otpClient = $this->store($idstore, $idclient, $offer_id);
+
+     
+
                 return view('otps.buy', ['otp' => $otp]);
             } else {
                 return back()->with('info', 'Ya pediste o consumiste un beneficio!');
@@ -33,6 +38,11 @@ class OtpController extends Controller
     {
         $otpService = new OtpService();
         $otp = $otpService->generateOtp($client_id, $store_id, $offer_id);
+
+        $clientEmail = User::findOrFail($client_id);
+        $offerEmail = Offer::findOrFail($offer_id);
+        $params= array('offer'=>$offerEmail->name_offer,'otp'=>$otp);
+        Mail::to($clientEmail->email)->send(new HeroeCodigoEmail('dasdsa')); 
         return $otp;
     }
 

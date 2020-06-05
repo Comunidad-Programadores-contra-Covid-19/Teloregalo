@@ -16,10 +16,13 @@ class HeroeCodigoEmail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public $params;
+
+    public function __construct($params)
     {
-        //
+        $this->params = $params;
     }
+
 
     /**
      * Build the message.
@@ -28,6 +31,6 @@ class HeroeCodigoEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->subject('Te lo regalo')->markdown('Emails.Heroe_codigo');
     }
 }
