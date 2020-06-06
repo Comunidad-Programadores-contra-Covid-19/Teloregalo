@@ -25,7 +25,7 @@ class OtpController extends Controller
             if (strtotime("now") > $validTill) {
                 $otpClient = $this->store($idstore, $idclient, $offer_id);
 
-     
+
 
                 return view('otps.buy', ['otp' => $otp]);
             } else {
@@ -42,7 +42,7 @@ class OtpController extends Controller
         $clientEmail = User::findOrFail($client_id);
         $offerEmail = Offer::findOrFail($offer_id);
         $params= array('offer'=>$offerEmail->name_offer,'otp'=>$otp);
-        Mail::to($clientEmail->email)->send(new HeroeCodigoEmail('dasdsa')); 
+        Mail::to($clientEmail->email)->send(new HeroeCodigoEmail('dasdsa'));
         return $otp;
     }
 
@@ -52,7 +52,7 @@ class OtpController extends Controller
         $store = Store::where('user_id', $idstore)->first();
         $pass = $request->codigo;
         $otp = Otp::where('otp_pass', $pass)->first();
-        
+
 
         $message = "";
         $success = false;
@@ -68,7 +68,12 @@ class OtpController extends Controller
                         //$otp->delete();
 
                         $message = "Codigo ingresado correctamente!";
-                        $success = true;
+                        $recipient= UserMailSend::where('offer_id', $otp->offer_id)->orderBy('created_at','desc')->first();
+                        if ($recipient==true) {
+                            $recipient->notify(new UserMailSendConfirmed);
+                            $recipient->delete();
+                        }
+
                     }
                 } else {
                     $message = "Ya usaste este codigo!";

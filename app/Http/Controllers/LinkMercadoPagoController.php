@@ -87,13 +87,15 @@ class LinkMercadoPagoController extends Controller
 
             $offer = Offer::find($ids->id);
             $offer->amount = 1 + $offer->amount;
+            $offer_id=$ids->id;
             $offer->save();
             $store = Store::find($offer->store_id);
             $store->gifts = $store->gifts + 1;
             $store->save();
+
             //To stay in /edit when updated
             //return back()->with('message','Oferta editada.');
-            return redirect('/agradecimiento')->with('success', 'Tu pago se ah efectuado con exito!.');
+            return view('teloregalo.agradecimiento',["offer_id"=>$offer_id])->with('success', 'Tu pago se ah efectuado con exito!.');
         } else {
             echo 'error';
         }

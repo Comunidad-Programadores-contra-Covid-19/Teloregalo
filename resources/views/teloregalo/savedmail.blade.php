@@ -1,30 +1,35 @@
-<body>
-    <table style="max-width: 600px; padding: 10px; margin: 0 auto; border-collapse: collapse;">
-        <tr>
-            <td style="text-align: center;">
-            <img style="max-width: 350px; height: auto"  src="https://teloregalo.com.ar/assets/emails/comercio.png"
-                alt="Bienvenido"
-                 />
-            </td>
+@extends('layouts.app')
+@section('content')
 
-        </tr>
-        <tr>
+<div class="container">
+
+
+
+    <!-- Inicio Compartir -->
+    <section id="compartirAgradecimiento">
+
+        <p style="font-family: Poppins Sans-serif,sans-serif; color: #96D293; font-weight: bold; font-size: 55px; margin: 5px;">
+                    ¡Tus datos se registraron con éxito!</p>
+
+        <h4 id="subtituloGracias">Te avisaremos cuando tu regalo haya sido retirado.
+Gracias por ayudar a nuestros héroes.</h4>
+
+        <img src="{{asset('assets/gracias.svg')}}" alt="gracias" id="imgGracias">
+
+        <ul id="iconosCompartir">
+            <li><button id="compartirDescargar"><img src="{{asset('assets/descarga.svg')}}" alt="icono descargar"></button></li>
+            <li><button id="compartirWhatsapp"><img src="{{asset('assets/whatsapp.svg')}}" alt="icono whatsapp"></button></li>
+            <li><button id="compartirInstagram"><img src="{{asset('assets/instagram.svg')}}" alt="icono instagram"></button></li>
+            <li><button id="compartirFacebook"><img src="{{asset('assets/facebook.svg')}}" alt="icono facebook"></button></li>
+            <li><button id="compartirTwitter"><img src="{{asset('assets/twitter.svg')}}" alt="icono twitter"></button></li>
+            <li><button id="compartirCorreo"><img src="{{asset('assets/correo.svg')}}" alt="icono correo"></button></li>
+        </ul>
+        <table style="max-width: 600px; padding: 10px; margin: 0 auto; border-collapse: collapse;">
+             <tr>
             <td style="text-align: center;">
-                <p style="font-family: Poppins Sans-serif,sans-serif; color: #96D293; font-weight: bold; font-size: 55px; margin: 5px;">
-                    ¡Tu regalo llegó a un héroe! </p>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: center;">
-                <p style="font-family: Poppins Sans-serif,sans-serif; font-size: 19px; line-height: 36px; text-align: justify;
-                    color: #263238; padding: 10px;">Un héroe y un comercio amigo fueron beneficiados con tu regalo, ¡muchas gracias por participar! Compartí nuestro proyecto para ayudarnos entre todos.</p>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: center;">
-                <a href="teloregalo.com.ar" style="color:#2E2C2C; background-color: #96D293; border: 0.1rem solid;
+                <a href="/" style="color:#2E2C2C; background-color: #96D293; border: 0.1rem solid;
             border-color: #96D293; border-radius: 1rem; padding: 0.3rem 1rem; font-weight: 400;
-            text-align: center; font-family: Poppins Sans-serif,sans-serif; font-size: 18px;">Visitar el sitio</a>
+            text-align: center; font-family: Poppins Sans-serif,sans-serif; font-size: 18px;">Volver al inicio</a>
             </td>
         </tr>
         <tr style="margin-bottom: 100px">
@@ -35,5 +40,10 @@
                 </p>
             </td>
         </tr>
-    </table>
-    </body>
+
+        </table>
+    </section>
+
+</div>
+<!-- Fin contenedor -->
+@endsection

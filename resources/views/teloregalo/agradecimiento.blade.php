@@ -32,14 +32,17 @@
     <!-- Inicio Pedir email -->
     <section id="pedirEmail">
         <h5>Si querés saber cuando es entregado tu regalo dejanos tu nombre y email.</h5>
-        <form id="formAgradecimiento">
+        <form method="POST" id="formAgradecimiento" action="{{ route('UserMail') }}">
+
+           @csrf
+            <input type="hidden" name="offer_id" value="{{ $offer_id }}">
             <div class="form-group ">
                 <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" id="nombre" placeholder="">
+                <input type="text" class="form-control" id="name" placeholder="Nombre" name="name" value="{{ old('name')}}">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="">
+                <input type="email" class="form-control" id="email" placeholder="Email" name="email" value="{{ old('email')}}">
             </div>
             <button type="submit" class="btn btn-principal btn-block" id="btnConfirmar">Confirmar</button>
         </form>
