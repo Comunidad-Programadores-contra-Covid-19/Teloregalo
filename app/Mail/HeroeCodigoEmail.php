@@ -9,7 +9,7 @@ use Illuminate\Queue\SerializesModels;
 
 class HeroeCodigoEmail extends Mailable
 {
-    use Queueable, SerializesModels;
+   use Queueable, SerializesModels;
 
     /**
      * Create a new message instance.
@@ -21,6 +21,7 @@ class HeroeCodigoEmail extends Mailable
     public function __construct($params)
     {
         $this->params = $params;
+
     }
 
 
@@ -34,3 +35,4 @@ class HeroeCodigoEmail extends Mailable
         return $this->subject('Te lo regalo')->markdown('Emails.Heroe_codigo');
     }
 }
+
