@@ -11,7 +11,7 @@
             <h1 id="tituloDonar">Ayudanos a ayudar</h1>
 
             <h5 id="subtituloDonar">
-                <p>Somos un grupo de voluntarios que nos unimos para colaborar durante la pandemia.</p>
+                <p>Somos un grupo de voluntarios que nos unimos para colaborar durante la pandemia</p>
                 <p>Necesitamos de tu colaboración para que teloregalo.com se mantenga en línea ayudando a comerciantes y héroes.</p>
             </h5>
 
