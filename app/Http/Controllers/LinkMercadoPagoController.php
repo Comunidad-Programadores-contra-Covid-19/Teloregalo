@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Store;
 use Auth;
 use App\Offer;
+use App\UserMailSend;
 use GuzzleHttp\Client;
 use App\Credentials;
 
