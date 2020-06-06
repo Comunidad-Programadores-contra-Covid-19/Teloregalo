@@ -1,7 +1,6 @@
 @component('mail::message')
 <body>
 <table style="max-width: 600px; padding: 10px; margin: 0 auto; border-collapse: collapse;">
-
     <tr>
         <td style="text-align: center;">
             <p style="font-family: Poppins Sans-serif,sans-serif; color: #96D293; font-weight: bold; font-size: 55px; margin: 5px;">
@@ -9,21 +8,17 @@
         </td>
     </tr>
     <tr>
-        <td style="text-align: center;">
+        <td style="text-align: center; ">
             <p style="font-family: Poppins Sans-serif,sans-serif; font-size: 40px; margin: 0;">Para poder
-                retirar <span style="font-weight: 600;">{{$params->offer}}</span> dictá
+                retirar <span style="font-weight: 600;">{{$params['offer']}}</span> dictá
                 el siguiente código en el comercio</p>
         </td>
     </tr>
     <tr>
-        <td style="text-align: center;">
-            {{$params->otp}}
+        <td style="text-align: center; height:280px; background-image: url('https://teloregalo.com.ar/assets/emails/ticketConfirmacion.png'); background-repeat: no-repeat;">
+                      <p style="font-family: Poppins Sans-serif,sans-serif; font-size: 40px; text-align: center; position:relative; top:20px;">{{$params['otp']}}</p>
         </td>
-
     </tr>
-
-    <tr>
-
     <tr>
         <td style="text-align: center;">
             <p style="font-family: Poppins Sans-serif,sans-serif; font-size: 19px; line-height: 36px; text-align: justify;
@@ -33,8 +28,6 @@
                 No olvides calificar tu experiencia con el comercio en nuestra página.</p>
         </td>
     </tr>
-
-
     <tr>
         <td style="text-align: center;">
             <button style="color:#2E2C2C; background-color: #96D293; border: 0.1rem solid;
@@ -45,15 +38,14 @@
             </button>
         </td>
     </tr>
-
     <tr style="margin-bottom: 100px">
         <td style="text-align: center;">
             <p style="font-family: Poppins Sans-serif,sans-serif; font-size: 23px;">El equipo de <b>teloregalo</b>
-                <img style="max-width: 50px; height: auto; margin-left: 15px; margin-top: 15px;" alt="Logo Te lo regalo"
-                     src=""/>
+                <img style="max-width: 50px; height: auto; margin-left: 15px; margin-top: 15px;" alt="Logo Te lo regalo" src="https://teloregalo.com.ar/assets/emails/logo.png"/>
             </p>
         </td>
     </tr>
 </table>
 </body>
 @endcomponent
+
