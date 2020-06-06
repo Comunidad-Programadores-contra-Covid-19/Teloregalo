@@ -101,4 +101,15 @@ class LinkMercadoPagoController extends Controller
             echo 'error';
         }
     }
+    
+    public function UserMailSend(Request $request){
+
+        $usernotyfiable= new UserMailSend();
+        $usernotyfiable->offer_id= $request->offer_id;
+        $usernotyfiable->name= $request->name;
+        $usernotyfiable->email= $request->email;
+        $usernotyfiable->save();
+        
+        return redirect('/');
+    }
 }
