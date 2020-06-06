@@ -110,6 +110,6 @@ class LinkMercadoPagoController extends Controller
         $usernotyfiable->email= $request->email;
         $usernotyfiable->save();
         
-        return redirect('/');
+       return view('teloregalo.savedmail');
     }
 }
