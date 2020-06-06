@@ -15,7 +15,7 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array
      */
-    protected $fillable3 = [
+    protected $fillable32 = [
         'name', 'email','rol','social_id','profesion','avatar','avatar_social','password','email_send',
     ];
 
@@ -43,5 +43,5 @@ class User extends Authenticatable implements MustVerifyEmail
     public function store() {
         return $this->hasOne('App\Store');
       }
-    
+
 }
