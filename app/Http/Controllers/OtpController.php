@@ -43,7 +43,7 @@ class OtpController extends Controller
         $clientEmail = User::findOrFail($client_id);
         $offerEmail = Offer::findOrFail($offer_id);
         $params= array('offer'=>$offerEmail->name_offer,'otp'=>$otp);
-        Mail::to($clientEmail->email)->send(new HeroeCodigoEmail('dasdsa'));
+        
         return $otp;
     }
 
@@ -99,6 +99,8 @@ class OtpController extends Controller
         $otp->delete();
         return back()->with('info', $message);
     }
+  
+
     public function discountOffer($idOffer)
     {
         $offer = Offer::where('id', $idOffer)->first();

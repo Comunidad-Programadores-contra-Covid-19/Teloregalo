@@ -91,7 +91,7 @@ class StoreController extends Controller
 
         $storeUpdate->update();
 
-        return redirect('stores/miPerfil')->with('success', 'Se han modificado los datos Correctamente');
+        return redirect('stores/misProductos')->with('success', 'Tu perfil se modificado Correctamente, por favor ahora publica un producto');
     }
     public function updateImage(Request $request, $id)
     {
@@ -108,7 +108,7 @@ class StoreController extends Controller
 
         $storeUpdate->update();
 
-        return redirect('stores/miPerfil')->with('success', 'Se han modificado los datos Correctamente');
+        return redirect('stores/misProductos')->with('success', 'Tu perfil se modificado Correctamente, por favor ahora publica un producto');
     }
 
     public function registerTwo(Request $request, $id)
@@ -123,16 +123,23 @@ class StoreController extends Controller
 
         $storeUpdate->update();
 
-        return redirect('stores/miPerfil')->with('success', 'Se han guardado tus datos Correctamente');
+        return redirect('stores/misProductos')->with('success', 'Tu perfil se modificado Correctamente, por favor ahora publica un producto');
     }
     public function show($id)
     {
         $store = Store::find($id);
-      $otp='';
+        $otp='';
         if(Auth::user()){
             if(Auth::user()->rol == "client"){
                 $userId=Auth::user()->id;
                 $otp = Otp::where('user_id',  $userId)->first();
+                if($otp){
+                    $OTP_VALID = 60;
+                    $validTill = strtotime($otp->otp_timestamp) + ($OTP_VALID * 60);
+                    if (strtotime("now") > $validTill) {
+                        $otp->delete();
+                    }
+                }
             }
         }
 

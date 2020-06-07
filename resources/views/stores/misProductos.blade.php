@@ -34,11 +34,11 @@
         <input class="btn  btn-block" id="file-input" name="imageOffer" type="file"/>
         @csrf
         <div class="form-group ">
-            <label for="inputTitulo">T铆tulo</label>
+            <label for="inputTitulo">Titulo</label>
                <input type="text" name="name_offer" placeholder="Nombre" required class="form-control mb-2"/>
         </div>
         <div class="form-group">
-            <label for="exampleFormControlTextarea1">Descripci贸n</label>
+            <label for="exampleFormControlTextarea1">Descripcion</label>
 
 
             <textarea name="description_offer" placeholder="Descripci贸n" required class="form-control mb-2" id="exampleFormControlTextarea1" rows="3" ></textarea>
