@@ -9,6 +9,7 @@ use App\Store;
 use App\User;
 use App\Offer;
 use Mail;
+use App\UserMailSend;
 use App\Mail\HeroeCodigoEmail;
 class OtpController extends Controller
 {

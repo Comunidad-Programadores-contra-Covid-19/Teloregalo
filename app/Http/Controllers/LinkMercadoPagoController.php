@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Store;
 use Auth;
 use App\Offer;
+use App\UserMailSend;
 use GuzzleHttp\Client;
 use App\Credentials;
 
@@ -99,5 +100,16 @@ class LinkMercadoPagoController extends Controller
         } else {
             echo 'error';
         }
+    }
+    
+    public function UserMailSend(Request $request){
+
+        $usernotyfiable= new UserMailSend();
+        $usernotyfiable->offer_id= $request->offer_id;
+        $usernotyfiable->name= $request->name;
+        $usernotyfiable->email= $request->email;
+        $usernotyfiable->save();
+        
+       return view('teloregalo.savedmail');
     }
 }
