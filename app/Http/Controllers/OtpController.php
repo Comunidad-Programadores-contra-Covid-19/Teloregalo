@@ -44,9 +44,11 @@ class OtpController extends Controller
         $clientEmail = User::findOrFail($client_id);
         $offerEmail = Offer::findOrFail($offer_id);
         $params= array('offer'=>$offerEmail->name_offer,'otp'=>$otp);
-        
+
         return $otp;
     }
+
+
 
     public function destroy(Request $request, $idstore)
     {
@@ -54,8 +56,6 @@ class OtpController extends Controller
         $store = Store::where('user_id', $idstore)->first();
         $pass = $request->codigo;
         $otp = Otp::where('otp_pass', $pass)->first();
-
-
         $message = "";
         $success = false;
         if ($otp != null && $store != null) {
@@ -67,15 +67,20 @@ class OtpController extends Controller
                     } else {
                         $this->discountOffer($otp->offer_id);
                         $otp->is_used = 1;
-                        //$otp->delete();
-
+                        $otp->save();
                         $message = "Codigo ingresado correctamente!";
+                        $success = true;
                         $recipient= UserMailSend::where('offer_id', $otp->offer_id)->orderBy('created_at','desc')->first();
                         if ($recipient==true) {
                             $recipient->notify(new UserMailSendConfirmed);
                             $recipient->delete();
                         }
-
+                        return response()->json([
+                            'success' => $success,
+                            'info' => $message,
+                            'offerId' => $otp->offer_id,
+                            'buyerId' => $otp->user_id
+                        ]);
                     }
                 } else {
                     $message = "Ya usaste este codigo!";
@@ -86,13 +91,13 @@ class OtpController extends Controller
         } else {
             $message = "Ups! El codigo o el comercio es incorrecto";
         }
-        //return back()->with('info', $message);
         return response()->json([
             'success' => $success,
-            'info' => $message,
-            'offerId' => $otp->offer_id,
-            'buyerId' => $otp->user_id
+            'info' => $message
         ]);
+
+
+
     }
     public function clientCancel($idOtp){
         $message="se cancelo tu pedido";
@@ -100,13 +105,12 @@ class OtpController extends Controller
         $otp->delete();
         return back()->with('info', $message);
     }
-  
+
 
     public function discountOffer($idOffer)
     {
         $offer = Offer::where('id', $idOffer)->first();
         //var_dump($offer->id);
-
         $offer->amount = $offer->amount - 1;
         $offer->total_amount = $offer->total_amount + 1;
         $offer->save();
