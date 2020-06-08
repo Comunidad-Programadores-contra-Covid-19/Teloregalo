@@ -26,6 +26,7 @@ class OtpService
         $date = date("Y-m-d H:i:s");
         $otp = new Otp();
         $otp->otp_pass = $pass;
+        $otp->otp_timestamp = $date;
         $otp->user_id = $client_id;
         $otp->store_id = $store_id;
         $otp->offer_id = $offer_id;
