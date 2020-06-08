@@ -81,7 +81,7 @@ class OtpController extends Controller
                             'offerId' => $otp->offer_id,
                             'buyerId' => $otp->user_id
                         ]);
-                        // Hola carlos, quiero ver que te llegue este cambio
+                        // Voy a generar un merge conflict
                     }
                 } else {
                     $message = "Ya usaste este codigo!";
