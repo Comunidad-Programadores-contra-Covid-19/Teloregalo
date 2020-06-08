@@ -10,6 +10,7 @@ use App\User;
 use App\Offer;
 use Mail;
 use App\UserMailSend;
+use App\Notifications\UserMailSendConfirmed;
 use App\Mail\HeroeCodigoEmail;
 class OtpController extends Controller
 {
