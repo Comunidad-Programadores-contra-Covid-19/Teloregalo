@@ -32,18 +32,20 @@ class HomeController extends Controller
         if(Auth::user()){
             $usuario=Auth::user();
             if($usuario->rol=='client' && $usuario->email_verified_at && $usuario->email_send == '0'){
-                    Mail::to($usuario->email)->send(new registroHeroeEmail($usuario->name)); 
+                    Mail::to($usuario->email)->send(new registroHeroeEmail($usuario->name));
                     $user = User::findOrFail($usuario->id);
                     $user->email_send ='1';
                     $user->update();
             }
         }
-        
-        
+
+
 
         $stores = DB::table('stores')
             ->join('credentials', 'stores.id', '=', 'credentials.store_id')
+            ->join('users', 'stores.user_id', '=', 'users.id')
             ->select('stores.*')
+            ->where('users.reports', '<' , 2)
             ->orderBy('rating', 'DESC')
             ->orderBy('sum_rating', 'DESC')
             ->get();
