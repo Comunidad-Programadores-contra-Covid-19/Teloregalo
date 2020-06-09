@@ -141,6 +141,22 @@
                                   @endif
                               </div>
 
+                     @if (Auth::user()==true)
+
+                             @if ($store->gifts >= 1)
+                              <div class="card-availability">
+                                <a href="{{ route('stores.perfil', $store->id) }}" class="btn-alternative"> {{$store->gifts}} para entregar</a>
+                              </div>
+
+                              @else
+                              <div class="card-availability">
+                                  <button disabled  class="btn-sm btn-alternative">{{$store->gifts}} para entregar</button>
+                              </div>
+
+                              @endif
+
+                     @else
+
                               @if ($store->gifts >= 1)
                               <div class="card-availability">
                                 <a href="{{ route('login') }}" class="btn-alternative"> {{$store->gifts}} para entregar</a>
@@ -152,6 +168,9 @@
                               </div>
 
                               @endif
+
+                    @endif
+
 
 
 
