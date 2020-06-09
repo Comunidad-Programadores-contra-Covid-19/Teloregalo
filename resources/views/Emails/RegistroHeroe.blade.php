@@ -36,10 +36,10 @@
     </tr>
     <tr>
         <td style="text-align: center;">
-            <button style="color:#2E2C2C; background-color: #96D293; border: 0.1rem solid;
+            <a href="{{ route('cliente.miperfil') }}" style="color:#2E2C2C; background-color: #96D293; border: 0.1rem solid;
         border-color: #96D293; border-radius: 1rem; padding: 0.3rem 1rem; font-weight: 400;
         text-align: center; font-family: Poppins Sans-serif,sans-serif; font-size: 18px;">Ir a mi perfil
-            </button>
+        </a>
         </td>
     </tr>
     <tr style="margin-bottom: 100px">
