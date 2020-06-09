@@ -140,9 +140,21 @@
                                     @endfor
                                   @endif
                               </div>
+
+                              @if ($store->gifts >= 1)
                               <div class="card-availability">
-                                  <p><b>{{$store->gifts}}</b> para entregar</p>
+                                <a href="{{ route('login') }}" class="btn-alternative"> {{$store->gifts}} para entregar</a>
                               </div>
+
+                              @else
+                              <div class="card-availability">
+                                  <button disabled  class="btn-sm btn-alternative">{{$store->gifts}} para entregar</button>
+                              </div>
+
+                              @endif
+
+
+
                               <div class="card-btn">
                                   <a href="{{ route('stores.perfil', $store->id) }}" class="btn-principal">Ver productos</a>
                               </div>
@@ -215,7 +227,7 @@
 
 
 
-        
+
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.auto.min.js"></script>
     <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
@@ -241,7 +253,7 @@
             const domMapa = document.getElementById('contenedorTarjetasMapHidde')
             domMapa.classList.add('d-none');
             domLista.classList.remove('d-none');
-            
+
         }
         function mostrarMapa(){
 
