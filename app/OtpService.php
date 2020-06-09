@@ -34,8 +34,8 @@ class OtpService
 
         $clientEmail = User::findOrFail($client_id);
         $offerEmail = Offer::findOrFail($offer_id);
-        $params= array('offer'=>$offerEmail->name_offer,'otp'=>$otp);
-        Mail::to($clientEmail->email)->send(new HeroeCodigoEmail($params)); 
+        $params= array('offer'=>$offerEmail->name_offer,'otp'=>$otp->otp_pass);
+        Mail::to($clientEmail->email)->send(new HeroeCodigoEmail($params));
 
         return $otp;
     }
