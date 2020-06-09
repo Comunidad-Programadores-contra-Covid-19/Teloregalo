@@ -62,7 +62,7 @@ Route::get('/stores', 'StoreController@index')->name('stores.index');
 Route::get('/search', 'StoreController@search')->name('stores.search');
 
 Route::get('store/{id}', 'StoreController@show')->name('stores.perfil');
-Route::group(['middleware' => ['auth', 'store']], function () {
+Route::group(['middleware' => ['auth', 'store','banned']], function () {
     Route::get('stores/miPerfil', 'StoreController@renderPerfil')->name('stores.miPerfil')->middleware('verified');
     Route::get('stores/misVentas', 'StoreController@renderVentas')->name('stores.misVentas')->middleware('verified');
     Route::get('stores/misProductos', 'StoreController@renderProductos')->name('stores.misProductos')->middleware('verified');
@@ -80,7 +80,12 @@ Route::group(['middleware' => ['auth', 'store']], function () {
 });
 
 Route::post('/verificar-pago', 'LinkMercadoPagoController@verificar')->name('verificar.pago');
-Route::group(['middleware' => ['auth', 'client','verified']], function () {
+
+Route::get('auth/banneduser', function () {
+    return view('auth.banneduser');
+});
+
+Route::group(['middleware' => ['auth', 'client','verified','banned']], function () {
     Route::get('otps', 'OtpController@create')/* ->middleware('verified') */;
     Route::get('otps/cancel/{idOtp}', 'OtpController@clientCancel')->name('otp.cancel')/* ->middleware('verified') */;
     Route::get('/mi-perfil', 'ClientController@renderPerfil')->name('cliente.miperfil')/* ->middleware('verified') */;
