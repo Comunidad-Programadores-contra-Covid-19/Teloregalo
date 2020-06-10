@@ -52,7 +52,7 @@ class LinkMercadoPagoController extends Controller
             $credentials->save();
 
             $verificate = Store::findOrFail($store_id);
-            $verificate->verificado = 1;
+            $verificate->vinculado = 1;
             $verificate->update();
 
             $messag = "Tu cuenta se vinculo con exito";
