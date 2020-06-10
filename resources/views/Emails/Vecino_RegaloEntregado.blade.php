@@ -2,14 +2,6 @@
     <table style="max-width: 600px; padding: 10px; margin: 0 auto; border-collapse: collapse;">
         <tr>
             <td style="text-align: center;">
-            <img style="max-width: 350px; height: auto"  src="https://teloregalo.com.ar/assets/emails/comercio.png"
-                alt="Bienvenido"
-                 />
-            </td>
-
-        </tr>
-        <tr>
-            <td style="text-align: center;">
                 <p style="font-family: Poppins Sans-serif,sans-serif; color: #96D293; font-weight: bold; font-size: 55px; margin: 5px;">
                     ¡Tu regalo llegó a un héroe! </p>
             </td>

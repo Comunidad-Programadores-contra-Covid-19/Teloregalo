@@ -9,6 +9,7 @@ use App\Store;
 use App\User;
 use App\Offer;
 use Mail;
+use Illuminate\Support\Facades\DB;
 use App\UserMailSend;
 use App\Notifications\UserMailSendConfirmed;
 use App\Mail\HeroeCodigoEmail;
@@ -19,8 +20,16 @@ class OtpController extends Controller
         $otpClient = Otp::where('user_id', $idclient)
             ->orderBy('otp_timestamp', 'ASC')->first();
         if ($otpClient == null) {
+             $offer=DB::table('offers')
+            ->select('name_offer')
+            ->where('id', '=' , $offer_id)
+            ->get();
+            $store=DB::table('stores')
+            ->select('name', 'address')
+            ->where('id', '=' , $idstore)
+            ->get();
             $otp = $this->store($idstore, $idclient, $offer_id);
-            return view('otps.buy', ['otp' => $otp]);
+            return view('otps.buy', ['otp' => $otp, 'offer' => $offer, 'store' => $store]);
         } else {
             $OTP_VALID = 1440; // Equivale a 24 horas.
             $validTill = strtotime($otpClient->otp_timestamp) + ($OTP_VALID * 60);
