@@ -41,7 +41,7 @@
             <label for="exampleFormControlTextarea1">Descripcion</label>
 
 
-            <textarea name="description_offer" placeholder="Descripci贸n" required class="form-control mb-2" id="exampleFormControlTextarea1" rows="3" ></textarea>
+            <textarea name="description_offer" placeholder="Descripción" required class="form-control mb-2" id="exampleFormControlTextarea1" rows="3" ></textarea>
         </div>
         <div class="form-group">
             <label for="inputPrecio">Precio</label>
