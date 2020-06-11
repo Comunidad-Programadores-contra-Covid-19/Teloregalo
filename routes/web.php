@@ -50,7 +50,7 @@ Route::resource('offers', 'OfferController')/* ->middleware('verified') */;
 
 Route::resource('otps', 'OtpController')/* ->middleware('verified') */;
 
-Route::get('create/{idstore}/{idclient}/{idOffer}', 'OtpController@create')->name('otps.create')/* ->middleware('verified') */;
+Route::get('create/{idstore}/{idclient}/{idOffer}', 'OtpController@create')->name('otps.create')->middleware('banned');
 
 Route::delete('/otps/{idstore}', 'OtpController@destroy')->name('otps.destroy') /* ->middleware('verified') */;
 
