@@ -199,7 +199,7 @@
             </div>
 
 
-            <div class="mercadoPago" >
+            {{-- <div class="mercadoPago" >
                 @if(!$storeInfo->vinculado)
                     <a id="mercadoPago" class="btn"
                        href="https://auth.mercadopago.com.ar/authorization?client_id=5661899751765285&response_type=code&platform_id=mp&redirect_uri=https%3A%2F%2Fteloregalo.com.ar/procesar-pago">
@@ -210,7 +210,7 @@
                         Tu cuenta esta vinculada a mercado pago
                     </a>
                 @endif
-            </div>
+            </div> --}}
 
             <div class="col-lg-12 mt-5">
                 <div class="row">
