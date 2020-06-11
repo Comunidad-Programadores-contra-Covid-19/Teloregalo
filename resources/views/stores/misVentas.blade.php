@@ -65,19 +65,19 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel"><b>¡La entrega del regalo fue
-                                        realizada con éxito!</b></h5>
+                                    <h5 class="modal-title text-center" id="exampleModalLabel"><b>Ahora realiza la entrega del regalo</b></h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
                                     <b>NOTA: </b>Si considerás que la persona a la que acabás de entregarle un regalo no
-                                    pertenece al personal esencial, hacé click en la opción reportar usuario.
+                                    pertenece al personal esencial, hacé click en la opción reportar usuario. <br>
+                                    <button type="button" id="btnReportar">Reportar usuario</button>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" id="btnReportar">Reportar usuario</button>
-                                    <button type="button" class="btn btn-principal" data-dismiss="modal">Cerrar</button>
+
+                                    <button type="button" class="btn btn-principal btn-block" data-dismiss="modal">Regalo entregado con éxito</button>
                                 </div>
                             </div>
                         </div>
@@ -163,7 +163,7 @@
 
             axios.delete('{{route('otps.destroy', Auth::user()->id)}}', {params: {codigo: code}})
                 .then(response => {
-                    
+
                     $("#infoCard").removeClass("d-none");;
                     $("#infoMessage").text(response.data.info);
 
@@ -188,7 +188,7 @@
                 return;
 
             $('#btnReportar').prop('disabled', true);
-            
+
             axios.put(`/reportar-cliente/${buyerId}`)
                 .then(response => {
                     console.log(response);
@@ -206,7 +206,7 @@
                     $('#btnReportar').prop('disabled', false);
                 })
 
-            
+
         });
     });
 </script>

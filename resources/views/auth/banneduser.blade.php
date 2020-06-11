@@ -14,7 +14,7 @@
         <tr>
             <td style="text-align: center;">
                 <p style="font-family: Poppins Sans-serif,sans-serif; font-size: 19px; line-height: 36px; text-align: justify;
-                    color: #263238; padding: 10px;">Más de un comercio nos comento que no eres un personal de salud, por lo cual procedimos a
+                    color: #263238; padding: 10px;">Más de un comercio nos comentó que no eres un personal de salud, por lo cual procedimos a
                 banear tu cuenta. Si consideras que esto há sido un error escribenos a <a href=""><strong> hola@teloregalo.com.ar</strong> </a></p>
             </td>
         </tr>
@@ -42,7 +42,7 @@
         <tr>
             <td style="text-align: center;">
                 <p style="font-family: Poppins Sans-serif,sans-serif; font-size: 19px; line-height: 36px; text-align: justify;
-                    color: #263238; padding: 10px;">Más de un héroe nos comento que no cumples con los terminos y condiciones de
+                    color: #263238; padding: 10px;">Más de un héroe nos comentó que no cumples con los terminos y condiciones de
                     nuestra web, por lo cual procedimos a  banear tu cuenta. Si consideras que esto há sido un error escribenos a <a href=""><strong> hola@teloregalo.com.ar</strong> </a></p>
             </td>
         </tr>
