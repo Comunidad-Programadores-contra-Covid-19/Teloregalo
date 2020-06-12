@@ -48,11 +48,6 @@ class ClientController extends Controller
         if($user){
 
             $user->reports++;
-            
-            if($user->reports > 5){ // Constante arbitraria
-                // Hacer algo
-                ;
-            }
 
             $user->update();
 

@@ -5,13 +5,13 @@
 <!-- Inicio contenedor -->
 <div class="container">
     <!-- Inicio Bot車n "volver" -->
-    <div class="volver">
+    {{-- <div class="volver">
         <a href="{{ url()->previous() }}"><  Volver</a>
-    </div>
+    </div> --}}
         <!-- Fin Bot車n "volver" -->
 
 
-
+{{-- 
     <div class="row ">
         <div class="col-md-auto">
             @if($store->avatar)
@@ -48,15 +48,19 @@
             </button>
             {{ Session::get('info') }}
         </div>
-    @endif
+    @endif --}}
 
-    <hr class="solid">
     <div class="row">
-
-        codigo para reportar
-
+        @if($success)
+            <p>El comercio {{$store->name}} ah sido reportado correctamente. Muchas gracias</p>
+        @else
+            <p>Hubo un problema reportando al comercio {{$store->name}}. Por favor, comunicate con nosotros al respecto. Muchas gracias</p>
+        @endif
     </div>
+
+    
 <!-- Fin contenedor -->
+</div>
 
 
 

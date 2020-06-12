@@ -173,7 +173,19 @@ class StoreController extends Controller
 
     public function report($id)
     {
+        $success = false;
         $store = Store::find($id);
-      return view('stores.reports', ['store' => $store]);
+        
+        if($store){
+            $user = $store->user;
+
+            $user->reports++;
+
+            $user->update();
+
+            $success = true;
+        }
+
+      return view('stores.reports', ['store' => $store, 'success' => $success]);
     }
 }
