@@ -40,11 +40,9 @@
                 <h1>Ayudá desde casa.</h1>
                 <div class="lead text-muted">
                     <p>Sorprendé al personal que hace frente al coronavirus con un regalo y colaborá al mismo tiempo con un comercio de confianza.</p>
-                    <br></br>
-                    <p>1. Elegí un comercio vecino</p>
-                    <p>2. Aboná el regalo</p>
-                    <p>3. Un héroe podrá retirar el regalo en el comercio elegido.</p>
-                    <br></br>
+                    <p><b>1</b>. Elegí un comercio vecino</p>
+                    <p><b>2</b>. Aboná el regalo</p>
+                    <p><b>3</b>. Un héroe podrá retirar el regalo en el comercio elegido.</p>
                 </div>
                 <div id="btnRegistroRegalo">
                     @guest
