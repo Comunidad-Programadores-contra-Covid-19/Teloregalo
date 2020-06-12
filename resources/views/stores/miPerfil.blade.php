@@ -291,7 +291,7 @@
     {{-- Esta mal que esto este aca, pero no se estaba incluyendo JQuery y lo necesitaba. Hay que incluirlo bien en el layout --}}
     <script src="https://code.jquery.com/jquery.js"></script>
 
-    @if(!$storeInfo->vinculado)
+    @if(!$storeInfo->verificado)
         <script type="text/javascript">
             $(window).on('load',function(){
                 $('#mpModal').modal('show');
