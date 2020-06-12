@@ -177,7 +177,7 @@ class StoreController extends Controller
         $store = Store::find($id);
 
         if($store){
-            $user = $store->user;
+            $user = User::where('id', $store->user_id)->first();
 
             $user->reports++;
 
