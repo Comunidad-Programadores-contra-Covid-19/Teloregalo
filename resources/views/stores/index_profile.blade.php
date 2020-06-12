@@ -17,12 +17,12 @@
             @else
             <img src="https://via.placeholder.com/150" alt="" class="card-image-profile">
             @endif
-           
+
         </div>
         <div class="col">
             <div class="card-description-profile">
-             
-                
+
+
                 <h3>{{$store->name}}</h3>
                 <div id="card-reputation">
                     <span class="fa fa-star checked"></span>
@@ -55,7 +55,7 @@
             {{ Session::get('info') }}
         </div>
     @endif
-    
+
     <hr class="solid">
     <div class="row">
         <?php
@@ -64,15 +64,15 @@
         // Agrega credenciales
         /*  \MercadoPago\SDK::setAccessToken($credentials->access_token);   */
        \MercadoPago\SDK::setAccessToken('TEST-5841017781823689-050723-4081492e6e230f3f7078e56332de7955-318863690');
-     
+
         ?>
         @if($store)
         @foreach ($store->offers as $offer)
-        <?php 
+        <?php
         $preference = new MercadoPago\Preference();
-        
+
         $item = new MercadoPago\Item();
-        $item->id =$offer->id; 
+        $item->id =$offer->id;
         $item->title = $offer->name_offer ;
         $item->description =$offer->description_offer ;
         $item->quantity = 1;
@@ -80,15 +80,15 @@
         $item->category_id =$offer->id;
 
         $preference->items = array($item);
-    
-        $preference->save(); 
+
+        $preference->save();
 
 
         ?>
        {{--  @if(Auth::user()->rol == 'client')
             @if()
         @endif --}}
-     
+
 
         <div class="col-xs-12 col-md-6 col-xl-4">
             <div class="card-product">
@@ -116,31 +116,31 @@
                     <h4>{{ $offer->name_offer }}</h4>
                     <p>{{ $offer->description_offer }}</p>
                     <h3>$ {{ $offer->cost }}</h3>
-                    
+
                 </div>
                 <div class="card-btn-product ">
-                 <form action="{{ route('verificar.pago')}}" method="POST"> 
+                 <form action="{{ route('verificar.pago')}}" method="POST">
                     <input type="hidden" name="ofert" value="TEST-5841017781823689-050723-4081492e6e230f3f7078e56332de7955-318863690"> {{-- cambiar esto tambien --}}
                     @csrf
-                        
-                        <script 
+
+                        <script
                         data-button-label="Comprar"
                         src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
                         data-preference-id="<?php echo $preference->id;?>">
-                      
+
                         </script>
-                     
-                  </form> 
+
+                  </form>
                     @if (!Auth::guest())
                         @if (Auth::user()->rol == 'client' && $offer->amount > 0)
-                            <a class="btn-alternative btn-block" href="{{ route('otps.create', ['idstore' => $store->id, 'idclient' => Auth::user()->id,'idOffer'=>$offer->id]) }}">Retirar</a>   
+                            <a class="btn-alternative btn-block" href="{{ route('otps.create', ['idstore' => $store->id, 'idclient' => Auth::user()->id,'idOffer'=>$offer->id]) }}">Retirar</a>
                         @endif
                     @endif
-                  
+
                 </div>
             </div>
         </div>
-       
+
         @endforeach
          @endif
 </div>

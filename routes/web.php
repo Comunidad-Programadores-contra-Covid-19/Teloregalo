@@ -87,6 +87,7 @@ Route::get('auth/banneduser', function () {
 
 Route::group(['middleware' => ['auth', 'client','verified','banned']], function () {
     Route::get('otps', 'OtpController@create')/* ->middleware('verified') */;
+    Route::get('stores/reports/{id}', 'StoreController@report')->name('store.report');
     Route::get('otps/cancel/{idOtp}', 'OtpController@clientCancel')->name('otp.cancel')/* ->middleware('verified') */;
     Route::get('/mi-perfil', 'ClientController@renderPerfil')->name('cliente.miperfil')/* ->middleware('verified') */;
     Route::get('/mis-regalos', 'ClientController@renderMisRegalos')->name('cliente.mis-regalos')/* ->middleware('verified') */;

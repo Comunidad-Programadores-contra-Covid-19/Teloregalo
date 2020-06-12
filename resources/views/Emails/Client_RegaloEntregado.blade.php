@@ -3,22 +3,38 @@
         <tr>
             <td style="text-align: center;">
                 <p style="font-family: Poppins Sans-serif,sans-serif; color: #96D293; font-weight: bold; font-size: 55px; margin: 5px;">
-                    ¡Tu regalo llegó a un héroe! </p>
+                    ¡Gracias por Cuidarnos {{$params['client']}}.Que disfrutes tu regalo!</p>
             </td>
         </tr>
         <tr>
             <td style="text-align: center;">
                 <p style="font-family: Poppins Sans-serif,sans-serif; font-size: 19px; line-height: 36px; text-align: justify;
-                    color: #263238; padding: 10px;">Un héroe y un comercio amigo fueron beneficiados con tu regalo, ¡muchas gracias por participar! Compartí nuestro proyecto para ayudarnos entre todos.</p>
-            </td>
+                    color: #263238; padding: 10px;"><h2>Calificá  tu experiencia con
+                       {{$params['store']}}</p></h2>
+                      <img src="{{ asset('assets/estrella.svg')}}" alt="">&nbsp;
+                      <img src="{{ asset('assets/estrella.svg')}}" alt="">&nbsp;
+                      <img src="{{ asset('assets/estrella.svg')}}" alt="">&nbsp;
+                      <img src="{{ asset('assets/estrella.svg')}}" alt="">&nbsp;
+                      <img src="{{ asset('assets/estrella.svg')}}" alt="">
+                      <h3>{{$params['store']}}</h3>
+                <p><img src="{{asset('assets/gota.svg')}}" alt="ubicacion">{{$params['storeaddress']}}</p><br>
+                <a href="" style="color:#2E2C2C; background-color: #96D293; border: 0.1rem solid;
+            border-color: #96D293; border-radius: 1rem; padding: 0.3rem 1rem; font-weight: 400;
+            text-align: center; font-family: Poppins Sans-serif,sans-serif; font-size: 18px;">Click aca para calificar</a>
+            </td><br>
         </tr>
         <tr>
-            <td style="text-align: center;">
-                <a href="http:www.teloregalo.com.ar" style="color:#2E2C2C; background-color: #96D293; border: 0.1rem solid;
+            <td style="text-align: center;"><br>
+                <p style="font-family: Poppins Sans-serif,sans-serif; font-size: 13px; line-height: 28px; text-align: justify;
+                    color: #263238; padding: 10px;">¿Tuviste algún inconveniente con la entrega del producto?
+                    Podés escribirnos a
+                      <a href=""><strong> hola@teloregalo.com.ar</strong> </a>o reporta el comercio en el siguiente link</p>
+                      <a href="{{ route('store.report',$params['storeid'] )}}" style="color:#2E2C2C; background-color: #96D293; border: 0.1rem solid;
             border-color: #96D293; border-radius: 1rem; padding: 0.3rem 1rem; font-weight: 400;
-            text-align: center; font-family: Poppins Sans-serif,sans-serif; font-size: 18px;" target="_blank">Visitar el sitio</a>
-            </td>
+            text-align: center; font-family: Poppins Sans-serif,sans-serif; font-size: 18px;" target="_blank">Reportar comercio</a>
+               </td>
         </tr>
+
         <tr style="margin-bottom: 100px">
             <td style="text-align: center;">
                 <p style="font-family: Poppins Sans-serif,sans-serif; font-size: 23px;">El equipo de <b>teloregalo</b>

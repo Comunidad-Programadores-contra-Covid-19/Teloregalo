@@ -15,7 +15,7 @@
             <td style="text-align: center;">
                 <p style="font-family: Poppins Sans-serif,sans-serif; font-size: 19px; line-height: 36px; text-align: justify;
                     color: #263238; padding: 10px;">Más de un comercio nos comentó que no eres un personal de salud, por lo cual procedimos a
-                banear tu cuenta. Si consideras que esto há sido un error escribenos a <a href=""><strong> hola@teloregalo.com.ar</strong> </a></p>
+                banear tu cuenta. Si consideras que esto há sido un error podés escribirnos a <a href=""><strong> hola@teloregalo.com.ar</strong> </a></p>
             </td>
         </tr>
         <tr style="margin-bottom: 100px">

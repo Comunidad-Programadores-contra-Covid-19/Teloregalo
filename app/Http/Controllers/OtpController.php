@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\OtpService;
+use Mail;
 use App\Otp;
-use App\Store;
 use App\User;
 use App\Offer;
-use Mail;
-use Illuminate\Support\Facades\DB;
+use App\Store;
+use App\OtpService;
 use App\UserMailSend;
-use App\Notifications\UserMailSendConfirmed;
+use Illuminate\Http\Request;
 use App\Mail\HeroeCodigoEmail;
+use Illuminate\Support\Facades\DB;
+use App\Notifications\UserMailSendConfirmed;
+use App\Notifications\ClientMailSendConfirmed;
+
 class OtpController extends Controller
 {
     public function create($idstore, $idclient, $offer_id)
@@ -79,6 +81,9 @@ class OtpController extends Controller
                         $otp->save();
                         $message = "Codigo ingresado correctamente!";
                         $success = true;
+                        $client= User::findOrFail($otp->user_id);
+                        $params= array('store'=>$store->name,'storeaddress'=>$store->address,'storeid'=>$store->id,'client'=>$client->name, );
+                        $client->notify(new ClientMailSendConfirmed($params));
                         $recipient= UserMailSend::where('offer_id', $otp->offer_id)->orderBy('created_at','desc')->first();
                         if ($recipient==true) {
                             $recipient->notify(new UserMailSendConfirmed);

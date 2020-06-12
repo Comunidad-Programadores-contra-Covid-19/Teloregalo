@@ -22,13 +22,13 @@ class StoreController extends Controller
         if(Auth::user()){
             $usuario=Auth::user();
             if($usuario->rol=='store' && $usuario->email_verified_at && $usuario->email_send == '0'){
-                    Mail::to($usuario->email)->send(new registroComercioEmail($usuario->store->name)); 
+                    Mail::to($usuario->email)->send(new registroComercioEmail($usuario->store->name));
                     $user = User::findOrFail($usuario->id);
                     $user->email_send ='1';
                     $user->update();
             }
         }
-        
+
         return view('stores.miPerfil');
     }
     public function renderVentas()
@@ -169,5 +169,11 @@ class StoreController extends Controller
         $rating = new RatingStore();
         $rate = $rating->getAverageRating($storeId);
         return $rate;
+    }
+
+    public function report($id)
+    {
+        $store = Store::find($id);
+      return view('stores.reports', ['store' => $store]);
     }
 }

@@ -52,7 +52,7 @@ class LinkMercadoPagoController extends Controller
             $credentials->save();
 
             $verificate = Store::findOrFail($store_id);
-            $verificate->vinculado = 1;
+            $verificate->verificado = 1;
             $verificate->update();
 
             $messag = "Tu cuenta se vinculo con exito";
@@ -101,7 +101,7 @@ class LinkMercadoPagoController extends Controller
             echo 'error';
         }
     }
-    
+
     public function UserMailSend(Request $request){
 
         $usernotyfiable= new UserMailSend();
@@ -109,7 +109,7 @@ class LinkMercadoPagoController extends Controller
         $usernotyfiable->name= $request->name;
         $usernotyfiable->email= $request->email;
         $usernotyfiable->save();
-        
+
        return view('teloregalo.savedmail');
     }
 }
