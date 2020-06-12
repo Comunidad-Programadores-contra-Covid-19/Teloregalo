@@ -22,7 +22,7 @@ class StoreController extends Controller
         if(Auth::user()){
             $usuario=Auth::user();
             if($usuario->rol=='store' && $usuario->email_verified_at && $usuario->email_send == '0'){
-                    Mail::to($usuario->email)->send(new registroComercioEmail($usuario->store->name));
+                   // Mail::to($usuario->email)->send(new registroComercioEmail($usuario->store->name));
                     $user = User::findOrFail($usuario->id);
                     $user->email_send ='1';
                     $user->update();
@@ -175,7 +175,7 @@ class StoreController extends Controller
     {
         $success = false;
         $store = Store::find($id);
-        
+
         if($store){
             $user = $store->user;
 
