@@ -139,38 +139,13 @@
                                   @endif
                               </div>
 
-                     @if (Auth::user()==true)
+                              {{-- <div class="card-availability">
+                                <p class="btn-alternative"> {{$store->gifts}} para entregar</p>
+                              </div> --}}
 
-                             @if ($store->gifts >= 1)
                               <div class="card-availability">
-                                <a href="{{ route('stores.perfil', $store->id) }}" class="btn-alternative"> {{$store->gifts}} para entregar</a>
+                                  <p>{{$store->gifts}} para entregar</p>
                               </div>
-
-                              @else
-                              <div class="card-availability">
-                                  <button disabled  class="btn-sm btn-alternative">{{$store->gifts}} para entregar</button>
-                              </div>
-
-                              @endif
-
-                     @else
-
-                              @if ($store->gifts >= 1)
-                              <div class="card-availability">
-                                <a href="{{ route('login') }}" class="btn-alternative"> {{$store->gifts}} para entregar</a>
-                              </div>
-
-                              @else
-                              <div class="card-availability">
-                                  <button disabled  class="btn-sm btn-alternative">{{$store->gifts}} para entregar</button>
-                              </div>
-
-                              @endif
-
-                    @endif
-
-
-
 
                               <div class="card-btn">
                                   <a href="{{ route('stores.perfil', $store->id) }}" class="btn-principal">Ver productos</a>
