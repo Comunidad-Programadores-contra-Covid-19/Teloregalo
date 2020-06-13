@@ -82,7 +82,7 @@ class OtpController extends Controller
                         $message = "Codigo ingresado correctamente!";
                         $success = true;
                         $client= User::findOrFail($otp->user_id);
-                        $params= array('store'=>$store->name,'storeaddress'=>$store->address,'storeid'=>$store->id,'client'=>$client->name, );
+                        $params= array('store'=>$store->name,'storeaddress'=>$store->address,'clientid'=>$client->id,'client'=>$client->name, );
                         $client->notify(new ClientMailSendConfirmed($params));
                         $recipient= UserMailSend::where('offer_id', $otp->offer_id)->orderBy('created_at','desc')->first();
                         if ($recipient==true) {

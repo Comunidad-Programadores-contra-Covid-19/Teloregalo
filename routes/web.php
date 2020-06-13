@@ -86,14 +86,13 @@ Route::get('auth/banneduser', function () {
 });
 
 // Rever funcionalidad de report. Muy insegura.
-Route::get('stores/reports/{id}', 'StoreController@report')->name('store.report');
+
 
 Route::group(['middleware' => ['auth', 'client','verified','banned']], function () {
     Route::get('otps', 'OtpController@create')/* ->middleware('verified') */;
-    
     Route::get('otps/cancel/{idOtp}', 'OtpController@clientCancel')->name('otp.cancel')/* ->middleware('verified') */;
     Route::get('/mi-perfil', 'ClientController@renderPerfil')->name('cliente.miperfil')/* ->middleware('verified') */;
-    Route::get('/mis-regalos', 'ClientController@renderMisRegalos')->name('cliente.mis-regalos')/* ->middleware('verified') */;
+    Route::get('/clientes/rating/{id}', 'ClientController@rating')->name('cliente.rating')/* ->middleware('verified') */;
 
     Route::put('/updateHero/{id}', 'ClientController@updateHero')->name('clientes.updateHero')/* ->middleware('verified') */;
     Route::put('/updateImageHero/{id}', 'ClientController@updateImage')->name('clientes.updateImage')/* ->middleware('verified') */;

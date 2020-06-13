@@ -27,7 +27,7 @@
         <!-- Fin Información del ticket regalo -->
 
         <!-- Inicio Calificar comercio -->
-       {{--   <div>
+         <div>
             <img src="{{ asset('assets/like.svg')}}" alt="like" id="dibujoLike">
             <div id="calificar">
                 <h2>Calificá tu experiencia</h2>
@@ -62,7 +62,7 @@
 
          @endforeach
             </div>
-        </div>  --}}
+        </div>
         <!-- Fin Calificar comercio -->
     </div>
     <!-- Fin contenedor -->

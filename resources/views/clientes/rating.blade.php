@@ -7,7 +7,7 @@
     <div id="menuMisRegalosHeroe">
         <ul>
             <li><a  href="{{route('cliente.miperfil')}}">Perfil</a></li>
-            <li><a  href="{{route('cliente.mis-regalos')}}">Mis regalos</a></li>
+            <li><a  href="{{route('cliente.rating', Auth::user()->id)}}">Mis regalos</a></li>
         </ul>
     </div>
     <!-- Fin Menú Mis Regalos Héroe -->
@@ -22,15 +22,22 @@
             <h2>Pendientes de calificación</h2>
 
             <!-- Inicio fila 1 -->
+
             <div class="row">
+
                 <!-- Inicio tarjeta 1.1 -->
+                @foreach ($stores as $store)
                 <div class="col-md-12 col-lg-6">
                     <div class="card">
-                        <img src="https://via.placeholder.com/150" alt="" class="card-image">
+                        @if($store->avatar)
+                               <img src="{{ Storage::url($store->avatar)}}" alt="" class="card-image">
+                         @else
+                               <img src="https://via.placeholder.com/150" alt="" class="card-image">
+                        @endif
                         <div class="card-description"  id="descripcionCard">
-                            <h4>Producto</h4>
-                            <h5>Nombre de comercio</h5>
-                            <p id="direccionCard"><span><i class="fas fa-map-marker-alt"></i></span>Ubicación</p>
+                            <h4>{{$store->offer}}</h4>
+                            <h5>{{$store->name}}</h5>
+                            <p id="direccionCard"><span><i class="fas fa-map-marker-alt"></i></span>{{$store->address}}</p>
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
@@ -39,25 +46,9 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
                 <!-- Fin tarjeta 1.1 -->
 
-                <!-- Inicio tarjeta 1.2 -->
-                <div class="col-md-12 col-lg-6">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/150" alt="" class="card-image">
-                        <div class="card-description">
-                            <h4>Producto</h4>
-                            <h5>Nombre de comercio</h5>
-                            <p><span><i class="fas fa-map-marker-alt"></i></span>Ubicación</p>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Fin tarjeta 1.2 -->
             </div>
             <!-- Fin fila 1 -->
 

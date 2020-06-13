@@ -161,7 +161,7 @@ class StoreController extends Controller
         $rating = new RatingStore();
         //$storeId =
         $rating->rateStore(1, $rate);
-        return redirect('/');
+
     }
 
     public function getPuntuacion($storeId)
@@ -171,21 +171,4 @@ class StoreController extends Controller
         return $rate;
     }
 
-    public function report($id)
-    {
-        $success = false;
-        $store = Store::find($id);
-
-        if($store){
-            $user = User::where('id', $store->user_id)->first();
-
-            $user->reports++;
-
-            $user->update();
-
-            $success = true;
-        }
-
-      return view('stores.reports', ['store' => $store, 'success' => $success]);
-    }
 }
