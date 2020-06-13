@@ -168,3 +168,19 @@
 #card-reputation{
     margin-bottom: 1rem !important;
 }
+
+
+/*---report card---*/
+
+.card-report {
+    padding: 4em;
+    background-color: #EAF6E9;
+    border-radius: 6px;
+    align-content: center;
+    width: 100%;
+    border:1px solid #eee;
+}
+
+.card-report p {
+    font-size: 30px;
+}
