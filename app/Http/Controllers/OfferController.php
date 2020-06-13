@@ -55,6 +55,7 @@ class OfferController extends Controller
         $offer->description_offer = $request->description_offer;
         $offer->cost = $request->cost;
         $offer->amount = 0;
+        $offer->active_otps = 0;
         $offer->total_amount=0;
         if ($request->has('imageOffer')) {
             $offer->image_offer = $request->file('imageOffer')->store('public');
@@ -137,6 +138,6 @@ class OfferController extends Controller
 
     
 
-        return redirect('stores/miPerfil')->with('success', 'Se han modificado los datos Correctamente');
+        return redirect('stores/miPerfil')->with('success', 'Se han modificado los datos correctamente');
     }
 }

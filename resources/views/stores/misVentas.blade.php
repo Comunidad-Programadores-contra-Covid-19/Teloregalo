@@ -114,7 +114,7 @@
                                         <span id="totalStock">
                                         <li>
                                             <p id="tituloStock">Disponibles</p>
-                                            <p id="offerAmount-{{$offer->id}}">{{$offer->amount}}</p>
+                                            <p id="offerAmount-{{$offer->id}}">{{$offer->amount - $offer->active_otps}}</p>
                                         </li>
                                         <li>
                                             <p id="tituloStock" style="opacity: 50%;">Entregados</p>

@@ -107,7 +107,7 @@
                                 <p><b>{{$offer->total_amount}}</b></p>
                                 <hr class="solid">
                                 <p>Disponibles </p>
-                                <p><b>{{$offer->amount}}</b></p>
+                                <p><b>{{$offer->amount - $offer->active_otps}}</b></p>
                             </div>
                         </div>
                     </div>
@@ -131,7 +131,7 @@
                         </script>
                   </form>
 
-                    @if ($offer->amount > 0 || (!Auth::guest() && Auth::user()->rol == 'store'))
+                    @if ($offer->amount - $offer->active_otps > 0 && (Auth::guest() || Auth::user()->rol != 'store'))
                         @if (!Auth::guest() && Auth::user()->rol == 'client')
                             <a class="btn-alternative btn-block" href="{{ route('otps.create', ['idstore' => $store->id, 'idclient' => Auth::user()->id,'idOffer'=>$offer->id]) }}">Retirar</a>
                         @else

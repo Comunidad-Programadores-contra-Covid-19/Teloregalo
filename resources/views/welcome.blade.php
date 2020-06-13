@@ -198,7 +198,7 @@
                                 </div>
 
                                 <div class="card-availability-map">
-                                    <p><b>{{$store->gifts}}</b> para entregar</p>
+                                    <p><b>{{$store->gifts - $store->claimed}}</b> para entregar</p>
                                 </div>
                                 <div class="card-btn-map">
                                     <a href="#" class="btn-principal">Ver</a>
