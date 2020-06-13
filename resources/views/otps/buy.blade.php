@@ -15,9 +15,9 @@
         <!-- Inicio Información del ticket regalo -->
         <div id="codigoRegalo">
             <h1>¡Gracias por cuidarnos!</h1>
-            @foreach ($offer as $o)
-            <p>Para poder retirar <span id="ingresarRegalo">{{ $o->name_offer }}</span> presentá el siguiente código en el comercio</p>
-            @endforeach
+
+            <p>Para poder retirar <span id="ingresarRegalo">{{ $offer }}</span> presentá el siguiente código en el comercio</p>
+
             <div id="ticket">
                 <p>{{$otp->otp_pass}}</p>
                 <img src={{ asset('assets/ticketConfirmacion.svg') }}>
