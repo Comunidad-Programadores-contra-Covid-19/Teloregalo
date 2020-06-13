@@ -40,7 +40,7 @@ class OtpController extends Controller
 
 
 
-                return view('otps.buy', ['otp' => $otp]);
+                return view('otps.buy', ['otp' => $otpClient]);
             } else {
                 return back()->with('info', 'Ya pediste o consumiste un beneficio!');
             }

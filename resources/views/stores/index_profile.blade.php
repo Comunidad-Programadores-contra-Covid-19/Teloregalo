@@ -42,7 +42,7 @@
     @if( Auth::user()->rol == 'client')
         @if($otp != '' && $otp->is_used == 0)
         <div class="alert alert-info">
-            <p>Tienes un codigo generado pendiente: {{ $otp->otp_pass}}   <a class="btn-alternative" href="{{ route('otp.cancel', ['idOtp'=>$otp->id]) }}">Cancelar pedido</a></p>
+            <p>Tienes un codigo generado pendiente: {{ $otp->otp_pass}} <a class="btn-alternative" href="{{ route('otp.cancel', ['idOtp'=>$otp->id]) }}">Cancelar pedido</a></p>
         </div>
         @endif
     @endif
