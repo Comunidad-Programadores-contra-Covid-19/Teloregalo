@@ -144,7 +144,7 @@
                               </div> --}}
 
                               <div class="card-availability">
-                                  <p>{{$store->gifts}} para entregar</p>
+                                  <p>{{$store->gifts - $store->claimed}} para entregar</p>
                               </div>
 
                               <div class="card-btn">
