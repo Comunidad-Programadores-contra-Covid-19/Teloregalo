@@ -51,11 +51,13 @@
     @endif --}}
 
     <div class="row">
-        @if($success)
-            <p>El comercio {{$store->name}} ah sido reportado correctamente. Muchas gracias</p>
-        @else
-            <p>Hubo un problema reportando al comercio {{$store->name}}. Por favor, comunicate con nosotros al respecto. Muchas gracias</p>
-        @endif
+        <div class="card-report">
+            @if($success)
+                <p class="text-center">El comercio {{$store->name}} ha sido reportado correctamente.<br><b>¡Muchas gracias!</b></p>
+            @else
+                <p class="text-center">Ha ocurrido un problema al reporta el comercio {{$store->name}}.<br>Por favor, comunicate con el equipo de Te Lo Regalo informando el problema.<br><b>¡Muchas gracias!</b></p>
+            @endif
+        </div>
     </div>
 
     

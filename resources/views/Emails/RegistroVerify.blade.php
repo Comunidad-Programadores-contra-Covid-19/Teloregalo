@@ -19,8 +19,15 @@
                 <p style="font-family: Poppins Sans-serif,sans-serif; font-size: 19px; line-height: 36px; text-align: justify;
                     color: #263238; padding: 10px;">Ahora los vecinos podrán comprar tus productos y beneficiar con un
                     regalo a los trabajadores esenciales durante la pandemia.
-                    Para que la ayuda sea un éxito, te pedimos consideración a la hora de entregar el regalo a nuestros
-                    héroes; pidiendo por ejemplo el certificado de circulación.</p>
+                    Para continuar:
+                    <ul style="font-family: Poppins Sans-serif,sans-serif; font-size: 19px; line-height: 36px; text-align: justify;
+                    color: #263238; padding: 10px; list-style-type: none;">
+                          <li><strong>1.</strong> Validá tu cuenta de  e-mail</li>
+                          <li><strong>2.</strong>Vinculá tu cuenta con Mercado Pago. Si aún no estás dado de alta en Mercado Pago, vas a poder hacerlo durante el registro.</li>
+                          <li><strong>3.</strong>Completá el perfil de “tu comercio”</li>
+                          <li><strong>4.</strong>Cargá los productos que desees vender.</li>
+                    </ul>
+                       </p>
             </td>
         </tr>
         <tr>
@@ -63,12 +70,22 @@
                 <p style="font-family: Poppins Sans-serif,sans-serif; font-size: 19px; line-height: 36px; text-align: justify;
                     color: #263238; padding: 10px;">Los vecinos quieren agradecer tu labor durante el coronavirus mediante
                     un regalo.
-                    Podés acceder a un regalo por día y una vez generado el código de retiro tendrás una hora para
-                    retirarlo.
-                    Importante: El comerciante te solicitará el código de retiro. Sin ánimo de ofender, el comerciante
-                    también puede pedirte el certificado de circulación.
-                    Al finalizar recuerda validar tu experiencia con el comerciante para cuidarnos entre todos.
-                    Ayudanos a difundir nuestro proyecto para que otros héroes y vecinos se enteren.</p>
+                    Cómo retirar tu regalo:
+                </p>
+                    <ul style="font-family: Poppins Sans-serif,sans-serif; font-size: 19px; line-height: 36px; text-align: justify;
+                    color: #263238; padding: 10px; list-style-type: none;">
+                          <li><strong>1.</strong> Validá tu cuenta de  e-mail</li>
+                          <li><strong>2.</strong>Elegí un producto de los comercios adheridos y seleccioná la opción <strong> “Retirar”</strong></li>
+                          <li><strong>3.</strong>Se generará un código y  tendrás una hora para retirarlo.
+                            Podés acceder a un regalo por día. </li>
+                          <li><strong>4.</strong>Por último el comerciante te solicitará el código de retiro.
+                            Recordá validar tu experiencia con el comercio para cuidarnos entre todos.
+                           </li>
+                    </ul>
+                    <p style="font-family: Poppins Sans-serif,sans-serif; font-size: 19px; line-height: 36px; text-align: justify;
+                    color: #263238; padding: 10px;">
+                    ¡Lo regalos te esperan, validá tu cuenta!
+                </p>
             </td>
         </tr>
         <tr>
