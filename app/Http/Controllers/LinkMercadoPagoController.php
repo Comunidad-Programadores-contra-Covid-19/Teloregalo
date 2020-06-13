@@ -88,6 +88,7 @@ class LinkMercadoPagoController extends Controller
 
             $offer = Offer::find($ids->id);
             $offer->amount = 1 + $offer->amount;
+            $offer->total_amount = $offer->total_amount + 1;
             $offer_id=$ids->id;
             $offer->save();
             $store = Store::find($offer->store_id);

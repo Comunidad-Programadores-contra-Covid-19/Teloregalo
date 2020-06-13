@@ -21,26 +21,31 @@ class OtpController extends Controller
     {
         $otpClient = Otp::where('user_id', $idclient)
             ->orderBy('otp_timestamp', 'ASC')->first();
+
+        $offer = Offer::find($offer_id);
+
+        if(!$offer || $offer->amount == 0 || $offer->amount <= $offer->active_otps)
+            return back()->with('info', 'Este producto no tiene stock!');
+
         if ($otpClient == null) {
-             $offer=DB::table('offers')
-            ->select('name_offer')
-            ->where('id', '=' , $offer_id)
-            ->get();
             $store=DB::table('stores')
             ->select('name', 'address')
             ->where('id', '=' , $idstore)
             ->get();
             $otp = $this->store($idstore, $idclient, $offer_id);
-            return view('otps.buy', ['otp' => $otp, 'offer' => $offer, 'store' => $store]);
+            return view('otps.buy', ['otp' => $otp, 'offer' => $offer->name_offer, 'store' => $store]);
         } else {
             $OTP_VALID = 1440; // Equivale a 24 horas.
             $validTill = strtotime($otpClient->otp_timestamp) + ($OTP_VALID * 60);
             if (strtotime("now") > $validTill) {
-                $otpClient = $this->store($idstore, $idclient, $offer_id);
+                $otp = $this->store($idstore, $idclient, $offer_id);
 
+                $store=DB::table('stores')
+                    ->select('name', 'address')
+                    ->where('id', '=' , $idstore)
+                    ->get();
 
-
-                return view('otps.buy', ['otp' => $otp]);
+                return view('otps.buy', ['otp' => $otp, 'offer' => $offer->name_offer, 'store' => $store]);
             } else {
                 return back()->with('info', 'Ya pediste o consumiste un beneficio!');
             }
@@ -51,10 +56,6 @@ class OtpController extends Controller
     {
         $otpService = new OtpService();
         $otp = $otpService->generateOtp($client_id, $store_id, $offer_id);
-
-        $clientEmail = User::findOrFail($client_id);
-        $offerEmail = Offer::findOrFail($offer_id);
-        $params= array('offer'=>$offerEmail->name_offer,'otp'=>$otp);
 
         return $otp;
     }
@@ -116,6 +117,15 @@ class OtpController extends Controller
     public function clientCancel($idOtp){
         $message="se cancelo tu pedido";
         $otp = Otp::where('id', $idOtp)->first();
+
+        $offer = $otp->offer;
+        $offer->active_otps = $offer->active_otps - 1;
+        $offer->save();
+
+        $store = $offer->store;
+        $store->claimed = $store->claimed - 1;
+        $store->save();
+
         $otp->delete();
         return back()->with('info', $message);
     }
@@ -124,12 +134,12 @@ class OtpController extends Controller
     public function discountOffer($idOffer)
     {
         $offer = Offer::where('id', $idOffer)->first();
-        //var_dump($offer->id);
         $offer->amount = $offer->amount - 1;
-        $offer->total_amount = $offer->total_amount + 1;
+        $offer->active_otps = $offer->active_otps - 1;
         $offer->save();
         $store = Store::find($offer->store_id);
         $store->gifts = $store->gifts - 1;
+        $store->claimed = $store->claimed - 1;
         $store->save();
     }
 }

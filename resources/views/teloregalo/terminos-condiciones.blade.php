@@ -30,7 +30,7 @@
             <p><span style="font-weight: 600;">2.1.1.</span> Para poder participar como Comercio Adherido deberás
                 ingresar a la Plataforma, seguir los pasos de
                 registración e integración y suministrar toda la información solicitada por la Plataforma.</p>
-            <p><span style="font-weight: 600; font-size: 1.1rem;">2.2.</span> Condiciones para la incorporación como
+            <p><span style="font-weight: 600; font-size: 1.1rem;">2.1.2</span> Condiciones para la incorporación como
                 Comercio Adherido:
                 <br>
             <ul>
@@ -146,7 +146,7 @@
                 corresponder.
             </p>
             <p>Por cualquier consulta en relación a los Términos y Condiciones o el funcionamiento de la Plataforma
-                consultá nuestras <a href="">Preguntas Frecuentes</a> o contactanos a <a href="">info@example.com</a>
+            consultá nuestras <a href="{{ route('faq') }}">Preguntas Frecuentes</a> o contactanos a <a href="mailto:hola@teloregalo.com.ar?Subject=Terminos">hola@teloregalo.com.ar</a>
             </p>
         </div>
     </section>

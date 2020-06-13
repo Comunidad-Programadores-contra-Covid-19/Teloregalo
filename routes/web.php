@@ -50,7 +50,7 @@ Route::resource('offers', 'OfferController')/* ->middleware('verified') */;
 
 Route::resource('otps', 'OtpController')/* ->middleware('verified') */;
 
-Route::get('create/{idstore}/{idclient}/{idOffer}', 'OtpController@create')->name('otps.create')->middleware('banned');
+
 
 Route::delete('/otps/{idstore}', 'OtpController@destroy')->name('otps.destroy') /* ->middleware('verified') */;
 
@@ -90,6 +90,7 @@ Route::get('auth/banneduser', function () {
 
 Route::group(['middleware' => ['auth', 'client','verified','banned']], function () {
     Route::get('otps', 'OtpController@create')/* ->middleware('verified') */;
+    Route::get('create/{idstore}/{idclient}/{idOffer}', 'OtpController@create')->name('otps.create');
     Route::get('otps/cancel/{idOtp}', 'OtpController@clientCancel')->name('otp.cancel')/* ->middleware('verified') */;
     Route::get('/mi-perfil', 'ClientController@renderPerfil')->name('cliente.miperfil')/* ->middleware('verified') */;
     Route::get('/clientes/rating/{id}', 'ClientController@rating')->name('cliente.rating')/* ->middleware('verified') */;
@@ -109,7 +110,7 @@ Route::get('/quienes-somos', function () {
 });
 Route::get('/preguntas-frecuentes', function () {
     return view('teloregalo.preguntas-frecuentes');
-});
+})->name('faq');
 Route::get('/donar', function () {
     return view('teloregalo.donar');
 });
@@ -120,7 +121,7 @@ Route::get('/agradecimiento', function () {
 Route::post('/agradecimiento', 'LinkMercadoPagoController@UserMailSend')->name('UserMail');
 Route::get('/terminos-condiciones', function () {
     return view('teloregalo.terminos-condiciones');
-});
+})->name('terminos');
 
 Route::get('storage-link', function () {
     Artisan::call('cache:clear');

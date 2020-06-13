@@ -37,6 +37,13 @@ class OtpService
         $params= array('offer'=>$offerEmail->name_offer,'otp'=>$otp->otp_pass,'store'=>$offerEmail->store_id, );
         Mail::to($clientEmail->email)->send(new HeroeCodigoEmail($params));
 
+        $offerEmail->active_otps++;
+        $offerEmail->save();
+
+        $store = Store::find($store_id);
+        $store->claimed++;
+        $store->save();
+
         return $otp;
     }
 }

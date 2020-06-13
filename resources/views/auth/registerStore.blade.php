@@ -50,11 +50,11 @@
                     <div class="form-check" id="chekRegistroComercio">
 
                         <input type="checkbox" name="terminos" onclick="isChecked()" class="form-check-input" id="exampleCheck1"/>
-                        <a target="_blank" href="{{ url('../terminos-condiciones') }}"><label class="form-check-label" for="exampleCheck1"><b> Aceptar términos y condiciones</b></label></a>
+                        <label class="form-check-label" for="exampleCheck1"><b> Aceptar términos y condiciones</b></label>
 
                     </div>
 
-                    <p id="tycRegistroComercio">Al hacer click en "Registrar mi comercio" aceptás nuestras <a href="{{ url('terminos-condiciones') }}"><b>condiciones,
+                    <p id="tycRegistroComercio">Al hacer click en "Registrar mi comercio" aceptás nuestras <a target="_blank" href="{{ route('terminos') }}"><b>condiciones,
                         la Política de Datos y la Política de Cookies.</b></a></p>
 
                     <button type="submit" class="btn btn-principal btn-block" id="btnRegistroComercio1" disabled>Registrar mi

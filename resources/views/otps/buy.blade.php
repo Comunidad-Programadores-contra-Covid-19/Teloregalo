@@ -8,7 +8,7 @@
 
         <!-- Inicio Botón "volver" -->
         <div class="volver">
-            <button href="{{ redirect()->getUrlGenerator()->previous() }}"><  Volver</button>
+            <a href="{{ redirect()->getUrlGenerator()->previous() }}"><  Volver</a>
         </div>
         <!-- Fin Botón "volver" -->
 

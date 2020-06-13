@@ -61,10 +61,13 @@
 
             <div class="form-check" id="chekRegistroHeroe">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="isChecked()">
-                <a target="_blank" href="{{ url('../terminos-condiciones') }}"><label class="form-check-label" for="exampleCheck1"><b> Aceptar términos y condiciones</b></label></a>
+                <label class="form-check-label" for="exampleCheck1"><b> Aceptar términos y condiciones</b></label>
+                
             </div>
 
-            <p id="tycRegistroHeroe">Al hacer click en "Registrarme" aceptás nuestras condiciones, la Política de Datos y la Política de Cookies.</p>
+            <p id="tycRegistroCliente">Al hacer click en "Registrarme" aceptás nuestras <a target="_blank" href="{{ route('terminos') }}"><b>condiciones,
+                la Política de Datos y la Política de Cookies.</b></a></p>
+                
             <button type="submit" class="btn btn-principal btn-block" id="btnRegistroHeroe" disabled>Registrarme</button>
         </form>
 

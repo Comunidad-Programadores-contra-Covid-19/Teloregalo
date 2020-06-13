@@ -42,7 +42,7 @@
     @if( Auth::user()->rol == 'client')
         @if($otp != '' && $otp->is_used == 0)
         <div class="alert alert-info">
-            <p>Tienes un codigo generado pendiente: {{ $otp->otp_pass}}   <a class="btn-alternative" href="{{ route('otp.cancel', ['idOtp'=>$otp->id]) }}">Cancelar pedido</a>   </p>
+            <p>Tienes un codigo generado pendiente: {{ $otp->otp_pass}} <a class="btn-alternative" href="{{ route('otp.cancel', ['idOtp'=>$otp->id]) }}">Cancelar pedido</a></p>
         </div>
         @endif
     @endif
@@ -107,7 +107,7 @@
                                 <p><b>{{$offer->total_amount}}</b></p>
                                 <hr class="solid">
                                 <p>Disponibles </p>
-                                <p><b>{{$offer->amount}}</b></p>
+                                <p><b>{{$offer->amount - $offer->active_otps}}</b></p>
                             </div>
                         </div>
                     </div>
@@ -129,11 +129,13 @@
                         data-preference-id="<?php echo $preference->id;?>">
 
                         </script>
-
                   </form>
-                    @if (!Auth::guest())
-                        @if (Auth::user()->rol == 'client' && $offer->amount > 0)
+
+                    @if ($offer->amount - $offer->active_otps > 0 && (Auth::guest() || Auth::user()->rol != 'store'))
+                        @if (!Auth::guest() && Auth::user()->rol == 'client')
                             <a class="btn-alternative btn-block" href="{{ route('otps.create', ['idstore' => $store->id, 'idclient' => Auth::user()->id,'idOffer'=>$offer->id]) }}">Retirar</a>
+                        @else
+                            <a class="btn-alternative btn-block" href="{{ route('login') }}">Retirar</a>
                         @endif
                     @endif
 

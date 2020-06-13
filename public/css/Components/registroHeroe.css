@@ -24,6 +24,11 @@
     margin-bottom: 0.5em;
 }
 
+#tycRegistroCliente {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+}
+
 
 #separadorRegistroHeroe {
     width: 100%;

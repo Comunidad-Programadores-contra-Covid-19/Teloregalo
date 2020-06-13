@@ -123,7 +123,7 @@ class StoreController extends Controller
 
         $storeUpdate->update();
 
-        return redirect('stores/misProductos')->with('success', 'Tu perfil se modificado Correctamente, por favor ahora publica un producto');
+        return redirect('stores/misProductos')->with('success', 'Tu perfil se modificado correctamente, por favor ahora publica un producto');
     }
     public function show($id)
     {
@@ -145,7 +145,6 @@ class StoreController extends Controller
 
         $credencialStore = Credentials::where('store_id', $id)->get();
         $credentials = $credencialStore[0];
-        /*  var_dump($storeCredentials); */
         return view('stores.index_profile', ['store' => $store, 'credentials' => $credentials,'otp'=> $otp]);
     }
     public function destroy($id)
