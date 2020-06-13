@@ -121,7 +121,7 @@ Route::get('/agradecimiento', function () {
 Route::post('/agradecimiento', 'LinkMercadoPagoController@UserMailSend')->name('UserMail');
 Route::get('/terminos-condiciones', function () {
     return view('teloregalo.terminos-condiciones');
-});
+})->name('terminos');
 
 Route::get('storage-link', function () {
     Artisan::call('cache:clear');
