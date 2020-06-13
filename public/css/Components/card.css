@@ -1,11 +1,11 @@
 
 /*---Shop card--- */
 .card{
-    height: 15rem;
+    height: 14.2rem;
     position: relative;
-    border:none;
+    border: 2px solid #eee;
     border-radius: 0.5rem;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
 }
@@ -13,25 +13,44 @@
 .card-image{
     position: absolute;
     border-top-left-radius: 0.5rem;
-    height: 10rem;
-    width: 10rem;
+    border-bottom-left-radius: 0.5rem;
+    height: 14rem;
+    width: 14em;
 }
 
 .card-description{
     position: absolute;
     top: 1rem;
-    left: 11rem;
+    left: 14rem;
     right: 1rem;
+}
+
+.card-description h3{
+    font-size: 20px;
+}
+
+.card-contenedor-btn{
+    position: absolute;
+    padding: 1em;
+    border-radius: 6px;
+    bottom: -1rem;
+    right: .5rem;
+}
+
+.card-contenedor-btn p{
+    margin-top: .6em;
 }
 
 .card-btn{
-    position: absolute;
-    bottom: 1.5rem;
+    bottom: 1rem;
     right: 1rem;
 }
 
+.card-btn a{
+    color: #fff;
+}
+
 .card-availability{
-    position: absolute;
     bottom: 1rem;
     left: 1rem;
 }
@@ -183,4 +202,35 @@
 
 .card-report p {
     font-size: 30px;
+}
+
+
+@media handheld, (min-width:992px) and (max-width:1220px) {
+    .card-image{
+        height: 14rem;
+        width: 14em;
+    }
+}
+
+@media handheld, (min-width:0px) and (max-width:991px) {
+    .card{
+        height: 8.2rem;
+    }
+
+    .card-contenedor-btn{
+        position: absolute;
+        padding: .2em;
+        border-radius: 6px;
+        bottom: -.8rem;
+        right: .5rem;
+    }
+
+    .card-availability p{
+        font-size: 10px;
+    }
+
+    .card-btn a{
+        font-size: 10px;
+    }
+
 }
