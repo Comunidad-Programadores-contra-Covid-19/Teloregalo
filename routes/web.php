@@ -110,7 +110,7 @@ Route::get('/quienes-somos', function () {
 });
 Route::get('/preguntas-frecuentes', function () {
     return view('teloregalo.preguntas-frecuentes');
-});
+})->name('faq');
 Route::get('/donar', function () {
     return view('teloregalo.donar');
 });

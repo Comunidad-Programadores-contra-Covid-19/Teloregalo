@@ -38,8 +38,6 @@ class OtpController extends Controller
             if (strtotime("now") > $validTill) {
                 $otpClient = $this->store($idstore, $idclient, $offer_id);
 
-
-
                 return view('otps.buy', ['otp' => $otpClient]);
             } else {
                 return back()->with('info', 'Ya pediste o consumiste un beneficio!');

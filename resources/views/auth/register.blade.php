@@ -65,9 +65,9 @@
                 
             </div>
 
-            <p><a target="_blank" href="{{ route('terminos') }}">Leé nuestros términos y condiciones</a></p>
-
-            <p id="tycRegistroHeroe">Al hacer click en "Registrarme" aceptás nuestras condiciones, la Política de Datos y la Política de Cookies.</p>
+            <p id="tycRegistroCliente">Al hacer click en "Registrarme" aceptás nuestras <a target="_blank" href="{{ route('terminos') }}"><b>condiciones,
+                la Política de Datos y la Política de Cookies.</b></a></p>
+                
             <button type="submit" class="btn btn-principal btn-block" id="btnRegistroHeroe" disabled>Registrarme</button>
         </form>
 
