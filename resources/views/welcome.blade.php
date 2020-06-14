@@ -70,10 +70,10 @@
                                     <form action="{{ route('stores.index') }}">
                                     <div class="input-group" id="buscarComercio">
 
+                                                <input name="searchName" id="searchName" type="search" class="form-control" placeholder="Buscar comercio por nombre">
                                             <span class="input-group-btn">
                                                 <button class="btn btn-default" type="submit"><img src="{{ asset('assets/lupa.svg') }}" alt=""></button>
                                             </span>
-                                                <input name="searchName" id="searchName" type="search" class="form-control" placeholder="Buscar comercio por nombre">
 
                                     </div>
                                 </form>
@@ -81,10 +81,10 @@
 
                                 <div class="col-lg-5">
                                     <div class="input-group" id="ingresarDireccion">
+                                        <input type="text" class="form-control" placeholder="Ingresá tu dirección" id="address">
                                         <span class="input-group-btn">
                                             <button onclick="setUbicationByAddress()" class="btn btn-default" type="button"><img src="{{ asset('assets/gota.svg') }}" alt=""></button>
                                         </span>
-                                        <input type="text" class="form-control" placeholder="Ingresá tu dirección" id="address">
                                     </div>
                                 </div>
 
@@ -104,6 +104,7 @@
             </label>
         </div>
         <!-- Fin Botón Lista/Mapa -->
+
 
         <!-- Inicio contenedor tarjetas -->
         <section id="contenedorTarjetas" class="">
@@ -139,17 +140,20 @@
                                   @endif
                               </div>
 
-                              {{-- <div class="card-availability">
-                                <p class="btn-alternative"> {{$store->gifts}} para entregar</p>
-                              </div> --}}
+                              <div class="card-contenedor-btn">
 
-                              <div class="card-availability">
-                                  <p>{{$store->gifts - $store->claimed}} para entregar</p>
+                                  <div class="card-btn">
+                                      <a href="{{ route('stores.perfil', $store->id) }}" class="btn-principal">Ver productos</a>
+                                  </div>
+                                  {{-- <div class="card-availability">
+                                    <p class="btn-alternative text-center"> {{$store->gifts}} para entregar</p>
+                                  </div> --}}
+                                  <div class="card-availability">
+                                      <p class="text-center">{{$store->gifts - $store->claimed}} para entregar</p>
+                                  </div>
+
                               </div>
 
-                              <div class="card-btn">
-                                  <a href="{{ route('stores.perfil', $store->id) }}" class="btn-principal">Ver productos</a>
-                              </div>
                           </div>
                       </div>
                       {{-- <div class="col-md-12 col-lg-6" id="map"></div> --}}
