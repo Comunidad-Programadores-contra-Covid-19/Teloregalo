@@ -1,20 +1,41 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    .verifyTable{
+         max-width: 600px;
+         padding: 10px;
+         margin: 0 auto;
+         border-collapse: collapse;
+    }
+
+    .verifyTable td{
+        text-align: center;
+    }
+
+    .container-welcome{
+        font-family: Poppins Sans-serif,sans-serif; 
+        color: #96D293; 
+        padding: .1em;
+        border: 1px solid #96D293;
+        border-radius: 6px;
+        font-size: 46px;
+        font-weight: bold; 
+    }
+
+    .container-welcome p{
+        margin-top: 10px;
+    }
+</style>
 <div class="container">
 
-    <table style="max-width: 600px; padding: 10px; margin: 0 auto; border-collapse: collapse;">
+    <table class="verifyTable">
 
         <tr>
-            <td style="text-align: center;">
-                <p style="font-family: Poppins Sans-serif,sans-serif; color: #96D293; font-weight: bold; font-size: 55px; margin: 5px;">
-                    Bienvenido</p>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: center;">
-                <p style="font-family: Poppins Sans-serif,sans-serif; font-size: 40px; margin: 0;">¡Gracias por
-                    registrarte!</p>
+            <td>
+                <div class="container-welcome">
+                    <p>¡Gracias por registrarte!</p>
+                </div>
             </td>
         </tr>
         <tr>
@@ -27,12 +48,12 @@
                         </div>
                     @endif
 
-                    <p style="font-family: Poppins Sans-serif,sans-serif; font-size: 19px; line-height: 36px; text-align: justify;
+                    <p style="font-family: Poppins Sans-serif,sans-serif; font-size: 24px; text-align: justify;
                     color: #263238; padding: 10px;" class="text-center">Antes de proceder, por favor chequee el link de verificación en su cuenta de email. <br>
                   <strong>  Si no recibiste el email, </strong><br></p>
                     <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                         @csrf
-		                <button type="submit" class="btn btn-principal">{{ __('click here to request another') }}</button>.
+		                <button type="submit" class="btn btn-principal">{{ __('click here to request another') }}</button>
 	                </form>
                 </div>
             </td>

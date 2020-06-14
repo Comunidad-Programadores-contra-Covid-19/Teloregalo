@@ -14,7 +14,6 @@
                     aria-controls="nav-ventas" aria-selected="true">Entrega de productos</a></li>
             </ul>
         </div>
-        <h1 class="tituloPerfilCom">Perfil</h1>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
              aria-hidden="true">
@@ -47,7 +46,7 @@
               enctype="multipart/form-data">
             {{ method_field('put') }}
             {{ csrf_field() }}
-            <div class="col-md-auto mb-5">
+            <div class="col-lg-auto mb-5">
                 <div class="logoPerfil">
                     <div class="image-upload d-flex flex-row-reverse " data-toggle="modal" data-target="#exampleModal">
                         <span class="far fa-edit "></span>
@@ -62,12 +61,13 @@
 
 
             <div class="col text-center mt-3 mb-5">
+                <h1 class="tituloPerfilCom text-center">Perfil de {{ $storeInfo->name }}</h1>
                 <h4>La Url de tu negocio es:</h4>
                 <p>https://teloregalo.com.ar/store/{{$storeInfo->id}}</p>
                 <div class="sharethis-inline-share-buttons" data-url="https://www.teloregalo.com.ar/store/{{$storeInfo->id}}"></div>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-12">
 
                 <section>
                     @if(session()->get('success'))
@@ -108,7 +108,7 @@
                 </section>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <section>
 
                     <div class="form-group ">
@@ -150,7 +150,7 @@
                 <hr class="solid">
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <section>
 
                     <div class="form-group">
@@ -174,9 +174,9 @@
                 </section>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <section>
-                    <div class="form-group">
+                    {{--<div class="form-group">
                         <label for="inputFace">Link perfil de Facebook</label>
                         <input type="text" name="facebook" class="form-control" id="inputFace"
                                value="{{ $storeInfo->facebook }}">
@@ -186,7 +186,7 @@
                         <label for="inputInsta">Link perfil de Instagram</label>
                         <input type="text" name="instagram" class="form-control" id="inputInsta"
                                value="{{ $storeInfo->instagram}}">
-                    </div>
+                    </div>--}}
 
                     <div class="form-group">
                         <label for="inputHorario">Horarios</label>
@@ -215,10 +215,10 @@
             <div class="col-lg-12 mt-5">
                 <div class="row">
                     <div class="col-4">
-                        <button class="btn btn-alternative btn-block">Cancelar</button>
+                        <button class="btn btn-alternative btn-block" style="padding: .4em;border-radius: 6px;font-size: 20px;">Cancelar</button>
                     </div>
                     <div class="col-8">
-                        <button type="submit" class="btn btn-principal btn-block mb-5">Guardar cambios</button>
+                        <button type="submit" class="btn btn-principal btn-block mb-5" style="padding: .4em;border-radius: 6px;color:#fff;font-size: 20px;">Guardar cambios</button>
                     </div>
                 </div>
             </div>
