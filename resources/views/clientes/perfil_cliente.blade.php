@@ -7,7 +7,6 @@
     <div id="menuPerfilHeroe">
         <ul>
             <li><a  href="{{route('cliente.miperfil')}}">Perfil</a></li>
-            <li><a  href="{{route('cliente.rating', Auth::user()->id)}}">Mis regalos</a></li>
         </ul>
     </div>
     <!-- Fin Menú Perfil Héroe -->

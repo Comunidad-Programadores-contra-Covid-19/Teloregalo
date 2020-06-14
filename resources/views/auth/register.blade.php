@@ -63,7 +63,7 @@
             <div class="form-check" id="chekRegistroHeroe">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="isChecked()">
                 <label class="form-check-label" for="exampleCheck1"><b> Aceptar términos y condiciones</b></label>
-                
+
             </div>
 
             <label id="tycRegistroCliente">Al hacer click en "Registrarme" aceptás nuestras <a target="_blank" href="{{ route('terminos') }}"><b>condiciones, la Política de Datos y la Política de Cookies.</b></a></label>
@@ -72,10 +72,10 @@
         </div>
         </form>
 
-        <img src="{{ asset('assets/separador.svg') }}" alt="separador" id="separadorRegistroHeroe">
+        {{--  <img src="{{ asset('assets/separador.svg') }}" alt="separador" id="separadorRegistroHeroe">
 
         <a class="btn btn-gmail btn-block disabled" id="btnRegistroHeroeGmail" href="{{ url('/login/google') }}">Registrarme con Gmail</a>
-        <a class="btn btn-facebook btn-block disabled" id="btnRegistroHeroeFace" disabled>Registrarme con Facebook</a>
+        <a class="btn btn-facebook btn-block disabled" id="btnRegistroHeroeFace" disabled>Registrarme con Facebook</a>  --}}
     </section>
 </div>
 <!-- Fin contenedor -->

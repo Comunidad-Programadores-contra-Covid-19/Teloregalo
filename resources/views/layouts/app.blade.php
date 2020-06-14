@@ -137,7 +137,7 @@
                 <div class="row">
                     <div class="col-auto">
                         <p>
-                            <a href="#">Comercios adheridos</a>
+                            <a href="{{ url('/') }}">Comercios adheridos</a>
                         </p>
                         <p>
                             <a  href="{{ url('preguntas-frecuentes') }}">Preguntas frecuentes</a>
