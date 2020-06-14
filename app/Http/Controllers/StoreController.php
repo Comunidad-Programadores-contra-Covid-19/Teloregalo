@@ -155,11 +155,25 @@ class StoreController extends Controller
         return back();
     }
 
-    public function setPuntuacion($rate)
+    public function setPuntuacion(Request $request, $id)
     {
+
+        if ($request->estrellas>=1) {
         $rating = new RatingStore();
-        //$storeId =
-        $rating->rateStore(1, $rate);
+        $rating->rateStore($id, $request->estrellas);
+        $otps=Otp::where('id', $request->otps)->first();
+        $otps->is_rating= 1;
+        $otps->save();
+
+        return back()->with('success', 'Has calificado al comercio correctamente');
+
+        } else {
+            return back()->with('success', 'Debes elegir una calificación');
+        }
+
+
+
+
 
     }
 

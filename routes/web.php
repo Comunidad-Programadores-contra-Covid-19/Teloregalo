@@ -101,7 +101,7 @@ Route::group(['middleware' => ['auth', 'client','verified','banned']], function 
 
 Route::put('/reportar-cliente/{id}', 'ClientController@report')->name('cliente.reportar');
 
-Route::post('/puntuacion/{rate}', 'StoreController@setPuntuacion')->name('puntuacion');
+Route::post('/puntuacion/{id}', 'StoreController@setPuntuacion')->name('puntuacion');
 
 Route::get('/puntuacion', 'StoreController@getPuntuacion')->name('get-puntuacion');
 

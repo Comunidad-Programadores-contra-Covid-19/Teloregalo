@@ -20,8 +20,10 @@ class ClientController extends Controller
 
             $stores = Store::join('otps','stores.id','=','otps.store_id')
               ->join('offers','stores.id','=','offers.store_id')
-             ->select('stores.*','offers.name_offer as offer')
+             ->select('stores.*','offers.name_offer as offer','otps.id as otps' )
              ->where('otps.user_id','=',Auth::user()->id)
+             ->where('otps.is_used','=',1)
+             ->where('otps.is_rating','=',0)
              ->orderBy('stores.id', 'desc')
              ->get();
 

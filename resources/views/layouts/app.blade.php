@@ -10,6 +10,7 @@
     <!-- Styles -->
     <link  href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link  href="{{ asset('css/style.css') }}" rel="stylesheet">
+    @yield('styles')
     <link rel="icon" href="{{ asset('assets/logo.svg') }}" sizes="32x32" type="image/svg">
     <link rel="icon" href="{{ asset('assets/logo.svg') }}" sizes="16x16" type="image/svg">
 

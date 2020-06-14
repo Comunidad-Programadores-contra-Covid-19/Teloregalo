@@ -1,4 +1,18 @@
   @extends('layouts.app')
+
+  @section('styles')
+
+  <link  href="{{ asset('css/rating.css') }}" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+       $('[data-toggle="tooltip"]').tooltip()
+      });
+  </script>
+
+  @endsection
+
+
   @section('content')
   <!-- Inicio contenedor -->
   <div class="container">
@@ -11,6 +25,18 @@
         </ul>
     </div>
     <!-- Fin Menú Mis Regalos Héroe -->
+    @if(session()->get('success'))
+
+
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+
+                            <strong>{{ session()->get('success') }}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+      @endif
 
 
     <!-- Inicio contenedor tarjetas -->
@@ -38,11 +64,23 @@
                             <h4>{{$store->offer}}</h4>
                             <h5>{{$store->name}}</h5>
                             <p id="direccionCard"><span><i class="fas fa-map-marker-alt"></i></span>{{$store->address}}</p>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
+                            <form action="{{ route('puntuacion', $store->id) }}" method="POST">
+                                @csrf
+                                <p class="clasificacion">
+                                    <input type="hidden" name="otps" value="{{$store->otps}}">
+                                  <input id="radio1" type="radio" name="estrellas" value="5">
+                                  <label for="radio1" data-toggle="tooltip" data-placement="top" title="Valorar 5 estrellas">★</label>&nbsp; &nbsp;
+                                  <input id="radio2" type="radio" name="estrellas" value="4">
+                                  <label for="radio2" data-toggle="tooltip" data-placement="top" title="Valorar 4 estrellas">★</label>&nbsp; &nbsp;
+                                  <input id="radio3" type="radio" name="estrellas" value="3">
+                                  <label for="radio3" data-toggle="tooltip" data-placement="top" title="Valorar 3 estrellas">★</label>&nbsp; &nbsp;
+                                  <input id="radio4" type="radio" name="estrellas" value="2">
+                                  <label for="radio4" data-toggle="tooltip" data-placement="top" title="Valorar 2 estrellas">★</label>&nbsp; &nbsp;
+                                  <input id="radio5" type="radio" name="estrellas" value="1">
+                                  <label for="radio5" data-toggle="tooltip" data-placement="top" title="Valorar 1 estrella">★</label>
+                                </p>
+                                <button type="submit" class="btn-principal">Calificar</button>
+                              </form>
                         </div>
                     </div>
                 </div>
@@ -55,29 +93,6 @@
         </section>
         <!-- Fin contenedor Pendientes -->
 
-        <!-- Inicio contenedor Calificados -->
-        <section id="contenedorCalificados">
-            <h2>Calificados</h2>
-            <div class="row">
-                <!-- Inicio tarjeta 1.1 -->
-                <div class="col-md-12 col-lg-6">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/150" alt="" class="card-image">
-                        <div class="card-description"  id="descripcionCard">
-                            <h4>Producto</h4>
-                            <h5>Nombre de comercio</h5>
-                            <p id="direccionCard"><span><i class="fas fa-map-marker-alt"></i></span>Ubicación</p>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Fin contenedor Calificados -->
     </div>
     <!-- Fin contenedor tarjetas -->
 </div>

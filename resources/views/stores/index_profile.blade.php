@@ -25,11 +25,19 @@
 
                 <h3>{{$store->name}}</h3>
                 <div id="card-reputation">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
+                    @if ($store->rating != 0)
+                     @for ($i = 1; $i <= $store->rating; $i++)
+                        <span class="fa fa-star checked"></span>
+                    @endfor
+
+                    @for ($i = 1; $i < 6-$store->rating; $i++)
                     <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
+                     @endfor
+                   @else
+                  @for ($i = 1; $i <= 5; $i++)
+                            <span class="fa fa-star"></span>
+                  @endfor
+                  @endif
                 </div>
                 <p><span><i class="fas fa-map-marker-alt"></i></span>{{$store->address}}</p>
                 <p><span><i class="fas fa-clock"></i></span>{{$store->horarios}}</p>
