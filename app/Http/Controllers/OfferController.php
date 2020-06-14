@@ -63,7 +63,7 @@ class OfferController extends Controller
         $offer->store_id = Auth::user()->store->id;
         $offer->save();
  
-        return back()->with('success', 'Oferta creada '. $request->name_offer);
+        return back()->with('success', 'Producto creado '. $request->name_offer);
     }
 
     /**
@@ -109,7 +109,7 @@ class OfferController extends Controller
 
         //To stay in /edit when updated
         //return back()->with('message','Oferta editada.');
-        return redirect('/offers')->with('success', 'Oferta actualizada.');
+        return redirect('/offers')->with('success', 'Producto actualizado.');
     }
 
     /**
@@ -123,7 +123,7 @@ class OfferController extends Controller
         $offer = Offer::find($id);
         $offer->delete();
 
-        return redirect('stores/misProductos')->with('success', 'Oferta eliminada.');
+        return redirect('stores/misProductos')->with('success', 'Producto eliminado.');
     }
     public function offerImageUpdate($id){
         

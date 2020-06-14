@@ -91,7 +91,7 @@ class StoreController extends Controller
 
         $storeUpdate->update();
 
-        return redirect('stores/misProductos')->with('success', 'Tu perfil se modificado Correctamente, por favor ahora publica un producto');
+        return redirect('stores/misProductos')->with('success', 'Tu perfil se modificado correctamente, por favor ahora publica un producto');
     }
     public function updateImage(Request $request, $id)
     {
@@ -108,7 +108,7 @@ class StoreController extends Controller
 
         $storeUpdate->update();
 
-        return redirect('stores/misProductos')->with('success', 'Tu perfil se modificado Correctamente, por favor ahora publica un producto');
+        return redirect('stores/misProductos')->with('success', 'Tu perfil se modificado correctamente, por favor ahora publica un producto');
     }
 
     public function registerTwo(Request $request, $id)

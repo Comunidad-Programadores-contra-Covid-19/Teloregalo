@@ -116,13 +116,13 @@ class OtpController extends Controller
     }
     public function clientCancel($idOtp){
         $message="se cancelo tu pedido";
-        $otp = Otp::where('id', $idOtp)->first();
+        $otp = Otp::find($idOtp);
 
-        $offer = $otp->offer;
+        $offer = Offer::find($otp->offer_id);
         $offer->active_otps = $offer->active_otps - 1;
         $offer->save();
 
-        $store = $offer->store;
+        $store = Store::find($otp->store_id);
         $store->claimed = $store->claimed - 1;
         $store->save();
 
