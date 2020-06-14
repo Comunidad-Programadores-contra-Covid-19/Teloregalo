@@ -129,7 +129,7 @@
                                             <span class="fa fa-star checked"></span>
                                         @endfor
 
-                                        @for ($i = 1; $i < 5/$store->rating; $i++)
+                                        @for ($i = 1; $i < 6-$store->rating; $i++)
                                             <span class="fa fa-star"></span>
                                         @endfor
                                   @else
