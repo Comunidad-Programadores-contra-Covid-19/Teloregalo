@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Store;
 use Auth;
+use App\User;
 use App\Offer;
+use App\Store;
+use App\Credentials;
 use App\UserMailSend;
 use GuzzleHttp\Client;
-use App\Credentials;
+use Illuminate\Http\Request;
+use App\Notifications\StoreGiftsCreated;
 
 class LinkMercadoPagoController extends Controller
 {
@@ -66,6 +68,8 @@ class LinkMercadoPagoController extends Controller
 
     public function verificar(Request $request)
     {
+
+
         $access_token = 'TEST-5841017781823689-050723-4081492e6e230f3f7078e56332de7955-318863690'; // token de comercio
         $idPago = $request->preference_id;  // id del pago realizado
         $payStatus = $request->payment_status;  // estado del pago realizado
@@ -95,6 +99,16 @@ class LinkMercadoPagoController extends Controller
             $store->gifts = $store->gifts + 1;
             $store->save();
 
+         //mail para notificar a comercio de nueva venta
+            $idstore=Credentials::join('stores','credentials.store_id','=','stores.id')
+        ->select('stores.*')
+        ->where('credentials.access_token','=',$request->ofert)
+        ->get();
+        foreach ($idstore as $idst) {
+            $recipient= User::findOrFail($idst->user_id);
+            $recipient->notify(new StoreGiftsCreated);
+        }
+
             //To stay in /edit when updated
             //return back()->with('message','Oferta editada.');
             return view('teloregalo.agradecimiento',["offer_id"=>$offer_id])->with('success', 'Tu pago se ah efectuado con exito!.');
@@ -103,6 +117,8 @@ class LinkMercadoPagoController extends Controller
         }
     }
 
+
+    // datos de contacto del vecino para ser notificado cuando se entregue su regalo
     public function UserMailSend(Request $request){
 
         $usernotyfiable= new UserMailSend();
