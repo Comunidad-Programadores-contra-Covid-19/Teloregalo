@@ -104,7 +104,7 @@ class OtpController extends Controller
                 $message = "Ups! El codigo o el comercio es incorrecto";
             }
         } else {
-            $message = "Ups! El codigo o el comercio es incorrecto";
+            $message = "Ups! El codigo o el comercio es incorrecto, o el codigo ya expiro";
         }
         return response()->json([
             'success' => $success,
