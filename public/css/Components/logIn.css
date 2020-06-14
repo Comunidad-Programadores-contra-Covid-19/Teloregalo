@@ -13,3 +13,9 @@ a:hover{
 .form-check-input {
     position: relative !important;
 }
+
+.loginform-register-link{
+  background-color: #EAF6E9;
+  padding: .3em;
+  border-radius: 6px;
+}

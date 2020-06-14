@@ -10,8 +10,9 @@
     <div class="col-lg-6">
     <section id="RegistroHeroe">
         <h1>Registro</h1>
-        <p>Al registrarte podrás recibir los regalos que los vecinos hacen en calidad de agradecimiento por tu labor durante la pandemia.</p>
+        <p class="">Al registrarte podrás recibir los regalos que los vecinos hacen en calidad de agradecimiento por tu labor durante la pandemia.</p>
         <form class="col-md-12 col-lg-12" method="POST" action="{{ route('register') }}">
+            <div class="form-container">
             @csrf
             <div class="form-group ">
                 <label for="inputNombreApellido">Nombre y apellido</label>
@@ -65,16 +66,16 @@
                 
             </div>
 
-            <p id="tycRegistroCliente">Al hacer click en "Registrarme" aceptás nuestras <a target="_blank" href="{{ route('terminos') }}"><b>condiciones,
-                la Política de Datos y la Política de Cookies.</b></a></p>
-                
+            <label id="tycRegistroCliente">Al hacer click en "Registrarme" aceptás nuestras <a target="_blank" href="{{ route('terminos') }}"><b>condiciones, la Política de Datos y la Política de Cookies.</b></a></label>
+            <br><br>
             <button type="submit" class="btn btn-principal btn-block" id="btnRegistroHeroe" disabled>Registrarme</button>
+        </div>
         </form>
 
         <img src="{{ asset('assets/separador.svg') }}" alt="separador" id="separadorRegistroHeroe">
 
-        <a class="btn btn-principal btn-block disabled" id="btnRegistroHeroeGmail" href="{{ url('/login/google') }}">Registrarme con Gmail</a>
-        <a class="btn btn-principal btn-block disabled" id="btnRegistroHeroeFace" disabled>Registrarme con Facebook</a>
+        <a class="btn btn-gmail btn-block disabled" id="btnRegistroHeroeGmail" href="{{ url('/login/google') }}">Registrarme con Gmail</a>
+        <a class="btn btn-facebook btn-block disabled" id="btnRegistroHeroeFace" disabled>Registrarme con Facebook</a>
     </section>
 </div>
 <!-- Fin contenedor -->

@@ -8,6 +8,12 @@
 
 #RegistroHeroe h1 {
     margin-bottom: 0.5em;
+    margin-left: 0.4em;
+}
+
+#RegistroHeroe p {
+    margin-bottom: 0.5em;
+    margin-left: 1.2em;
 }
 
 #RegistroHeroe label {

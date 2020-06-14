@@ -12,6 +12,7 @@
                 <h1>Paso 1</h1>
                 <p>Al registrar tu comercio los vecinos podrán elegirte para comprar regalos a nuestros héroes.</p>
                 <form method="POST" action="{{ url('stores/register') }}">
+            <div class="form-container">
                     {!! csrf_field() !!}
                     <div class="form-group ">
                         <label for="inputNombreComercio">Tu nombre y apellido</label>
@@ -60,7 +61,7 @@
                     <button type="submit" class="btn btn-principal btn-block" id="btnRegistroComercio1" disabled>Registrar mi
                         comercio
                     </button>
-
+                </div>
                 </form>
             </section>
 

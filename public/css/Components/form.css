@@ -1,3 +1,15 @@
+.form-container {
+  background-color: #fff;
+  padding: 4em;
+  border: 2px solid #eee;
+  border-radius: 6px;
+}
+
+.form-container button {
+  font-size: 16px;
+  border-radius: 6px;
+}
+
 .form-control{
     background-color:rgba(140, 193, 137, 0.1) !important;
     border-color: #8CC189 !important;
@@ -26,7 +38,12 @@ input:focus,
 
 .form-check-input {
     position: absolute;
-    margin-top: .3rem;
+    margin-top: 1rem;
     margin-bottom: .3rem;
-    margin-left: 0;
+}
+
+.loginform-register-link{
+  background-color: #EAF6E9;
+  padding: .3em;
+  border-radius: 6px;
 }

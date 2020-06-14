@@ -85,3 +85,36 @@
 }
 
 
+/*---Botones RRSS---*/
+
+.btn-gmail {
+    color:#333;
+    background-color: #fff;
+    border: 0.1rem solid;
+    border-color: #eee;
+    border-radius: 6px;
+    padding: 0.3rem 1rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.btn-gmail:hover {
+    color:#fff;
+    background-color: #dd4b39;
+}
+
+.btn-facebook {
+    color:#333;
+    background-color: #fff;
+    border: 0.1rem solid;
+    border-color: #eee;
+    border-radius: 6px;
+    padding: 0.3rem 1rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.btn-facebook:hover {
+    color:#fff;
+    background-color: #3b5998;
+}

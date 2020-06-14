@@ -15,6 +15,7 @@
         
         <form  method="POST" action=" {{ route('stores.updateRegister', $storeId) }}"
             enctype="multipart/form-data">
+            <div class="form-container">
           {{ method_field('put') }}
           {!! csrf_field() !!}
           <div class="form-group">
@@ -71,6 +72,7 @@
         <p id="tycRegistroComercio">Al hacer click en "Registrar mi comercio" declarás que toda la información ingresada es real y tenés la capacidad para actuar en representacion del negocio.  </p>
         <button type="submit" class="btn btn-principal btn-block" id="btnRegistroComercio1">Registrar mi
             comercio</button>
+        </div>
         </form>
 
             </section>

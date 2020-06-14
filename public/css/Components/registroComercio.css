@@ -45,6 +45,7 @@
 @media handheld, screen and (max-width:991px) {
 
     #imgRegistroComercio {
+        z-index: 0;
         width: 40%;
         float: right;
         margin-bottom: 0;
