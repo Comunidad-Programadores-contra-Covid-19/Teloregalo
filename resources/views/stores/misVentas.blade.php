@@ -65,14 +65,14 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title text-center" id="exampleModalLabel"><b>Ahora realiza la entrega del regalo</b></h5>
+                                    <h5 class="modal-title text-center" id="exampleModalLabel"><b>¡Excelente! Entregá el regalo.</b></h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <b>NOTA: </b>Si considerás que la persona a la que acabás de entregarle un regalo no
-                                    pertenece al personal esencial, hacé click en la opción reportar usuario. <br>
+                                    <b>NOTA: </b>Si considerás que la persona que retira el producto no es un trabajador esencial,
+                                    te recomendamos entregar el regalo y luego seleccioná la opción “Reportar usuario”. <br>
                                     <button type="button" id="btnReportar">Reportar usuario</button>
                                 </div>
                                 <div class="modal-footer">
