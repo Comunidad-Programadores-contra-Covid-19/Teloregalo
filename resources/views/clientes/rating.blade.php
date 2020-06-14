@@ -1,5 +1,7 @@
   @extends('layouts.app')
 
+
+  <!-- Inicio Estilos y scritp de calificar comercio -->
   @section('styles')
 
   <link  href="{{ asset('css/rating.css') }}" rel="stylesheet">
@@ -11,6 +13,8 @@
   </script>
 
   @endsection
+  <!-- Fin Estilos y scritp de calificar comercio -->
+
 
 
   @section('content')
