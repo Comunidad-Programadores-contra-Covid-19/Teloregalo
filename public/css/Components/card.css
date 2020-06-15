@@ -63,7 +63,7 @@
 /*---Product card--- */
 
 .card-product{
-    height: 44rem;
+    height: 45rem;
     width: 100%;
     position: relative;
     border: 1px solid #eee;
@@ -76,25 +76,36 @@
 .card-image-product{
     width: 27.7rem;
     position: relative;
+    top: 3.2rem;
     margin: 0rem;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
+}
+
+.card-description-product-name{
+    position: absolute;
+    text-align: center; 
+    left: 0rem;
+    right: 0rem;
+    padding: 1em;
 }
 
 .card-description-product{
     position: absolute;
     text-align: center; 
     border-top: 1px solid #eee;
-    top: 31rem;
+    top: 34rem;
     left: 0rem;
     right: 0rem;
     padding: 1em;
 }
 
+.card-description-product h4{
+    display: none;
+}
+
 .card-index-product{
     position: relative;
     text-align: center;
-    top: .6rem;
+    top: 3.7rem;
     width: 94%;
     left: 1.6rem;
     background-color: #eee;
@@ -108,7 +119,7 @@
 
 .card-btn-product{
     position: absolute;
-    bottom: 0rem;
+    bottom: -.4rem;
     left: 1rem !important;
     right: 1rem !important;
 }
@@ -252,10 +263,10 @@
 
 @media handheld, (min-width:991px) and (max-width:1280px) {
     .card-product{
-        height: 41rem;
+        height: 46rem;
     }
     .card-description-product{
-        top: 26.4rem;
+        top: 34rem;
     }
     .card-image-product{
         width: 100%;
@@ -273,6 +284,7 @@
     .card-image-product{
         width: 22rem;
         left: -1rem;
+        top: 0rem;
         border-radius: 0px;
         border-bottom-right-radius: 6px;
         border-top-left-radius: 6px;
@@ -281,6 +293,14 @@
     .card-description-product{
         top: 0rem;
         left: 22rem;
+    }
+
+    .card-description-product-name{
+        display: none;
+    }
+
+    .card-description-product h4{
+        display: block;
     }
 
     .card-index-product{
@@ -310,6 +330,7 @@
     .card-image-product{
         width: 14rem;
         left: -1rem;
+        top: 0rem;
         border-radius: 0px;
         border-bottom-right-radius: 6px;
         border-top-left-radius: 6px;
@@ -318,6 +339,14 @@
     .card-description-product{
         top: 0rem;
         left: 14rem;
+    }
+
+    .card-description-product-name{
+        display: none;
+    }
+
+    .card-description-product h4{
+        display: block;
     }
 
     .card-index-product{

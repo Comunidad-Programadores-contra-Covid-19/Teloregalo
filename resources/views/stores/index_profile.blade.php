@@ -100,6 +100,11 @@
 
         <div class="col-xs-12 col-md-6 col-xl-4">
             <div class="card-product">
+
+                <div class="card-description-product-name">
+                    <h4>{{ $offer->name_offer }}</h4>
+                </div>
+
                 <div class="row">
                     <div class="col-12">
                         @if($offer->image_offer)
