@@ -165,7 +165,7 @@ class StoreController extends Controller
         $otps->is_rating= 1;
         $otps->save();
 
-        return redirect('cliente.miperfil');
+        return redirect('/mi-perfil');
 
         } else {
             return back()->with('success', 'Debes elegir una calificación');
