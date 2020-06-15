@@ -101,52 +101,51 @@
         <div class="col-xs-12 col-md-6 col-xl-4">
             <div class="card-product">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12">
                         @if($offer->image_offer)
                         <img src="{{ Storage::url($offer->image_offer)}}" alt="" class="card-image-product ">
                         @else
                         <img src="https://via.placeholder.com/150" alt="" class="card-image-product ">
                         @endif
                     </div>
-                    <div class="col-6">
-                        <div class=" card-index-product" >
-                            <div>
-                                <p>Total vendidos</p>
-                                <p><b>{{$offer->total_amount}}</b></p>
-                                <hr class="solid">
-                                <p>Disponibles </p>
-                                <p><b>{{$offer->amount - $offer->active_otps}}</b></p>
-                            </div>
-                        </div>
+                </div>
+                <div>
+                    <div class="card-index-product row">
+                        <label class="col-lg-6">Total regalados: <b>{{$offer->total_amount}}</b></label>
+                        <label class="col-lg-6">Disponibles para retirar: <b>{{$offer->amount - $offer->active_otps}}</b></label>
                     </div>
                 </div>
                 <div class="card-description-product">
                     <h4>{{ $offer->name_offer }}</h4>
                     <p>{{ $offer->description_offer }}</p>
                     <h3>$ {{ $offer->cost }}</h3>
-
                 </div>
                 <div class="card-btn-product ">
-                 <form action="{{ route('verificar.pago')}}" method="POST">
-                    <input type="hidden" name="ofert" value="TEST-5841017781823689-050723-4081492e6e230f3f7078e56332de7955-318863690"> {{-- cambiar esto tambien --}}
-                    @csrf
+                    <div class="row">
+                        <div class="col-lg-6"> 
+                            @if ($offer->amount - $offer->active_otps > 0 && (Auth::guest() || Auth::user()->rol != 'store'))
+                                @if (!Auth::guest() && Auth::user()->rol == 'client')
+                                    <a class="btn-alternative btn-block" href="{{ route('otps.create', ['idstore' => $store->id, 'idclient' => Auth::user()->id,'idOffer'=>$offer->id]) }}">Retirar</a>
+                                @else
+                                    <a class="btn-alternative btn-block" href="{{ route('login') }}">Retirar</a>
+                                @endif
+                            @endif
+                        </div>
 
-                        <script
-                        data-button-label="Regalar"
-                        src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
-                        data-preference-id="<?php echo $preference->id;?>">
+                        <div class="col-lg-6"> 
+                            <form action="{{ route('verificar.pago')}}" method="POST">
+                                <input type="hidden" name="ofert" value="TEST-5841017781823689-050723-4081492e6e230f3f7078e56332de7955-318863690"> {{-- cambiar esto tambien --}}
+                                @csrf
 
-                        </script>
-                  </form>
+                                <script
+                                    data-button-label="Regalar"
+                                    src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
+                                    data-preference-id="<?php echo $preference->id;?>">
 
-                    @if ($offer->amount - $offer->active_otps > 0 && (Auth::guest() || Auth::user()->rol != 'store'))
-                        @if (!Auth::guest() && Auth::user()->rol == 'client')
-                            <a class="btn-alternative btn-block" href="{{ route('otps.create', ['idstore' => $store->id, 'idclient' => Auth::user()->id,'idOffer'=>$offer->id]) }}">Retirar</a>
-                        @else
-                            <a class="btn-alternative btn-block" href="{{ route('login') }}">Retirar</a>
-                        @endif
-                    @endif
-
+                                </script>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
