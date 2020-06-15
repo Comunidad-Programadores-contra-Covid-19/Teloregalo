@@ -132,7 +132,7 @@
                     @csrf
 
                         <script
-                        data-button-label="Comprar"
+                        data-button-label="Regalar"
                         src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
                         data-preference-id="<?php echo $preference->id;?>">
 

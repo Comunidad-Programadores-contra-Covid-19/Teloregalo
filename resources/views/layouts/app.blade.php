@@ -137,7 +137,7 @@
                 <div class="row">
                     <div class="col-auto">
                         <p>
-                            <a href="#">Comercios adheridos</a>
+                            <a href="{{ url('/') }}">Comercios adheridos</a>
                         </p>
                         <p>
                             <a  href="{{ url('preguntas-frecuentes') }}">Preguntas frecuentes</a>
@@ -150,6 +150,12 @@
                         </p>
                         <p>
                             <a href="{{ url('donar') }}">Donar</a>
+                        </p>
+                    </div>
+
+                    <div class="col-auto">
+                        <p>
+                            <a href="{{ url('terminos-condiciones') }}">Terminos y Condiciones</a>
                         </p>
                     </div>
                 </div>
@@ -166,8 +172,8 @@
 
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-md-0 mb-4">
                 <h6 class="text-uppercase font-weight-bold">Seguinos</h6>
-                <a href="#"> <span class="fab fa-2x fa-facebook-square"></span></a>
-                <a href="#"><span class="fab fa-2x fa-instagram"></span></a>
+                <a target="_blank" href="https://www.facebook.com/lacomunidaddeprogramadores"> <span class="fab fa-2x fa-facebook-square"></span></a>
+                <a target="_blank" href="https://instagram.com/comunidaddeprogramadores"><span class="fab fa-2x fa-instagram"></span></a>
             </div>
             <!-- Grid column -->
 

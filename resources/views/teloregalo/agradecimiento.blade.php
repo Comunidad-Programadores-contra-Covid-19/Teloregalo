@@ -18,14 +18,14 @@
 
         <img src="{{asset('assets/gracias.svg')}}" alt="gracias" id="imgGracias">
 
-        <ul id="iconosCompartir">
+        {{-- <ul id="iconosCompartir">
             <li><button id="compartirDescargar"><img src="{{asset('assets/descarga.svg')}}" alt="icono descargar"></button></li>
             <li><button id="compartirWhatsapp"><img src="{{asset('assets/whatsapp.svg')}}" alt="icono whatsapp"></button></li>
             <li><button id="compartirInstagram"><img src="{{asset('assets/instagram.svg')}}" alt="icono instagram"></button></li>
             <li><button id="compartirFacebook"><img src="{{asset('assets/facebook.svg')}}" alt="icono facebook"></button></li>
             <li><button id="compartirTwitter"><img src="{{asset('assets/twitter.svg')}}" alt="icono twitter"></button></li>
             <li><button id="compartirCorreo"><img src="{{asset('assets/correo.svg')}}" alt="icono correo"></button></li>
-        </ul>
+        </ul> --}}
     </section>
     <!-- Fin Compartir -->
 
