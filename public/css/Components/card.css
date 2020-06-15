@@ -261,7 +261,77 @@
 
 }
 
-@media handheld, (min-width:991px) and (max-width:1280px) {
+
+
+
+
+
+
+
+
+/*---Product card responsive---*/
+
+@media handheld, (min-width:1800px) and (max-width:2400px) {
+    .card-product{
+        height: 52rem;
+    }
+    .card-description-product{
+        top: 41.5rem;
+    }
+    .card-image-product{
+        width: 100%;
+    }
+}
+
+@media handheld, (min-width:1700px) and (max-width:1800px) {
+    .card-product{
+        height: 48rem;
+    }
+    .card-description-product{
+        top: 37.5rem;
+    }
+    .card-image-product{
+        width: 100%;
+    }
+}
+
+@media handheld, (min-width:1600px) and (max-width:1700px) {
+    .card-product{
+        display: 100%;
+    }
+    .card-description-product{
+        top: 34rem;
+    }
+    .card-image-product{
+        width: 100%;
+    }
+}
+
+@media handheld, (min-width:1336px) and (max-width:1480px) {
+    .card-product{
+        height: 45rem;
+    }
+    .card-description-product{
+        top: 32.6rem;
+    }
+    .card-image-product{
+        width: 100%;
+    }
+}
+
+@media handheld, (min-width:1200px) and (max-width:1280px) {
+    .card-product{
+        height: 42rem;
+    }
+    .card-description-product{
+        top: 29.5rem;
+    }
+    .card-image-product{
+        width: 100%;
+    }
+}
+
+@media handheld, (min-width:991px) and (max-width:1200px) {
     .card-product{
         height: 46rem;
     }
@@ -374,7 +444,7 @@
     }
 
     .card-image-product{
-        width: 8rem;
+        width: 9rem;
         left: -1rem;
         border-radius: 0px;
         border-bottom-right-radius: 6px;
@@ -384,11 +454,12 @@
     .card-description-product{
         top: 0rem;
         left: 8rem;
+        border:none;
     }
 
     .card-index-product{
         position: absolute;
-        top: 9rem;
+        top: 11rem;
         width: 100%;
         left: 10rem;
         background-color: #eee;
