@@ -33,18 +33,18 @@
                 </div>
                 <br>
                 <button type="submit" class="btn btn-principal btn-block" id="btnIngreso">Ingresar</button>
-        
+
         <br>
         <p class="text-center"> ¿No tenés cuenta? <a class="loginform-register-link" href="{{url('register')}}"><b>Registrarse</b></a></p>
         <p class="text-center"> ¿Olvidaste tu contraseña? ¡No te preocupes! <a href="{{ route('password.request') }}"><b>Te ayudamos a recuperarla</b></a></p>
             </div>
         </form>
 
-        <img src="assets/separador.svg" alt="separador" id="separadorRegistroHeroe">
+        {{--  <img src="assets/separador.svg" alt="separador" id="separadorRegistroHeroe">
         <br>
 
         <a class="btn btn-gmail btn-block" id="btnLogInHeroeGmail"  href="{{ route('social.auth', 'google') }}">Ingresar con Gmail</a>
-        <a class="btn btn-facebook btn-block" id="btnLogInHeroeFace" href="{{ route('social.auth', 'facebook') }}">Ingresar con Facebook</a>
+        <a class="btn btn-facebook btn-block" id="btnLogInHeroeFace" href="{{ route('social.auth', 'facebook') }}">Ingresar con Facebook</a>  --}}
 
     </section>
 </div>

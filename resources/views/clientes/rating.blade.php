@@ -25,7 +25,6 @@
     <div id="menuMisRegalosHeroe">
         <ul>
             <li><a  href="{{route('cliente.miperfil')}}">Perfil</a></li>
-            <li><a  href="{{route('cliente.rating', Auth::user()->id)}}">Mis regalos</a></li>
         </ul>
     </div>
     <!-- Fin Menú Mis Regalos Héroe -->
@@ -49,7 +48,7 @@
         <!-- Inicio contenedor Pendientes -->
         <section id="contenedorPendientes">
 
-            <h2>Pendientes de calificación</h2>
+            <h2>Calificar comercio</h2>
 
             <!-- Inicio fila 1 -->
 
