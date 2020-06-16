@@ -3,6 +3,7 @@
 }
 
 #imgAyuda {
+    width: 20%;
     margin-top: 1em;
 }
 
@@ -11,13 +12,17 @@
     margin-bottom: 5.5em;
 }
 
+#tituloDonar {
+    margin-top: 1em;
+}
+
 #subtituloDonar {
     width: 900px;
     font-weight: normal;
     margin-left: auto;
     margin-right: auto;
     line-height: 32px;
-    text-align: justify;
+    text-align: center;
     font-size: 22px;
     margin-top: 2.7em;
     margin-bottom: 2.7em;
