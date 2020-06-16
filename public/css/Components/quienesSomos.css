@@ -5,6 +5,7 @@
 }
 
 .subtitulosQuienesSomos {
+    text-align: center;
     margin-top: 3em;
     margin-bottom: 1.5em;
 }
@@ -29,6 +30,7 @@
 }
 
 #miembrosEquipo h3 {
+    font-size: 30px;
     text-align: center;
     margin-top: 1.2em;
     margin-bottom: 1.2em;

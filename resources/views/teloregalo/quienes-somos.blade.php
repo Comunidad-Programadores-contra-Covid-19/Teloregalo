@@ -30,9 +30,9 @@
     <h3 class="subtitulosQuienesSomos">¡Conocé al equipo!</h3>
     <section id="miembrosEquipo" class="box-line pl-3 pr-3">
 
-        <h3>Fundador</h3>
-        <div class="row" id="equipo">
-            <div class="col-md-12 col-lg-12">
+        <h3>Proyect Leaders</h3>
+        <div class="row">
+            <div class="col-md-12 col-lg-4">
                 <div class="card-member">
                     <img src="{{asset('assets/Esteban.jpg')}}" alt="" class="avatar">
                     <h6>Esteban Atlasovich</h6>
@@ -40,11 +40,7 @@
                     <p><em>"A Ananda. Por cuidar a mi Abuela y a todos los Agentin@s."</em></p>
                 </div>
             </div>
-        </div>
-
-        <h3>Proyect Leaders</h3>
-        <div class="row">
-            <div class="col-md-12 col-lg-3">
+            <div class="col-md-12 col-lg-4">
                 <div class="card-member">
                     <img src="{{asset('assets/Fernando%20Zamora.jpg')}}" alt="" class="avatar">
                     <h6>Fernando Zamora</h6>
@@ -52,7 +48,7 @@
                     <p><em>"Agradezco a quienes buscan ser parte de la solución y mitigar el impacto de esta crisis."</em></p>
                 </div>
             </div>
-            <div class="col-md-12 col-lg-3">
+            <div class="col-md-12 col-lg-4">
                 <div class="card-member">
                     <img src="https://via.placeholder.com/50" alt="" class="avatar">
                     <h6>Sergio A. Torchia</h6>
@@ -60,7 +56,7 @@
                     <p><em>"A Luis Pombo, Mariano Teyssandier y todos los que ponen el cuerpo para que estemos todos los días un poquito mejor."</em></p>
                 </div>
             </div>
-            <div class="col-md-12 col-lg-3">
+            <div class="col-md-12 col-lg-4">
                 <div class="card-member">
                     <img src="{{asset('assets/facundo%20luzko.png')}}" alt="" class="avatar">
                     <h6>Facundo Luzko</h6>
@@ -68,7 +64,7 @@
                     <p><em>"A médicos, investigadores y a todos los que desde su lugar aportan su granito de arena a la situación."</em></p>
                 </div>
             </div>
-            <div class="col-md-12 col-lg-3">
+            <div class="col-md-12 col-lg-4">
                 <div class="card-member">
                     <img src="{{asset('assets/Julian.jpg')}}" alt="" class="avatar">
                     <h6>Julian Atlasovich</h6>
@@ -116,7 +112,7 @@
 
         <h3>Front End</h3>
         <div class="row">
-            <div class="col-md-12 col-lg-4">
+            <div class="col-md-12 col-lg-3">
                 <div class="card-member">
                     <img src="{{asset('assets/Juan%20Pablo%20Larraza.jpg')}}" alt="" class="avatar">
                     <h6>Juan Pabo Larraza</h6>
@@ -124,7 +120,7 @@
                     <p><em>"A todos los que salen día a día para combatir esta situación, no me alcanzan las palabras para nombrar a todos. Gracias de corazón!"</em></p>
                 </div>
             </div>
-            <div class="col-md-12 col-lg-4">
+            <div class="col-md-12 col-lg-3">
                 <div class="card-member">
                     <img src="{{asset('assets/Alex.png')}}" alt="" class="avatar">
                     <h6>Alex Bordón</h6>
@@ -132,7 +128,7 @@
                     <p><em>"Mi agradecimiento va para aquellas personas, que a costa de su propia vida, nos cuidan y protegen día a día."</em></p>
                 </div>
             </div>
-            <div class="col-md-12 col-lg-4">
+            <div class="col-md-12 col-lg-3">
                 <div class="card-member">
                     <img src="{{asset('assets/Florencia%20De%20Mollein.jpg')}}" alt="" class="avatar">
                     <h6>Florencia De Mollein</h6>
@@ -140,11 +136,19 @@
                     <p><em>"A todos los héroes anónimos. A mi familia."</em></p>
                 </div>
             </div>
+            <div class="col-md-12 col-lg-3">
+                <div class="card-member">
+                    <img src="{{asset('assets/GuillermoLopez.jpeg')}}" alt="" class="avatar">
+                    <h6>Guillermo López</h6>
+                    <a href="https://www.linkedin.com/in/guillermo-david-lopez/" target="_blank"><span><i class="fab fa-linkedin"></i></span> linkedin.com/in/guillermo-david-lopez/</a>
+                    <p><em>"Gracias a las personas que me rodean, a la comunidad de desarrolladores, y a los héroes anónimos de esta pandemia."</em></p>
+                </div>
+            </div>
         </div>
 
         <h3>Back End</h3>
         <div class="row">
-            <div class="col-md-12 col-lg-3">
+            <div class="col-md-12 col-lg-4">
                 <div class="card-member">
                     <img src="https://via.placeholder.com/50.jpg" alt="" class="avatar">
                     <h6>Luciano Kapluk</h6>
@@ -152,7 +156,7 @@
                     <p><em>"Gracias a todos los héroes que trabajan día a día para cuidarnos, y la Comunidad de desarrolladores que me dejaron ser parte de este proyecto."</em></p>
                 </div>
             </div>
-            <div class="col-md-12 col-lg-3">
+            <div class="col-md-12 col-lg-4">
                 <div class="card-member">
                     <img src="{{asset('assets/NicolasLiendro.jpeg')}}" alt="" class="avatar">
                     <h6>Nicolás Liendro</h6>
@@ -160,7 +164,7 @@
                     <p><em>"Gracias a todo el personal médico que, a pasar de las adversidades, siempre ponen el hombro para cuidarnos."</em></p>
                 </div>
             </div>
-            <div class="col-md-12 col-lg-3">
+            <div class="col-md-12 col-lg-4">
                 <div class="card-member">
                     <img src="{{asset('assets/Nahuel%20Villagra.jpg')}}" alt="" class="avatar">
                     <h6>Nahuel Villagra</h6>
@@ -168,12 +172,28 @@
                     <p><em>"Gracias a mi familia."</em></p>
                 </div>
             </div>
-            <div class="col-md-12 col-lg-3">
+            <div class="col-md-12 col-lg-4">
                 <div class="card-member">
                     <img src="https://via.placeholder.com/50.jpg" alt="" class="avatar">
                     <h6>Melanie Salzman</h6>
                     <a href="https://www.linkedin.com/in/salzmanmelanie/" target="_blank"><span><i class="fab fa-linkedin"></i></span> linkedin.com/in/salzmanmelanie/</a>
                     <p><em>"Gracias a las personas que dedican su tiempo en ayudar a nuestro país."</em></p>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-4">
+                <div class="card-member">
+                    <img src="{{asset('assets/CarlosOronoz.jpg')}}" alt="" class="avatar">
+                    <h6>Carlos Oronoz</h6>
+                    <a href="http://www.linkedin.com/in/carlojsoronozr/" target="_blank"><span><i class="fab fa-linkedin"></i></span> linkedin.com/in/carlojsoronozr/</a>
+                    <p><em>"Gracias a todas las personas que día a día, ayudan a combatir esta pandemia."</em></p>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-4">
+                <div class="card-member">
+                    <img src="{{asset('assets/TobiasBrandy.jpeg')}}" alt="" class="avatar">
+                    <h6>Tobias Brandy</h6>
+                    <a href="https://www.linkedin.com/in/tobiasbrandy/" target="_blank"><span><i class="fab fa-linkedin"></i></span> https://www.linkedin.com/in/tobiasbrandy/</a>
+                    <p><em>"Gracias a todos los que combaten esta pandemia."</em></p>
                 </div>
             </div>
         </div>
